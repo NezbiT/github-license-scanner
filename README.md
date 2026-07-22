@@ -15,6 +15,7 @@
   <a href="#web-ui"><img src="https://img.shields.io/badge/UI-NiceGUI-8b5e3c?style=flat-square" alt="NiceGUI" /></a>
   <a href="#cli"><img src="https://img.shields.io/badge/CLI-supported-3f6f4e?style=flat-square" alt="CLI" /></a>
   <a href="#disclaimer"><img src="https://img.shields.io/badge/Not-legal%20advice-9b2c2c?style=flat-square" alt="Disclaimer" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2c3e50?style=flat-square" alt="MIT License" /></a>
 </p>
 
 ---
@@ -171,8 +172,13 @@ Always review with a qualified attorney before commercial closed-source distribu
 
 ## License
 
-This project source is provided for educational and developer productivity use.  
-Add a formal `LICENSE` file of your choice if you redistribute.
+Released under the **[MIT License](LICENSE)**.
+
+You may use, modify, and redistribute this project commercially or privately,  
+as long as you keep the copyright and license notice. See `LICENSE` for full text.
+
+> The MIT license applies to **this tool’s source code**.  
+> It does **not** change the licenses of the GitHub repositories or packages you scan.
 
 ---
 
