@@ -19,6 +19,7 @@ class Dependency:
     version_spec: str | None
     ecosystem: str  # npm | pypi | cargo | go | rubygems | composer | maven | gradle
     source_file: str  # path inside the repository, e.g. "package.json"
+    is_dev: bool = False  # True for dev/test/build-only dependencies
 
 
 @dataclass
@@ -32,6 +33,7 @@ class PackageLicense:
     source_file: str
     license_url: str | None = None
     version_spec: str | None = None
+    is_dev: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -91,6 +93,14 @@ class ScanResult:
     topics: list[str] = field(default_factory=list)
     dependency_files: list[str] = field(default_factory=list)
     has_dockerfile: bool = False
+    # Risk score 0 (safest) … 100 (highest copyleft / uncertainty pressure)
+    risk_score: int = 0
+    risk_score_label: str = "n/a"
+    # Counts after prod/dev split (filled by analyzer)
+    prod_package_count: int = 0
+    dev_package_count: int = 0
+    # Strong copyleft only in dev deps (warning, does not force open by default)
+    strong_copyleft_dev_only: bool = False
 
     def to_history_entry(self) -> dict[str, Any]:
         """Compact dict suitable for history.json persistence."""
@@ -103,10 +113,11 @@ class ScanResult:
             "can_sell_closed": self.can_sell_closed,
             "forces_open_source": self.forces_open_source,
             "package_count": len(self.packages),
+            "risk_score": self.risk_score,
             "verdict_summary": self.verdict_summary,
         }
 
-    def risk_counts(self) -> dict[str, int]:
+    def risk_counts(self, *, prod_only: bool = False) -> dict[str, int]:
         """Count packages by risk category."""
         counts = {
             "permissive": 0,
@@ -115,6 +126,16 @@ class ScanResult:
             "unknown": 0,
         }
         for pkg in self.packages:
+            if prod_only and pkg.is_dev:
+                continue
             key = pkg.risk if pkg.risk in counts else "unknown"
             counts[key] += 1
         return counts
+
+    @property
+    def prod_packages(self) -> list[PackageLicense]:
+        return [p for p in self.packages if not p.is_dev]
+
+    @property
+    def dev_packages(self) -> list[PackageLicense]:
+        return [p for p in self.packages if p.is_dev]

@@ -61,18 +61,21 @@ def parse_many(files: dict[str, str]) -> list[Dependency]:
     """
     Parse multiple path -> content mappings and deduplicate by (ecosystem, name).
 
-    First occurrence wins (prefer root files if caller sorted them that way).
+    Prefer production declarations over dev-only: if a package appears as both,
+    keep the non-dev entry.
     """
-    seen: set[tuple[str, str]] = set()
-    result: list[Dependency] = []
+    by_key: dict[tuple[str, str], Dependency] = {}
     for path, content in files.items():
         for dep in parse_dependencies(path, content):
             key = (dep.ecosystem, dep.name.lower())
-            if key in seen:
+            existing = by_key.get(key)
+            if existing is None:
+                by_key[key] = dep
                 continue
-            seen.add(key)
-            result.append(dep)
-    return result
+            # Upgrade dev → prod if we later see a runtime declaration
+            if existing.is_dev and not dep.is_dev:
+                by_key[key] = dep
+    return list(by_key.values())
 
 
 # ---------------------------------------------------------------------------
@@ -91,10 +94,8 @@ def _parse_package_json(path: str, content: str) -> list[Dependency]:
         block = data.get(section) or {}
         if not isinstance(block, dict):
             continue
+        is_dev = section == "devDependencies"
         for name, version in block.items():
-            if not name or name.startswith("@"):
-                # Scoped packages like @scope/name are valid — keep them
-                pass
             if not isinstance(name, str):
                 continue
             version_spec = str(version) if version is not None else None
@@ -111,6 +112,7 @@ def _parse_package_json(path: str, content: str) -> list[Dependency]:
                     version_spec=version_spec,
                     ecosystem="npm",
                     source_file=path,
+                    is_dev=is_dev,
                 )
             )
     return deps
@@ -157,8 +159,19 @@ def _parse_requirement_line(line: str) -> tuple[str, str | None] | None:
         return None
 
 
+def _is_dev_requirements_path(path: str) -> bool:
+    """Heuristic: requirements-dev.txt, requirements/test.txt, etc."""
+    lower = path.replace("\\", "/").lower()
+    base = lower.rsplit("/", 1)[-1]
+    return bool(
+        re.search(r"(^|[_\-/])(dev|test|tests|lint|docs|doc|ci|typing)([_\-./]|$)", lower)
+        or re.search(r"requirements[-_.]?(dev|test|docs)", base)
+    )
+
+
 def _parse_requirements_txt(path: str, content: str) -> list[Dependency]:
     """Parse classic pip requirements files."""
+    is_dev = _is_dev_requirements_path(path)
     deps: list[Dependency] = []
     for raw_line in content.splitlines():
         parsed = _parse_requirement_line(raw_line)
@@ -171,6 +184,7 @@ def _parse_requirements_txt(path: str, content: str) -> list[Dependency]:
                 version_spec=version_spec,
                 ecosystem="pypi",
                 source_file=path,
+                is_dev=is_dev,
             )
         )
     return deps
@@ -186,23 +200,28 @@ def _parse_pyproject_toml(path: str, content: str) -> list[Dependency]:
         return []
 
     deps: list[Dependency] = []
-    seen: set[str] = set()
+    seen: dict[str, bool] = {}  # name -> is_dev (prefer prod)
 
-    def add_req_string(req_str: str) -> None:
+    def add_req_string(req_str: str, *, is_dev: bool = False) -> None:
         parsed = _parse_requirement_line(req_str)
         if not parsed:
             return
         name, version_spec = parsed
         key = name.lower()
         if key in seen:
-            return
-        seen.add(key)
+            if seen[key] and not is_dev:
+                # upgrade later by removing old and re-adding
+                deps[:] = [d for d in deps if d.name.lower() != key]
+            else:
+                return
+        seen[key] = is_dev
         deps.append(
             Dependency(
                 name=name,
                 version_spec=version_spec,
                 ecosystem="pypi",
                 source_file=path,
+                is_dev=is_dev,
             )
         )
 
@@ -210,16 +229,19 @@ def _parse_pyproject_toml(path: str, content: str) -> list[Dependency]:
     project = data.get("project") or {}
     for item in project.get("dependencies") or []:
         if isinstance(item, str):
-            add_req_string(item)
+            add_req_string(item, is_dev=False)
 
-    # optional-dependencies: { group: [reqs] }
+    # optional-dependencies: treat as dev/extra (not default runtime ship)
     optional = project.get("optional-dependencies") or {}
     if isinstance(optional, dict):
-        for group_reqs in optional.values():
+        for group_name, group_reqs in optional.items():
+            g_dev = str(group_name).lower() in {
+                "dev", "test", "tests", "lint", "docs", "doc", "typing", "ci"
+            } or True  # extras are optional → mark as dev for closed-sale scoring
             if isinstance(group_reqs, list):
                 for item in group_reqs:
                     if isinstance(item, str):
-                        add_req_string(item)
+                        add_req_string(item, is_dev=g_dev)
 
     # Poetry: [tool.poetry.dependencies] / group.dev
     poetry = (data.get("tool") or {}).get("poetry") or {}
@@ -227,13 +249,17 @@ def _parse_pyproject_toml(path: str, content: str) -> list[Dependency]:
         block = poetry.get(section_name) or {}
         if not isinstance(block, dict):
             continue
+        is_dev = section_name == "dev-dependencies"
         for name, spec in block.items():
             if name.lower() == "python":
                 continue
             key = name.lower()
-            if key in seen:
-                continue
-            seen.add(key)
+            if key in seen and not (seen[key] and not is_dev):
+                if seen[key] and not is_dev:
+                    deps[:] = [d for d in deps if d.name.lower() != key]
+                else:
+                    continue
+            seen[key] = is_dev
             version_spec = None
             if isinstance(spec, str):
                 version_spec = spec
@@ -245,23 +271,28 @@ def _parse_pyproject_toml(path: str, content: str) -> list[Dependency]:
                     version_spec=version_spec,
                     ecosystem="pypi",
                     source_file=path,
+                    is_dev=is_dev,
                 )
             )
 
-    # Poetry 1.2+ groups
+    # Poetry 1.2+ groups (usually dev/test)
     groups = poetry.get("group") or {}
     if isinstance(groups, dict):
-        for group in groups.values():
+        for group_name, group in groups.items():
             if not isinstance(group, dict):
                 continue
             gdeps = group.get("dependencies") or {}
             if not isinstance(gdeps, dict):
                 continue
+            is_dev = str(group_name).lower() != "main"
             for name, spec in gdeps.items():
                 key = name.lower()
                 if key in seen:
-                    continue
-                seen.add(key)
+                    if seen[key] and not is_dev:
+                        deps[:] = [d for d in deps if d.name.lower() != key]
+                    else:
+                        continue
+                seen[key] = is_dev
                 version_spec = spec if isinstance(spec, str) else None
                 deps.append(
                     Dependency(
@@ -269,6 +300,7 @@ def _parse_pyproject_toml(path: str, content: str) -> list[Dependency]:
                         version_spec=version_spec if isinstance(version_spec, str) else None,
                         ecosystem="pypi",
                         source_file=path,
+                        is_dev=is_dev,
                     )
                 )
 
@@ -287,6 +319,7 @@ def _parse_pipfile(path: str, content: str) -> list[Dependency]:
         block = data.get(section) or {}
         if not isinstance(block, dict):
             continue
+        is_dev = section == "dev-packages"
         for name, spec in block.items():
             version_spec = spec if isinstance(spec, str) else None
             deps.append(
@@ -295,6 +328,7 @@ def _parse_pipfile(path: str, content: str) -> list[Dependency]:
                     version_spec=version_spec,
                     ecosystem="pypi",
                     source_file=path,
+                    is_dev=is_dev,
                 )
             )
     return deps
@@ -343,16 +377,20 @@ def _parse_cargo_toml(path: str, content: str) -> list[Dependency]:
         return []
 
     deps: list[Dependency] = []
-    seen: set[str] = set()
+    seen: dict[str, bool] = {}
     for section in ("dependencies", "dev-dependencies", "build-dependencies"):
         block = data.get(section) or {}
         if not isinstance(block, dict):
             continue
+        is_dev = section in {"dev-dependencies", "build-dependencies"}
         for name, spec in block.items():
             key = name.lower()
             if key in seen:
-                continue
-            seen.add(key)
+                if seen[key] and not is_dev:
+                    deps[:] = [d for d in deps if d.name.lower() != key]
+                else:
+                    continue
+            seen[key] = is_dev
             version_spec = None
             if isinstance(spec, str):
                 version_spec = spec
@@ -368,6 +406,7 @@ def _parse_cargo_toml(path: str, content: str) -> list[Dependency]:
                     version_spec=version_spec,
                     ecosystem="cargo",
                     source_file=path,
+                    is_dev=is_dev,
                 )
             )
     return deps
@@ -473,6 +512,7 @@ def _parse_composer_json(path: str, content: str) -> list[Dependency]:
         block = data.get(section) or {}
         if not isinstance(block, dict):
             continue
+        is_dev = section == "require-dev"
         for name, version in block.items():
             # Skip php runtime and extensions
             if name == "php" or name.startswith("ext-"):
@@ -483,6 +523,7 @@ def _parse_composer_json(path: str, content: str) -> list[Dependency]:
                     version_spec=str(version) if version is not None else None,
                     ecosystem="composer",
                     source_file=path,
+                    is_dev=is_dev,
                 )
             )
     return deps

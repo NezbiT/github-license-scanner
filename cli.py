@@ -22,6 +22,7 @@ from pathlib import Path
 from history_store import append_scan, load_history
 from license_analyzer import analyze_repository
 from models import ScanResult
+from report import render_markdown_report
 
 
 def _print_result(result: ScanResult, verbose: bool = True) -> None:
@@ -44,20 +45,33 @@ def _print_result(result: ScanResult, verbose: bool = True) -> None:
 
     flag = "YES — strong copyleft may force opening source" if result.forces_open_source else "NO"
     sell = "YES (with caveats)" if result.can_sell_closed else "NO"
+    print(f"Risk score         : {result.risk_score}/100 ({result.risk_score_label})")
     print(f"Forces open source : {flag}")
     print(f"Can sell closed    : {sell}")
+    if result.strong_copyleft_dev_only:
+        print("Dev-only copyleft  : YES (strong copyleft only in dev deps)")
     print()
     print("Verdict:")
     print(f"  {result.verdict_summary}")
     print()
 
     counts = result.risk_counts()
+    prod_counts = result.risk_counts(prod_only=True)
     print(
         f"Packages analyzed: {len(result.packages)}  "
-        f"[permissive={counts['permissive']}, "
+        f"(prod={result.prod_package_count}, dev={result.dev_package_count})"
+    )
+    print(
+        f"  all  [permissive={counts['permissive']}, "
         f"weak_copyleft={counts['weak_copyleft']}, "
         f"strong_copyleft={counts['strong_copyleft']}, "
         f"unknown={counts['unknown']}]"
+    )
+    print(
+        f"  prod [permissive={prod_counts['permissive']}, "
+        f"weak_copyleft={prod_counts['weak_copyleft']}, "
+        f"strong_copyleft={prod_counts['strong_copyleft']}, "
+        f"unknown={prod_counts['unknown']}]"
     )
 
     if verbose and result.grouped:
@@ -68,7 +82,8 @@ def _print_result(result: ScanResult, verbose: bool = True) -> None:
             risk_label = ",".join(sorted(risks))
             print(f"  [{risk_label}] {lic} ({len(pkgs)})")
             for p in sorted(pkgs, key=lambda x: x.name.lower())[:15]:
-                print(f"      - {p.name} ({p.ecosystem}) from {p.source_file}")
+                scope = "dev" if p.is_dev else "prod"
+                print(f"      - {p.name} ({p.ecosystem}/{scope}) from {p.source_file}")
             if len(pkgs) > 15:
                 print(f"      … and {len(pkgs) - 15} more")
 
@@ -105,11 +120,22 @@ def _print_result(result: ScanResult, verbose: bool = True) -> None:
     print("=" * 72)
 
 
-async def cmd_scan(url: str, save: bool = True, verbose: bool = True) -> int:
+async def cmd_scan(
+    url: str,
+    save: bool = True,
+    verbose: bool = True,
+    markdown_path: str | None = None,
+) -> int:
     """Scan a single repository URL. Returns process exit code."""
     print(f"Scanning {url} …")
     result = await analyze_repository(url)
     _print_result(result, verbose=verbose)
+
+    if markdown_path:
+        md = render_markdown_report(result)
+        out = Path(markdown_path)
+        out.write_text(md, encoding="utf-8")
+        print(f"Markdown report written to {out}")
 
     if save and result.owner:
         append_scan(result)
@@ -182,6 +208,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_scan = sub.add_parser("scan", help="Scan a single GitHub repository URL")
     p_scan.add_argument("url", help="GitHub repository URL or owner/repo")
     p_scan.add_argument("--no-save", action="store_true", help="Do not write history")
+    p_scan.add_argument(
+        "--markdown",
+        metavar="PATH",
+        help="Write a Markdown report to PATH (e.g. report.md)",
+    )
 
     p_batch = sub.add_parser("batch", help="Scan URLs from a text file")
     p_batch.add_argument("file", help="Path to text file with one URL per line")
@@ -198,7 +229,13 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.command == "scan":
-        return asyncio.run(cmd_scan(args.url, save=not args.no_save))
+        return asyncio.run(
+            cmd_scan(
+                args.url,
+                save=not args.no_save,
+                markdown_path=args.markdown,
+            )
+        )
     if args.command == "batch":
         return asyncio.run(cmd_batch(args.file, save=not args.no_save))
     if args.command == "history":

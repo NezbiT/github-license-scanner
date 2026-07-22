@@ -146,8 +146,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "en": "Open on GitHub",
     },
     "risk_legend": {
-        "es": "Verde = permisiva · Naranja = débil/desconocida · Rojo = copyleft fuerte",
-        "en": "Green = permissive · Orange = weak/unknown · Red = strong copyleft",
+        "es": "Agrupado por licencia · revisa el badge de riesgo en cada paquete",
+        "en": "Grouped by license · check each package risk badge",
     },
     "how_it_works": {
         "es": "Cómo funciona",
@@ -315,6 +315,32 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "es": "¿Obliga a abrir código?",
         "en": "Forces open source?",
     },
+    "meta_risk_score": {
+        "es": "Score de riesgo",
+        "en": "Risk score",
+    },
+    "meta_prod_dev": {
+        "es": "Prod / Dev",
+        "en": "Prod / Dev",
+    },
+    "scope_prod": {"es": "prod", "en": "prod"},
+    "scope_dev": {"es": "dev", "en": "dev"},
+    "export_markdown": {
+        "es": "Exportar Markdown",
+        "en": "Export Markdown",
+    },
+    "export_copied": {
+        "es": "Reporte Markdown copiado al portapapeles",
+        "en": "Markdown report copied to clipboard",
+    },
+    "export_download": {
+        "es": "Descargar .md",
+        "en": "Download .md",
+    },
+    "risk_label_minimal": {"es": "mínimo", "en": "minimal"},
+    "risk_label_low": {"es": "bajo", "en": "low"},
+    "risk_label_medium": {"es": "medio", "en": "medium"},
+    "risk_label_high": {"es": "alto", "en": "high"},
     "unknown": {"es": "Desconocida", "en": "Unknown"},
     # Risk labels
     "risk_permissive": {"es": "Permisiva", "en": "Permissive"},

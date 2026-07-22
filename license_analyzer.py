@@ -416,6 +416,7 @@ async def resolve_all_licenses(
                     source_file=dep.source_file,
                     license_url=url,
                     version_spec=dep.version_spec,
+                    is_dev=dep.is_dev,
                 )
 
         tasks = [one(d) for d in deps]
@@ -485,21 +486,31 @@ def suggest_replacements(packages: list[PackageLicense]) -> list[ReplacementSugg
 def compute_verdict(
     repo_license: str | None,
     packages: list[PackageLicense],
-) -> tuple[bool, bool, bool, bool, str]:
+) -> tuple[bool, bool, bool, bool, str, bool]:
     """
     Decide closed-source sellability.
 
+    Strong copyleft in **production** deps (or the repo license) forces open.
+    Strong copyleft only in **dev** deps is reported but does not auto-force open.
+
     Returns:
         can_sell_closed, forces_open_source, has_weak_copyleft,
-        has_unknown_licenses, verdict_summary
+        has_unknown_licenses, verdict_summary, strong_copyleft_dev_only
     """
     repo_risk = classify_license(repo_license)
-    strong_pkgs = [p for p in packages if p.risk == "strong_copyleft"]
+    prod = [p for p in packages if not p.is_dev]
+    dev = [p for p in packages if p.is_dev]
+
+    strong_prod = [p for p in prod if p.risk == "strong_copyleft"]
+    strong_dev = [p for p in dev if p.risk == "strong_copyleft"]
     weak_pkgs = [p for p in packages if p.risk == "weak_copyleft"]
     unknown_pkgs = [p for p in packages if p.risk == "unknown"]
+    # Prefer unknown in prod for messaging weight
+    unknown_prod = [p for p in prod if p.risk == "unknown"]
 
     forces = False
     reasons: list[str] = []
+    strong_dev_only = False
 
     if repo_risk == "strong_copyleft":
         forces = True
@@ -509,14 +520,23 @@ def compute_verdict(
             f"typically requires providing corresponding source under the same terms."
         )
 
-    if strong_pkgs:
+    if strong_prod:
         forces = True
-        names = ", ".join(sorted({p.name for p in strong_pkgs})[:12])
-        extra = "…" if len(strong_pkgs) > 12 else ""
+        names = ", ".join(sorted({p.name for p in strong_prod})[:12])
+        extra = "…" if len(strong_prod) > 12 else ""
         reasons.append(
-            f"Strong copyleft dependencies detected ({len(strong_pkgs)}): {names}{extra}. "
-            f"Linking/distributing these with a proprietary product often forces "
-            f"opening your source (especially GPL/AGPL)."
+            f"Strong copyleft in production dependencies ({len(strong_prod)}): "
+            f"{names}{extra}. Linking/distributing these with a proprietary product "
+            f"often forces opening your source (especially GPL/AGPL)."
+        )
+
+    if strong_dev and not strong_prod:
+        strong_dev_only = True
+        names = ", ".join(sorted({p.name for p in strong_dev})[:8])
+        reasons.append(
+            f"Strong copyleft only in dev/test dependencies ({len(strong_dev)}): "
+            f"{names}. These often do not ship in production, but confirm your "
+            f"build/distribution pipeline does not bundle them."
         )
 
     has_weak = bool(weak_pkgs) or repo_risk == "weak_copyleft"
@@ -525,21 +545,24 @@ def compute_verdict(
     can_sell = not forces
 
     if can_sell and has_weak:
+        weak_prod = [p for p in weak_pkgs if not p.is_dev]
         reasons.append(
-            f"Weak copyleft packages present ({len(weak_pkgs)}: MPL/LGPL/EPL-class). "
+            f"Weak copyleft packages present ({len(weak_pkgs)} total, "
+            f"{len(weak_prod)} production: MPL/LGPL/EPL-class). "
             f"You may often keep your own code closed if you comply with file-level "
             f"or dynamic-linking obligations — review each license."
         )
     if can_sell and has_unknown:
         reasons.append(
-            f"Some licenses could not be determined ({len(unknown_pkgs)} packages"
+            f"Some licenses could not be determined "
+            f"({len(unknown_prod)} production / {len(unknown_pkgs)} total packages"
             f"{' and/or missing repo license' if not repo_license else ''}). "
             f"Manual review recommended before commercial closed-source distribution."
         )
     if can_sell and not reasons:
         reasons.append(
             "No strong copyleft (GPL/AGPL-class) signals found in the repository "
-            "license or resolved dependencies. Closed-source commercial sale appears "
+            "license or production dependencies. Closed-source commercial sale appears "
             "plausible, subject to attribution and terms of each permissive license."
         )
 
@@ -547,7 +570,46 @@ def compute_verdict(
     summary += (
         " DISCLAIMER: This is automated guidance only and is NOT legal advice."
     )
-    return can_sell, forces, has_weak, has_unknown, summary
+    return can_sell, forces, has_weak, has_unknown, summary, strong_dev_only
+
+
+def compute_risk_score(
+    repo_license: str | None,
+    packages: list[PackageLicense],
+) -> tuple[int, str]:
+    """
+    Compute a 0–100 risk score (higher = more concern for closed-source sale).
+
+    Weight production deps more heavily than dev deps.
+    """
+    score = 0
+    repo_risk = classify_license(repo_license)
+    if repo_risk == "strong_copyleft":
+        score += 55
+    elif repo_risk == "weak_copyleft":
+        score += 15
+    elif repo_risk == "unknown" or not repo_license:
+        score += 10
+
+    for pkg in packages:
+        w = 0.35 if pkg.is_dev else 1.0
+        if pkg.risk == "strong_copyleft":
+            score += 18 * w
+        elif pkg.risk == "weak_copyleft":
+            score += 6 * w
+        elif pkg.risk == "unknown":
+            score += 4 * w
+
+    score_i = int(min(100, round(score)))
+    if score_i >= 70:
+        label = "high"
+    elif score_i >= 40:
+        label = "medium"
+    elif score_i >= 15:
+        label = "low"
+    else:
+        label = "minimal"
+    return score_i, label
 
 
 def group_by_license(packages: list[PackageLicense]) -> dict[str, list[PackageLicense]]:
@@ -687,13 +749,15 @@ async def analyze_repository(url: str) -> ScanResult:
                     risk="unknown",
                     source_file=d.source_file,
                     version_spec=d.version_spec,
+                    is_dev=d.is_dev,
                 )
                 for d in dependencies[:MAX_PACKAGES_LOOKUP]
             ]
 
-    can_sell, forces, has_weak, has_unknown, summary = compute_verdict(
+    can_sell, forces, has_weak, has_unknown, summary, strong_dev_only = compute_verdict(
         repo_license, packages
     )
+    risk_score, risk_label = compute_risk_score(repo_license, packages)
     grouped = group_by_license(packages)
     replacements = suggest_replacements(packages)
     deploy = recommend_deploy(
@@ -705,6 +769,8 @@ async def analyze_repository(url: str) -> ScanResult:
         description=description,
     )
     notice = build_copyright_notice(owner, repo, repo_license)
+    prod_n = sum(1 for p in packages if not p.is_dev)
+    dev_n = sum(1 for p in packages if p.is_dev)
 
     return ScanResult(
         owner=owner,
@@ -727,5 +793,10 @@ async def analyze_repository(url: str) -> ScanResult:
         description=description,
         topics=topics,
         dependency_files=dep_paths,
+        risk_score=risk_score,
+        risk_score_label=risk_label,
+        prod_package_count=prod_n,
+        dev_package_count=dev_n,
+        strong_copyleft_dev_only=strong_dev_only,
         has_dockerfile=has_dockerfile,
     )
