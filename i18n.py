@@ -290,6 +290,14 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "es": "No se detectó copyleft fuerte en la licencia del repo ni en las dependencias resueltas.",
         "en": "No strong copyleft found in the repo license or resolved dependencies.",
     },
+    "verdict_incomplete_title": {
+        "es": "Análisis incompleto",
+        "en": "Incomplete analysis",
+    },
+    "verdict_incomplete_sub": {
+        "es": "No se pudo obtener suficiente información de GitHub (rate limit, red o permisos). Configura GITHUB_TOKEN e inténtalo de nuevo.",
+        "en": "Could not fetch enough data from GitHub (rate limit, network, or permissions). Set GITHUB_TOKEN and try again.",
+    },
     # Meta cards
     "meta_repo_license": {
         "es": "Licencia del repositorio",

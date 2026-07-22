@@ -843,8 +843,16 @@ def render_result(container: ui.element, result: ScanResult, lang: str | None = 
                     ).classes("gls-repo-link")
                 ui.badge(result.scanned_at).props("outline color=grey")
 
-            # Verdict
-            if result.forces_open_source:
+            # Verdict — incomplete scan (API/rate-limit) is not a legal "no"
+            incomplete = bool(result.errors) and not result.repo_license and not result.packages
+            if incomplete:
+                v_cls, title, sub, emoji = (
+                    "warn",
+                    t("verdict_incomplete_title", lang),
+                    t("verdict_incomplete_sub", lang),
+                    "⏳",
+                )
+            elif result.forces_open_source:
                 v_cls, title, sub, emoji = (
                     "bad",
                     t("verdict_bad_title", lang),

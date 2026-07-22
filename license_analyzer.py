@@ -77,7 +77,6 @@ WEAK_COPYLEFT = {
     "cddl-1.0",
     "cddl-1.1",
     "ms-pl",
-    "osl-3.0",
 }
 
 STRONG_COPYLEFT = {
@@ -96,7 +95,7 @@ STRONG_COPYLEFT = {
     "sspl-1.0",
     "sspl",
     "sleepycat",
-    "osl-3.0",  # often treated as strong for distribution
+    "osl-3.0",  # treated as strong for distribution (conservative)
 }
 
 # Heuristic replacements for known strong-copyleft packages (not exhaustive)
@@ -629,6 +628,7 @@ async def analyze_repository(url: str) -> ScanResult:
 
         except GitHubAPIError as exc:
             errors.append(str(exc))
+            # Incomplete scan — do not imply a closed-sale decision either way
             return ScanResult(
                 owner=owner,
                 repo=repo,
@@ -637,7 +637,14 @@ async def analyze_repository(url: str) -> ScanResult:
                 scanned_at=scanned_at,
                 can_sell_closed=False,
                 forces_open_source=False,
-                verdict_summary=str(exc),
+                has_weak_copyleft=False,
+                has_unknown_licenses=True,
+                verdict_summary=(
+                    f"Scan incomplete: {exc} "
+                    "No closed-source sellability decision can be made until "
+                    "GitHub data is available. Set GITHUB_TOKEN if you hit rate limits. "
+                    "DISCLAIMER: This is automated guidance only and is NOT legal advice."
+                ),
                 errors=errors,
                 copyright_notice=build_copyright_notice(owner, repo, None),
             )
@@ -651,7 +658,12 @@ async def analyze_repository(url: str) -> ScanResult:
                 scanned_at=scanned_at,
                 can_sell_closed=False,
                 forces_open_source=False,
-                verdict_summary=str(exc),
+                has_weak_copyleft=False,
+                has_unknown_licenses=True,
+                verdict_summary=(
+                    f"Scan incomplete (network error): {exc} "
+                    "DISCLAIMER: This is automated guidance only and is NOT legal advice."
+                ),
                 errors=errors,
                 copyright_notice=build_copyright_notice(owner, repo, None),
             )
