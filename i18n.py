@@ -267,13 +267,13 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     },
     "history_privacy_note": {
         "es": (
-            "Privacidad: el historial se guarda en disco de esta instancia y es "
-            "compartido entre usuarios si el servidor es multi-usuario. "
-            "Puedes borrarlo aquí (borrado local)."
+            "Privacidad: con autenticación activada el historial es por usuario "
+            "(data/history/<usuario>.json). Sin auth, el archivo es compartido en la instancia. "
+            "Puedes borrarlo aquí."
         ),
         "en": (
-            "Privacy: history is stored on this instance’s disk and is shared across "
-            "users if the server is multi-user. You can clear it here (local erasure)."
+            "Privacy: with auth enabled, history is per user (data/history/<user>.json). "
+            "Without auth, the file is shared on the instance. You can clear it here."
         ),
     },
     "history_empty": {
@@ -383,6 +383,49 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     "export_download": {
         "es": "Descargar .md",
         "en": "Download .md",
+    },
+    "export_sbom": {
+        "es": "Exportar SBOM",
+        "en": "Export SBOM",
+    },
+    "export_sbom_help": {
+        "es": (
+            "Bill of Materials generado a partir de dependencias declaradas y licencias "
+            "de registro (heurístico; no es un SBOM binario de build)."
+        ),
+        "en": (
+            "Bill of Materials from declared dependencies and registry licenses "
+            "(heuristic; not a full binary build SBOM)."
+        ),
+    },
+    "export_cyclonedx": {
+        "es": "Descargar CycloneDX JSON",
+        "en": "Download CycloneDX JSON",
+    },
+    "export_spdx": {
+        "es": "Descargar SPDX JSON",
+        "en": "Download SPDX JSON",
+    },
+    "login_title": {
+        "es": "Iniciar sesión",
+        "en": "Sign in",
+    },
+    "login_help": {
+        "es": "Esta instancia requiere autenticación. El historial es privado por usuario.",
+        "en": "This instance requires authentication. History is private per user.",
+    },
+    "login_user": {"es": "Usuario", "en": "Username"},
+    "login_pass": {"es": "Contraseña", "en": "Password"},
+    "login_button": {"es": "Entrar", "en": "Sign in"},
+    "login_ok": {"es": "Sesión iniciada", "en": "Signed in"},
+    "login_fail": {
+        "es": "Usuario o contraseña incorrectos",
+        "en": "Invalid username or password",
+    },
+    "logout": {"es": "Salir", "en": "Log out"},
+    "logged_in_as": {
+        "es": "Sesión: {user}",
+        "en": "Signed in: {user}",
     },
     "risk_label_minimal": {"es": "mínimo", "en": "minimal"},
     "risk_label_low": {"es": "bajo", "en": "low"},

@@ -27,7 +27,9 @@ from license_analyzer import (
     compute_verdict,
     normalize_license_id,
 )
-from models import Dependency, PackageLicense
+from models import Dependency, PackageLicense, ScanResult
+from sbom_export import render_sbom
+from spdx_engine import classify_expression, parse_expression
 
 
 def section(title: str) -> None:
@@ -62,6 +64,10 @@ def test_units() -> None:
         ("MPL-2.0", "weak_copyleft"),
         ("MIT OR GPL-2.0", "permissive"),
         ("GPL-2.0 AND MIT", "strong_copyleft"),
+        ("(MIT OR Apache-2.0) AND GPL-3.0", "strong_copyleft"),
+        ("MIT OR (GPL-2.0 AND BSD-3-Clause)", "permissive"),
+        ("GPL-2.0+ WITH Classpath-exception-2.0", "strong_copyleft"),
+        ("MIT/Apache-2.0", "permissive"),
         (None, "unknown"),
         ("UNLICENSED", "unknown"),
     ]
@@ -70,7 +76,11 @@ def test_units() -> None:
         assert got == exp, f"{lic!r} -> {got} expected {exp}"
     # empty / whitespace
     assert classify_license(normalize_license_id("")) == "unknown"
-    print(f"  classify_license: {len(cls_cases)}+ OK")
+    node = parse_expression("MIT OR Apache-2.0")
+    assert node.op == "or"
+    risk, _, err = classify_expression("MIT AND GPL-3.0")
+    assert risk == "strong_copyleft" and err is None
+    print(f"  classify_license / spdx_engine: {len(cls_cases)}+ OK")
 
     req = parse_dependencies(
         "requirements.txt", "httpx>=0.27\n# c\npackaging==24\n-r other.txt\n"
@@ -128,6 +138,53 @@ def test_units() -> None:
     assert "psf" in notice2 and "Apache-2.0" in notice2
     assert "TEMPLATE" in notice2
     print("  copyright notice: OK")
+
+    # SBOM export smoke
+    sample = ScanResult(
+        owner="psf",
+        repo="requests",
+        url="https://github.com/psf/requests",
+        repo_license="Apache-2.0",
+        packages=[
+            PackageLicense(
+                "httpx", "pypi", "BSD-3-Clause", "permissive", "requirements.txt",
+                version_spec="0.27.0",
+            ),
+            PackageLicense(
+                "bad", "pypi", "GPL-3.0", "strong_copyleft", "requirements.txt",
+                is_dev=True,
+            ),
+        ],
+        scan_complete=True,
+        risk_score=10,
+    )
+    cdx = render_sbom(sample, "cyclonedx")
+    assert '"bomFormat": "CycloneDX"' in cdx and "httpx" in cdx
+    spdx = render_sbom(sample, "spdx")
+    assert "SPDX-2.3" in spdx and "SPDXRef-Package" in spdx
+    print("  sbom_export cyclonedx+spdx: OK")
+
+    # Auth hash roundtrip
+    from auth import hash_password, verify_password, add_user, authenticate, delete_user
+
+    rec = hash_password("test-password-99")
+    assert verify_password("test-password-99", rec)
+    assert not verify_password("wrong", rec)
+    add_user("gls_test_user", "test-password-99")
+    assert authenticate("gls_test_user", "test-password-99")
+    delete_user("gls_test_user")
+    print("  auth pbkdf2: OK")
+
+    # Per-user history isolation
+    from history_store import append_scan, clear_history, load_history
+
+    clear_history(user="gls_hist_a")
+    clear_history(user="gls_hist_b")
+    append_scan(sample, user="gls_hist_a")
+    assert len(load_history(user="gls_hist_a")) == 1
+    assert len(load_history(user="gls_hist_b")) == 0
+    clear_history(user="gls_hist_a")
+    print("  history per-user: OK")
 
 
 async def timed_scan(url: str):

@@ -26,13 +26,14 @@ When you run a scan, the host machine sends requests to:
 
 Those services process the request under **their** privacy policies and terms. Do not submit private repository URLs unless you are authorized and understand that API tokens and network logs may retain metadata.
 
-## Shared history warning
+## History isolation
 
-`data/history.json` is **instance-wide**. On a multi-user deployment without authentication, **any user of that instance can see other users’ recent scans**. For multi-tenant production:
+| Mode | Path | Visibility |
+|------|------|------------|
+| Auth **disabled** (default) | `data/history.json` | Shared by everyone on the instance |
+| Auth **enabled** (`GLS_AUTH_ENABLED=1`) | `data/history/<username>.json` | Isolated per logged-in user |
 
-- do not enable public access without auth; or  
-- replace the store with per-user storage; and  
-- document this clearly to data subjects.
+On a multi-user deployment **without** authentication, any user of that instance can see others’ recent scans. Enable auth (create users with `python cli.py user-add …`) for per-user isolation.
 
 ## Your rights (GDPR / CCPA-style)
 

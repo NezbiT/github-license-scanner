@@ -1,14 +1,9 @@
 """
-Persistent scan history stored as a local JSON file.
-
-Keeps a bounded list of recent scans so the UI and CLI can show
-repositories that were analyzed previously without a database.
+Persistent scan history stored as local JSON file(s).
 
 Privacy notes:
-  - History is stored on the machine running the app (local disk).
-  - In a multi-user deployment this file is shared by all users of that
-    instance — do not treat it as private per-user data unless you add
-    authentication and per-user stores.
+  - Without auth: single shared file data/history.json (local/dev).
+  - With multi-user auth: data/history/<username>.json per user.
   - Entries are pruned by count and optional max age (see config).
 """
 
@@ -16,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import tempfile
 import threading
 from datetime import datetime, timezone
@@ -26,27 +22,25 @@ from models import ScanResult
 
 try:
     from config import HISTORY_MAX_AGE_DAYS, HISTORY_MAX_ENTRIES
-except Exception:  # noqa: BLE001 — allow import during partial bootstrap
+except Exception:  # noqa: BLE001
     HISTORY_MAX_ENTRIES = 100
     HISTORY_MAX_AGE_DAYS = 90
 
-# History lives next to the project under data/
 DATA_DIR = Path(__file__).resolve().parent / "data"
 HISTORY_PATH = DATA_DIR / "history.json"
+HISTORY_USERS_DIR = DATA_DIR / "history"
 
-# Process-local lock (multi-process still needs external coordination)
 _lock = threading.Lock()
+_SAFE_USER = re.compile(r"^[a-z0-9_.-]{1,64}$")
 
 
-def _ensure_store() -> None:
-    """Create the data directory and empty history file if needed."""
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    if not HISTORY_PATH.exists():
-        _atomic_write(HISTORY_PATH, "[]")
+def _ensure_store(path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.exists():
+        _atomic_write(path, "[]")
 
 
 def _atomic_write(path: Path, text: str) -> None:
-    """Write via temp file + replace to reduce partial-write corruption."""
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp_name = tempfile.mkstemp(
         dir=str(path.parent),
@@ -67,17 +61,29 @@ def _atomic_write(path: Path, text: str) -> None:
         raise
 
 
+def history_path_for(user: str | None = None) -> Path:
+    """Resolve history file path for optional authenticated user."""
+    if user:
+        key = user.strip().lower()
+        if not _SAFE_USER.match(key):
+            raise ValueError(f"Invalid history user key: {user!r}")
+        return HISTORY_USERS_DIR / f"{key}.json"
+    return HISTORY_PATH
+
+
 def _parse_scanned_at(value: Any) -> datetime | None:
-    """Best-effort parse of history timestamps."""
     if not value or not isinstance(value, str):
         return None
     text = value.strip()
-    # Expected: "2026-07-24 12:00:00 UTC"
     for fmt in ("%Y-%m-%d %H:%M:%S UTC", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%d"):
         try:
-            if fmt.endswith("%z") and text.endswith("Z"):
-                text = text[:-1] + "+0000"
-            dt = datetime.strptime(text.replace(" UTC", ""), fmt.replace(" UTC", ""))
+            candidate = text
+            if fmt.endswith("%z") and candidate.endswith("Z"):
+                candidate = candidate[:-1] + "+0000"
+            dt = datetime.strptime(
+                candidate.replace(" UTC", ""),
+                fmt.replace(" UTC", ""),
+            )
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt
@@ -87,7 +93,6 @@ def _parse_scanned_at(value: Any) -> datetime | None:
 
 
 def _prune(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Apply max-age and max-count retention policies."""
     if HISTORY_MAX_AGE_DAYS and HISTORY_MAX_AGE_DAYS > 0:
         cutoff = datetime.now(timezone.utc).timestamp() - (
             HISTORY_MAX_AGE_DAYS * 24 * 3600
@@ -101,20 +106,20 @@ def _prune(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return entries[:HISTORY_MAX_ENTRIES]
 
 
-def load_history() -> list[dict[str, Any]]:
-    """Return all history entries (newest first), after retention prune."""
+def load_history(user: str | None = None) -> list[dict[str, Any]]:
+    """Return history entries (newest first) for the given user scope."""
+    path = history_path_for(user)
     with _lock:
-        _ensure_store()
+        _ensure_store(path)
         try:
-            raw = HISTORY_PATH.read_text(encoding="utf-8")
+            raw = path.read_text(encoding="utf-8")
             data = json.loads(raw or "[]")
             if not isinstance(data, list):
                 return []
             pruned = _prune(data)
-            # Persist prune if it removed rows (lazy cleanup)
             if len(pruned) != len(data):
                 _atomic_write(
-                    HISTORY_PATH,
+                    path,
                     json.dumps(pruned, indent=2, ensure_ascii=False),
                 )
             return pruned
@@ -122,31 +127,26 @@ def load_history() -> list[dict[str, Any]]:
             return []
 
 
-def save_history(entries: list[dict[str, Any]]) -> None:
-    """Overwrite history with the given entries list."""
+def save_history(entries: list[dict[str, Any]], user: str | None = None) -> None:
+    path = history_path_for(user)
     with _lock:
-        _ensure_store()
+        _ensure_store(path)
         trimmed = _prune(entries)
         _atomic_write(
-            HISTORY_PATH,
+            path,
             json.dumps(trimmed, indent=2, ensure_ascii=False),
         )
 
 
-def append_scan(result: ScanResult) -> None:
-    """
-    Prepend a scan result to history.
-
-    If the same owner/repo already exists, the old entry is removed first
-    so the list stays unique by repository and shows the latest scan.
-    Incomplete scans (no owner) are not stored.
-    """
+def append_scan(result: ScanResult, user: str | None = None) -> None:
+    """Prepend a complete scan; unique by owner/repo within the user scope."""
     if not result.owner or not result.repo:
         return
+    path = history_path_for(user)
     with _lock:
-        _ensure_store()
+        _ensure_store(path)
         try:
-            raw = HISTORY_PATH.read_text(encoding="utf-8")
+            raw = path.read_text(encoding="utf-8")
             entries = json.loads(raw or "[]")
             if not isinstance(entries, list):
                 entries = []
@@ -162,11 +162,11 @@ def append_scan(result: ScanResult) -> None:
         entries.insert(0, result.to_history_entry())
         trimmed = _prune(entries)
         _atomic_write(
-            HISTORY_PATH,
+            path,
             json.dumps(trimmed, indent=2, ensure_ascii=False),
         )
 
 
-def clear_history() -> None:
-    """Delete all history entries (local erasure / privacy control)."""
-    save_history([])
+def clear_history(user: str | None = None) -> None:
+    """Erase history for the given scope."""
+    save_history([], user=user)

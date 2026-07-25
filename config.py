@@ -112,5 +112,21 @@ GITHUB_TOKEN: str | None = (
 
 USER_AGENT: str = os.environ.get(
     "GLS_USER_AGENT",
-    "github-license-scanner/1.1 (+https://github.com/NezbiT/github-license-scanner; educational)",
+    "github-license-scanner/1.2 (+https://github.com/NezbiT/github-license-scanner; educational)",
+)
+
+# ---------------------------------------------------------------------------
+# Multi-user authentication (web UI)
+# ---------------------------------------------------------------------------
+
+AUTH_ENABLED: bool = os.environ.get("GLS_AUTH_ENABLED", "").strip().lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
+# JSON file of {username: {salt, hash, iterations}} — see auth.py
+USERS_FILE: str = os.environ.get(
+    "GLS_USERS_FILE",
+    str(Path(__file__).resolve().parent / "data" / "users.json"),
 )

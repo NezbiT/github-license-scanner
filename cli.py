@@ -23,6 +23,7 @@ from history_store import append_scan, load_history
 from license_analyzer import analyze_repository
 from models import ScanResult
 from report import render_markdown_report
+from sbom_export import render_sbom
 
 
 def _print_result(result: ScanResult, verbose: bool = True) -> None:
@@ -132,6 +133,8 @@ async def cmd_scan(
     save: bool = True,
     verbose: bool = True,
     markdown_path: str | None = None,
+    sbom_path: str | None = None,
+    sbom_format: str = "cyclonedx",
 ) -> int:
     """Scan a single repository URL. Returns process exit code."""
     print(f"Scanning {url} …")
@@ -144,7 +147,17 @@ async def cmd_scan(
         out.write_text(md, encoding="utf-8")
         print(f"Markdown report written to {out}")
 
-    if save and result.owner:
+    if sbom_path:
+        try:
+            doc = render_sbom(result, sbom_format)
+            out = Path(sbom_path)
+            out.write_text(doc, encoding="utf-8")
+            print(f"SBOM ({sbom_format}) written to {out}")
+        except ValueError as exc:
+            print(f"SBOM export failed: {exc}", file=sys.stderr)
+            return 2
+
+    if save and result.owner and result.scan_complete:
         append_scan(result)
         print("Saved to history.")
 
@@ -224,12 +237,27 @@ def build_parser() -> argparse.ArgumentParser:
         metavar="PATH",
         help="Write a Markdown report to PATH (e.g. report.md)",
     )
+    p_scan.add_argument(
+        "--sbom",
+        metavar="PATH",
+        help="Write an SBOM JSON file to PATH (CycloneDX or SPDX)",
+    )
+    p_scan.add_argument(
+        "--sbom-format",
+        choices=("cyclonedx", "spdx"),
+        default="cyclonedx",
+        help="SBOM format when using --sbom (default: cyclonedx)",
+    )
 
     p_batch = sub.add_parser("batch", help="Scan URLs from a text file")
     p_batch.add_argument("file", help="Path to text file with one URL per line")
     p_batch.add_argument("--no-save", action="store_true", help="Do not write history")
 
     sub.add_parser("history", help="Show previous scan history")
+
+    p_user = sub.add_parser("user-add", help="Add a web UI user (multi-user auth)")
+    p_user.add_argument("username", help="Username (letters, digits, _ . -)")
+    sub.add_parser("user-list", help="List web UI users")
 
     return parser
 
@@ -245,12 +273,41 @@ def main(argv: list[str] | None = None) -> int:
                 args.url,
                 save=not args.no_save,
                 markdown_path=args.markdown,
+                sbom_path=args.sbom,
+                sbom_format=args.sbom_format,
             )
         )
     if args.command == "batch":
         return asyncio.run(cmd_batch(args.file, save=not args.no_save))
     if args.command == "history":
         return cmd_history()
+    if args.command == "user-add":
+        from auth import add_user
+
+        import getpass
+
+        pw = getpass.getpass("Password: ")
+        pw2 = getpass.getpass("Confirm: ")
+        if pw != pw2:
+            print("Passwords do not match", file=sys.stderr)
+            return 2
+        try:
+            add_user(args.username, pw)
+        except ValueError as exc:
+            print(exc, file=sys.stderr)
+            return 2
+        print(f"User {args.username!r} created. Set GLS_AUTH_ENABLED=1 to require login.")
+        return 0
+    if args.command == "user-list":
+        from auth import list_usernames
+
+        names = list_usernames()
+        if not names:
+            print("No users yet. Run: python cli.py user-add <name>")
+        else:
+            for n in names:
+                print(n)
+        return 0
 
     parser.print_help()
     return 2

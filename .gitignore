@@ -21,6 +21,8 @@ build/
 .env.*
 !.env.example
 data/history.json
+data/history/
+data/users.json
 
 # IDE / OS
 .idea/

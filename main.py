@@ -17,6 +17,7 @@ from typing import Any, Callable
 
 from nicegui import app, ui
 
+from auth import auth_enabled, authenticate, history_user_key
 from config import (
     HOST,
     MAX_BATCH_URLS,
@@ -32,6 +33,7 @@ from license_analyzer import analyze_repository, risk_color
 from models import PackageLicense, ScanResult
 from rate_limit import SlidingWindowRateLimiter
 from report import render_markdown_report
+from sbom_export import render_sbom
 
 # Per-process scan limiter (keyed by session / anonymous)
 _scan_limiter = SlidingWindowRateLimiter(
@@ -41,8 +43,11 @@ _scan_limiter = SlidingWindowRateLimiter(
 
 
 def _client_rate_key() -> str:
-    """Best-effort client key for rate limiting (session storage id)."""
+    """Best-effort client key for rate limiting (user or session id)."""
     try:
+        username = app.storage.user.get("username")
+        if username:
+            return f"user:{username}"
         # NiceGUI user storage is cookie-backed; use a stable per-browser key
         key = app.storage.user.get("_gls_rid")
         if not key:
@@ -751,6 +756,29 @@ def set_dark(enabled: bool) -> None:
     app.storage.user["dark"] = bool(enabled)
 
 
+def get_username() -> str | None:
+    """Authenticated username, or None when auth is off / logged out."""
+    if not auth_enabled():
+        return None
+    try:
+        user = app.storage.user.get("username")
+        return str(user) if user else None
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def history_user() -> str | None:
+    """Scope key for per-user history (None = shared local file)."""
+    return history_user_key(get_username()) if auth_enabled() else None
+
+
+def require_login() -> bool:
+    """Return True if the current session may use the app."""
+    if not auth_enabled():
+        return True
+    return get_username() is not None
+
+
 # ---------------------------------------------------------------------------
 # Small helpers
 # ---------------------------------------------------------------------------
@@ -982,6 +1010,31 @@ def render_result(container: ui.element, result: ScanResult, lang: str | None = 
                         ),
                     ).props("outline rounded no-caps")
 
+            # Export SBOM
+            base = f"{result.owner or 'repo'}-{result.repo or 'scan'}"
+            cdx = render_sbom(result, "cyclonedx")
+            spdx_doc = render_sbom(result, "spdx")
+            with ui.element("div").classes("gls-section"):
+                ui.html(f"<h3>{t('export_sbom', lang)}</h3>", sanitize=False)
+                ui.label(t("export_sbom_help", lang)).classes("gls-muted")
+                with ui.row().classes("gap-2 flex-wrap q-mt-sm"):
+                    ui.button(
+                        t("export_cyclonedx", lang),
+                        icon="download",
+                        on_click=lambda: ui.download(
+                            cdx.encode("utf-8"),
+                            filename=f"{base}-bom.cdx.json",
+                        ),
+                    ).props("outline rounded no-caps")
+                    ui.button(
+                        t("export_spdx", lang),
+                        icon="download",
+                        on_click=lambda: ui.download(
+                            spdx_doc.encode("utf-8"),
+                            filename=f"{base}.spdx.json",
+                        ),
+                    ).props("outline rounded no-caps")
+
             # Copyright
             with ui.element("div").classes("gls-section"):
                 ui.html(f"<h3>{t('copyright_title', lang)}</h3>", sanitize=False)
@@ -1153,7 +1206,7 @@ def render_batch_summary(
 def render_history(container: ui.element, lang: str | None = None) -> None:
     lang = normalize_lang(lang or get_lang())
     container.clear()
-    entries = load_history()
+    entries = load_history(user=history_user())
     with container:
         if not entries:
             with ui.element("div").classes("gls-empty"):
@@ -1215,6 +1268,48 @@ def _set_steps(step_els: list[ui.element], active: int) -> None:
 # Page
 # ---------------------------------------------------------------------------
 
+@ui.page("/login")
+def login_page() -> None:
+    """Login form when GLS_AUTH_ENABLED is set."""
+    ui.add_css(CUSTOM_CSS)
+    lang = get_lang()
+    if not auth_enabled():
+        ui.navigate.to("/")
+        return
+    if get_username():
+        ui.navigate.to("/")
+        return
+
+    with ui.element("div").classes("gls-app"):
+        with ui.element("div").classes("gls-wrap").style("max-width:420px;margin:4rem auto"):
+            with ui.element("div").classes("gls-card"):
+                ui.label(t("login_title", lang)).classes("gls-title")
+                ui.label(t("login_help", lang)).classes("gls-lead")
+                user_in = ui.input(label=t("login_user", lang)).classes(
+                    "w-full gls-field q-mt-md"
+                ).props("outlined dense")
+                pass_in = ui.input(
+                    label=t("login_pass", lang), password=True, password_toggle_button=True
+                ).classes("w-full gls-field").props("outlined dense")
+
+                def do_login() -> None:
+                    u = (user_in.value or "").strip()
+                    p = pass_in.value or ""
+                    if authenticate(u, p):
+                        app.storage.user["username"] = u
+                        ui.notify(t("login_ok", lang), type="positive")
+                        ui.navigate.to("/")
+                    else:
+                        ui.notify(t("login_fail", lang), type="negative")
+
+                ui.button(
+                    t("login_button", lang),
+                    on_click=do_login,
+                    icon="login",
+                ).props("color=primary unelevated no-caps").classes("gls-cta q-mt-md")
+                pass_in.on("keydown.enter", do_login)
+
+
 @ui.page("/")
 def index_page() -> None:
     """Main app page with split workspace UX."""
@@ -1224,11 +1319,16 @@ def index_page() -> None:
     )
     ui.add_css(CUSTOM_CSS)
 
+    if auth_enabled() and not require_login():
+        ui.navigate.to("/login")
+        return
+
     lang = get_lang()
     dark_pref = get_dark()
     dark = ui.dark_mode(dark_pref)
     # Cross-tab UI refresh hooks (history clear → recent list, etc.)
     ui_refreshers: list[Callable[[], None]] = []
+    current_user = get_username()
 
     with ui.element("div").classes("gls-app"):
         # Top bar
@@ -1243,6 +1343,21 @@ def index_page() -> None:
                             sanitize=False,
                         )
                 with ui.element("div").classes("gls-tools"):
+                    if current_user:
+                        ui.label(
+                            t("logged_in_as", lang, user=current_user)
+                        ).classes("text-caption text-grey q-mr-sm")
+
+                        def do_logout() -> None:
+                            app.storage.user.pop("username", None)
+                            ui.navigate.to("/login")
+
+                        ui.button(
+                            t("logout", lang),
+                            on_click=do_logout,
+                            icon="logout",
+                        ).props("flat dense no-caps").classes("gls-icon-btn")
+
                     with ui.element("div").classes("gls-seg"):
                         ui.button("ES", on_click=lambda: set_lang("es")).props(
                             "flat dense no-caps"
@@ -1372,7 +1487,7 @@ def index_page() -> None:
                                         result = await analyze_repository(url)
                                         _set_steps(step_els, 2)
                                         if result.owner and result.scan_complete:
-                                            append_scan(result)
+                                            append_scan(result, user=history_user())
                                         _set_steps(step_els, 3)
                                         render_result(results_box, result, lang=lang)
                                         _set_steps(step_els, 4)  # all done look
@@ -1451,7 +1566,7 @@ def index_page() -> None:
 
                                 def render_recent() -> None:
                                     recent_box.clear()
-                                    entries = load_history()[:5]
+                                    entries = load_history(user=history_user())[:5]
                                     with recent_box:
                                         if not entries:
                                             return
@@ -1548,7 +1663,9 @@ def index_page() -> None:
                                             )
                                             result = await analyze_repository(url)
                                             if result.owner and result.scan_complete:
-                                                append_scan(result)
+                                                append_scan(
+                                                    result, user=history_user()
+                                                )
                                             results.append(result)
                                         render_batch_summary(
                                             results_box, results, lang=lang
@@ -1589,7 +1706,7 @@ def index_page() -> None:
                                     render_history(history_box, lang=lang)
 
                                 def do_clear_history() -> None:
-                                    clear_history()
+                                    clear_history(user=history_user())
                                     refresh_history()
                                     for fn in ui_refreshers:
                                         try:

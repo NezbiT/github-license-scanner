@@ -100,8 +100,23 @@ $env:GLS_STORAGE_SECRET = "long-random-string"
 | `GLS_HOST` / `GLS_PORT` | Bind address (default `127.0.0.1:8080`) |
 | `GLS_MAX_BATCH_URLS` | Cap batch scans (default 15) |
 | `GLS_RATE_LIMIT_SCANS` | Scans per window per client (default 20/hour) |
+| `GLS_AUTH_ENABLED` | Require web login (`1` / `true`) |
+| `GLS_USERS_FILE` | JSON users DB (default `data/users.json`) |
 
 See [`.env.example`](.env.example) for the full list.
+
+### Multi-user auth + private history
+
+```bash
+python cli.py user-add alice          # interactive password (≥8 chars)
+# or: python auth.py add-user alice
+
+# .env
+GLS_AUTH_ENABLED=1
+GLS_STORAGE_SECRET=long-random-string
+```
+
+Each user gets `data/history/<username>.json`. Without auth, history stays in `data/history.json`.
 
 ---
 
@@ -133,6 +148,10 @@ python cli.py batch urls.example.txt
 
 # History
 python cli.py history
+
+# Markdown + SBOM export
+python cli.py scan psf/requests --markdown report.md --sbom bom.cdx.json
+python cli.py scan psf/requests --sbom bom.spdx.json --sbom-format spdx
 ```
 
 | Exit code | Meaning |
@@ -151,11 +170,14 @@ github-license-scanner/
 ├── cli.py                  # Command-line mode
 ├── config.py               # Env-based configuration
 ├── rate_limit.py           # Scan rate limiter
+├── auth.py                 # Optional multi-user auth (PBKDF2)
+├── spdx_engine.py          # SPDX expression parser + risk
+├── sbom_export.py          # CycloneDX 1.5 + SPDX 2.3 JSON
 ├── github_api.py           # URL parse + GitHub REST
 ├── dependency_scanner.py   # Manifest parsers
 ├── license_analyzer.py     # Registry licenses + verdict
 ├── deploy_advisor.py       # Deploy recommendations
-├── history_store.py        # JSON history (+ retention)
+├── history_store.py        # JSON history (shared or per-user)
 ├── models.py               # Dataclasses
 ├── i18n.py                 # ES/EN strings
 ├── report.py               # Markdown export

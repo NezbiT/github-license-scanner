@@ -194,75 +194,22 @@ def normalize_license_id(raw: str | None) -> str | None:
 
 def classify_license(license_id: str | None) -> str:
     """
-    Classify a license string into a risk bucket.
+    Classify a license string / SPDX expression into a risk bucket.
 
+    Uses the SPDX expression engine (AND/OR/WITH + parentheses).
     Returns one of: permissive | weak_copyleft | strong_copyleft | unknown
     """
-    if not license_id:
-        return "unknown"
+    from spdx_engine import classify_expression
 
-    raw = license_id.strip()
-    lower = raw.lower()
-
-    # Proprietary / explicit unlicensed (npm)
-    if lower in {"unlicensed", "proprietary", "commercial"}:
-        return "unknown"
-
-    # Dual / multi licenses: if ANY alternative is permissive-only OK,
-    # but if ALL include strong copyleft, flag strong.
-    # Heuristic for "MIT OR GPL-2.0" → permissive choice available → permissive
-    if " or " in lower or "||" in lower or lower.startswith("("):
-        tokens = re.split(r"\s+or\s+|\s*\|\|\s*|[()]", lower)
-        tokens = [t.strip() for t in tokens if t.strip() and t.strip() not in {"and", "with"}]
-        if tokens:
-            classes = {_classify_single(t) for t in tokens}
-            if "permissive" in classes:
-                return "permissive"
-            if "weak_copyleft" in classes and "strong_copyleft" not in classes:
-                return "weak_copyleft"
-            if "strong_copyleft" in classes:
-                return "strong_copyleft"
-
-    # AND composition: more conservative — strong if any strong
-    if " and " in lower or "&&" in lower:
-        tokens = re.split(r"\s+and\s+|\s*&&\s*", lower)
-        classes = {_classify_single(t.strip(" ()")) for t in tokens if t.strip()}
-        if "strong_copyleft" in classes:
-            return "strong_copyleft"
-        if "weak_copyleft" in classes:
-            return "weak_copyleft"
-        if classes == {"permissive"}:
-            return "permissive"
-
-    return _classify_single(lower)
+    risk, _node, _err = classify_expression(license_id)
+    return risk
 
 
 def _classify_single(token: str) -> str:
-    """Classify a single license token (already lowercased-ish)."""
-    t = token.lower().strip().strip("()")
-    t = t.replace(" ", "-")
-    # Normalize common variants
-    t = t.replace("gnu-", "").replace("licence", "license")
+    """Classify a single license token (kept for tests / callers)."""
+    from spdx_engine import classify_id
 
-    # Direct set membership
-    if t in PERMISSIVE or t.replace("-", "") in {p.replace("-", "") for p in PERMISSIVE}:
-        return "permissive"
-    if t in WEAK_COPYLEFT:
-        return "weak_copyleft"
-    if t in STRONG_COPYLEFT:
-        return "strong_copyleft"
-
-    # Substring heuristics
-    if "agpl" in t or "sspl" in t:
-        return "strong_copyleft"
-    if re.search(r"(^|-)gpl", t) and "lgpl" not in t:
-        return "strong_copyleft"
-    if "lgpl" in t or "mpl" in t or t.startswith("epl"):
-        return "weak_copyleft"
-    if any(p in t for p in ("mit", "apache", "bsd", "isc", "unlicense", "zlib", "boost")):
-        return "permissive"
-
-    return "unknown"
+    return classify_id(token).value
 
 
 def risk_color(risk: str) -> str:
@@ -542,10 +489,9 @@ def suggest_replacements(packages: list[PackageLicense]) -> list[ReplacementSugg
 
 def _is_network_copyleft(license_id: str | None) -> bool:
     """True if the license string looks like AGPL/SSPL (SaaS/network sensitive)."""
-    if not license_id:
-        return False
-    lower = license_id.lower()
-    return any(m in lower for m in NETWORK_COPYLEFT_MARKERS)
+    from spdx_engine import is_network_copyleft_expression
+
+    return is_network_copyleft_expression(license_id)
 
 
 def compute_verdict(
