@@ -1,9 +1,12 @@
 """
 Persistent scan history stored as local JSON file(s).
 
+Files live in the per-user data directory (platformdirs), never inside the
+installed package and never in the current working directory.
+
 Privacy notes:
-  - Without auth: single shared file data/history.json (local/dev).
-  - With multi-user auth: data/history/<username>.json per user.
+  - Without auth: single shared file <data_dir>/history.json (local/dev).
+  - With multi-user auth: <data_dir>/history/<username>.json per user.
   - Entries are pruned by count and optional max age (see config).
 """
 
@@ -18,15 +21,17 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from models import ScanResult
+from .models import ScanResult
 
 try:
-    from config import HISTORY_MAX_AGE_DAYS, HISTORY_MAX_ENTRIES
+    from .config import DATA_DIR, HISTORY_MAX_AGE_DAYS, HISTORY_MAX_ENTRIES
 except Exception:  # noqa: BLE001
+    from platformdirs import user_data_dir
+
     HISTORY_MAX_ENTRIES = 100
     HISTORY_MAX_AGE_DAYS = 90
+    DATA_DIR = Path(user_data_dir("github-license-scanner", "NezbiT"))
 
-DATA_DIR = Path(__file__).resolve().parent / "data"
 HISTORY_PATH = DATA_DIR / "history.json"
 HISTORY_USERS_DIR = DATA_DIR / "history"
 

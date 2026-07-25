@@ -2,9 +2,10 @@
 Command-line interface for the GitHub License Scanner.
 
 Usage examples:
-  python cli.py scan https://github.com/psf/requests
-  python cli.py batch urls.txt
-  python cli.py history
+  gls scan https://github.com/psf/requests
+  gls batch urls.txt
+  gls history
+  gls ui                      # web interface (requires the [ui] extra)
 
 Exit codes for `scan` / `batch`:
   0 — no strong copyleft force-open signal
@@ -19,11 +20,12 @@ import asyncio
 import sys
 from pathlib import Path
 
-from history_store import append_scan, load_history
-from license_analyzer import analyze_repository
-from models import ScanResult
-from report import render_markdown_report
-from sbom_export import render_sbom
+from . import __version__
+from .history_store import append_scan, load_history
+from .license_analyzer import analyze_repository
+from .models import ScanResult
+from .report import render_markdown_report
+from .sbom_export import render_sbom
 
 
 def _print_result(result: ScanResult, verbose: bool = True) -> None:
@@ -221,12 +223,28 @@ def cmd_history() -> int:
     return 0
 
 
+def cmd_ui(host: str | None, port: int | None) -> int:
+    """Launch the web interface. NiceGUI is an optional extra, so import late."""
+    try:
+        from .webui import run
+    except ImportError:
+        print(
+            "The web interface is not installed.\n"
+            "Install it with: pipx install 'github-license-scanner[ui]'",
+            file=sys.stderr,
+        )
+        return 2
+    run(host=host, port=port)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Create the CLI argument parser."""
     parser = argparse.ArgumentParser(
-        prog="cli.py",
+        prog="gls",
         description="GitHub License Scanner — analyze repo & dependency licenses.",
     )
+    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_scan = sub.add_parser("scan", help="Scan a single GitHub repository URL")
@@ -255,6 +273,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("history", help="Show previous scan history")
 
+    p_ui = sub.add_parser("ui", help="Launch the web interface (needs the [ui] extra)")
+    p_ui.add_argument("--host", default=None, help="Bind address (default: GLS_HOST)")
+    p_ui.add_argument("--port", type=int, default=None, help="Port (default: GLS_PORT)")
+
     p_user = sub.add_parser("user-add", help="Add a web UI user (multi-user auth)")
     p_user.add_argument("username", help="Username (letters, digits, _ . -)")
     sub.add_parser("user-list", help="List web UI users")
@@ -262,8 +284,25 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def _force_utf8_output() -> None:
+    """
+    Windows consoles and redirected pipes default to a legacy codepage (cp1252)
+    that cannot encode the arrows and dashes used in reports, which crashed the
+    scan halfway through with UnicodeEncodeError. Degrade instead of dying.
+    """
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is None:
+            continue
+        try:
+            reconfigure(encoding="utf-8", errors="replace")
+        except (ValueError, OSError):  # detached or already-closed stream
+            pass
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entrypoint."""
+    _force_utf8_output()
     parser = build_parser()
     args = parser.parse_args(argv)
 
@@ -281,8 +320,10 @@ def main(argv: list[str] | None = None) -> int:
         return asyncio.run(cmd_batch(args.file, save=not args.no_save))
     if args.command == "history":
         return cmd_history()
+    if args.command == "ui":
+        return cmd_ui(args.host, args.port)
     if args.command == "user-add":
-        from auth import add_user
+        from .auth import add_user
 
         import getpass
 
@@ -299,11 +340,11 @@ def main(argv: list[str] | None = None) -> int:
         print(f"User {args.username!r} created. Set GLS_AUTH_ENABLED=1 to require login.")
         return 0
     if args.command == "user-list":
-        from auth import list_usernames
+        from .auth import list_usernames
 
         names = list_usernames()
         if not names:
-            print("No users yet. Run: python cli.py user-add <name>")
+            print("No users yet. Run: gls user-add <name>")
         else:
             for n in names:
                 print(n)

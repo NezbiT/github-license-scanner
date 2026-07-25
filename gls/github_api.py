@@ -24,7 +24,7 @@ from typing import Any
 import httpx
 
 try:
-    from config import GITHUB_TOKEN, MAX_DEPENDENCY_FILES, USER_AGENT
+    from .config import GITHUB_TOKEN, MAX_DEPENDENCY_FILES, USER_AGENT
 except Exception:  # noqa: BLE001
     import os
 

@@ -68,30 +68,28 @@
 ## Quick start
 
 ```bash
-git clone https://github.com/NezbiT/github-license-scanner.git
-cd github-license-scanner
+pipx install github-license-scanner
+gls scan psf/requests
+```
 
-python -m venv .venv
+The web interface is an optional extra, so the CLI stays light:
 
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-# source .venv/bin/activate
-
-pip install -r requirements.txt
+```bash
+pipx install 'github-license-scanner[ui]'
+gls ui
 ```
 
 Optional configuration (recommended):
 
 ```bash
-# Copy example env and edit
-cp .env.example .env   # Windows: copy .env.example .env
-
 # PowerShell example
 $env:GITHUB_TOKEN = "ghp_..."
 $env:GLS_STORAGE_SECRET = "long-random-string"
 ```
+
+Environment variables are the source of truth. A `.env` file is only a local
+convenience: one is read from the current directory or from your user config
+directory if present, and real environment variables always win.
 
 | Variable | Purpose |
 |----------|---------|
@@ -101,29 +99,39 @@ $env:GLS_STORAGE_SECRET = "long-random-string"
 | `GLS_MAX_BATCH_URLS` | Cap batch scans (default 15) |
 | `GLS_RATE_LIMIT_SCANS` | Scans per window per client (default 20/hour) |
 | `GLS_AUTH_ENABLED` | Require web login (`1` / `true`) |
-| `GLS_USERS_FILE` | JSON users DB (default `data/users.json`) |
+| `GLS_USERS_FILE` | JSON users DB (default: `users.json` in the data dir) |
+| `GLS_DATA_DIR` | Override where history and users are stored |
 
 See [`.env.example`](.env.example) for the full list.
+
+History and users live in your per-user data directory, never inside the
+installed package:
+
+| OS | Path |
+|----|------|
+| Windows | `%LOCALAPPDATA%\NezbiT\github-license-scanner` |
+| macOS | `~/Library/Application Support/github-license-scanner` |
+| Linux | `~/.local/share/github-license-scanner` |
 
 ### Multi-user auth + private history
 
 ```bash
-python cli.py user-add alice          # interactive password (≥8 chars)
-# or: python auth.py add-user alice
+gls user-add alice          # interactive password (≥8 chars)
 
-# .env
-GLS_AUTH_ENABLED=1
-GLS_STORAGE_SECRET=long-random-string
+export GLS_AUTH_ENABLED=1
+export GLS_STORAGE_SECRET=long-random-string
 ```
 
-Each user gets `data/history/<username>.json`. Without auth, history stays in `data/history.json`.
+Each user gets `history/<username>.json` in that data directory. Without auth,
+history stays in a single `history.json`.
 
 ---
 
 ## Web UI
 
 ```bash
-python main.py
+pipx install 'github-license-scanner[ui]'
+gls ui                       # or: gls ui --host 0.0.0.0 --port 9000
 ```
 
 Open **[http://127.0.0.1:8080](http://127.0.0.1:8080)** (binds to localhost by default)
@@ -138,21 +146,23 @@ Open **[http://127.0.0.1:8080](http://127.0.0.1:8080)** (binds to localhost by d
 
 ```bash
 # Single repository
-python cli.py scan https://github.com/psf/requests
+gls scan https://github.com/psf/requests
 
 # Shorthand
-python cli.py scan psf/requests
+gls scan psf/requests
 
 # Batch (one URL per line)
-python cli.py batch urls.example.txt
+gls batch urls.example.txt
 
 # History
-python cli.py history
+gls history
 
 # Markdown + SBOM export
-python cli.py scan psf/requests --markdown report.md --sbom bom.cdx.json
-python cli.py scan psf/requests --sbom bom.spdx.json --sbom-format spdx
+gls scan psf/requests --markdown report.md --sbom bom.cdx.json
+gls scan psf/requests --sbom bom.spdx.json --sbom-format spdx
 ```
+
+`github-license-scanner` is available as a longer alias for `gls`.
 
 | Exit code | Meaning |
 |-----------|---------|
@@ -166,28 +176,33 @@ python cli.py scan psf/requests --sbom bom.spdx.json --sbom-format spdx
 
 ```text
 github-license-scanner/
-├── main.py                 # NiceGUI interface
-├── cli.py                  # Command-line mode
-├── config.py               # Env-based configuration
-├── rate_limit.py           # Scan rate limiter
-├── auth.py                 # Optional multi-user auth (PBKDF2)
-├── spdx_engine.py          # SPDX expression parser + risk
-├── sbom_export.py          # CycloneDX 1.5 + SPDX 2.3 JSON
-├── github_api.py           # URL parse + GitHub REST
-├── dependency_scanner.py   # Manifest parsers
-├── license_analyzer.py     # Registry licenses + verdict
-├── deploy_advisor.py       # Deploy recommendations
-├── history_store.py        # JSON history (shared or per-user)
-├── models.py               # Dataclasses
-├── i18n.py                 # ES/EN strings
-├── report.py               # Markdown export
-├── requirements.txt
+├── pyproject.toml          # Packaging (hatchling)
+├── gls/
+│   ├── __init__.py         # __version__
+│   ├── cli.py              # Command-line mode + entry point
+│   ├── webui.py            # NiceGUI interface (optional [ui] extra)
+│   ├── config.py           # Env-based configuration + data paths
+│   ├── rate_limit.py       # Scan rate limiter
+│   ├── auth.py             # Optional multi-user auth (PBKDF2)
+│   ├── spdx_engine.py      # SPDX expression parser + risk
+│   ├── sbom_export.py      # CycloneDX 1.5 + SPDX 2.3 JSON
+│   ├── github_api.py       # URL parse + GitHub REST
+│   ├── dependency_scanner.py  # Manifest parsers
+│   ├── license_analyzer.py    # Registry licenses + verdict
+│   ├── deploy_advisor.py   # Deploy recommendations
+│   ├── history_store.py    # JSON history (shared or per-user)
+│   ├── models.py           # Dataclasses
+│   ├── i18n.py             # ES/EN strings
+│   ├── report.py           # Markdown export
+│   └── docs/               # Legal pages served by the web UI
+│       ├── LEGAL_DISCLAIMER.md
+│       ├── PRIVACY.md
+│       └── TERMS.md
+├── scripts/                # Dev smoke tests / audit tooling
 ├── .env.example
 ├── urls.example.txt
 └── docs/
-    ├── LEGAL_DISCLAIMER.md
-    ├── PRIVACY.md
-    ├── TERMS.md
+    ├── AUDIT_REPORT.pdf
     └── images/             # README screenshots
 ```
 
@@ -209,7 +224,7 @@ github-license-scanner/
 - Set a strong **`GLS_STORAGE_SECRET`** before exposing the UI.
 - Scan history is **instance-local** and shared if multi-user — use **Clear history** or prune via config.
 - Rate limits and batch caps reduce GitHub API abuse.
-- Docs: [Privacy](docs/PRIVACY.md) · [Terms](docs/TERMS.md) · [Legal disclaimer](docs/LEGAL_DISCLAIMER.md)
+- Docs: [Privacy](gls/docs/PRIVACY.md) · [Terms](gls/docs/TERMS.md) · [Legal disclaimer](gls/docs/LEGAL_DISCLAIMER.md)
 
 ---
 
@@ -219,7 +234,33 @@ This tool provides **automated heuristics only**. It is **not legal advice** and
 license-compatibility opinion. Dual-licensing, linking models, SaaS (AGPL/SSPL),  
 attribution duties, and contracts can change obligations.  
 Always review with a qualified attorney before commercial closed-source distribution.  
-See [docs/LEGAL_DISCLAIMER.md](docs/LEGAL_DISCLAIMER.md).
+See [gls/docs/LEGAL_DISCLAIMER.md](gls/docs/LEGAL_DISCLAIMER.md).
+
+---
+
+## Development
+
+```bash
+git clone https://github.com/NezbiT/github-license-scanner.git
+cd github-license-scanner
+
+python -m venv .venv
+.venv\Scripts\activate          # macOS / Linux: source .venv/bin/activate
+
+pip install -e '.[ui]'
+python -m gls.cli scan psf/requests
+```
+
+Build and check a release locally before tagging:
+
+```bash
+pip install build twine
+python -m build
+twine check dist/*
+```
+
+Releases are published to PyPI by [`.github/workflows/publish.yml`](.github/workflows/publish.yml)
+using Trusted Publishing (OIDC) — no API tokens are stored anywhere.
 
 ---
 

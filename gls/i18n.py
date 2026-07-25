@@ -2,7 +2,7 @@
 Bilingual UI strings (Spanish / English) for the NiceGUI interface.
 
 Usage:
-    from i18n import t, normalize_lang
+    from .i18n import t, normalize_lang
     label = t("scan_button", "es")
 """
 
@@ -268,11 +268,11 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     "history_privacy_note": {
         "es": (
             "Privacidad: con autenticación activada el historial es por usuario "
-            "(data/history/<usuario>.json). Sin auth, el archivo es compartido en la instancia. "
+            "(history/<usuario>.json en el directorio de datos del usuario). Sin auth, el archivo es compartido en la instancia. "
             "Puedes borrarlo aquí."
         ),
         "en": (
-            "Privacy: with auth enabled, history is per user (data/history/<user>.json). "
+            "Privacy: with auth enabled, history is per user (history/<user>.json in the user data directory). "
             "Without auth, the file is shared on the instance. You can clear it here."
         ),
     },

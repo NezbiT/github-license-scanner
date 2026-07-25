@@ -1,9 +1,10 @@
 """
 Runtime configuration for GitHub License Scanner.
 
-All sensitive or environment-specific values are read from environment
-variables (optionally loaded from a local .env file). Defaults are safe
-for local development only.
+Environment variables are the source of truth. A .env file is a convenience
+for local development only: one is looked for in the current directory and in
+the user config directory, and neither is required. Values already present in
+the environment always win.
 """
 
 from __future__ import annotations
@@ -13,13 +14,33 @@ import secrets
 import warnings
 from pathlib import Path
 
-# Load .env if python-dotenv is available (optional dependency)
+from platformdirs import user_config_dir, user_data_dir
+
+APP_NAME = "github-license-scanner"
+APP_AUTHOR = "NezbiT"
+
+# ---------------------------------------------------------------------------
+# Writable locations (must never be inside the installed package)
+# ---------------------------------------------------------------------------
+
+DATA_DIR: Path = Path(
+    os.environ.get("GLS_DATA_DIR") or user_data_dir(APP_NAME, APP_AUTHOR)
+)
+CONFIG_DIR: Path = Path(
+    os.environ.get("GLS_CONFIG_DIR") or user_config_dir(APP_NAME, APP_AUTHOR)
+)
+
+# Optional .env loading. Never assume a file is present: installed globally,
+# the current directory has nothing to do with the package.
 try:
     from dotenv import load_dotenv
-
-    load_dotenv(Path(__file__).resolve().parent / ".env")
-except ImportError:
+except ImportError:  # python-dotenv is an optional convenience
     pass
+else:
+    for _candidate in (Path.cwd() / ".env", CONFIG_DIR / ".env"):
+        if _candidate.is_file():
+            # override=False: real environment variables take precedence.
+            load_dotenv(_candidate, override=False)
 
 # ---------------------------------------------------------------------------
 # Server
@@ -77,7 +98,18 @@ def _resolve_storage_secret() -> str:
     return _DEFAULT_DEV_SECRET
 
 
-STORAGE_SECRET: str = _resolve_storage_secret()
+def __getattr__(name: str) -> str:
+    """
+    Resolve STORAGE_SECRET lazily (PEP 562).
+
+    Computing it at import time made every CLI invocation emit the
+    development-secret warning, even though only the web UI signs sessions.
+    """
+    if name == "STORAGE_SECRET":
+        value = _resolve_storage_secret()
+        globals()["STORAGE_SECRET"] = value  # cache: warn at most once
+        return value
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 # ---------------------------------------------------------------------------
 # Abuse / resource limits
@@ -126,7 +158,4 @@ AUTH_ENABLED: bool = os.environ.get("GLS_AUTH_ENABLED", "").strip().lower() in {
     "on",
 }
 # JSON file of {username: {salt, hash, iterations}} — see auth.py
-USERS_FILE: str = os.environ.get(
-    "GLS_USERS_FILE",
-    str(Path(__file__).resolve().parent / "data" / "users.json"),
-)
+USERS_FILE: str = os.environ.get("GLS_USERS_FILE", str(DATA_DIR / "users.json"))

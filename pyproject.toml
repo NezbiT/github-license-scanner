@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "github-license-scanner"
+dynamic = ["version"]
+description = "Analyze GitHub repo and dependency licenses, copyleft risk, and closed-source sellability."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Mario Alvarez" }]
+keywords = ["license", "copyleft", "gpl", "agpl", "compliance", "dependencies", "sbom"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+  "httpx>=0.27.0",
+  "packaging>=24.0",
+  "platformdirs>=4.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+ui = ["nicegui>=2.0.0"]
+
+[project.scripts]
+github-license-scanner = "gls.cli:main"
+gls = "gls.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/NezbiT/github-license-scanner"
+Issues = "https://github.com/NezbiT/github-license-scanner/issues"
+
+[tool.hatch.version]
+path = "gls/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["gls"]
+
+[tool.hatch.build.targets.sdist]
+include = ["gls", "scripts", "README.md", "LICENSE", "requirements.txt"]

@@ -17,19 +17,19 @@ sys.path.insert(0, str(ROOT))
 
 import httpx
 
-from dependency_scanner import parse_dependencies
-from deploy_advisor import recommend_deploy
-from github_api import parse_github_url
-from license_analyzer import (
+from gls.dependency_scanner import parse_dependencies
+from gls.deploy_advisor import recommend_deploy
+from gls.github_api import parse_github_url
+from gls.license_analyzer import (
     analyze_repository,
     build_copyright_notice,
     classify_license,
     compute_verdict,
     normalize_license_id,
 )
-from models import Dependency, PackageLicense, ScanResult
-from sbom_export import render_sbom
-from spdx_engine import classify_expression, parse_expression
+from gls.models import Dependency, PackageLicense, ScanResult
+from gls.sbom_export import render_sbom
+from gls.spdx_engine import classify_expression, parse_expression
 
 
 def section(title: str) -> None:
@@ -165,7 +165,7 @@ def test_units() -> None:
     print("  sbom_export cyclonedx+spdx: OK")
 
     # Auth hash roundtrip
-    from auth import hash_password, verify_password, add_user, authenticate, delete_user
+    from gls.auth import hash_password, verify_password, add_user, authenticate, delete_user
 
     rec = hash_password("test-password-99")
     assert verify_password("test-password-99", rec)
@@ -176,7 +176,7 @@ def test_units() -> None:
     print("  auth pbkdf2: OK")
 
     # Per-user history isolation
-    from history_store import append_scan, clear_history, load_history
+    from gls.history_store import append_scan, clear_history, load_history
 
     clear_history(user="gls_hist_a")
     clear_history(user="gls_hist_b")
