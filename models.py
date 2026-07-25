@@ -87,6 +87,8 @@ class ScanResult:
     deploy_advice: list[DeployAdvice] = field(default_factory=list)
     scanned_at: str = ""
     errors: list[str] = field(default_factory=list)
+    # False when GitHub/network failed before a reliable verdict
+    scan_complete: bool = True
     # Extra metadata used by deploy advisor / UI
     primary_language: str | None = None
     description: str | None = None
@@ -101,6 +103,8 @@ class ScanResult:
     dev_package_count: int = 0
     # Strong copyleft only in dev deps (warning, does not force open by default)
     strong_copyleft_dev_only: bool = False
+    # True when AGPL/network-copyleft signals were detected (extra SaaS caution)
+    has_network_copyleft: bool = False
 
     def to_history_entry(self) -> dict[str, Any]:
         """Compact dict suitable for history.json persistence."""
@@ -112,9 +116,12 @@ class ScanResult:
             "scanned_at": self.scanned_at,
             "can_sell_closed": self.can_sell_closed,
             "forces_open_source": self.forces_open_source,
+            "scan_complete": self.scan_complete,
             "package_count": len(self.packages),
             "risk_score": self.risk_score,
-            "verdict_summary": self.verdict_summary,
+            "has_network_copyleft": self.has_network_copyleft,
+            # Truncate free text for privacy / storage hygiene
+            "verdict_summary": (self.verdict_summary or "")[:500],
         }
 
     def risk_counts(self, *, prod_only: bool = False) -> dict[str, int]:

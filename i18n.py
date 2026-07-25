@@ -36,13 +36,17 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     },
     "disclaimer": {
         "es": (
-            "Aviso legal: esta herramienta ofrece orientación automatizada y NO constituye "
-            "asesoramiento jurídico. Las decisiones de cumplimiento de licencias deben "
-            "revisarse con un abogado cualificado."
+            "Aviso legal: esta herramienta ofrece heurísticas automatizadas y NO constituye "
+            "asesoramiento jurídico ni una opinión de compatibilidad de licencias. "
+            "No garantiza no infracción. Las decisiones de cumplimiento (copyleft, SaaS/AGPL, "
+            "atribución, contratos) deben revisarse con un abogado cualificado. "
+            "El historial se guarda en el servidor/local de esta instancia."
         ),
         "en": (
-            "Legal notice: this tool provides automated guidance and is NOT legal advice. "
-            "License compliance decisions should be reviewed with a qualified attorney."
+            "Legal notice: this tool provides automated heuristics and is NOT legal advice "
+            "or a license-compatibility opinion. It does not warrant non-infringement. "
+            "Compliance decisions (copyleft, SaaS/AGPL, attribution, contracts) should be "
+            "reviewed with a qualified attorney. Scan history is stored on this instance."
         ),
     },
     "token_hint": {
@@ -234,10 +238,43 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "es": "Error en batch: {error}",
         "en": "Batch error: {error}",
     },
+    "notify_batch_too_many": {
+        "es": "Lote limitado a {max} URLs (había {count}). Se procesarán las primeras.",
+        "en": "Batch capped at {max} URLs (got {count}). Processing the first ones.",
+    },
+    "rate_limited": {
+        "es": (
+            "Límite de análisis alcanzado ({limit} por {window}s). "
+            "Espera ~{wait}s o reduce el uso. Esto protege la API de GitHub."
+        ),
+        "en": (
+            "Scan rate limit reached ({limit} per {window}s). "
+            "Wait ~{wait}s or reduce usage. This protects the GitHub API."
+        ),
+    },
     # History
     "history_refresh": {
         "es": "Actualizar historial",
         "en": "Refresh history",
+    },
+    "history_clear": {
+        "es": "Borrar historial",
+        "en": "Clear history",
+    },
+    "history_cleared": {
+        "es": "Historial borrado.",
+        "en": "History cleared.",
+    },
+    "history_privacy_note": {
+        "es": (
+            "Privacidad: el historial se guarda en disco de esta instancia y es "
+            "compartido entre usuarios si el servidor es multi-usuario. "
+            "Puedes borrarlo aquí (borrado local)."
+        ),
+        "en": (
+            "Privacy: history is stored on this instance’s disk and is shared across "
+            "users if the server is multi-user. You can clear it here (local erasure)."
+        ),
     },
     "history_empty": {
         "es": "Aún no hay historial. Analiza un repositorio para empezar.",
@@ -247,6 +284,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "es": "{count} repositorio(s) en historial",
         "en": "{count} repository(ies) in history",
     },
+    "link_privacy": {"es": "Privacidad", "en": "Privacy"},
+    "link_terms": {"es": "Términos", "en": "Terms"},
+    "link_legal": {"es": "Aviso legal", "en": "Legal notice"},
+    "back_home": {"es": "← Volver al escáner", "en": "← Back to scanner"},
     "col_when": {"es": "Fecha", "en": "Date"},
     "col_repo": {"es": "Repositorio", "en": "Repository"},
     "col_license": {"es": "Licencia", "en": "License"},
@@ -267,12 +308,18 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     },
     # Verdict
     "verdict_bad_title": {
-        "es": "No se recomienda vender como software cerrado",
-        "en": "Not recommended to sell as closed-source software",
+        "es": "Alto riesgo para software cerrado (heurística)",
+        "en": "High risk for closed-source distribution (heuristic)",
     },
     "verdict_bad_sub": {
-        "es": "Hay señales de copyleft fuerte (GPL/AGPL u otras) que suelen obligar a abrir el código.",
-        "en": "Strong copyleft signals (GPL/AGPL or similar) often require opening the source code.",
+        "es": (
+            "Señales de copyleft fuerte (GPL/AGPL/SSPL u otras). El resultado depende del "
+            "modelo de enlace, distribución y uso en red. No es una prohibición legal automática."
+        ),
+        "en": (
+            "Strong copyleft signals (GPL/AGPL/SSPL or similar). Outcome depends on linking, "
+            "distribution, and network use. This is not an automatic legal prohibition."
+        ),
     },
     "verdict_warn_title": {
         "es": "Posible venta cerrada — con precauciones",

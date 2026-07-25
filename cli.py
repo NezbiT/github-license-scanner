@@ -43,11 +43,18 @@ def _print_result(result: ScanResult, verbose: bool = True) -> None:
         print("=" * 72)
         return
 
+    if not result.scan_complete:
+        print("Scan complete      : NO (incomplete — do not treat verdict as reliable)")
     flag = "YES — strong copyleft may force opening source" if result.forces_open_source else "NO"
-    sell = "YES (with caveats)" if result.can_sell_closed else "NO"
+    if result.scan_complete and result.can_sell_closed:
+        sell = "POSSIBLY (heuristic; attribution & counsel still required)"
+    else:
+        sell = "NO / UNDETERMINED"
     print(f"Risk score         : {result.risk_score}/100 ({result.risk_score_label})")
     print(f"Forces open source : {flag}")
     print(f"Can sell closed    : {sell}")
+    if result.has_network_copyleft:
+        print("Network copyleft   : YES (AGPL/SSPL-class — SaaS obligations possible)")
     if result.strong_copyleft_dev_only:
         print("Dev-only copyleft  : YES (strong copyleft only in dev deps)")
     print()
@@ -143,9 +150,13 @@ async def cmd_scan(
 
     if result.errors and not result.owner:
         return 2
-    if result.errors and not result.packages and result.repo_license is None and not result.can_sell_closed:
-        # Hard GitHub failure already returned earlier in analyze
-        if any("not found" in e.lower() or "rate limit" in e.lower() or "forbidden" in e.lower() for e in result.errors):
+    if not result.scan_complete:
+        return 2
+    if result.errors and not result.packages and result.repo_license is None:
+        if any(
+            any(k in e.lower() for k in ("not found", "rate limit", "forbidden", "exceeded"))
+            for e in result.errors
+        ):
             return 2
     return 1 if result.forces_open_source else 0
 

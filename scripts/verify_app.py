@@ -95,14 +95,18 @@ def test_units() -> None:
     weak = PackageLicense("certifi", "pypi", "MPL-2.0", "weak_copyleft", "req.txt")
     perm = PackageLicense("httpx", "pypi", "BSD-3-Clause", "permissive", "req.txt")
 
-    c, f, w, u, _ = compute_verdict("MIT", [perm])
-    assert c and not f and not w
-    c, f, w, u, _ = compute_verdict("MIT", [perm, weak])
+    c, f, w, u, _, dev_only, net = compute_verdict("MIT", [perm])
+    assert c and not f and not w and not dev_only and not net
+    c, f, w, u, _, _, _ = compute_verdict("MIT", [perm, weak])
     assert c and not f and w
-    c, f, w, u, _ = compute_verdict("MIT", [strong])
+    c, f, w, u, _, _, _ = compute_verdict("MIT", [strong])
     assert not c and f
-    c, f, w, u, _ = compute_verdict("GPL-3.0", [perm])
+    c, f, w, u, _, _, _ = compute_verdict("GPL-3.0", [perm])
     assert not c and f
+    agpl = PackageLicense("svc", "pypi", "AGPL-3.0", "strong_copyleft", "req.txt")
+    c, f, w, u, summary, _, net = compute_verdict("MIT", [agpl])
+    assert not c and f and net
+    assert "AGPL" in summary or "network" in summary.lower() or "SaaS" in summary
     print("  compute_verdict: OK")
 
     adv = recommend_deploy(
@@ -120,8 +124,9 @@ def test_units() -> None:
     ) or any("Railway" in a.platform for a in adv)
     print(f"  deploy_advisor: OK top={adv[0].platform} score={adv[0].score}")
 
-    notice = build_copyright_notice("psf", "requests", "Apache-2.0")
-    assert "psf" in notice and "Apache-2.0" in notice
+    notice2 = build_copyright_notice("psf", "requests", "Apache-2.0")
+    assert "psf" in notice2 and "Apache-2.0" in notice2
+    assert "TEMPLATE" in notice2
     print("  copyright notice: OK")
 
 

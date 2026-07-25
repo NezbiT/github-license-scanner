@@ -17,11 +17,62 @@ from typing import Any, Callable
 
 from nicegui import app, ui
 
-from history_store import append_scan, load_history
+from config import (
+    HOST,
+    MAX_BATCH_URLS,
+    PORT,
+    RATE_LIMIT_SCANS,
+    RATE_LIMIT_WINDOW_SECONDS,
+    SHOW_BROWSER,
+    STORAGE_SECRET,
+)
+from history_store import append_scan, clear_history, load_history
 from i18n import DEFAULT_LANG, normalize_lang, t
 from license_analyzer import analyze_repository, risk_color
 from models import PackageLicense, ScanResult
+from rate_limit import SlidingWindowRateLimiter
 from report import render_markdown_report
+
+# Per-process scan limiter (keyed by session / anonymous)
+_scan_limiter = SlidingWindowRateLimiter(
+    max_calls=RATE_LIMIT_SCANS,
+    window_seconds=RATE_LIMIT_WINDOW_SECONDS,
+)
+
+
+def _client_rate_key() -> str:
+    """Best-effort client key for rate limiting (session storage id)."""
+    try:
+        # NiceGUI user storage is cookie-backed; use a stable per-browser key
+        key = app.storage.user.get("_gls_rid")
+        if not key:
+            import secrets
+
+            key = secrets.token_hex(16)
+            app.storage.user["_gls_rid"] = key
+        return f"u:{key}"
+    except Exception:  # noqa: BLE001
+        return "u:anonymous"
+
+
+def _check_scan_budget(n: int = 1) -> str | None:
+    """
+    Consume rate-limit budget for n scans.
+
+    Returns an error message if denied, else None.
+    """
+    key = _client_rate_key()
+    for _ in range(max(1, n)):
+        if not _scan_limiter.allow(key):
+            wait = int(_scan_limiter.retry_after_seconds(key)) + 1
+            return t(
+                "rate_limited",
+                get_lang(),
+                wait=wait,
+                limit=RATE_LIMIT_SCANS,
+                window=RATE_LIMIT_WINDOW_SECONDS,
+            )
+    return None
 
 # Example repos shown as one-click chips (public, fast to scan)
 EXAMPLE_REPOS = [
@@ -785,7 +836,9 @@ def render_result(container: ui.element, result: ScanResult, lang: str | None = 
                 ui.badge(result.scanned_at).props("outline color=grey")
 
             # Verdict — incomplete scan (API/rate-limit) is not a legal "no"
-            incomplete = bool(result.errors) and not result.repo_license and not result.packages
+            incomplete = not result.scan_complete or (
+                bool(result.errors) and not result.repo_license and not result.packages
+            )
             if incomplete:
                 v_cls, title, sub, emoji = (
                     "warn",
@@ -800,7 +853,11 @@ def render_result(container: ui.element, result: ScanResult, lang: str | None = 
                     t("verdict_bad_sub", lang),
                     "🚫",
                 )
-            elif result.has_weak_copyleft or result.has_unknown_licenses:
+            elif (
+                result.has_weak_copyleft
+                or result.has_unknown_licenses
+                or result.has_network_copyleft
+            ):
                 v_cls, title, sub, emoji = (
                     "warn",
                     t("verdict_warn_title", lang),
@@ -1170,6 +1227,8 @@ def index_page() -> None:
     lang = get_lang()
     dark_pref = get_dark()
     dark = ui.dark_mode(dark_pref)
+    # Cross-tab UI refresh hooks (history clear → recent list, etc.)
+    ui_refreshers: list[Callable[[], None]] = []
 
     with ui.element("div").classes("gls-app"):
         # Top bar
@@ -1294,6 +1353,10 @@ def index_page() -> None:
                                             t("notify_paste_url", lang), type="warning"
                                         )
                                         return
+                                    limited = _check_scan_budget(1)
+                                    if limited:
+                                        ui.notify(limited, type="warning")
+                                        return
                                     url_input.value = url
                                     scan_btn.disable()
                                     scan_bar.set_visibility(True)
@@ -1308,7 +1371,7 @@ def index_page() -> None:
                                         _set_steps(step_els, 1)
                                         result = await analyze_repository(url)
                                         _set_steps(step_els, 2)
-                                        if result.owner:
+                                        if result.owner and result.scan_complete:
                                             append_scan(result)
                                         _set_steps(step_els, 3)
                                         render_result(results_box, result, lang=lang)
@@ -1423,6 +1486,7 @@ def index_page() -> None:
                                                     )
 
                                 render_recent()
+                                ui_refreshers.append(render_recent)
 
                             # --- Batch ---
                             with ui.tab_panel(tab_batch):
@@ -1453,6 +1517,21 @@ def index_page() -> None:
                                             t("notify_batch_empty", lang), type="warning"
                                         )
                                         return
+                                    if len(urls) > MAX_BATCH_URLS:
+                                        ui.notify(
+                                            t(
+                                                "notify_batch_too_many",
+                                                lang,
+                                                max=MAX_BATCH_URLS,
+                                                count=len(urls),
+                                            ),
+                                            type="warning",
+                                        )
+                                        urls = urls[:MAX_BATCH_URLS]
+                                    limited = _check_scan_budget(len(urls))
+                                    if limited:
+                                        ui.notify(limited, type="warning")
+                                        return
                                     batch_btn.disable()
                                     scan_bar.set_visibility(True)
                                     results: list[ScanResult] = []
@@ -1468,7 +1547,7 @@ def index_page() -> None:
                                                 )
                                             )
                                             result = await analyze_repository(url)
-                                            if result.owner:
+                                            if result.owner and result.scan_complete:
                                                 append_scan(result)
                                             results.append(result)
                                         render_batch_summary(
@@ -1509,11 +1588,30 @@ def index_page() -> None:
                                 def refresh_history() -> None:
                                     render_history(history_box, lang=lang)
 
-                                ui.button(
-                                    t("history_refresh", lang),
-                                    on_click=refresh_history,
-                                    icon="refresh",
-                                ).props("outline rounded no-caps dense")
+                                def do_clear_history() -> None:
+                                    clear_history()
+                                    refresh_history()
+                                    for fn in ui_refreshers:
+                                        try:
+                                            fn()
+                                        except Exception:  # noqa: BLE001
+                                            pass
+                                    ui.notify(t("history_cleared", lang), type="info")
+
+                                with ui.row().classes("gap-2 flex-wrap"):
+                                    ui.button(
+                                        t("history_refresh", lang),
+                                        on_click=refresh_history,
+                                        icon="refresh",
+                                    ).props("outline rounded no-caps dense")
+                                    ui.button(
+                                        t("history_clear", lang),
+                                        on_click=do_clear_history,
+                                        icon="delete_outline",
+                                    ).props("outline rounded no-caps dense color=negative")
+                                ui.label(t("history_privacy_note", lang)).classes(
+                                    "gls-muted q-mt-sm"
+                                ).style("font-size:0.75rem")
                                 history_box
                                 refresh_history()
 
@@ -1524,6 +1622,22 @@ def index_page() -> None:
                     ui.label(t("token_hint", lang)).classes("gls-muted q-mt-sm").style(
                         "font-size:0.75rem"
                     )
+                    with ui.row().classes("gap-3 q-mt-sm flex-wrap"):
+                        ui.link(
+                            t("link_privacy", lang),
+                            "/docs/privacy",
+                            new_tab=True,
+                        ).classes("text-caption")
+                        ui.link(
+                            t("link_terms", lang),
+                            "/docs/terms",
+                            new_tab=True,
+                        ).classes("text-caption")
+                        ui.link(
+                            t("link_legal", lang),
+                            "/docs/legal",
+                            new_tab=True,
+                        ).classes("text-caption")
 
                 # ========== RIGHT: results ==========
                 with ui.element("div").classes("gls-main"):
@@ -1541,16 +1655,48 @@ def index_page() -> None:
                 )
 
 
+@ui.page("/docs/privacy")
+def privacy_page() -> None:
+    """Serve privacy policy (local markdown)."""
+    _render_doc_page("PRIVACY.md", "Privacy")
+
+
+@ui.page("/docs/terms")
+def terms_page() -> None:
+    """Serve terms of use (local markdown)."""
+    _render_doc_page("TERMS.md", "Terms")
+
+
+@ui.page("/docs/legal")
+def legal_page() -> None:
+    """Serve legal disclaimer (local markdown)."""
+    _render_doc_page("LEGAL_DISCLAIMER.md", "Legal disclaimer")
+
+
+def _render_doc_page(filename: str, title: str) -> None:
+    from pathlib import Path
+
+    lang = get_lang()
+    path = Path(__file__).resolve().parent / "docs" / filename
+    body = path.read_text(encoding="utf-8") if path.exists() else f"# {title}\n\nNot found."
+    ui.add_css(CUSTOM_CSS)
+    with ui.element("div").classes("gls-app"):
+        with ui.element("div").classes("gls-wrap"):
+            ui.link(t("back_home", lang), "/").classes("text-caption")
+            ui.markdown(body).classes("gls-card q-mt-md")
+
+
 def main() -> None:
     """Start the NiceGUI application server."""
     ui.run(
         title="GitHub License Scanner",
         reload=False,
-        port=8080,
-        show=True,
+        host=HOST,
+        port=PORT,
+        show=SHOW_BROWSER,
         favicon="⚖️",
         dark=None,
-        storage_secret="github-license-scanner-bilingual-ui",
+        storage_secret=STORAGE_SECRET,
     )
 
 

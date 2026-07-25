@@ -8,26 +8,62 @@ Responsibilities:
   - Download file contents for parsing
 
 Uses httpx for all HTTP calls. Optional GITHUB_TOKEN env var raises rate limits.
+
+Security:
+  - Only the official api.github.com host is contacted (no user-controlled hosts).
+  - Owner/repo are validated against a strict charset before interpolation.
 """
 
 from __future__ import annotations
 
+import asyncio
 import base64
-import os
 import re
 from typing import Any
 
 import httpx
+
+try:
+    from config import GITHUB_TOKEN, MAX_DEPENDENCY_FILES, USER_AGENT
+except Exception:  # noqa: BLE001
+    import os
+
+    GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    MAX_DEPENDENCY_FILES = 30
+    USER_AGENT = "github-license-scanner/1.1 (educational)"
 
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 
 GITHUB_API = "https://api.github.com"
-USER_AGENT = "github-license-scanner/1.0 (NiceGUI; educational)"
 
-# Maximum dependency files to fetch per repository (monorepo protection)
-MAX_DEPENDENCY_FILES = 30
+# Reserved / non-repo path segments that must never be treated as owner/repo
+_RESERVED_OWNERS = {
+    "settings",
+    "marketplace",
+    "explore",
+    "topics",
+    "notifications",
+    "login",
+    "join",
+    "features",
+    "pricing",
+    "about",
+    "site",
+    "orgs",
+    "users",
+    "search",
+    "pulls",
+    "issues",
+    "codespaces",
+    "sponsors",
+    "customer-stories",
+    "team",
+    "enterprise",
+    "security",
+    "readme",
+}
 
 # Path patterns that identify dependency manifests.
 # Each entry: (basename_regex or exact basename, preferred weight for sorting)
@@ -116,19 +152,38 @@ def parse_github_url(url: str) -> tuple[str, str]:
     if not text:
         raise ValueError("Empty GitHub URL")
 
+    # Reject URL schemes other than http(s)/git/ssh shorthand to avoid SSRF-style abuse
+    if "://" in text:
+        scheme = text.split("://", 1)[0].lower()
+        if scheme not in {"http", "https", "ssh", "git"}:
+            raise ValueError(f"Unsupported URL scheme: {scheme!r}")
+
     # Shorthand: owner/repo
     if re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", text):
         owner, repo = text.split("/", 1)
-        return owner, repo.removesuffix(".git")
+        return _validate_owner_repo(owner, repo.removesuffix(".git"))
 
     for pattern in _URL_PATTERNS:
         match = pattern.match(text)
         if match:
             owner = match.group("owner")
             repo = match.group("repo").removesuffix(".git")
-            return owner, repo
+            return _validate_owner_repo(owner, repo)
 
     raise ValueError(f"Not a valid GitHub repository URL: {url!r}")
+
+
+def _validate_owner_repo(owner: str, repo: str) -> tuple[str, str]:
+    """Validate and normalize owner/repo identifiers."""
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+", owner or ""):
+        raise ValueError(f"Invalid GitHub owner: {owner!r}")
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+", repo or ""):
+        raise ValueError(f"Invalid GitHub repository name: {repo!r}")
+    if owner.lower() in _RESERVED_OWNERS:
+        raise ValueError(f"Not a repository path (reserved segment): {owner!r}")
+    if len(owner) > 100 or len(repo) > 100:
+        raise ValueError("Owner or repository name is too long")
+    return owner, repo
 
 
 # ---------------------------------------------------------------------------
@@ -142,9 +197,8 @@ def _auth_headers() -> dict[str, str]:
         "User-Agent": USER_AGENT,
         "X-GitHub-Api-Version": "2022-11-28",
     }
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
     return headers
 
 
@@ -155,6 +209,8 @@ def create_client(timeout: float = 30.0) -> httpx.AsyncClient:
         headers=_auth_headers(),
         timeout=timeout,
         follow_redirects=True,
+        # Never follow redirects off github.com for API paths
+        # (httpx still only uses our base_url paths when we pass relative paths)
     )
 
 
@@ -164,6 +220,10 @@ async def _get_json(client: httpx.AsyncClient, path: str) -> Any:
 
     Raises GitHubAPIError with a human-readable message on failure.
     """
+    # Paths must be relative API routes — never absolute external URLs
+    if path.startswith("http://") or path.startswith("https://"):
+        raise GitHubAPIError("Refusing absolute URL in GitHub API client")
+
     response = await client.get(path)
     if response.status_code == 404:
         raise GitHubAPIError(
@@ -171,11 +231,14 @@ async def _get_json(client: httpx.AsyncClient, path: str) -> Any:
             status_code=404,
         )
     if response.status_code == 403:
-        # Rate limit or permission issue
         remaining = response.headers.get("X-RateLimit-Remaining", "?")
+        reset = response.headers.get("X-RateLimit-Reset", "?")
+        retry_after = response.headers.get("Retry-After", "")
+        extra = f" Retry-After: {retry_after}." if retry_after else ""
         raise GitHubAPIError(
             f"GitHub API forbidden (rate limit or permissions). "
-            f"Remaining: {remaining}. Set GITHUB_TOKEN for higher limits.",
+            f"Remaining: {remaining}, reset: {reset}.{extra} "
+            f"Set GITHUB_TOKEN for higher limits.",
             status_code=403,
         )
     if response.status_code == 401:
@@ -183,9 +246,18 @@ async def _get_json(client: httpx.AsyncClient, path: str) -> Any:
             "GitHub authentication failed. Check GITHUB_TOKEN.",
             status_code=401,
         )
-    if response.status_code >= 400:
+    if response.status_code == 429:
+        retry_after = response.headers.get("Retry-After", "?")
         raise GitHubAPIError(
-            f"GitHub API error {response.status_code}: {response.text[:200]}",
+            f"GitHub API rate limit exceeded. Retry-After: {retry_after}. "
+            f"Set GITHUB_TOKEN or wait before scanning again.",
+            status_code=429,
+        )
+    if response.status_code >= 400:
+        # Do not echo large response bodies (may contain tokens in rare edge cases)
+        body = (response.text or "")[:180].replace("\n", " ")
+        raise GitHubAPIError(
+            f"GitHub API error {response.status_code}: {body}",
             status_code=response.status_code,
         )
     return response.json()
@@ -416,16 +488,27 @@ async def download_dependency_files(
     ref: str | None = None,
 ) -> dict[str, str]:
     """
-    Download multiple dependency files.
+    Download multiple dependency files concurrently (bounded).
 
     Returns a mapping of path -> text content. Failed downloads are skipped
     (caller can treat missing keys as soft errors).
     """
     result: dict[str, str] = {}
-    for path in paths:
-        try:
-            result[path] = await get_file_content(client, owner, repo, path, ref=ref)
-        except (GitHubAPIError, httpx.HTTPError):
-            # Soft-fail individual files; analysis continues with the rest
-            continue
+    if not paths:
+        return result
+
+    semaphore = asyncio.Semaphore(6)
+
+    async def one(path: str) -> tuple[str, str | None]:
+        async with semaphore:
+            try:
+                content = await get_file_content(client, owner, repo, path, ref=ref)
+                return path, content
+            except (GitHubAPIError, httpx.HTTPError):
+                return path, None
+
+    pairs = await asyncio.gather(*(one(p) for p in paths))
+    for path, content in pairs:
+        if content is not None:
+            result[path] = content
     return result

@@ -82,15 +82,26 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-Optional (higher GitHub API rate limits):
+Optional configuration (recommended):
 
 ```bash
-# PowerShell
-$env:GITHUB_TOKEN = "ghp_..."
+# Copy example env and edit
+cp .env.example .env   # Windows: copy .env.example .env
 
-# bash
-export GITHUB_TOKEN=ghp_...
+# PowerShell example
+$env:GITHUB_TOKEN = "ghp_..."
+$env:GLS_STORAGE_SECRET = "long-random-string"
 ```
+
+| Variable | Purpose |
+|----------|---------|
+| `GITHUB_TOKEN` | Higher GitHub API rate limits / private repos |
+| `GLS_STORAGE_SECRET` | Signs session cookies (**required** for public deploys) |
+| `GLS_HOST` / `GLS_PORT` | Bind address (default `127.0.0.1:8080`) |
+| `GLS_MAX_BATCH_URLS` | Cap batch scans (default 15) |
+| `GLS_RATE_LIMIT_SCANS` | Scans per window per client (default 20/hour) |
+
+See [`.env.example`](.env.example) for the full list.
 
 ---
 
@@ -100,7 +111,7 @@ export GITHUB_TOKEN=ghp_...
 python main.py
 ```
 
-Open **[http://127.0.0.1:8080](http://127.0.0.1:8080)**
+Open **[http://127.0.0.1:8080](http://127.0.0.1:8080)** (binds to localhost by default)
 
 - Switch **ES | EN** in the top bar  
 - Toggle **light / dark** with the sun/moon button  
@@ -138,16 +149,24 @@ python cli.py history
 github-license-scanner/
 ├── main.py                 # NiceGUI interface
 ├── cli.py                  # Command-line mode
+├── config.py               # Env-based configuration
+├── rate_limit.py           # Scan rate limiter
 ├── github_api.py           # URL parse + GitHub REST
 ├── dependency_scanner.py   # Manifest parsers
 ├── license_analyzer.py     # Registry licenses + verdict
 ├── deploy_advisor.py       # Deploy recommendations
-├── history_store.py        # JSON history
+├── history_store.py        # JSON history (+ retention)
 ├── models.py               # Dataclasses
 ├── i18n.py                 # ES/EN strings
+├── report.py               # Markdown export
 ├── requirements.txt
+├── .env.example
 ├── urls.example.txt
-└── docs/images/            # README screenshots
+└── docs/
+    ├── LEGAL_DISCLAIMER.md
+    ├── PRIVACY.md
+    ├── TERMS.md
+    └── images/             # README screenshots
 ```
 
 ---
@@ -157,16 +176,28 @@ github-license-scanner/
 | Color | Risk | Examples |
 |-------|------|----------|
 | Green | Permissive | MIT, Apache-2.0, BSD, ISC |
-| Orange | Weak copyleft / unknown | LGPL, MPL, missing metadata |
+| Orange | Weak copyleft / unknown | LGPL, MPL, EUPL, missing metadata |
 | Red | Strong copyleft | GPL, AGPL, SSPL |
+
+---
+
+## Security & privacy notes
+
+- Default bind is **localhost only** (`GLS_HOST=127.0.0.1`).
+- Set a strong **`GLS_STORAGE_SECRET`** before exposing the UI.
+- Scan history is **instance-local** and shared if multi-user — use **Clear history** or prune via config.
+- Rate limits and batch caps reduce GitHub API abuse.
+- Docs: [Privacy](docs/PRIVACY.md) · [Terms](docs/TERMS.md) · [Legal disclaimer](docs/LEGAL_DISCLAIMER.md)
 
 ---
 
 ## Disclaimer
 
-This tool provides **automated heuristics only**. It is **not legal advice**.  
-Dual-licensing, linking models, SaaS (AGPL), and distribution choices can change obligations.  
-Always review with a qualified attorney before commercial closed-source distribution.
+This tool provides **automated heuristics only**. It is **not legal advice** and not a  
+license-compatibility opinion. Dual-licensing, linking models, SaaS (AGPL/SSPL),  
+attribution duties, and contracts can change obligations.  
+Always review with a qualified attorney before commercial closed-source distribution.  
+See [docs/LEGAL_DISCLAIMER.md](docs/LEGAL_DISCLAIMER.md).
 
 ---
 

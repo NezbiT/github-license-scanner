@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import asyncio
 import re
+import time
 from datetime import datetime, timezone
 from typing import Any
 from urllib.parse import quote
@@ -33,6 +34,21 @@ from models import (
     ReplacementSuggestion,
     ScanResult,
 )
+
+try:
+    from config import (
+        LICENSE_CACHE_MAX_ENTRIES,
+        LICENSE_CACHE_TTL_SECONDS,
+        MAX_CONCURRENT_LOOKUPS,
+        MAX_PACKAGES_LOOKUP,
+        USER_AGENT,
+    )
+except Exception:  # noqa: BLE001
+    MAX_CONCURRENT_LOOKUPS = 12
+    MAX_PACKAGES_LOOKUP = 80
+    USER_AGENT = "github-license-scanner/1.1 (license-lookup; educational)"
+    LICENSE_CACHE_TTL_SECONDS = 3600
+    LICENSE_CACHE_MAX_ENTRIES = 2000
 
 # ---------------------------------------------------------------------------
 # License classification maps (SPDX-oriented, case-insensitive matching)
@@ -68,6 +84,10 @@ WEAK_COPYLEFT = {
     "lgpl-2.1",
     "lgpl-3.0",
     "lgpl-2.0",
+    "lgpl-2.1-only",
+    "lgpl-2.1-or-later",
+    "lgpl-3.0-only",
+    "lgpl-3.0-or-later",
     "lgpl",
     "mpl-2.0",
     "mpl",
@@ -77,6 +97,8 @@ WEAK_COPYLEFT = {
     "cddl-1.0",
     "cddl-1.1",
     "ms-pl",
+    "eupl-1.1",
+    "eupl-1.2",
 }
 
 STRONG_COPYLEFT = {
@@ -96,7 +118,11 @@ STRONG_COPYLEFT = {
     "sspl",
     "sleepycat",
     "osl-3.0",  # treated as strong for distribution (conservative)
+    "cecill-2.1",
 }
+
+# Licenses with network-use / SaaS-sensitive obligations (subset of strong)
+NETWORK_COPYLEFT_MARKERS = ("agpl", "sspl")
 
 # Heuristic replacements for known strong-copyleft packages (not exhaustive)
 REPLACEMENT_MAP: dict[str, list[str]] = {
@@ -117,15 +143,28 @@ REPLACEMENT_MAP: dict[str, list[str]] = {
     "node-gpl-example": ["look for MIT alternatives on npm"],
 }
 
-# Cap concurrent registry requests
-MAX_CONCURRENT_LOOKUPS = 12
-# Cap total packages looked up per scan
-MAX_PACKAGES_LOOKUP = 80
+# In-process cache: (ecosystem, name_lower) -> (license_id, url, expires_at)
+_license_cache: dict[tuple[str, str], tuple[str | None, str | None, float]] = {}
 
-USER_AGENT = "github-license-scanner/1.0 (license-lookup; educational)"
 
-# In-process cache: (ecosystem, name_lower) -> (license_id, url)
-_license_cache: dict[tuple[str, str], tuple[str | None, str | None]] = {}
+def _cache_get(key: tuple[str, str]) -> tuple[str | None, str | None] | None:
+    entry = _license_cache.get(key)
+    if not entry:
+        return None
+    lic, url, expires = entry
+    if time.monotonic() > expires:
+        _license_cache.pop(key, None)
+        return None
+    return lic, url
+
+
+def _cache_set(key: tuple[str, str], lic: str | None, url: str | None) -> None:
+    # Evict oldest-ish entries if over capacity (simple size guard)
+    if len(_license_cache) >= LICENSE_CACHE_MAX_ENTRIES:
+        # Drop ~10% of keys
+        for drop_key in list(_license_cache.keys())[: max(1, LICENSE_CACHE_MAX_ENTRIES // 10)]:
+            _license_cache.pop(drop_key, None)
+    _license_cache[key] = (lic, url, time.monotonic() + LICENSE_CACHE_TTL_SECONDS)
 
 
 # ---------------------------------------------------------------------------
@@ -311,8 +350,9 @@ async def lookup_package_license(
     Returns (license_id, info_url). Uses an in-process cache.
     """
     cache_key = (dep.ecosystem, dep.name.lower())
-    if cache_key in _license_cache:
-        return _license_cache[cache_key]
+    cached = _cache_get(cache_key)
+    if cached is not None:
+        return cached
 
     license_id: str | None = None
     info_url: str | None = None
@@ -384,7 +424,7 @@ async def lookup_package_license(
     except (httpx.HTTPError, ValueError, KeyError, TypeError):
         license_id = None
 
-    _license_cache[cache_key] = (license_id, info_url)
+    _cache_set(cache_key, license_id, info_url)
     return license_id, info_url
 
 
@@ -435,18 +475,35 @@ def build_copyright_notice(
     repo_license: str | None,
     year: int | None = None,
 ) -> str:
-    """Build a plain-text copyright notice for the repository."""
+    """
+    Build a plain-text *template* for notices — NOT a legal copyright claim.
+
+    Important: the GitHub owner/organization name is often NOT the copyright
+    holder (forks, orgs, employers, multi-author projects). Users must verify
+    the LICENSE file, NOTICE file, and commit authorship before relying on this.
+    """
     y = year or datetime.now(timezone.utc).year
     lic = repo_license or "SEE LICENSE IN REPOSITORY"
     return (
-        f"Copyright (c) {y} {owner}\n"
-        f"All rights reserved unless otherwise stated in the project license.\n"
+        f"=== NOTICE TEMPLATE (NOT LEGAL ADVICE) ===\n"
+        f"WARNING: Do NOT treat the GitHub account name as proof of copyright\n"
+        f"ownership. Verify rights holders from LICENSE, NOTICE, and history.\n"
         f"\n"
         f"Repository: https://github.com/{owner}/{repo}\n"
-        f"Project license: {lic}\n"
+        f"Detected project license (heuristic): {lic}\n"
+        f"GitHub owner/org (may differ from copyright holder): {owner}\n"
         f"\n"
-        f"This notice was generated by GitHub License Scanner for convenience.\n"
-        f"Verify against the repository LICENSE file before use."
+        f"--- Suggested skeleton (edit before use) ---\n"
+        f"Copyright (c) {y} [COPYRIGHT HOLDER NAME(S) — verify manually]\n"
+        f"Licensed under {lic}. See the repository LICENSE file for full terms.\n"
+        f"\n"
+        f"Third-party software: list each dependency with its license id,\n"
+        f"copyright holders, and any required attribution / NOTICE text.\n"
+        f"Permissive licenses (MIT/BSD/Apache-2.0) still require attribution\n"
+        f"and preservation of license/notice files upon distribution.\n"
+        f"\n"
+        f"Generated by GitHub License Scanner for convenience only.\n"
+        f"Always verify against upstream sources before commercial use."
     )
 
 
@@ -483,19 +540,32 @@ def suggest_replacements(packages: list[PackageLicense]) -> list[ReplacementSugg
     return suggestions
 
 
+def _is_network_copyleft(license_id: str | None) -> bool:
+    """True if the license string looks like AGPL/SSPL (SaaS/network sensitive)."""
+    if not license_id:
+        return False
+    lower = license_id.lower()
+    return any(m in lower for m in NETWORK_COPYLEFT_MARKERS)
+
+
 def compute_verdict(
     repo_license: str | None,
     packages: list[PackageLicense],
-) -> tuple[bool, bool, bool, bool, str, bool]:
+) -> tuple[bool, bool, bool, bool, str, bool, bool]:
     """
-    Decide closed-source sellability.
+    Heuristic closed-source risk signals (NOT a legal determination).
 
-    Strong copyleft in **production** deps (or the repo license) forces open.
-    Strong copyleft only in **dev** deps is reported but does not auto-force open.
+    Strong copyleft in **production** deps (or the repo license) sets
+    forces_open_source. Strong copyleft only in **dev** deps is reported but
+    does not auto-force open.
+
+    Linking models (static vs dynamic), distribution vs SaaS, dual-licensing,
+    additional permissions, and contractual overlays are NOT fully modeled.
 
     Returns:
         can_sell_closed, forces_open_source, has_weak_copyleft,
-        has_unknown_licenses, verdict_summary, strong_copyleft_dev_only
+        has_unknown_licenses, verdict_summary, strong_copyleft_dev_only,
+        has_network_copyleft
     """
     repo_risk = classify_license(repo_license)
     prod = [p for p in packages if not p.is_dev]
@@ -505,8 +575,15 @@ def compute_verdict(
     strong_dev = [p for p in dev if p.risk == "strong_copyleft"]
     weak_pkgs = [p for p in packages if p.risk == "weak_copyleft"]
     unknown_pkgs = [p for p in packages if p.risk == "unknown"]
-    # Prefer unknown in prod for messaging weight
     unknown_prod = [p for p in prod if p.risk == "unknown"]
+
+    network_hits = []
+    if _is_network_copyleft(repo_license):
+        network_hits.append(f"repo:{repo_license}")
+    for p in packages:
+        if _is_network_copyleft(p.license_id):
+            network_hits.append(p.name)
+    has_network = bool(network_hits)
 
     forces = False
     reasons: list[str] = []
@@ -515,9 +592,10 @@ def compute_verdict(
     if repo_risk == "strong_copyleft":
         forces = True
         reasons.append(
-            f"The repository license ({repo_license}) is strong copyleft "
-            f"(GPL/AGPL/SSPL-class). Distributing a modified or combined work "
-            f"typically requires providing corresponding source under the same terms."
+            f"The repository license ({repo_license}) is classified as strong "
+            f"copyleft (GPL/AGPL/SSPL-class). Distributing a modified or combined "
+            f"work often requires providing corresponding source under compatible "
+            f"terms — outcome depends on how you combine and distribute the code."
         )
 
     if strong_prod:
@@ -526,8 +604,18 @@ def compute_verdict(
         extra = "…" if len(strong_prod) > 12 else ""
         reasons.append(
             f"Strong copyleft in production dependencies ({len(strong_prod)}): "
-            f"{names}{extra}. Linking/distributing these with a proprietary product "
-            f"often forces opening your source (especially GPL/AGPL)."
+            f"{names}{extra}. Depending on linking/distribution model, this can "
+            f"require opening source of combined works (GPL family). This tool "
+            f"does not analyze your binary linking graph."
+        )
+
+    if has_network:
+        names = ", ".join(sorted(set(network_hits))[:8])
+        reasons.append(
+            f"Network-copyleft / SaaS-sensitive license signal (AGPL/SSPL-class): "
+            f"{names}. Even without traditional 'distribution', offering the "
+            f"software over a network may trigger source-offer obligations. "
+            f"Review AGPL §13 / SSPL terms with counsel before SaaS deployment."
         )
 
     if strong_dev and not strong_prod:
@@ -548,29 +636,37 @@ def compute_verdict(
         weak_prod = [p for p in weak_pkgs if not p.is_dev]
         reasons.append(
             f"Weak copyleft packages present ({len(weak_pkgs)} total, "
-            f"{len(weak_prod)} production: MPL/LGPL/EPL-class). "
-            f"You may often keep your own code closed if you comply with file-level "
-            f"or dynamic-linking obligations — review each license."
+            f"{len(weak_prod)} production: MPL/LGPL/EPL/EUPL-class). "
+            f"You may often keep your own code closed if you comply with "
+            f"file-level, library, or reciprocal obligations — review each license."
         )
     if can_sell and has_unknown:
         reasons.append(
             f"Some licenses could not be determined "
             f"({len(unknown_prod)} production / {len(unknown_pkgs)} total packages"
             f"{' and/or missing repo license' if not repo_license else ''}). "
-            f"Manual review recommended before commercial closed-source distribution."
+            f"Manual review required before commercial closed-source distribution."
         )
     if can_sell and not reasons:
         reasons.append(
             "No strong copyleft (GPL/AGPL-class) signals found in the repository "
-            "license or production dependencies. Closed-source commercial sale appears "
-            "plausible, subject to attribution and terms of each permissive license."
+            "license or production dependencies. Closed-source commercial sale may "
+            "be feasible, subject to attribution, NOTICE, patent, trademark, and "
+            "export terms of each permissive license (MIT/BSD/Apache-2.0, etc.)."
+        )
+    elif can_sell:
+        reasons.append(
+            "Even without strong copyleft, permissive licenses still require "
+            "preserving copyright/license notices upon redistribution."
         )
 
     summary = " ".join(reasons)
     summary += (
-        " DISCLAIMER: This is automated guidance only and is NOT legal advice."
+        " DISCLAIMER: Automated heuristic only — NOT legal advice, NOT a license "
+        "compatibility opinion, and NOT a warranty of non-infringement. Consult a "
+        "qualified attorney for compliance decisions."
     )
-    return can_sell, forces, has_weak, has_unknown, summary, strong_dev_only
+    return can_sell, forces, has_weak, has_unknown, summary, strong_dev_only, has_network
 
 
 def compute_risk_score(
@@ -652,6 +748,7 @@ async def analyze_repository(url: str) -> ScanResult:
             scanned_at=scanned_at,
             can_sell_closed=False,
             forces_open_source=False,
+            scan_complete=False,
             verdict_summary=str(exc),
             errors=[str(exc)],
             copyright_notice="",
@@ -699,13 +796,14 @@ async def analyze_repository(url: str) -> ScanResult:
                 scanned_at=scanned_at,
                 can_sell_closed=False,
                 forces_open_source=False,
+                scan_complete=False,
                 has_weak_copyleft=False,
                 has_unknown_licenses=True,
                 verdict_summary=(
                     f"Scan incomplete: {exc} "
                     "No closed-source sellability decision can be made until "
                     "GitHub data is available. Set GITHUB_TOKEN if you hit rate limits. "
-                    "DISCLAIMER: This is automated guidance only and is NOT legal advice."
+                    "DISCLAIMER: Automated heuristic only — NOT legal advice."
                 ),
                 errors=errors,
                 copyright_notice=build_copyright_notice(owner, repo, None),
@@ -720,11 +818,12 @@ async def analyze_repository(url: str) -> ScanResult:
                 scanned_at=scanned_at,
                 can_sell_closed=False,
                 forces_open_source=False,
+                scan_complete=False,
                 has_weak_copyleft=False,
                 has_unknown_licenses=True,
                 verdict_summary=(
                     f"Scan incomplete (network error): {exc} "
-                    "DISCLAIMER: This is automated guidance only and is NOT legal advice."
+                    "DISCLAIMER: Automated heuristic only — NOT legal advice."
                 ),
                 errors=errors,
                 copyright_notice=build_copyright_notice(owner, repo, None),
@@ -754,9 +853,15 @@ async def analyze_repository(url: str) -> ScanResult:
                 for d in dependencies[:MAX_PACKAGES_LOOKUP]
             ]
 
-    can_sell, forces, has_weak, has_unknown, summary, strong_dev_only = compute_verdict(
-        repo_license, packages
-    )
+    (
+        can_sell,
+        forces,
+        has_weak,
+        has_unknown,
+        summary,
+        strong_dev_only,
+        has_network,
+    ) = compute_verdict(repo_license, packages)
     risk_score, risk_label = compute_risk_score(repo_license, packages)
     grouped = group_by_license(packages)
     replacements = suggest_replacements(packages)
@@ -789,6 +894,7 @@ async def analyze_repository(url: str) -> ScanResult:
         deploy_advice=deploy,
         scanned_at=scanned_at,
         errors=errors,
+        scan_complete=True,
         primary_language=primary_language,
         description=description,
         topics=topics,
@@ -798,5 +904,6 @@ async def analyze_repository(url: str) -> ScanResult:
         prod_package_count=prod_n,
         dev_package_count=dev_n,
         strong_copyleft_dev_only=strong_dev_only,
+        has_network_copyleft=has_network,
         has_dockerfile=has_dockerfile,
     )

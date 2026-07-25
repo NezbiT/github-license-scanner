@@ -570,15 +570,28 @@ def _parse_gradle(path: str, content: str) -> list[Dependency]:
     Matches lines like:
       implementation 'com.google.guava:guava:31.0'
       implementation("org.slf4j:slf4j-api:2.0.0")
+
+    test*/compileOnly configurations are marked is_dev=True so they do not
+    auto-force open-source on the production sellability heuristic.
     """
     deps: list[Dependency] = []
     pattern = re.compile(
-        r"""(?:implementation|api|compileOnly|runtimeOnly|testImplementation|compile|testCompile)"""
+        r"""(?P<config>implementation|api|compileOnly|runtimeOnly|testImplementation|"""
+        r"""testCompileOnly|testRuntimeOnly|compile|testCompile|annotationProcessor)"""
         r"""\s*[\(]?\s*['\"]([^:'\"]+):([^:'\"]+)(?::([^'\"]+))?['\"]""",
         re.IGNORECASE,
     )
+    dev_configs = {
+        "compileonly",
+        "testimplementation",
+        "testcompileonly",
+        "testruntimeonly",
+        "testcompile",
+        "annotationprocessor",
+    }
     for match in pattern.finditer(content):
-        group_id, artifact_id, version = match.group(1), match.group(2), match.group(3)
+        config = (match.group("config") or "").lower()
+        group_id, artifact_id, version = match.group(2), match.group(3), match.group(4)
         name = f"{group_id}:{artifact_id}"
         deps.append(
             Dependency(
@@ -586,6 +599,7 @@ def _parse_gradle(path: str, content: str) -> list[Dependency]:
                 version_spec=version,
                 ecosystem="gradle",
                 source_file=path,
+                is_dev=config in dev_configs,
             )
         )
     return deps
