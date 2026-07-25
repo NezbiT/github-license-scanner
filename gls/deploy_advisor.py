@@ -9,7 +9,7 @@ This is heuristic guidance for developers — not a production capacity plan.
 
 from __future__ import annotations
 
-from models import Dependency, DeployAdvice
+from .models import Dependency, DeployAdvice
 
 # ---------------------------------------------------------------------------
 # Platform catalog

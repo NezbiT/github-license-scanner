@@ -7,7 +7,7 @@ progressive scan feedback, empty states, and polished results.
 Code comments: English.
 
 Run:
-  python main.py
+  gls ui
 """
 
 from __future__ import annotations
@@ -17,8 +17,8 @@ from typing import Any, Callable
 
 from nicegui import app, ui
 
-from auth import auth_enabled, authenticate, history_user_key
-from config import (
+from .auth import auth_enabled, authenticate, history_user_key
+from .config import (
     HOST,
     MAX_BATCH_URLS,
     PORT,
@@ -27,13 +27,13 @@ from config import (
     SHOW_BROWSER,
     STORAGE_SECRET,
 )
-from history_store import append_scan, clear_history, load_history
-from i18n import DEFAULT_LANG, normalize_lang, t
-from license_analyzer import analyze_repository, risk_color
-from models import PackageLicense, ScanResult
-from rate_limit import SlidingWindowRateLimiter
-from report import render_markdown_report
-from sbom_export import render_sbom
+from .history_store import append_scan, clear_history, load_history
+from .i18n import DEFAULT_LANG, normalize_lang, t
+from .license_analyzer import analyze_repository, risk_color
+from .models import PackageLicense, ScanResult
+from .rate_limit import SlidingWindowRateLimiter
+from .report import render_markdown_report
+from .sbom_export import render_sbom
 
 # Per-process scan limiter (keyed by session / anonymous)
 _scan_limiter = SlidingWindowRateLimiter(
@@ -1791,11 +1791,14 @@ def legal_page() -> None:
 
 
 def _render_doc_page(filename: str, title: str) -> None:
-    from pathlib import Path
+    from importlib.resources import files
 
     lang = get_lang()
-    path = Path(__file__).resolve().parent / "docs" / filename
-    body = path.read_text(encoding="utf-8") if path.exists() else f"# {title}\n\nNot found."
+    # Read from package data — an installed wheel has no repo checkout around it.
+    try:
+        body = files("gls").joinpath("docs", filename).read_text(encoding="utf-8")
+    except (FileNotFoundError, OSError):
+        body = f"# {title}\n\nNot found."
     ui.add_css(CUSTOM_CSS)
     with ui.element("div").classes("gls-app"):
         with ui.element("div").classes("gls-wrap"):
@@ -1803,14 +1806,18 @@ def _render_doc_page(filename: str, title: str) -> None:
             ui.markdown(body).classes("gls-card q-mt-md")
 
 
-def main() -> None:
-    """Start the NiceGUI application server."""
+def run(
+    host: str | None = None,
+    port: int | None = None,
+    show: bool | None = None,
+) -> None:
+    """Start the NiceGUI application server. Arguments override config defaults."""
     ui.run(
         title="GitHub License Scanner",
         reload=False,
-        host=HOST,
-        port=PORT,
-        show=SHOW_BROWSER,
+        host=host or HOST,
+        port=port or PORT,
+        show=SHOW_BROWSER if show is None else show,
         favicon="⚖️",
         dark=None,
         storage_secret=STORAGE_SECRET,
@@ -1818,4 +1825,4 @@ def main() -> None:
 
 
 if __name__ in {"__main__", "__mp_main__"}:
-    main()
+    run()

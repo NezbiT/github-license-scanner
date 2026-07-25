@@ -10,7 +10,7 @@ This Tool is primarily designed for **local / self-hosted** use. If you deploy i
 | Data | Purpose | Storage | Retention |
 |------|---------|---------|-----------|
 | GitHub repo URLs you submit | Run license analysis | In memory during scan; may be written to local history | See history settings |
-| Scan results (owner/repo, license ids, risk flags, short verdict text) | History UI / CLI | `data/history.json` on the host | Max entries + optional max age (default 90 days) |
+| Scan results (owner/repo, license ids, risk flags, short verdict text) | History UI / CLI | `history.json` in the user data directory on the host | Max entries + optional max age (default 90 days) |
 | UI preferences (language, theme) | UX | Browser cookie / NiceGUI user storage (signed) | Browser session / cookie lifetime |
 | Rate-limit counters | Abuse prevention | In-process memory | Rolling window (default 1 hour) |
 | Optional `GITHUB_TOKEN` | Higher GitHub API limits / private repos | Environment of the host process only | Until you remove it |
@@ -30,10 +30,10 @@ Those services process the request under **their** privacy policies and terms. D
 
 | Mode | Path | Visibility |
 |------|------|------------|
-| Auth **disabled** (default) | `data/history.json` | Shared by everyone on the instance |
-| Auth **enabled** (`GLS_AUTH_ENABLED=1`) | `data/history/<username>.json` | Isolated per logged-in user |
+| Auth **disabled** (default) | `history.json` in the user data directory | Shared by everyone on the instance |
+| Auth **enabled** (`GLS_AUTH_ENABLED=1`) | `history/<username>.json` in the user data directory | Isolated per logged-in user |
 
-On a multi-user deployment **without** authentication, any user of that instance can see others’ recent scans. Enable auth (create users with `python cli.py user-add …`) for per-user isolation.
+On a multi-user deployment **without** authentication, any user of that instance can see others’ recent scans. Enable auth (create users with `gls user-add …`) for per-user isolation.
 
 ## Your rights (GDPR / CCPA-style)
 
@@ -41,8 +41,8 @@ If EU/UK GDPR or similar laws apply to **your** deployment:
 
 | Right | How to exercise on this Tool |
 |-------|------------------------------|
-| Access | Read `data/history.json` / History tab |
-| Erasure | Use **Clear history** in the UI, or delete `data/history.json` |
+| Access | Read `history.json` in the user data directory / History tab |
+| Erasure | Use **Clear history** in the UI, or delete `history.json` in the user data directory |
 | Restriction / objection | Stop using the service; operator may disable history |
 | Portability | Export Markdown report from a scan result |
 

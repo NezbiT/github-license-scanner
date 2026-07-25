@@ -6,7 +6,7 @@ Used by the web UI (download / copy) and the CLI (`scan --markdown`).
 
 from __future__ import annotations
 
-from models import ScanResult
+from .models import ScanResult
 
 
 def render_markdown_report(result: ScanResult) -> str:

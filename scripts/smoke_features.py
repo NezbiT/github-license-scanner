@@ -4,10 +4,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from dependency_scanner import parse_dependencies
-from license_analyzer import analyze_repository, compute_risk_score, compute_verdict
-from models import PackageLicense
-from report import render_markdown_report
+from gls.dependency_scanner import parse_dependencies
+from gls.license_analyzer import analyze_repository, compute_risk_score, compute_verdict
+from gls.models import PackageLicense
+from gls.report import render_markdown_report
 
 
 def test_units() -> None:

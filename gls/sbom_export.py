@@ -18,8 +18,8 @@ from datetime import datetime, timezone
 from typing import Any
 from urllib.parse import quote
 
-from models import PackageLicense, ScanResult
-from spdx_engine import expression_to_spdx_ids
+from .models import PackageLicense, ScanResult
+from .spdx_engine import expression_to_spdx_ids
 
 
 TOOL_NAME = "github-license-scanner"

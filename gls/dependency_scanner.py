@@ -16,7 +16,7 @@ from typing import Callable
 
 from packaging.requirements import InvalidRequirement, Requirement
 
-from models import Dependency
+from .models import Dependency
 
 # ---------------------------------------------------------------------------
 # Public API

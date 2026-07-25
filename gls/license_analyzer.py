@@ -18,9 +18,9 @@ from urllib.parse import quote
 
 import httpx
 
-from dependency_scanner import parse_many
-from deploy_advisor import recommend_deploy
-from github_api import (
+from .dependency_scanner import parse_many
+from .deploy_advisor import recommend_deploy
+from .github_api import (
     GitHubAPIError,
     create_client,
     download_dependency_files,
@@ -28,7 +28,7 @@ from github_api import (
     get_repo_info,
     parse_github_url,
 )
-from models import (
+from .models import (
     Dependency,
     PackageLicense,
     ReplacementSuggestion,
@@ -36,7 +36,7 @@ from models import (
 )
 
 try:
-    from config import (
+    from .config import (
         LICENSE_CACHE_MAX_ENTRIES,
         LICENSE_CACHE_TTL_SECONDS,
         MAX_CONCURRENT_LOOKUPS,
@@ -199,7 +199,7 @@ def classify_license(license_id: str | None) -> str:
     Uses the SPDX expression engine (AND/OR/WITH + parentheses).
     Returns one of: permissive | weak_copyleft | strong_copyleft | unknown
     """
-    from spdx_engine import classify_expression
+    from .spdx_engine import classify_expression
 
     risk, _node, _err = classify_expression(license_id)
     return risk
@@ -207,7 +207,7 @@ def classify_license(license_id: str | None) -> str:
 
 def _classify_single(token: str) -> str:
     """Classify a single license token (kept for tests / callers)."""
-    from spdx_engine import classify_id
+    from .spdx_engine import classify_id
 
     return classify_id(token).value
 
@@ -489,7 +489,7 @@ def suggest_replacements(packages: list[PackageLicense]) -> list[ReplacementSugg
 
 def _is_network_copyleft(license_id: str | None) -> bool:
     """True if the license string looks like AGPL/SSPL (SaaS/network sensitive)."""
-    from spdx_engine import is_network_copyleft_expression
+    from .spdx_engine import is_network_copyleft_expression
 
     return is_network_copyleft_expression(license_id)
 

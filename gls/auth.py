@@ -2,7 +2,7 @@
 Optional multi-user authentication for the web UI.
 
 When GLS_AUTH_ENABLED is true, the NiceGUI app requires a login.
-Each user gets an isolated history file under data/history/<user>.json.
+Each user gets an isolated history file under <data_dir>/history/<user>.json.
 
 Password storage uses PBKDF2-HMAC-SHA256 (stdlib only).
 Users file format (JSON):
@@ -12,9 +12,8 @@ Users file format (JSON):
   }
 
 CLI:
-  python auth.py hash-password
-  python auth.py add-user alice
-  python auth.py list-users
+  gls user-add alice
+  gls user-list
 """
 
 from __future__ import annotations
@@ -31,14 +30,13 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from config import DATA_DIR  # type: ignore
+    from .config import DATA_DIR  # type: ignore
 except Exception:  # noqa: BLE001
-    DATA_DIR = Path(__file__).resolve().parent / "data"
+    from platformdirs import user_data_dir
 
-USERS_PATH = Path(
-    os.environ.get("GLS_USERS_FILE")
-    or (Path(__file__).resolve().parent / "data" / "users.json")
-)
+    DATA_DIR = Path(user_data_dir("github-license-scanner", "NezbiT"))
+
+USERS_PATH = Path(os.environ.get("GLS_USERS_FILE") or (DATA_DIR / "users.json"))
 
 DEFAULT_ITERATIONS = 200_000
 USERNAME_RE = re.compile(r"^[A-Za-z0-9_.-]{1,64}$")
@@ -187,7 +185,7 @@ def _cli(argv: list[str]) -> int:
     if cmd == "list-users":
         names = list_usernames()
         if not names:
-            print("No users. Create one with: python auth.py add-user <name>")
+            print("No users. Create one with: python -m gls.auth add-user <name>")
             print(f"Users file: {USERS_PATH}")
             return 0
         for n in names:
@@ -195,7 +193,7 @@ def _cli(argv: list[str]) -> int:
         return 0
     if cmd == "add-user":
         if len(argv) < 3:
-            print("Usage: python auth.py add-user <username>", file=sys.stderr)
+            print("Usage: python -m gls.auth add-user <username>", file=sys.stderr)
             return 2
         username = argv[2]
         pw = getpass.getpass("Password: ")
@@ -218,7 +216,7 @@ def _cli(argv: list[str]) -> int:
         return 0
     if cmd == "delete-user":
         if len(argv) < 3:
-            print("Usage: python auth.py delete-user <username>", file=sys.stderr)
+            print("Usage: python -m gls.auth delete-user <username>", file=sys.stderr)
             return 2
         ok = delete_user(argv[2])
         print("Deleted" if ok else "Not found")
