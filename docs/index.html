@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitHub License Scanner — CLI &amp; UI for open-source license risk</title>
+  <meta name="description" content="Analyze GitHub repository and dependency licenses. Detect GPL/AGPL copyleft risk before selling closed-source. Free open-source CLI and NiceGUI UI — install with pipx or clone from GitHub." />
+  <meta name="theme-color" content="#111111" />
+  <link rel="canonical" href="https://nezbit.github.io/github-license-scanner/" />
+  <meta property="og:title" content="GitHub License Scanner" />
+  <meta property="og:description" content="Scan repo + dependency licenses. Know if copyleft may force open source." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nezbit.github.io/github-license-scanner/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/NezbiT/github-license-scanner/main/docs/images/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./">
+        <span class="mark" aria-hidden="true">⚖️</span>
+        <span>
+          <strong>GitHub License Scanner</strong>
+          <small data-i18n="badge">Licencias · Copyleft · CLI</small>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="https://github.com/NezbiT/github-license-scanner" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://pypi.org/project/github-license-scanner/" target="_blank" rel="noopener">PyPI</a>
+        <div class="seg" role="group" aria-label="Language">
+          <button type="button" id="lang-es" class="is-on" data-lang="es">ES</button>
+          <button type="button" id="lang-en" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="kicker" data-i18n="kicker">Open source · gratis · se ejecuta en tu máquina</p>
+      <h1 data-i18n="hero_title">¿Puedes vender tu app en cerrado… o el copyleft te obliga a abrir código?</h1>
+      <p class="lead" data-i18n="hero_lead">
+        Analiza la licencia del repositorio GitHub y de sus dependencias.
+        Señal heurística de riesgo GPL/AGPL, export Markdown/SBOM y UI local opcional.
+        No es asesoramiento jurídico.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#install" data-i18n="cta_install">Instalar con pipx</a>
+        <a class="btn ghost" href="https://github.com/NezbiT/github-license-scanner" target="_blank" rel="noopener" data-i18n="cta_repo">Ver en GitHub</a>
+        <a class="btn ghost" href="#clone" data-i18n="cta_clone">Clonar el repo</a>
+      </div>
+      <p class="fine" data-i18n="hero_fine">
+        Esta página es solo documentación estática (GitHub Pages).
+        La herramienta corre en tu PC — sin SaaS y sin enviar tu código a terceros.
+      </p>
+    </section>
+
+    <section class="wrap shot">
+      <img
+        src="images/ui-light.jpg"
+        alt="GitHub License Scanner UI — light mode"
+        width="1400"
+        height="800"
+        loading="lazy"
+      />
+    </section>
+
+    <section class="wrap grid-3" id="features">
+      <article class="card">
+        <h3 data-i18n="f1_t">Repo + dependencias</h3>
+        <p data-i18n="f1_d">npm, PyPI, Cargo, Go, RubyGems, Composer, Maven/Gradle (best-effort) y licencia del repo vía API de GitHub.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="f2_t">Copyleft / venta cerrada</h3>
+        <p data-i18n="f2_d">Clasifica permisivas, copyleft débil/fuerte y señales AGPL/SSPL (SaaS). Score 0–100 y veredicto con disclaimers.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="f3_t">CLI, UI, SBOM</h3>
+        <p data-i18n="f3_d">Comando <code>gls</code>, UI NiceGUI opcional, export Markdown, CycloneDX y SPDX. ES/EN y tema claro/oscuro.</p>
+      </article>
+    </section>
+
+    <section class="wrap panel" id="install">
+      <h2 data-i18n="install_title">Instalar (recomendado)</h2>
+      <p class="muted" data-i18n="install_sub">Python 3.11+. <a href="https://pipx.pypa.io/" target="_blank" rel="noopener">pipx</a> aísla la herramienta del resto de tu entorno.</p>
+
+      <h3 data-i18n="install_cli">Solo CLI</h3>
+      <div class="codeblock">
+        <pre id="cmd-cli"><code>pipx install github-license-scanner
+gls scan psf/requests</code></pre>
+        <button type="button" class="copy" data-copy="cmd-cli" data-i18n="copy">Copiar</button>
+      </div>
+
+      <h3 data-i18n="install_ui">CLI + interfaz web local</h3>
+      <div class="codeblock">
+        <pre id="cmd-ui"><code>pipx install "github-license-scanner[ui]"
+gls ui</code></pre>
+        <button type="button" class="copy" data-copy="cmd-ui" data-i18n="copy">Copiar</button>
+      </div>
+      <p class="muted" data-i18n="install_ui_note">Luego abre <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a> en tu navegador (solo en tu máquina).</p>
+
+      <h3 data-i18n="install_pip">Con pip (venv)</h3>
+      <div class="codeblock">
+        <pre id="cmd-pip"><code>python -m venv .venv
+# Windows: .venv\Scripts\activate
+source .venv/bin/activate
+pip install "github-license-scanner[ui]"
+gls scan owner/repo
+gls ui</code></pre>
+        <button type="button" class="copy" data-copy="cmd-pip" data-i18n="copy">Copiar</button>
+      </div>
+
+      <p class="muted">
+        <span data-i18n="pypi_link">Paquete en PyPI:</span>
+        <a href="https://pypi.org/project/github-license-scanner/" target="_blank" rel="noopener">github-license-scanner</a>
+      </p>
+    </section>
+
+    <section class="wrap panel" id="clone">
+      <h2 data-i18n="clone_title">Clonar desde GitHub</h2>
+      <p class="muted" data-i18n="clone_sub">Ideal si quieres contribuir o ejecutar la versión de desarrollo.</p>
+      <div class="codeblock">
+        <pre id="cmd-clone"><code>git clone https://github.com/NezbiT/github-license-scanner.git
+cd github-license-scanner
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+source .venv/bin/activate
+pip install -e ".[ui]"
+gls scan psf/requests
+gls ui</code></pre>
+        <button type="button" class="copy" data-copy="cmd-clone" data-i18n="copy">Copiar</button>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="https://github.com/NezbiT/github-license-scanner" target="_blank" rel="noopener" data-i18n="open_repo">Abrir repositorio</a>
+        <a class="btn ghost" href="https://github.com/NezbiT/github-license-scanner/archive/refs/heads/main.zip" data-i18n="download_zip">Descargar ZIP</a>
+      </div>
+    </section>
+
+    <section class="wrap panel" id="usage">
+      <h2 data-i18n="usage_title">Uso rápido</h2>
+      <div class="codeblock">
+        <pre id="cmd-usage"><code># Escaneo
+gls scan https://github.com/psf/requests
+gls scan owner/repo
+
+# Lote (un URL por línea)
+gls batch urls.txt
+
+# Export Markdown + SBOM
+gls scan psf/requests --markdown report.md --sbom bom.cdx.json
+gls scan psf/requests --sbom bom.spdx.json --sbom-format spdx
+
+# Historial local
+gls history
+
+# UI
+gls ui</code></pre>
+        <button type="button" class="copy" data-copy="cmd-usage" data-i18n="copy">Copiar</button>
+      </div>
+      <p class="muted" data-i18n="token_hint">Opcional: define <code>GITHUB_TOKEN</code> para más cuota de la API de GitHub y repos privados autorizados.</p>
+    </section>
+
+    <section class="wrap panel warn" id="disclaimer">
+      <h2 data-i18n="disc_title">Aviso legal</h2>
+      <p data-i18n="disc_body">
+        Esta herramienta ofrece <strong>heurísticas automatizadas</strong> para desarrolladores.
+        <strong>No es asesoramiento jurídico</strong>, ni una opinión de compatibilidad de licencias,
+        ni una garantía de no infracción. Dual-licensing, linking, SaaS (AGPL/SSPL) y contratos
+        pueden cambiar las obligaciones. Consulta a un abogado cualificado antes de distribuir
+        software cerrado comercialmente.
+      </p>
+      <p class="links">
+        <a href="https://github.com/NezbiT/github-license-scanner/blob/main/gls/docs/LEGAL_DISCLAIMER.md" target="_blank" rel="noopener" data-i18n="link_legal">Disclaimer</a>
+        ·
+        <a href="https://github.com/NezbiT/github-license-scanner/blob/main/gls/docs/PRIVACY.md" target="_blank" rel="noopener" data-i18n="link_privacy">Privacidad</a>
+        ·
+        <a href="https://github.com/NezbiT/github-license-scanner/blob/main/gls/docs/TERMS.md" target="_blank" rel="noopener" data-i18n="link_terms">Términos</a>
+        ·
+        <a href="https://github.com/NezbiT/github-license-scanner/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>
+        <span data-i18n="footer">Hecho con Python · MIT ·</span>
+        <a href="https://github.com/NezbiT/github-license-scanner">NezbiT/github-license-scanner</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" hidden data-i18n="copied">Copiado</div>
+  <script src="site.js"></script>
+</body>
+</html>

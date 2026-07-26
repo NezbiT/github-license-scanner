@@ -36,7 +36,9 @@ github-license-scanner = "gls.cli:main"
 gls = "gls.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/NezbiT/github-license-scanner"
+Homepage = "https://nezbit.github.io/github-license-scanner/"
+Repository = "https://github.com/NezbiT/github-license-scanner"
+Documentation = "https://nezbit.github.io/github-license-scanner/"
 Issues = "https://github.com/NezbiT/github-license-scanner/issues"
 
 [tool.hatch.version]

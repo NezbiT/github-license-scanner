@@ -11,11 +11,18 @@
 </p>
 
 <p align="center">
+  <a href="https://nezbit.github.io/github-license-scanner/"><img src="https://img.shields.io/badge/Site-GitHub%20Pages-2c3e50?style=flat-square" alt="GitHub Pages" /></a>
   <a href="#quick-start"><img src="https://img.shields.io/badge/Python-3.11%2B-2c3e50?style=flat-square" alt="Python" /></a>
-  <a href="#web-ui"><img src="https://img.shields.io/badge/UI-NiceGUI-8b5e3c?style=flat-square" alt="NiceGUI" /></a>
-  <a href="#cli"><img src="https://img.shields.io/badge/CLI-supported-3f6f4e?style=flat-square" alt="CLI" /></a>
+  <a href="https://pypi.org/project/github-license-scanner/"><img src="https://img.shields.io/badge/PyPI-github--license--scanner-8b5e3c?style=flat-square" alt="PyPI" /></a>
+  <a href="#cli"><img src="https://img.shields.io/badge/CLI-gls-3f6f4e?style=flat-square" alt="CLI" /></a>
   <a href="#disclaimer"><img src="https://img.shields.io/badge/Not-legal%20advice-9b2c2c?style=flat-square" alt="Disclaimer" /></a>
   <a href="https://github.com/NezbiT/github-license-scanner/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-2c3e50?style=flat-square" alt="MIT License" /></a>
+</p>
+
+<p align="center">
+  <strong>Website:</strong>
+  <a href="https://nezbit.github.io/github-license-scanner/">nezbit.github.io/github-license-scanner</a>
+  · install with <code>pipx</code> or clone from GitHub
 </p>
 
 ---
@@ -62,6 +69,14 @@
 - **Copy copyright notice** button  
 - **Deploy advisor** (Vercel, Railway, Render, Fly.io, …)  
 - **ES / EN** UI · **light / dark** theme · **full-width** responsive layout  
+
+---
+
+## Website (GitHub Pages)
+
+Static landing (install / clone links only — the scanner runs **on your machine**):
+
+**https://nezbit.github.io/github-license-scanner/**
 
 ---
 
