@@ -1,7 +1,7 @@
 # GitHub License Scanner
 
 <p align="center">
-  <img src="docs/images/hero.jpg" alt="GitHub License Scanner hero banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/NezbiT/github-license-scanner/main/docs/images/hero.jpg" alt="GitHub License Scanner hero banner" width="100%" />
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@
   <a href="#web-ui"><img src="https://img.shields.io/badge/UI-NiceGUI-8b5e3c?style=flat-square" alt="NiceGUI" /></a>
   <a href="#cli"><img src="https://img.shields.io/badge/CLI-supported-3f6f4e?style=flat-square" alt="CLI" /></a>
   <a href="#disclaimer"><img src="https://img.shields.io/badge/Not-legal%20advice-9b2c2c?style=flat-square" alt="Disclaimer" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2c3e50?style=flat-square" alt="MIT License" /></a>
+  <a href="https://github.com/NezbiT/github-license-scanner/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-2c3e50?style=flat-square" alt="MIT License" /></a>
 </p>
 
 ---
@@ -25,19 +25,19 @@
 ### Light workspace (full-width layout)
 
 <p align="center">
-  <img src="docs/images/ui-light.jpg" alt="Light mode UI — scan workspace and results" width="100%" />
+  <img src="https://raw.githubusercontent.com/NezbiT/github-license-scanner/main/docs/images/ui-light.jpg" alt="Light mode UI — scan workspace and results" width="100%" />
 </p>
 
 ### Dark mode
 
 <p align="center">
-  <img src="docs/images/ui-dark.jpg" alt="Dark mode UI — copyleft warning and package groups" width="100%" />
+  <img src="https://raw.githubusercontent.com/NezbiT/github-license-scanner/main/docs/images/ui-dark.jpg" alt="Dark mode UI — copyleft warning and package groups" width="100%" />
 </p>
 
 ### How it works
 
 <p align="center">
-  <img src="docs/images/flow.jpg" alt="Flow: URL → fetch → registries → verdict → deploy" width="100%" />
+  <img src="https://raw.githubusercontent.com/NezbiT/github-license-scanner/main/docs/images/flow.jpg" alt="Flow: URL → fetch → registries → verdict → deploy" width="100%" />
 </p>
 
 | Step | What happens |
@@ -102,7 +102,7 @@ directory if present, and real environment variables always win.
 | `GLS_USERS_FILE` | JSON users DB (default: `users.json` in the data dir) |
 | `GLS_DATA_DIR` | Override where history and users are stored |
 
-See [`.env.example`](.env.example) for the full list.
+See [`.env.example`](https://github.com/NezbiT/github-license-scanner/blob/main/.env.example) for the full list.
 
 History and users live in your per-user data directory, never inside the
 installed package:
@@ -224,7 +224,7 @@ github-license-scanner/
 - Set a strong **`GLS_STORAGE_SECRET`** before exposing the UI.
 - Scan history is **instance-local** and shared if multi-user — use **Clear history** or prune via config.
 - Rate limits and batch caps reduce GitHub API abuse.
-- Docs: [Privacy](gls/docs/PRIVACY.md) · [Terms](gls/docs/TERMS.md) · [Legal disclaimer](gls/docs/LEGAL_DISCLAIMER.md)
+- Docs: [Privacy](https://github.com/NezbiT/github-license-scanner/blob/main/gls/docs/PRIVACY.md) · [Terms](https://github.com/NezbiT/github-license-scanner/blob/main/gls/docs/TERMS.md) · [Legal disclaimer](https://github.com/NezbiT/github-license-scanner/blob/main/gls/docs/LEGAL_DISCLAIMER.md)
 
 ---
 
@@ -234,7 +234,7 @@ This tool provides **automated heuristics only**. It is **not legal advice** and
 license-compatibility opinion. Dual-licensing, linking models, SaaS (AGPL/SSPL),  
 attribution duties, and contracts can change obligations.  
 Always review with a qualified attorney before commercial closed-source distribution.  
-See [gls/docs/LEGAL_DISCLAIMER.md](gls/docs/LEGAL_DISCLAIMER.md).
+See [gls/docs/LEGAL_DISCLAIMER.md](https://github.com/NezbiT/github-license-scanner/blob/main/gls/docs/LEGAL_DISCLAIMER.md).
 
 ---
 
@@ -259,14 +259,14 @@ python -m build
 twine check dist/*
 ```
 
-Releases are published to PyPI by [`.github/workflows/publish.yml`](.github/workflows/publish.yml)
+Releases are published to PyPI by [`.github/workflows/publish.yml`](https://github.com/NezbiT/github-license-scanner/blob/main/.github/workflows/publish.yml)
 using Trusted Publishing (OIDC) — no API tokens are stored anywhere.
 
 ---
 
 ## License
 
-Released under the **[MIT License](LICENSE)**.
+Released under the **[MIT License](https://github.com/NezbiT/github-license-scanner/blob/main/LICENSE)**.
 
 You may use, modify, and redistribute this project commercially or privately,  
 as long as you keep the copyright and license notice. See `LICENSE` for full text.
