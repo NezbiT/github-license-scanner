@@ -35,6 +35,9 @@ jobs:
         with:
           name: dist
           path: dist/
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
       - name: Assert the distribution survived the roundtrip
         run: |
           set -euo pipefail
@@ -42,7 +45,12 @@ jobs:
           ls -la dist/
           test -f dist/github_license_scanner-0.1.2-py3-none-any.whl
           test -f dist/github_license_scanner-0.1.2.tar.gz
-          # twine check is what gh-action-pypi-publish effectively gates on
-          pip install --quiet twine
+          # The package uses PEP 639 metadata (Metadata-Version 2.4), which
+          # older twine releases reject — pin a version that understands it.
+          pip install --quiet "twine>=6.1"
           twine check dist/*
+          # Strongest check available here: the wheel that came out the other
+          # side still installs and runs.
+          pip install --quiet dist/github_license_scanner-0.1.2-py3-none-any.whl
+          gls --version
           echo "roundtrip OK"
