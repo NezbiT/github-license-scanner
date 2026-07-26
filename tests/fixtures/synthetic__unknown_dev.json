@@ -1,0 +1,58 @@
+{
+ "https://api.github.com/repos/acme/gadget": {
+  "status": 200,
+  "json": {
+   "full_name": "acme/gadget",
+   "html_url": "https://github.com/acme/gadget",
+   "description": "Synthetic repo: unresolvable dependency in devDependencies only.",
+   "default_branch": "main",
+   "language": "JavaScript",
+   "topics": [],
+   "private": false,
+   "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit"
+   }
+  }
+ },
+ "https://api.github.com/repos/acme/gadget/git/trees/main?recursive=1": {
+  "status": 200,
+  "json": {
+   "truncated": false,
+   "tree": [
+    {"path": "package.json", "type": "blob"}
+   ]
+  }
+ },
+ "https://api.github.com/repos/acme/gadget/contents/package.json?ref=main": {
+  "status": 200,
+  "json": {
+   "name": "package.json",
+   "encoding": "utf-8-trimmed",
+   "content": "{\n  \"name\": \"gadget\",\n  \"version\": \"1.0.0\",\n  \"dependencies\": {\n    \"left-pad\": \"^1.3.0\"\n  },\n  \"devDependencies\": {\n    \"acme-internal-build-tool\": \"^2.0.0\"\n  }\n}\n"
+  }
+ },
+ "https://api.github.com/repos/acme/gadget/contents/LICENSE?ref=main": {
+  "status": 200,
+  "json": {
+   "name": "LICENSE",
+   "encoding": "utf-8-trimmed",
+   "content": "MIT License\n\nCopyright (c) 2026 Acme\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction.\n"
+  }
+ },
+ "https://registry.npmjs.org/left-pad": {
+  "status": 200,
+  "json": {
+   "name": "left-pad",
+   "license": "WTFPL",
+   "dist-tags": {"latest": "1.3.0"},
+   "versions": {"1.3.0": {"license": "WTFPL"}}
+  }
+ },
+ "https://registry.npmjs.org/acme-internal-build-tool": {
+  "status": 404,
+  "json": {"error": "Not found"}
+ }
+}

@@ -1,0 +1,392 @@
+{
+ "https://api.github.com/repos/torvalds/linux": {
+  "json": {
+   "allow_forking": true,
+   "archive_url": "https://api.github.com/repos/torvalds/linux/{archive_format}{/ref}",
+   "archived": false,
+   "assignees_url": "https://api.github.com/repos/torvalds/linux/assignees{/user}",
+   "blobs_url": "https://api.github.com/repos/torvalds/linux/git/blobs{/sha}",
+   "branches_url": "https://api.github.com/repos/torvalds/linux/branches{/branch}",
+   "clone_url": "https://github.com/torvalds/linux.git",
+   "collaborators_url": "https://api.github.com/repos/torvalds/linux/collaborators{/collaborator}",
+   "comments_url": "https://api.github.com/repos/torvalds/linux/comments{/number}",
+   "commits_url": "https://api.github.com/repos/torvalds/linux/commits{/sha}",
+   "compare_url": "https://api.github.com/repos/torvalds/linux/compare/{base}...{head}",
+   "contents_url": "https://api.github.com/repos/torvalds/linux/contents/{+path}",
+   "contributors_url": "https://api.github.com/repos/torvalds/linux/contributors",
+   "created_at": "2011-09-04T22:48:12Z",
+   "default_branch": "master",
+   "deployments_url": "https://api.github.com/repos/torvalds/linux/deployments",
+   "description": "Linux kernel source tree",
+   "disabled": false,
+   "downloads_url": "https://api.github.com/repos/torvalds/linux/downloads",
+   "events_url": "https://api.github.com/repos/torvalds/linux/events",
+   "fork": false,
+   "forks": 63514,
+   "forks_count": 63514,
+   "forks_url": "https://api.github.com/repos/torvalds/linux/forks",
+   "full_name": "torvalds/linux",
+   "git_commits_url": "https://api.github.com/repos/torvalds/linux/git/commits{/sha}",
+   "git_refs_url": "https://api.github.com/repos/torvalds/linux/git/refs{/sha}",
+   "git_tags_url": "https://api.github.com/repos/torvalds/linux/git/tags{/sha}",
+   "git_url": "git://github.com/torvalds/linux.git",
+   "has_discussions": false,
+   "has_downloads": false,
+   "has_issues": false,
+   "has_pages": false,
+   "has_projects": true,
+   "has_pull_requests": false,
+   "has_wiki": false,
+   "homepage": "",
+   "hooks_url": "https://api.github.com/repos/torvalds/linux/hooks",
+   "html_url": "https://github.com/torvalds/linux",
+   "id": 2325298,
+   "is_template": false,
+   "issue_comment_url": "https://api.github.com/repos/torvalds/linux/issues/comments{/number}",
+   "issue_events_url": "https://api.github.com/repos/torvalds/linux/issues/events{/number}",
+   "issues_url": "https://api.github.com/repos/torvalds/linux/issues{/number}",
+   "keys_url": "https://api.github.com/repos/torvalds/linux/keys{/key_id}",
+   "labels_url": "https://api.github.com/repos/torvalds/linux/labels{/name}",
+   "language": "C",
+   "languages_url": "https://api.github.com/repos/torvalds/linux/languages",
+   "license": {
+    "key": "other",
+    "name": "Other",
+    "node_id": "MDc6TGljZW5zZTA=",
+    "spdx_id": "NOASSERTION",
+    "url": null
+   },
+   "merges_url": "https://api.github.com/repos/torvalds/linux/merges",
+   "milestones_url": "https://api.github.com/repos/torvalds/linux/milestones{/number}",
+   "mirror_url": null,
+   "name": "linux",
+   "network_count": 63514,
+   "node_id": "MDEwOlJlcG9zaXRvcnkyMzI1Mjk4",
+   "notifications_url": "https://api.github.com/repos/torvalds/linux/notifications{?since,all,participating}",
+   "open_issues": 3,
+   "open_issues_count": 3,
+   "owner": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/1024025?v=4",
+    "events_url": "https://api.github.com/users/torvalds/events{/privacy}",
+    "followers_url": "https://api.github.com/users/torvalds/followers",
+    "following_url": "https://api.github.com/users/torvalds/following{/other_user}",
+    "gists_url": "https://api.github.com/users/torvalds/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/torvalds",
+    "id": 1024025,
+    "login": "torvalds",
+    "node_id": "MDQ6VXNlcjEwMjQwMjU=",
+    "organizations_url": "https://api.github.com/users/torvalds/orgs",
+    "received_events_url": "https://api.github.com/users/torvalds/received_events",
+    "repos_url": "https://api.github.com/users/torvalds/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/torvalds/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/torvalds/subscriptions",
+    "type": "User",
+    "url": "https://api.github.com/users/torvalds",
+    "user_view_type": "public"
+   },
+   "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+   },
+   "private": false,
+   "pull_request_creation_policy": "all",
+   "pulls_url": "https://api.github.com/repos/torvalds/linux/pulls{/number}",
+   "pushed_at": "2026-07-25T17:24:39Z",
+   "releases_url": "https://api.github.com/repos/torvalds/linux/releases{/id}",
+   "size": 6295980,
+   "ssh_url": "git@github.com:torvalds/linux.git",
+   "stargazers_count": 240614,
+   "stargazers_url": "https://api.github.com/repos/torvalds/linux/stargazers",
+   "statuses_url": "https://api.github.com/repos/torvalds/linux/statuses/{sha}",
+   "subscribers_count": 8330,
+   "subscribers_url": "https://api.github.com/repos/torvalds/linux/subscribers",
+   "subscription_url": "https://api.github.com/repos/torvalds/linux/subscription",
+   "svn_url": "https://github.com/torvalds/linux",
+   "tags_url": "https://api.github.com/repos/torvalds/linux/tags",
+   "teams_url": "https://api.github.com/repos/torvalds/linux/teams",
+   "temp_clone_token": "",
+   "topics": [],
+   "trees_url": "https://api.github.com/repos/torvalds/linux/git/trees{/sha}",
+   "updated_at": "2026-07-26T17:27:41Z",
+   "url": "https://api.github.com/repos/torvalds/linux",
+   "visibility": "public",
+   "watchers": 240614,
+   "watchers_count": 240614,
+   "web_commit_signoff_required": false
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/?ref=master": {
+  "json": [
+   {
+    "name": ".clang-format",
+    "type": "file"
+   },
+   {
+    "name": ".clippy.toml",
+    "type": "file"
+   },
+   {
+    "name": ".cocciconfig",
+    "type": "file"
+   },
+   {
+    "name": ".editorconfig",
+    "type": "file"
+   },
+   {
+    "name": ".get_maintainer.ignore",
+    "type": "file"
+   },
+   {
+    "name": ".gitattributes",
+    "type": "file"
+   },
+   {
+    "name": ".gitignore",
+    "type": "file"
+   },
+   {
+    "name": ".mailmap",
+    "type": "file"
+   },
+   {
+    "name": ".pylintrc",
+    "type": "file"
+   },
+   {
+    "name": ".rustfmt.toml",
+    "type": "file"
+   },
+   {
+    "name": "COPYING",
+    "type": "file"
+   },
+   {
+    "name": "CREDITS",
+    "type": "file"
+   },
+   {
+    "name": "Documentation",
+    "type": "dir"
+   },
+   {
+    "name": "Kbuild",
+    "type": "file"
+   },
+   {
+    "name": "Kconfig",
+    "type": "file"
+   },
+   {
+    "name": "LICENSES",
+    "type": "dir"
+   },
+   {
+    "name": "MAINTAINERS",
+    "type": "file"
+   },
+   {
+    "name": "Makefile",
+    "type": "file"
+   },
+   {
+    "name": "README",
+    "type": "file"
+   },
+   {
+    "name": "arch",
+    "type": "dir"
+   },
+   {
+    "name": "block",
+    "type": "dir"
+   },
+   {
+    "name": "certs",
+    "type": "dir"
+   },
+   {
+    "name": "crypto",
+    "type": "dir"
+   },
+   {
+    "name": "drivers",
+    "type": "dir"
+   },
+   {
+    "name": "fs",
+    "type": "dir"
+   },
+   {
+    "name": "include",
+    "type": "dir"
+   },
+   {
+    "name": "init",
+    "type": "dir"
+   },
+   {
+    "name": "io_uring",
+    "type": "dir"
+   },
+   {
+    "name": "ipc",
+    "type": "dir"
+   },
+   {
+    "name": "kernel",
+    "type": "dir"
+   },
+   {
+    "name": "lib",
+    "type": "dir"
+   },
+   {
+    "name": "mm",
+    "type": "dir"
+   },
+   {
+    "name": "net",
+    "type": "dir"
+   },
+   {
+    "name": "rust",
+    "type": "dir"
+   },
+   {
+    "name": "samples",
+    "type": "dir"
+   },
+   {
+    "name": "scripts",
+    "type": "dir"
+   },
+   {
+    "name": "security",
+    "type": "dir"
+   },
+   {
+    "name": "sound",
+    "type": "dir"
+   },
+   {
+    "name": "tools",
+    "type": "dir"
+   },
+   {
+    "name": "usr",
+    "type": "dir"
+   },
+   {
+    "name": "virt",
+    "type": "dir"
+   }
+  ],
+  "status": 200
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/COPYING.LIB?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/COPYING.txt?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/COPYING?ref=master": {
+  "json": {
+   "content": "The Linux Kernel is provided under:\n\n\tSPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note\n\nBeing under the terms of the GNU General Public License version 2 only,\naccording with:\n\n\tLICENSES/preferred/GPL-2.0\n\nWith an explicit syscall exception, as stated at:\n\n\tLICENSES/exceptions/Linux-syscall-note\n\nIn addition, other licenses may also apply. Please see:\n\n\tDocumentation/process/license-rules.rst\n\nfor more details.\n\nAll contributions to the Linux Kernel are subject to this COPYING file.\n",
+   "encoding": "utf-8-trimmed",
+   "name": "COPYING",
+   "size": 496
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/Documentation/sphinx/requirements.txt?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/torvalds/linux/git/blobs/76b4255061d09f461b65b9e56267d508455a1719",
+    "html": "https://github.com/torvalds/linux/blob/master/Documentation/sphinx/requirements.txt",
+    "self": "https://api.github.com/repos/torvalds/linux/contents/Documentation/sphinx/requirements.txt?ref=master"
+   },
+   "content": "IyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAphbGFiYXN0ZXIK\nU3BoaW54CnB5eWFtbAo=\n",
+   "download_url": "https://raw.githubusercontent.com/torvalds/linux/master/Documentation/sphinx/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/torvalds/linux/git/blobs/76b4255061d09f461b65b9e56267d508455a1719",
+   "html_url": "https://github.com/torvalds/linux/blob/master/Documentation/sphinx/requirements.txt",
+   "name": "requirements.txt",
+   "path": "Documentation/sphinx/requirements.txt",
+   "sha": "76b4255061d09f461b65b9e56267d508455a1719",
+   "size": 59,
+   "type": "file",
+   "url": "https://api.github.com/repos/torvalds/linux/contents/Documentation/sphinx/requirements.txt?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/LICENSE.md?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/LICENSE.txt?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/torvalds/linux/contents/LICENSE?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/torvalds/linux/git/trees/master?recursive=1": {
+  "json": {
+   "tree": [
+    {
+     "path": "Documentation/sphinx/requirements.txt",
+     "type": "blob"
+    }
+   ],
+   "truncated": false
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/Sphinx/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-2-Clause",
+    "name": "Sphinx"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/alabaster/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": null,
+    "license_expression": null,
+    "name": "alabaster"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pyyaml/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "PyYAML"
+   }
+  },
+  "status": 200
+ }
+}

@@ -24,6 +24,7 @@ from .github_api import (
     GitHubAPIError,
     create_client,
     download_dependency_files,
+    fetch_license_text,
     find_dependency_files,
     get_repo_info,
     parse_github_url,
@@ -223,6 +224,97 @@ def risk_color(risk: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# License detection from file text
+# ---------------------------------------------------------------------------
+
+# Only the beginning of a license file is inspected. License grants state
+# their identity in the header; scanning further mostly picks up cross
+# references to other licenses (the SSPL body cites the GPL, LGPL-2.1 cites
+# the GPL) and would misclassify them.
+_LICENSE_TEXT_SCAN_CHARS = 8000
+
+# How far past a license title to look for its version number.
+_VERSION_WINDOW = 160
+
+
+def detect_license_from_text(text: str | None) -> str | None:
+    """
+    Identify a license from the text of a LICENSE/COPYING file.
+
+    This is the fallback for repositories where GitHub's detector returns
+    "other" or NOASSERTION. It recognizes the well-known license headers and
+    nothing else.
+
+    Returns an SPDX-like id, or None when the text is not recognized. None
+    means "unknown" and must never be treated as permissive by callers.
+    """
+    if not text or not text.strip():
+        return None
+
+    # Collapse whitespace: license titles are routinely split across lines
+    # and padded with tabs ("GNU GENERAL PUBLIC LICENSE\n\t\tVersion 2, ...").
+    flat = re.sub(r"\s+", " ", text[:_LICENSE_TEXT_SCAN_CHARS])
+
+    # Order matters. SSPL is derived from the AGPL and the LGPL text cites the
+    # GPL, so the more specific licenses have to be tested first.
+    if re.search(r"Server Side Public Licen[cs]e", flat, re.IGNORECASE):
+        return "SSPL-1.0"
+
+    # The GPL family has to be resolved by *first* occurrence, not by testing
+    # for each variant in turn: the GPL-2.0 preamble itself mentions the
+    # Lesser GPL ("Some other Free Software Foundation software is covered by
+    # the GNU Lesser General Public License instead"), so searching for LGPL
+    # anywhere in a plain GPL-2.0 file matches. The document's own title comes
+    # first; every later mention is a cross reference.
+    gpl_family = re.search(
+        r"GNU\s+(AFFERO\s+|LESSER\s+)?GENERAL PUBLIC LICEN[CS]E", flat, re.IGNORECASE
+    )
+    if gpl_family:
+        qualifier = (gpl_family.group(1) or "").strip().upper()
+        window = flat[gpl_family.end() : gpl_family.end() + _VERSION_WINDOW]
+        version_match = re.search(r"version\s*([0-9]+(?:\.[0-9]+)?)", window, re.IGNORECASE)
+        version = version_match.group(1) if version_match else None
+
+        if qualifier == "AFFERO":
+            return "AGPL-3.0"
+        if qualifier == "LESSER":
+            if version and version.startswith("3"):
+                return "LGPL-3.0"
+            if version == "2.1":
+                return "LGPL-2.1"
+            if version and version.startswith("2"):
+                return "LGPL-2.0"
+            return "LGPL"
+        if version and version.startswith("3"):
+            return "GPL-3.0"
+        if version and version.startswith("2"):
+            return "GPL-2.0"
+        # Recognized as GPL but the version is unclear — still strong copyleft.
+        return "GPL"
+
+    if re.search(r"Mozilla Public Licen[cs]e", flat, re.IGNORECASE):
+        return "MPL-2.0"
+
+    # Apache before BSD: Apache-2.0 section 4 is titled "Redistribution".
+    if re.search(r"Apache Licen[cs]e", flat, re.IGNORECASE) and re.search(
+        r"version\s*2\.0", flat, re.IGNORECASE
+    ):
+        return "Apache-2.0"
+
+    if re.search(
+        r"Permission is hereby granted,\s*free of charge", flat, re.IGNORECASE
+    ):
+        return "MIT"
+
+    if re.search(
+        r"Redistribution and use in source and binary forms", flat, re.IGNORECASE
+    ):
+        return "BSD"
+
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Registry license lookups
 # ---------------------------------------------------------------------------
 
@@ -287,6 +379,38 @@ def _extract_pypi_license(data: dict[str, Any]) -> str | None:
     return normalize_license_id(str(lic) if lic else None)
 
 
+def _extract_cargo_license(data: dict[str, Any]) -> str | None:
+    """
+    Extract the license from a crates.io GET /api/v1/crates/{name} payload.
+
+    The top-level `crate` object carries no `license` field at all — the
+    license lives on each entry of the sibling `versions` array. Reading
+    `crate["license"]` therefore returned None for every crate in existence.
+
+    Prefers the crate's default (newest stable) version, skipping yanked
+    releases, and falls back to the newest version that declares a license.
+    """
+    crate = data.get("crate") or {}
+    versions = data.get("versions") or []
+    if not isinstance(versions, list):
+        return None
+
+    preferred = crate.get("default_version") or crate.get("max_stable_version")
+    usable = [
+        v for v in versions
+        if isinstance(v, dict) and not v.get("yanked") and v.get("license")
+    ]
+
+    for version in usable:
+        if preferred and version.get("num") == preferred:
+            return normalize_license_id(str(version["license"]))
+
+    if usable:
+        # `versions` comes back newest-first.
+        return normalize_license_id(str(usable[0]["license"]))
+    return None
+
+
 async def lookup_package_license(
     client: httpx.AsyncClient,
     dep: Dependency,
@@ -329,9 +453,7 @@ async def lookup_package_license(
             info_url = f"https://crates.io/crates/{dep.name}"
             resp = await client.get(url, headers={"User-Agent": USER_AGENT})
             if resp.status_code == 200:
-                crate = (resp.json().get("crate") or {})
-                # license field on crate
-                license_id = normalize_license_id(crate.get("license"))
+                license_id = _extract_cargo_license(resp.json())
 
         elif dep.ecosystem == "go":
             # Best-effort: pkg.go.dev does not have a stable simple JSON API.
@@ -375,6 +497,23 @@ async def lookup_package_license(
     return license_id, info_url
 
 
+def create_registry_client(
+    transport: httpx.AsyncBaseTransport | None = None,
+) -> httpx.AsyncClient:
+    """
+    Create the httpx client used for package-registry lookups.
+
+    `transport` is a test seam: passing an httpx.MockTransport lets the suite
+    replay recorded fixtures without network access.
+    """
+    return httpx.AsyncClient(
+        timeout=20.0,
+        headers={"User-Agent": USER_AGENT},
+        follow_redirects=True,
+        transport=transport,
+    )
+
+
 async def resolve_all_licenses(
     dependencies: list[Dependency],
 ) -> list[PackageLicense]:
@@ -385,11 +524,7 @@ async def resolve_all_licenses(
     semaphore = asyncio.Semaphore(MAX_CONCURRENT_LOOKUPS)
     results: list[PackageLicense] = []
 
-    async with httpx.AsyncClient(
-        timeout=20.0,
-        headers={"User-Agent": USER_AGENT},
-        follow_redirects=True,
-    ) as client:
+    async with create_registry_client() as client:
 
         async def one(dep: Dependency) -> PackageLicense:
             async with semaphore:
@@ -576,7 +711,38 @@ def compute_verdict(
     has_weak = bool(weak_pkgs) or repo_risk == "weak_copyleft"
     has_unknown = bool(unknown_pkgs) or repo_risk == "unknown" or not repo_license
 
-    can_sell = not forces
+    # An unresolved license is missing information, not evidence of safety.
+    # Anything we could not identify blocks a closed-source conclusion; only
+    # a scan that resolved the repo license and every production dependency
+    # can support one.
+    repo_unresolved = repo_risk == "unknown" or not repo_license
+    undetermined = not forces and (repo_unresolved or bool(unknown_prod))
+    can_sell = not forces and not undetermined
+
+    if undetermined:
+        if repo_unresolved:
+            reasons.append(
+                f"The repository license could not be determined "
+                f"({repo_license or 'no license metadata'}). GitHub's detector "
+                f"did not recognize it and the license file text did not match "
+                f"a known license either. An unidentified license is NOT a "
+                f"permissive one: it may well be GPL/AGPL-class. Read the "
+                f"LICENSE/COPYING file yourself before any distribution."
+            )
+        if unknown_prod:
+            names = ", ".join(sorted({p.name for p in unknown_prod})[:12])
+            extra = "…" if len(unknown_prod) > 12 else ""
+            reasons.append(
+                f"{len(unknown_prod)} production dependencies have an "
+                f"unidentified license: {names}{extra}. Each one could be "
+                f"strong copyleft. Resolve them before treating this project "
+                f"as safe to sell closed-source."
+            )
+        reasons.append(
+            "Verdict: UNDETERMINED. This scan cannot tell you whether the "
+            "software can be sold closed-source, and the absence of a detected "
+            "copyleft signal here does NOT mean there is none."
+        )
 
     if can_sell and has_weak:
         weak_prod = [p for p in weak_pkgs if not p.is_dev]
@@ -587,11 +753,14 @@ def compute_verdict(
             f"file-level, library, or reciprocal obligations — review each license."
         )
     if can_sell and has_unknown:
+        # Reachable only for dev-scoped unknowns: an unresolved repo license
+        # or production dependency clears can_sell above.
+        unknown_dev = [p for p in unknown_pkgs if p.is_dev]
         reasons.append(
-            f"Some licenses could not be determined "
-            f"({len(unknown_prod)} production / {len(unknown_pkgs)} total packages"
-            f"{' and/or missing repo license' if not repo_license else ''}). "
-            f"Manual review required before commercial closed-source distribution."
+            f"{len(unknown_dev)} dev/test dependencies have an unidentified "
+            f"license. They do not normally ship to users, so they do not block "
+            f"a closed-source verdict here — but confirm your build does not "
+            f"bundle them into what you distribute."
         )
     if can_sell and not reasons:
         reasons.append(
@@ -631,7 +800,10 @@ def compute_risk_score(
     elif repo_risk == "weak_copyleft":
         score += 15
     elif repo_risk == "unknown" or not repo_license:
-        score += 10
+        # An unidentified project license is the single biggest unknown there
+        # is: it governs the whole codebase and it may be GPL/AGPL-class. It
+        # must not score below the weak-copyleft band.
+        score += 40
 
     for pkg in packages:
         w = 0.35 if pkg.is_dev else 1.0
@@ -640,7 +812,16 @@ def compute_risk_score(
         elif pkg.risk == "weak_copyleft":
             score += 6 * w
         elif pkg.risk == "unknown":
-            score += 4 * w
+            # An unresolved production dependency carries nearly the weight of
+            # a known-copyleft one, because it may turn out to be exactly that.
+            score += 14 * w
+
+    # A scan with unresolved production licences cannot land in a reassuring
+    # band, however few packages it happened to look at.
+    if repo_risk == "unknown" or not repo_license:
+        score = max(score, 45)
+    elif any(p.risk == "unknown" and not p.is_dev for p in packages):
+        score = max(score, 40)
 
     score_i = int(min(100, round(score)))
     if score_i >= 70:
@@ -701,6 +882,7 @@ async def analyze_repository(url: str) -> ScanResult:
         )
 
     repo_license: str | None = None
+    license_detection_source = "unresolved"
     primary_language: str | None = None
     description: str | None = None
     topics: list[str] = []
@@ -713,12 +895,42 @@ async def analyze_repository(url: str) -> ScanResult:
     async with create_client() as gh:
         try:
             info = await get_repo_info(gh, owner, repo)
-            repo_license = info.get("license_spdx") or info.get("license_name")
+            # Deliberately NOT falling back to license_name: GitHub returns the
+            # literal string "Other" whenever its detector fails, and "Other"
+            # classifies as unknown, which used to read as "no copyleft found".
+            # That is how git/git — GPL-2.0 — was reported as sellable closed.
+            repo_license = info.get("license_spdx")
+            if repo_license:
+                license_detection_source = "github_api"
             primary_language = info.get("language")
             description = info.get("description")
             topics = list(info.get("topics") or [])
             html_url = info.get("html_url") or html_url
             branch = info["default_branch"]
+
+            if not repo_license:
+                license_path, license_text = await fetch_license_text(
+                    gh, owner, repo, ref=branch
+                )
+                detected = detect_license_from_text(license_text)
+                if detected:
+                    repo_license = detected
+                    license_detection_source = "license_text"
+                    errors.append(
+                        f"GitHub could not identify the license; detected "
+                        f"{detected} from the text of {license_path}."
+                    )
+                elif license_path:
+                    errors.append(
+                        f"Found {license_path} but its text matches no known "
+                        f"license. Treating the project license as UNKNOWN — "
+                        f"read it manually."
+                    )
+                else:
+                    errors.append(
+                        "No LICENSE/COPYING file found and GitHub reported no "
+                        "license. Treating the project license as UNKNOWN."
+                    )
 
             dep_paths, has_dockerfile = await find_dependency_files(
                 gh, owner, repo, branch
@@ -745,6 +957,7 @@ async def analyze_repository(url: str) -> ScanResult:
                 scan_complete=False,
                 has_weak_copyleft=False,
                 has_unknown_licenses=True,
+                repo_license_unresolved=True,
                 verdict_summary=(
                     f"Scan incomplete: {exc} "
                     "No closed-source sellability decision can be made until "
@@ -767,6 +980,7 @@ async def analyze_repository(url: str) -> ScanResult:
                 scan_complete=False,
                 has_weak_copyleft=False,
                 has_unknown_licenses=True,
+                repo_license_unresolved=True,
                 verdict_summary=(
                     f"Scan incomplete (network error): {exc} "
                     "DISCLAIMER: Automated heuristic only — NOT legal advice."
@@ -822,6 +1036,8 @@ async def analyze_repository(url: str) -> ScanResult:
     notice = build_copyright_notice(owner, repo, repo_license)
     prod_n = sum(1 for p in packages if not p.is_dev)
     dev_n = sum(1 for p in packages if p.is_dev)
+    repo_unresolved = not repo_license or classify_license(repo_license) == "unknown"
+    unknown_prod = any(p.risk == "unknown" and not p.is_dev for p in packages)
 
     return ScanResult(
         owner=owner,
@@ -852,4 +1068,7 @@ async def analyze_repository(url: str) -> ScanResult:
         strong_copyleft_dev_only=strong_dev_only,
         has_network_copyleft=has_network,
         has_dockerfile=has_dockerfile,
+        license_detection_source=license_detection_source,
+        repo_license_unresolved=repo_unresolved,
+        has_unknown_prod_licenses=unknown_prod,
     )

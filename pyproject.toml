@@ -30,6 +30,8 @@ dependencies = [
 
 [project.optional-dependencies]
 ui = ["nicegui>=2.0.0"]
+# Test-only; the runtime dependency list above stays at four packages.
+test = ["pytest>=8.0"]
 
 [project.scripts]
 github-license-scanner = "gls.cli:main"
@@ -40,6 +42,9 @@ Homepage = "https://nezbit.github.io/github-license-scanner/"
 Repository = "https://github.com/NezbiT/github-license-scanner"
 Documentation = "https://nezbit.github.io/github-license-scanner/"
 Issues = "https://github.com/NezbiT/github-license-scanner/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.hatch.version]
 path = "gls/__init__.py"

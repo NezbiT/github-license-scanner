@@ -1,0 +1,45 @@
+{
+ "https://api.github.com/repos/acme/widget": {
+  "status": 200,
+  "json": {
+   "full_name": "acme/widget",
+   "html_url": "https://github.com/acme/widget",
+   "description": "Synthetic repo: permissive license, unresolvable production dependency.",
+   "default_branch": "main",
+   "language": "Go",
+   "topics": [],
+   "private": false,
+   "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit"
+   }
+  }
+ },
+ "https://api.github.com/repos/acme/widget/git/trees/main?recursive=1": {
+  "status": 200,
+  "json": {
+   "truncated": false,
+   "tree": [
+    {"path": "go.mod", "type": "blob"}
+   ]
+  }
+ },
+ "https://api.github.com/repos/acme/widget/contents/go.mod?ref=main": {
+  "status": 200,
+  "json": {
+   "name": "go.mod",
+   "encoding": "utf-8-trimmed",
+   "content": "module github.com/acme/widget\n\ngo 1.22\n\nrequire (\n\tgithub.com/acme/internal-toolkit v1.4.0\n\tgithub.com/acme/telemetry v0.9.2\n)\n"
+  }
+ },
+ "https://api.github.com/repos/acme/widget/contents/LICENSE?ref=main": {
+  "status": 200,
+  "json": {
+   "name": "LICENSE",
+   "encoding": "utf-8-trimmed",
+   "content": "MIT License\n\nCopyright (c) 2026 Acme\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction.\n"
+  }
+ }
+}

@@ -86,6 +86,21 @@ DEPENDENCY_BASENAMES = {
 # requirements-dev.txt, requirements-prod.txt, etc.
 REQUIREMENTS_GLOB = re.compile(r"^requirements(-[\w.-]+)?\.txt$", re.IGNORECASE)
 
+# License files probed when GitHub's own detector returns "other"/NOASSERTION.
+# Ordered: the most conventional names first.
+LICENSE_FILE_CANDIDATES = (
+    "LICENSE",
+    "LICENSE.md",
+    "LICENSE.txt",
+    "COPYING",
+    "COPYING.txt",
+    "COPYING.LIB",
+)
+
+# Root files worth reading when none of the candidates above exist.
+# mongodb/mongo, for example, ships only LICENSE-Community.txt.
+_LICENSE_FILE_PREFIXES = ("LICENSE", "LICENCE", "COPYING")
+
 # Docker-related files used by deploy_advisor signals
 DOCKER_BASENAMES = {
     "Dockerfile",
@@ -202,13 +217,22 @@ def _auth_headers() -> dict[str, str]:
     return headers
 
 
-def create_client(timeout: float = 30.0) -> httpx.AsyncClient:
-    """Create a configured async httpx client for GitHub API calls."""
+def create_client(
+    timeout: float = 30.0,
+    transport: httpx.AsyncBaseTransport | None = None,
+) -> httpx.AsyncClient:
+    """
+    Create a configured async httpx client for GitHub API calls.
+
+    `transport` is a test seam: passing an httpx.MockTransport lets the suite
+    replay recorded fixtures without network access.
+    """
     return httpx.AsyncClient(
         base_url=GITHUB_API,
         headers=_auth_headers(),
         timeout=timeout,
         follow_redirects=True,
+        transport=transport,
         # Never follow redirects off github.com for API paths
         # (httpx still only uses our base_url paths when we pass relative paths)
     )
@@ -478,6 +502,80 @@ async def get_file_content(
         return content
 
     raise GitHubAPIError(f"Unexpected content payload for {path}")
+
+
+async def _list_root_license_files(
+    client: httpx.AsyncClient,
+    owner: str,
+    repo: str,
+    ref: str | None = None,
+    exclude: tuple[str, ...] = (),
+) -> list[str]:
+    """
+    List root-level files whose name looks like a license file.
+
+    Used only after the conventional candidate names all 404, to catch
+    projects that ship e.g. LICENSE-Community.txt or COPYING-GPL.
+    """
+    api_path = f"/repos/{owner}/{repo}/contents/"
+    if ref:
+        api_path += f"?ref={ref}"
+    try:
+        data = await _get_json(client, api_path)
+    except (GitHubAPIError, httpx.HTTPError):
+        return []
+    if not isinstance(data, list):
+        return []
+
+    skip = {name.upper() for name in exclude}
+    found: list[str] = []
+    for item in data:
+        if not isinstance(item, dict) or item.get("type") != "file":
+            continue
+        name = item.get("name") or ""
+        upper = name.upper()
+        if upper in skip:
+            continue
+        if upper.startswith(_LICENSE_FILE_PREFIXES):
+            found.append(name)
+    return sorted(found)
+
+
+async def fetch_license_text(
+    client: httpx.AsyncClient,
+    owner: str,
+    repo: str,
+    ref: str | None = None,
+) -> tuple[str | None, str | None]:
+    """
+    Download the repository's license file for text-based detection.
+
+    Called when GitHub's licensee-backed detector reports "other" or
+    NOASSERTION, which it does for any LICENSE/COPYING file it cannot match
+    verbatim — git's COPYING has a preamble that defeats it, for instance.
+
+    Returns:
+        (path, text) for the first readable license file, else (None, None).
+    """
+    for name in LICENSE_FILE_CANDIDATES:
+        try:
+            text = await get_file_content(client, owner, repo, name, ref=ref)
+        except (GitHubAPIError, httpx.HTTPError):
+            continue
+        if text and text.strip():
+            return name, text
+
+    for name in await _list_root_license_files(
+        client, owner, repo, ref=ref, exclude=LICENSE_FILE_CANDIDATES
+    ):
+        try:
+            text = await get_file_content(client, owner, repo, name, ref=ref)
+        except (GitHubAPIError, httpx.HTTPError):
+            continue
+        if text and text.strip():
+            return name, text
+
+    return None, None
 
 
 async def download_dependency_files(
