@@ -1,0 +1,2615 @@
+{
+ "https://api.github.com/repos/git/git": {
+  "json": {
+   "allow_forking": true,
+   "archive_url": "https://api.github.com/repos/git/git/{archive_format}{/ref}",
+   "archived": false,
+   "assignees_url": "https://api.github.com/repos/git/git/assignees{/user}",
+   "blobs_url": "https://api.github.com/repos/git/git/git/blobs{/sha}",
+   "branches_url": "https://api.github.com/repos/git/git/branches{/branch}",
+   "clone_url": "https://github.com/git/git.git",
+   "collaborators_url": "https://api.github.com/repos/git/git/collaborators{/collaborator}",
+   "comments_url": "https://api.github.com/repos/git/git/comments{/number}",
+   "commits_url": "https://api.github.com/repos/git/git/commits{/sha}",
+   "compare_url": "https://api.github.com/repos/git/git/compare/{base}...{head}",
+   "contents_url": "https://api.github.com/repos/git/git/contents/{+path}",
+   "contributors_url": "https://api.github.com/repos/git/git/contributors",
+   "created_at": "2008-07-23T14:21:26Z",
+   "custom_properties": {},
+   "default_branch": "master",
+   "deployments_url": "https://api.github.com/repos/git/git/deployments",
+   "description": "Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.",
+   "disabled": false,
+   "downloads_url": "https://api.github.com/repos/git/git/downloads",
+   "events_url": "https://api.github.com/repos/git/git/events",
+   "fork": false,
+   "forks": 28180,
+   "forks_count": 28180,
+   "forks_url": "https://api.github.com/repos/git/git/forks",
+   "full_name": "git/git",
+   "git_commits_url": "https://api.github.com/repos/git/git/git/commits{/sha}",
+   "git_refs_url": "https://api.github.com/repos/git/git/git/refs{/sha}",
+   "git_tags_url": "https://api.github.com/repos/git/git/git/tags{/sha}",
+   "git_url": "git://github.com/git/git.git",
+   "has_discussions": false,
+   "has_downloads": false,
+   "has_issues": false,
+   "has_pages": false,
+   "has_projects": false,
+   "has_pull_requests": true,
+   "has_wiki": false,
+   "homepage": "",
+   "hooks_url": "https://api.github.com/repos/git/git/hooks",
+   "html_url": "https://github.com/git/git",
+   "id": 36502,
+   "is_template": false,
+   "issue_comment_url": "https://api.github.com/repos/git/git/issues/comments{/number}",
+   "issue_events_url": "https://api.github.com/repos/git/git/issues/events{/number}",
+   "issues_url": "https://api.github.com/repos/git/git/issues{/number}",
+   "keys_url": "https://api.github.com/repos/git/git/keys{/key_id}",
+   "labels_url": "https://api.github.com/repos/git/git/labels{/name}",
+   "language": "C",
+   "languages_url": "https://api.github.com/repos/git/git/languages",
+   "license": {
+    "key": "other",
+    "name": "Other",
+    "node_id": "MDc6TGljZW5zZTA=",
+    "spdx_id": "NOASSERTION",
+    "url": null
+   },
+   "merges_url": "https://api.github.com/repos/git/git/merges",
+   "milestones_url": "https://api.github.com/repos/git/git/milestones{/number}",
+   "mirror_url": null,
+   "name": "git",
+   "network_count": 28180,
+   "node_id": "MDEwOlJlcG9zaXRvcnkzNjUwMg==",
+   "notifications_url": "https://api.github.com/repos/git/git/notifications{?since,all,participating}",
+   "open_issues": 376,
+   "open_issues_count": 376,
+   "organization": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/18133?v=4",
+    "events_url": "https://api.github.com/users/git/events{/privacy}",
+    "followers_url": "https://api.github.com/users/git/followers",
+    "following_url": "https://api.github.com/users/git/following{/other_user}",
+    "gists_url": "https://api.github.com/users/git/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/git",
+    "id": 18133,
+    "login": "git",
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjE4MTMz",
+    "organizations_url": "https://api.github.com/users/git/orgs",
+    "received_events_url": "https://api.github.com/users/git/received_events",
+    "repos_url": "https://api.github.com/users/git/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/git/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/git/subscriptions",
+    "type": "Organization",
+    "url": "https://api.github.com/users/git",
+    "user_view_type": "public"
+   },
+   "owner": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/18133?v=4",
+    "events_url": "https://api.github.com/users/git/events{/privacy}",
+    "followers_url": "https://api.github.com/users/git/followers",
+    "following_url": "https://api.github.com/users/git/following{/other_user}",
+    "gists_url": "https://api.github.com/users/git/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/git",
+    "id": 18133,
+    "login": "git",
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjE4MTMz",
+    "organizations_url": "https://api.github.com/users/git/orgs",
+    "received_events_url": "https://api.github.com/users/git/received_events",
+    "repos_url": "https://api.github.com/users/git/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/git/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/git/subscriptions",
+    "type": "Organization",
+    "url": "https://api.github.com/users/git",
+    "user_view_type": "public"
+   },
+   "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+   },
+   "private": false,
+   "pull_request_creation_policy": "all",
+   "pulls_url": "https://api.github.com/repos/git/git/pulls{/number}",
+   "pushed_at": "2026-07-26T05:23:17Z",
+   "releases_url": "https://api.github.com/repos/git/git/releases{/id}",
+   "size": 314390,
+   "ssh_url": "git@github.com:git/git.git",
+   "stargazers_count": 62209,
+   "stargazers_url": "https://api.github.com/repos/git/git/stargazers",
+   "statuses_url": "https://api.github.com/repos/git/git/statuses/{sha}",
+   "subscribers_count": 2489,
+   "subscribers_url": "https://api.github.com/repos/git/git/subscribers",
+   "subscription_url": "https://api.github.com/repos/git/git/subscription",
+   "svn_url": "https://github.com/git/git",
+   "tags_url": "https://api.github.com/repos/git/git/tags",
+   "teams_url": "https://api.github.com/repos/git/git/teams",
+   "temp_clone_token": "",
+   "topics": [
+    "c",
+    "hacktoberfest",
+    "shell"
+   ],
+   "trees_url": "https://api.github.com/repos/git/git/git/trees{/sha}",
+   "updated_at": "2026-07-26T15:59:26Z",
+   "url": "https://api.github.com/repos/git/git",
+   "visibility": "public",
+   "watchers": 62209,
+   "watchers_count": 62209,
+   "web_commit_signoff_required": false
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/git/git/contents/?ref=master": {
+  "json": [
+   {
+    "name": ".b4-config",
+    "type": "file"
+   },
+   {
+    "name": ".b4-cover-template",
+    "type": "file"
+   },
+   {
+    "name": ".cirrus.yml",
+    "type": "file"
+   },
+   {
+    "name": ".clang-format",
+    "type": "file"
+   },
+   {
+    "name": ".editorconfig",
+    "type": "file"
+   },
+   {
+    "name": ".gitattributes",
+    "type": "file"
+   },
+   {
+    "name": ".github",
+    "type": "dir"
+   },
+   {
+    "name": ".gitignore",
+    "type": "file"
+   },
+   {
+    "name": ".gitlab-ci.yml",
+    "type": "file"
+   },
+   {
+    "name": ".gitmodules",
+    "type": "file"
+   },
+   {
+    "name": ".mailmap",
+    "type": "file"
+   },
+   {
+    "name": ".tsan-suppressions",
+    "type": "file"
+   },
+   {
+    "name": "CODE_OF_CONDUCT.md",
+    "type": "file"
+   },
+   {
+    "name": "COPYING",
+    "type": "file"
+   },
+   {
+    "name": "Cargo.toml",
+    "type": "file"
+   },
+   {
+    "name": "Documentation",
+    "type": "dir"
+   },
+   {
+    "name": "GIT-BUILD-OPTIONS.in",
+    "type": "file"
+   },
+   {
+    "name": "GIT-VERSION-FILE.in",
+    "type": "file"
+   },
+   {
+    "name": "GIT-VERSION-GEN",
+    "type": "file"
+   },
+   {
+    "name": "INSTALL",
+    "type": "file"
+   },
+   {
+    "name": "LGPL-2.1",
+    "type": "file"
+   },
+   {
+    "name": "Makefile",
+    "type": "file"
+   },
+   {
+    "name": "README.md",
+    "type": "file"
+   },
+   {
+    "name": "RelNotes",
+    "type": "file"
+   },
+   {
+    "name": "SECURITY.md",
+    "type": "file"
+   },
+   {
+    "name": "abspath.c",
+    "type": "file"
+   },
+   {
+    "name": "abspath.h",
+    "type": "file"
+   },
+   {
+    "name": "aclocal.m4",
+    "type": "file"
+   },
+   {
+    "name": "add-interactive.c",
+    "type": "file"
+   },
+   {
+    "name": "add-interactive.h",
+    "type": "file"
+   },
+   {
+    "name": "add-patch.c",
+    "type": "file"
+   },
+   {
+    "name": "add-patch.h",
+    "type": "file"
+   },
+   {
+    "name": "advice.c",
+    "type": "file"
+   },
+   {
+    "name": "advice.h",
+    "type": "file"
+   },
+   {
+    "name": "alias.c",
+    "type": "file"
+   },
+   {
+    "name": "alias.h",
+    "type": "file"
+   },
+   {
+    "name": "alloc.c",
+    "type": "file"
+   },
+   {
+    "name": "alloc.h",
+    "type": "file"
+   },
+   {
+    "name": "apply.c",
+    "type": "file"
+   },
+   {
+    "name": "apply.h",
+    "type": "file"
+   },
+   {
+    "name": "archive-tar.c",
+    "type": "file"
+   },
+   {
+    "name": "archive-zip.c",
+    "type": "file"
+   },
+   {
+    "name": "archive.c",
+    "type": "file"
+   },
+   {
+    "name": "archive.h",
+    "type": "file"
+   },
+   {
+    "name": "attr.c",
+    "type": "file"
+   },
+   {
+    "name": "attr.h",
+    "type": "file"
+   },
+   {
+    "name": "banned.h",
+    "type": "file"
+   },
+   {
+    "name": "base85.c",
+    "type": "file"
+   },
+   {
+    "name": "base85.h",
+    "type": "file"
+   },
+   {
+    "name": "bin-wrappers",
+    "type": "dir"
+   },
+   {
+    "name": "bisect.c",
+    "type": "file"
+   },
+   {
+    "name": "bisect.h",
+    "type": "file"
+   },
+   {
+    "name": "blame.c",
+    "type": "file"
+   },
+   {
+    "name": "blame.h",
+    "type": "file"
+   },
+   {
+    "name": "blob.c",
+    "type": "file"
+   },
+   {
+    "name": "blob.h",
+    "type": "file"
+   },
+   {
+    "name": "block-sha1",
+    "type": "dir"
+   },
+   {
+    "name": "bloom.c",
+    "type": "file"
+   },
+   {
+    "name": "bloom.h",
+    "type": "file"
+   },
+   {
+    "name": "branch.c",
+    "type": "file"
+   },
+   {
+    "name": "branch.h",
+    "type": "file"
+   },
+   {
+    "name": "build.rs",
+    "type": "file"
+   },
+   {
+    "name": "builtin.h",
+    "type": "file"
+   },
+   {
+    "name": "builtin",
+    "type": "dir"
+   },
+   {
+    "name": "bundle-uri.c",
+    "type": "file"
+   },
+   {
+    "name": "bundle-uri.h",
+    "type": "file"
+   },
+   {
+    "name": "bundle.c",
+    "type": "file"
+   },
+   {
+    "name": "bundle.h",
+    "type": "file"
+   },
+   {
+    "name": "cache-tree.c",
+    "type": "file"
+   },
+   {
+    "name": "cache-tree.h",
+    "type": "file"
+   },
+   {
+    "name": "cbtree.c",
+    "type": "file"
+   },
+   {
+    "name": "cbtree.h",
+    "type": "file"
+   },
+   {
+    "name": "chdir-notify.c",
+    "type": "file"
+   },
+   {
+    "name": "chdir-notify.h",
+    "type": "file"
+   },
+   {
+    "name": "checkout.c",
+    "type": "file"
+   },
+   {
+    "name": "checkout.h",
+    "type": "file"
+   },
+   {
+    "name": "chunk-format.c",
+    "type": "file"
+   },
+   {
+    "name": "chunk-format.h",
+    "type": "file"
+   },
+   {
+    "name": "ci",
+    "type": "dir"
+   },
+   {
+    "name": "color.c",
+    "type": "file"
+   },
+   {
+    "name": "color.h",
+    "type": "file"
+   },
+   {
+    "name": "column.c",
+    "type": "file"
+   },
+   {
+    "name": "column.h",
+    "type": "file"
+   },
+   {
+    "name": "combine-diff.c",
+    "type": "file"
+   },
+   {
+    "name": "command-list.txt",
+    "type": "file"
+   },
+   {
+    "name": "commit-graph.c",
+    "type": "file"
+   },
+   {
+    "name": "commit-graph.h",
+    "type": "file"
+   },
+   {
+    "name": "commit-reach.c",
+    "type": "file"
+   },
+   {
+    "name": "commit-reach.h",
+    "type": "file"
+   },
+   {
+    "name": "commit-slab-decl.h",
+    "type": "file"
+   },
+   {
+    "name": "commit-slab-impl.h",
+    "type": "file"
+   },
+   {
+    "name": "commit-slab.h",
+    "type": "file"
+   },
+   {
+    "name": "commit.c",
+    "type": "file"
+   },
+   {
+    "name": "commit.h",
+    "type": "file"
+   },
+   {
+    "name": "common-exit.c",
+    "type": "file"
+   },
+   {
+    "name": "common-init.c",
+    "type": "file"
+   },
+   {
+    "name": "common-init.h",
+    "type": "file"
+   },
+   {
+    "name": "common-main.c",
+    "type": "file"
+   },
+   {
+    "name": "compat",
+    "type": "dir"
+   },
+   {
+    "name": "compiler-tricks",
+    "type": "dir"
+   },
+   {
+    "name": "config.c",
+    "type": "file"
+   },
+   {
+    "name": "config.h",
+    "type": "file"
+   },
+   {
+    "name": "config.mak.dev",
+    "type": "file"
+   },
+   {
+    "name": "config.mak.in",
+    "type": "file"
+   },
+   {
+    "name": "config.mak.uname",
+    "type": "file"
+   },
+   {
+    "name": "configure.ac",
+    "type": "file"
+   },
+   {
+    "name": "connect.c",
+    "type": "file"
+   },
+   {
+    "name": "connect.h",
+    "type": "file"
+   },
+   {
+    "name": "connected.c",
+    "type": "file"
+   },
+   {
+    "name": "connected.h",
+    "type": "file"
+   },
+   {
+    "name": "contrib",
+    "type": "dir"
+   },
+   {
+    "name": "convert.c",
+    "type": "file"
+   },
+   {
+    "name": "convert.h",
+    "type": "file"
+   },
+   {
+    "name": "copy.c",
+    "type": "file"
+   },
+   {
+    "name": "copy.h",
+    "type": "file"
+   },
+   {
+    "name": "credential.c",
+    "type": "file"
+   },
+   {
+    "name": "credential.h",
+    "type": "file"
+   },
+   {
+    "name": "csum-file.c",
+    "type": "file"
+   },
+   {
+    "name": "csum-file.h",
+    "type": "file"
+   },
+   {
+    "name": "ctype.c",
+    "type": "file"
+   },
+   {
+    "name": "daemon.c",
+    "type": "file"
+   },
+   {
+    "name": "date.c",
+    "type": "file"
+   },
+   {
+    "name": "date.h",
+    "type": "file"
+   },
+   {
+    "name": "decorate.c",
+    "type": "file"
+   },
+   {
+    "name": "decorate.h",
+    "type": "file"
+   },
+   {
+    "name": "delta-islands.c",
+    "type": "file"
+   },
+   {
+    "name": "delta-islands.h",
+    "type": "file"
+   },
+   {
+    "name": "delta.h",
+    "type": "file"
+   },
+   {
+    "name": "diagnose.c",
+    "type": "file"
+   },
+   {
+    "name": "diagnose.h",
+    "type": "file"
+   },
+   {
+    "name": "diff-delta.c",
+    "type": "file"
+   },
+   {
+    "name": "diff-lib.c",
+    "type": "file"
+   },
+   {
+    "name": "diff-merges.c",
+    "type": "file"
+   },
+   {
+    "name": "diff-merges.h",
+    "type": "file"
+   },
+   {
+    "name": "diff-no-index.c",
+    "type": "file"
+   },
+   {
+    "name": "diff.c",
+    "type": "file"
+   },
+   {
+    "name": "diff.h",
+    "type": "file"
+   },
+   {
+    "name": "diffcore-break.c",
+    "type": "file"
+   },
+   {
+    "name": "diffcore-delta.c",
+    "type": "file"
+   },
+   {
+    "name": "diffcore-order.c",
+    "type": "file"
+   },
+   {
+    "name": "diffcore-pickaxe.c",
+    "type": "file"
+   },
+   {
+    "name": "diffcore-rename.c",
+    "type": "file"
+   },
+   {
+    "name": "diffcore-rotate.c",
+    "type": "file"
+   },
+   {
+    "name": "diffcore.h",
+    "type": "file"
+   },
+   {
+    "name": "dir-iterator.c",
+    "type": "file"
+   },
+   {
+    "name": "dir-iterator.h",
+    "type": "file"
+   },
+   {
+    "name": "dir.c",
+    "type": "file"
+   },
+   {
+    "name": "dir.h",
+    "type": "file"
+   },
+   {
+    "name": "editor.c",
+    "type": "file"
+   },
+   {
+    "name": "editor.h",
+    "type": "file"
+   },
+   {
+    "name": "entry.c",
+    "type": "file"
+   },
+   {
+    "name": "entry.h",
+    "type": "file"
+   },
+   {
+    "name": "environment.c",
+    "type": "file"
+   },
+   {
+    "name": "environment.h",
+    "type": "file"
+   },
+   {
+    "name": "ewah",
+    "type": "dir"
+   },
+   {
+    "name": "exec-cmd.c",
+    "type": "file"
+   },
+   {
+    "name": "exec-cmd.h",
+    "type": "file"
+   },
+   {
+    "name": "fetch-negotiator.c",
+    "type": "file"
+   },
+   {
+    "name": "fetch-negotiator.h",
+    "type": "file"
+   },
+   {
+    "name": "fetch-pack.c",
+    "type": "file"
+   },
+   {
+    "name": "fetch-pack.h",
+    "type": "file"
+   },
+   {
+    "name": "fmt-merge-msg.c",
+    "type": "file"
+   },
+   {
+    "name": "fmt-merge-msg.h",
+    "type": "file"
+   },
+   {
+    "name": "for-each-ref.h",
+    "type": "file"
+   },
+   {
+    "name": "fsck.c",
+    "type": "file"
+   },
+   {
+    "name": "fsck.h",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor--daemon.h",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor-ipc.c",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor-ipc.h",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor-ll.h",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor-path-utils.h",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor-settings.c",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor-settings.h",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor.c",
+    "type": "file"
+   },
+   {
+    "name": "fsmonitor.h",
+    "type": "file"
+   },
+   {
+    "name": "gettext.c",
+    "type": "file"
+   },
+   {
+    "name": "gettext.h",
+    "type": "file"
+   },
+   {
+    "name": "git-archimport.perl",
+    "type": "file"
+   },
+   {
+    "name": "git-compat-util.h",
+    "type": "file"
+   },
+   {
+    "name": "git-curl-compat.h",
+    "type": "file"
+   },
+   {
+    "name": "git-cvsexportcommit.perl",
+    "type": "file"
+   },
+   {
+    "name": "git-cvsimport.perl",
+    "type": "file"
+   },
+   {
+    "name": "git-cvsserver.perl",
+    "type": "file"
+   },
+   {
+    "name": "git-difftool--helper.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-filter-branch.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-gui",
+    "type": "dir"
+   },
+   {
+    "name": "git-instaweb.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-merge-octopus.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-merge-one-file.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-merge-resolve.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-mergetool--lib.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-mergetool.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-p4.py",
+    "type": "file"
+   },
+   {
+    "name": "git-quiltimport.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-request-pull.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-send-email.perl",
+    "type": "file"
+   },
+   {
+    "name": "git-sh-i18n.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-sh-setup.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-submodule.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-svn.perl",
+    "type": "file"
+   },
+   {
+    "name": "git-web--browse.sh",
+    "type": "file"
+   },
+   {
+    "name": "git-zlib.c",
+    "type": "file"
+   },
+   {
+    "name": "git-zlib.h",
+    "type": "file"
+   },
+   {
+    "name": "git.c",
+    "type": "file"
+   },
+   {
+    "name": "git.rc.in",
+    "type": "file"
+   },
+   {
+    "name": "gitk-git",
+    "type": "dir"
+   },
+   {
+    "name": "gitweb",
+    "type": "dir"
+   },
+   {
+    "name": "gpg-interface.c",
+    "type": "file"
+   },
+   {
+    "name": "gpg-interface.h",
+    "type": "file"
+   },
+   {
+    "name": "graph.c",
+    "type": "file"
+   },
+   {
+    "name": "graph.h",
+    "type": "file"
+   },
+   {
+    "name": "grep.c",
+    "type": "file"
+   },
+   {
+    "name": "grep.h",
+    "type": "file"
+   },
+   {
+    "name": "hash-lookup.c",
+    "type": "file"
+   },
+   {
+    "name": "hash-lookup.h",
+    "type": "file"
+   },
+   {
+    "name": "hash.c",
+    "type": "file"
+   },
+   {
+    "name": "hash.h",
+    "type": "file"
+   },
+   {
+    "name": "hashmap.c",
+    "type": "file"
+   },
+   {
+    "name": "hashmap.h",
+    "type": "file"
+   },
+   {
+    "name": "help.c",
+    "type": "file"
+   },
+   {
+    "name": "help.h",
+    "type": "file"
+   },
+   {
+    "name": "hex-ll.c",
+    "type": "file"
+   },
+   {
+    "name": "hex-ll.h",
+    "type": "file"
+   },
+   {
+    "name": "hex.c",
+    "type": "file"
+   },
+   {
+    "name": "hex.h",
+    "type": "file"
+   },
+   {
+    "name": "hook.c",
+    "type": "file"
+   },
+   {
+    "name": "hook.h",
+    "type": "file"
+   },
+   {
+    "name": "http-backend.c",
+    "type": "file"
+   },
+   {
+    "name": "http-fetch.c",
+    "type": "file"
+   },
+   {
+    "name": "http-push.c",
+    "type": "file"
+   },
+   {
+    "name": "http-walker.c",
+    "type": "file"
+   },
+   {
+    "name": "http.c",
+    "type": "file"
+   },
+   {
+    "name": "http.h",
+    "type": "file"
+   },
+   {
+    "name": "ident.c",
+    "type": "file"
+   },
+   {
+    "name": "ident.h",
+    "type": "file"
+   },
+   {
+    "name": "imap-send.c",
+    "type": "file"
+   },
+   {
+    "name": "iterator.h",
+    "type": "file"
+   },
+   {
+    "name": "json-writer.c",
+    "type": "file"
+   },
+   {
+    "name": "json-writer.h",
+    "type": "file"
+   },
+   {
+    "name": "khash.h",
+    "type": "file"
+   },
+   {
+    "name": "kwset.c",
+    "type": "file"
+   },
+   {
+    "name": "kwset.h",
+    "type": "file"
+   },
+   {
+    "name": "levenshtein.c",
+    "type": "file"
+   },
+   {
+    "name": "levenshtein.h",
+    "type": "file"
+   },
+   {
+    "name": "line-log.c",
+    "type": "file"
+   },
+   {
+    "name": "line-log.h",
+    "type": "file"
+   },
+   {
+    "name": "line-range.c",
+    "type": "file"
+   },
+   {
+    "name": "line-range.h",
+    "type": "file"
+   },
+   {
+    "name": "linear-assignment.c",
+    "type": "file"
+   },
+   {
+    "name": "linear-assignment.h",
+    "type": "file"
+   },
+   {
+    "name": "list-objects-filter-options.c",
+    "type": "file"
+   },
+   {
+    "name": "list-objects-filter-options.h",
+    "type": "file"
+   },
+   {
+    "name": "list-objects-filter.c",
+    "type": "file"
+   },
+   {
+    "name": "list-objects-filter.h",
+    "type": "file"
+   },
+   {
+    "name": "list-objects.c",
+    "type": "file"
+   },
+   {
+    "name": "list-objects.h",
+    "type": "file"
+   },
+   {
+    "name": "list.h",
+    "type": "file"
+   },
+   {
+    "name": "lockfile.c",
+    "type": "file"
+   },
+   {
+    "name": "lockfile.h",
+    "type": "file"
+   },
+   {
+    "name": "log-tree.c",
+    "type": "file"
+   },
+   {
+    "name": "log-tree.h",
+    "type": "file"
+   },
+   {
+    "name": "loose.c",
+    "type": "file"
+   },
+   {
+    "name": "loose.h",
+    "type": "file"
+   },
+   {
+    "name": "ls-refs.c",
+    "type": "file"
+   },
+   {
+    "name": "ls-refs.h",
+    "type": "file"
+   },
+   {
+    "name": "mailinfo.c",
+    "type": "file"
+   },
+   {
+    "name": "mailinfo.h",
+    "type": "file"
+   },
+   {
+    "name": "mailmap.c",
+    "type": "file"
+   },
+   {
+    "name": "mailmap.h",
+    "type": "file"
+   },
+   {
+    "name": "match-trees.c",
+    "type": "file"
+   },
+   {
+    "name": "match-trees.h",
+    "type": "file"
+   },
+   {
+    "name": "mem-pool.c",
+    "type": "file"
+   },
+   {
+    "name": "mem-pool.h",
+    "type": "file"
+   },
+   {
+    "name": "merge-blobs.c",
+    "type": "file"
+   },
+   {
+    "name": "merge-blobs.h",
+    "type": "file"
+   },
+   {
+    "name": "merge-ll.c",
+    "type": "file"
+   },
+   {
+    "name": "merge-ll.h",
+    "type": "file"
+   },
+   {
+    "name": "merge-ort-wrappers.c",
+    "type": "file"
+   },
+   {
+    "name": "merge-ort-wrappers.h",
+    "type": "file"
+   },
+   {
+    "name": "merge-ort.c",
+    "type": "file"
+   },
+   {
+    "name": "merge-ort.h",
+    "type": "file"
+   },
+   {
+    "name": "merge.c",
+    "type": "file"
+   },
+   {
+    "name": "merge.h",
+    "type": "file"
+   },
+   {
+    "name": "mergesort.h",
+    "type": "file"
+   },
+   {
+    "name": "mergetools",
+    "type": "dir"
+   },
+   {
+    "name": "meson.build",
+    "type": "file"
+   },
+   {
+    "name": "meson_options.txt",
+    "type": "file"
+   },
+   {
+    "name": "midx-write.c",
+    "type": "file"
+   },
+   {
+    "name": "midx.c",
+    "type": "file"
+   },
+   {
+    "name": "midx.h",
+    "type": "file"
+   },
+   {
+    "name": "name-hash.c",
+    "type": "file"
+   },
+   {
+    "name": "name-hash.h",
+    "type": "file"
+   },
+   {
+    "name": "negotiator",
+    "type": "dir"
+   },
+   {
+    "name": "notes-cache.c",
+    "type": "file"
+   },
+   {
+    "name": "notes-cache.h",
+    "type": "file"
+   },
+   {
+    "name": "notes-merge.c",
+    "type": "file"
+   },
+   {
+    "name": "notes-merge.h",
+    "type": "file"
+   },
+   {
+    "name": "notes-utils.c",
+    "type": "file"
+   },
+   {
+    "name": "notes-utils.h",
+    "type": "file"
+   },
+   {
+    "name": "notes.c",
+    "type": "file"
+   },
+   {
+    "name": "notes.h",
+    "type": "file"
+   },
+   {
+    "name": "object-file-convert.c",
+    "type": "file"
+   },
+   {
+    "name": "object-file-convert.h",
+    "type": "file"
+   },
+   {
+    "name": "object-file.c",
+    "type": "file"
+   },
+   {
+    "name": "object-file.h",
+    "type": "file"
+   },
+   {
+    "name": "object-name.c",
+    "type": "file"
+   },
+   {
+    "name": "object-name.h",
+    "type": "file"
+   },
+   {
+    "name": "object.c",
+    "type": "file"
+   },
+   {
+    "name": "object.h",
+    "type": "file"
+   },
+   {
+    "name": "odb.c",
+    "type": "file"
+   },
+   {
+    "name": "odb.h",
+    "type": "file"
+   },
+   {
+    "name": "odb",
+    "type": "dir"
+   },
+   {
+    "name": "oid-array.c",
+    "type": "file"
+   },
+   {
+    "name": "oid-array.h",
+    "type": "file"
+   },
+   {
+    "name": "oidmap.c",
+    "type": "file"
+   },
+   {
+    "name": "oidmap.h",
+    "type": "file"
+   },
+   {
+    "name": "oidset.c",
+    "type": "file"
+   },
+   {
+    "name": "oidset.h",
+    "type": "file"
+   },
+   {
+    "name": "oidtree.c",
+    "type": "file"
+   },
+   {
+    "name": "oidtree.h",
+    "type": "file"
+   },
+   {
+    "name": "oss-fuzz",
+    "type": "dir"
+   },
+   {
+    "name": "pack-bitmap-write.c",
+    "type": "file"
+   },
+   {
+    "name": "pack-bitmap.c",
+    "type": "file"
+   },
+   {
+    "name": "pack-bitmap.h",
+    "type": "file"
+   },
+   {
+    "name": "pack-check.c",
+    "type": "file"
+   },
+   {
+    "name": "pack-mtimes.c",
+    "type": "file"
+   },
+   {
+    "name": "pack-mtimes.h",
+    "type": "file"
+   },
+   {
+    "name": "pack-objects.c",
+    "type": "file"
+   },
+   {
+    "name": "pack-objects.h",
+    "type": "file"
+   },
+   {
+    "name": "pack-refs.c",
+    "type": "file"
+   },
+   {
+    "name": "pack-refs.h",
+    "type": "file"
+   },
+   {
+    "name": "pack-revindex.c",
+    "type": "file"
+   },
+   {
+    "name": "pack-revindex.h",
+    "type": "file"
+   },
+   {
+    "name": "pack-write.c",
+    "type": "file"
+   },
+   {
+    "name": "pack.h",
+    "type": "file"
+   },
+   {
+    "name": "packfile-list.c",
+    "type": "file"
+   },
+   {
+    "name": "packfile-list.h",
+    "type": "file"
+   },
+   {
+    "name": "packfile.c",
+    "type": "file"
+   },
+   {
+    "name": "packfile.h",
+    "type": "file"
+   },
+   {
+    "name": "pager.c",
+    "type": "file"
+   },
+   {
+    "name": "pager.h",
+    "type": "file"
+   },
+   {
+    "name": "parallel-checkout.c",
+    "type": "file"
+   },
+   {
+    "name": "parallel-checkout.h",
+    "type": "file"
+   },
+   {
+    "name": "parse-options-cb.c",
+    "type": "file"
+   },
+   {
+    "name": "parse-options.c",
+    "type": "file"
+   },
+   {
+    "name": "parse-options.h",
+    "type": "file"
+   },
+   {
+    "name": "parse.c",
+    "type": "file"
+   },
+   {
+    "name": "parse.h",
+    "type": "file"
+   },
+   {
+    "name": "patch-delta.c",
+    "type": "file"
+   },
+   {
+    "name": "patch-ids.c",
+    "type": "file"
+   },
+   {
+    "name": "patch-ids.h",
+    "type": "file"
+   },
+   {
+    "name": "path-walk.c",
+    "type": "file"
+   },
+   {
+    "name": "path-walk.h",
+    "type": "file"
+   },
+   {
+    "name": "path.c",
+    "type": "file"
+   },
+   {
+    "name": "path.h",
+    "type": "file"
+   },
+   {
+    "name": "pathspec.c",
+    "type": "file"
+   },
+   {
+    "name": "pathspec.h",
+    "type": "file"
+   },
+   {
+    "name": "perl",
+    "type": "dir"
+   },
+   {
+    "name": "pkt-line.c",
+    "type": "file"
+   },
+   {
+    "name": "pkt-line.h",
+    "type": "file"
+   },
+   {
+    "name": "po",
+    "type": "dir"
+   },
+   {
+    "name": "preload-index.c",
+    "type": "file"
+   },
+   {
+    "name": "preload-index.h",
+    "type": "file"
+   },
+   {
+    "name": "pretty.c",
+    "type": "file"
+   },
+   {
+    "name": "pretty.h",
+    "type": "file"
+   },
+   {
+    "name": "prio-queue.c",
+    "type": "file"
+   },
+   {
+    "name": "prio-queue.h",
+    "type": "file"
+   },
+   {
+    "name": "progress.c",
+    "type": "file"
+   },
+   {
+    "name": "progress.h",
+    "type": "file"
+   },
+   {
+    "name": "promisor-remote.c",
+    "type": "file"
+   },
+   {
+    "name": "promisor-remote.h",
+    "type": "file"
+   },
+   {
+    "name": "prompt.c",
+    "type": "file"
+   },
+   {
+    "name": "prompt.h",
+    "type": "file"
+   },
+   {
+    "name": "protocol-caps.c",
+    "type": "file"
+   },
+   {
+    "name": "protocol-caps.h",
+    "type": "file"
+   },
+   {
+    "name": "protocol.c",
+    "type": "file"
+   },
+   {
+    "name": "protocol.h",
+    "type": "file"
+   },
+   {
+    "name": "prune-packed.c",
+    "type": "file"
+   },
+   {
+    "name": "prune-packed.h",
+    "type": "file"
+   },
+   {
+    "name": "pseudo-merge.c",
+    "type": "file"
+   },
+   {
+    "name": "pseudo-merge.h",
+    "type": "file"
+   },
+   {
+    "name": "quote.c",
+    "type": "file"
+   },
+   {
+    "name": "quote.h",
+    "type": "file"
+   },
+   {
+    "name": "range-diff.c",
+    "type": "file"
+   },
+   {
+    "name": "range-diff.h",
+    "type": "file"
+   },
+   {
+    "name": "reachable.c",
+    "type": "file"
+   },
+   {
+    "name": "reachable.h",
+    "type": "file"
+   },
+   {
+    "name": "read-cache-ll.h",
+    "type": "file"
+   },
+   {
+    "name": "read-cache.c",
+    "type": "file"
+   },
+   {
+    "name": "read-cache.h",
+    "type": "file"
+   },
+   {
+    "name": "rebase-interactive.c",
+    "type": "file"
+   },
+   {
+    "name": "rebase-interactive.h",
+    "type": "file"
+   },
+   {
+    "name": "rebase.c",
+    "type": "file"
+   },
+   {
+    "name": "rebase.h",
+    "type": "file"
+   },
+   {
+    "name": "ref-filter.c",
+    "type": "file"
+   },
+   {
+    "name": "ref-filter.h",
+    "type": "file"
+   },
+   {
+    "name": "reflog-walk.c",
+    "type": "file"
+   },
+   {
+    "name": "reflog-walk.h",
+    "type": "file"
+   },
+   {
+    "name": "reflog.c",
+    "type": "file"
+   },
+   {
+    "name": "reflog.h",
+    "type": "file"
+   },
+   {
+    "name": "refs.c",
+    "type": "file"
+   },
+   {
+    "name": "refs.h",
+    "type": "file"
+   },
+   {
+    "name": "refs",
+    "type": "dir"
+   },
+   {
+    "name": "refspec.c",
+    "type": "file"
+   },
+   {
+    "name": "refspec.h",
+    "type": "file"
+   },
+   {
+    "name": "reftable",
+    "type": "dir"
+   },
+   {
+    "name": "remote-curl.c",
+    "type": "file"
+   },
+   {
+    "name": "remote.c",
+    "type": "file"
+   },
+   {
+    "name": "remote.h",
+    "type": "file"
+   },
+   {
+    "name": "repack-cruft.c",
+    "type": "file"
+   },
+   {
+    "name": "repack-filtered.c",
+    "type": "file"
+   },
+   {
+    "name": "repack-geometry.c",
+    "type": "file"
+   },
+   {
+    "name": "repack-midx.c",
+    "type": "file"
+   },
+   {
+    "name": "repack-promisor.c",
+    "type": "file"
+   },
+   {
+    "name": "repack.c",
+    "type": "file"
+   },
+   {
+    "name": "repack.h",
+    "type": "file"
+   },
+   {
+    "name": "replace-object.c",
+    "type": "file"
+   },
+   {
+    "name": "replace-object.h",
+    "type": "file"
+   },
+   {
+    "name": "replay.c",
+    "type": "file"
+   },
+   {
+    "name": "replay.h",
+    "type": "file"
+   },
+   {
+    "name": "repo-settings.c",
+    "type": "file"
+   },
+   {
+    "name": "repo-settings.h",
+    "type": "file"
+   },
+   {
+    "name": "repository.c",
+    "type": "file"
+   },
+   {
+    "name": "repository.h",
+    "type": "file"
+   },
+   {
+    "name": "rerere.c",
+    "type": "file"
+   },
+   {
+    "name": "rerere.h",
+    "type": "file"
+   },
+   {
+    "name": "reset.c",
+    "type": "file"
+   },
+   {
+    "name": "reset.h",
+    "type": "file"
+   },
+   {
+    "name": "resolve-undo.c",
+    "type": "file"
+   },
+   {
+    "name": "resolve-undo.h",
+    "type": "file"
+   },
+   {
+    "name": "revision.c",
+    "type": "file"
+   },
+   {
+    "name": "revision.h",
+    "type": "file"
+   },
+   {
+    "name": "run-command.c",
+    "type": "file"
+   },
+   {
+    "name": "run-command.h",
+    "type": "file"
+   },
+   {
+    "name": "sane-ctype.h",
+    "type": "file"
+   },
+   {
+    "name": "scalar.c",
+    "type": "file"
+   },
+   {
+    "name": "send-pack.c",
+    "type": "file"
+   },
+   {
+    "name": "send-pack.h",
+    "type": "file"
+   },
+   {
+    "name": "sequencer.c",
+    "type": "file"
+   },
+   {
+    "name": "sequencer.h",
+    "type": "file"
+   },
+   {
+    "name": "serve.c",
+    "type": "file"
+   },
+   {
+    "name": "serve.h",
+    "type": "file"
+   },
+   {
+    "name": "server-info.c",
+    "type": "file"
+   },
+   {
+    "name": "server-info.h",
+    "type": "file"
+   },
+   {
+    "name": "setup.c",
+    "type": "file"
+   },
+   {
+    "name": "setup.h",
+    "type": "file"
+   },
+   {
+    "name": "sh-i18n--envsubst.c",
+    "type": "file"
+   },
+   {
+    "name": "sha1",
+    "type": "dir"
+   },
+   {
+    "name": "sha1collisiondetection",
+    "type": "file"
+   },
+   {
+    "name": "sha1dc",
+    "type": "dir"
+   },
+   {
+    "name": "sha1dc_git.c",
+    "type": "file"
+   },
+   {
+    "name": "sha1dc_git.h",
+    "type": "file"
+   },
+   {
+    "name": "sha256",
+    "type": "dir"
+   },
+   {
+    "name": "shallow.c",
+    "type": "file"
+   },
+   {
+    "name": "shallow.h",
+    "type": "file"
+   },
+   {
+    "name": "shared.mak",
+    "type": "file"
+   },
+   {
+    "name": "shell.c",
+    "type": "file"
+   },
+   {
+    "name": "shortlog.h",
+    "type": "file"
+   },
+   {
+    "name": "sideband.c",
+    "type": "file"
+   },
+   {
+    "name": "sideband.h",
+    "type": "file"
+   },
+   {
+    "name": "sigchain.c",
+    "type": "file"
+   },
+   {
+    "name": "sigchain.h",
+    "type": "file"
+   },
+   {
+    "name": "simple-ipc.h",
+    "type": "file"
+   },
+   {
+    "name": "sparse-index.c",
+    "type": "file"
+   },
+   {
+    "name": "sparse-index.h",
+    "type": "file"
+   },
+   {
+    "name": "split-index.c",
+    "type": "file"
+   },
+   {
+    "name": "split-index.h",
+    "type": "file"
+   },
+   {
+    "name": "src",
+    "type": "dir"
+   },
+   {
+    "name": "stable-qsort.c",
+    "type": "file"
+   },
+   {
+    "name": "statinfo.c",
+    "type": "file"
+   },
+   {
+    "name": "statinfo.h",
+    "type": "file"
+   },
+   {
+    "name": "strbuf.c",
+    "type": "file"
+   },
+   {
+    "name": "strbuf.h",
+    "type": "file"
+   },
+   {
+    "name": "string-list.c",
+    "type": "file"
+   },
+   {
+    "name": "string-list.h",
+    "type": "file"
+   },
+   {
+    "name": "strmap.c",
+    "type": "file"
+   },
+   {
+    "name": "strmap.h",
+    "type": "file"
+   },
+   {
+    "name": "strvec.c",
+    "type": "file"
+   },
+   {
+    "name": "strvec.h",
+    "type": "file"
+   },
+   {
+    "name": "sub-process.c",
+    "type": "file"
+   },
+   {
+    "name": "sub-process.h",
+    "type": "file"
+   },
+   {
+    "name": "submodule-config.c",
+    "type": "file"
+   },
+   {
+    "name": "submodule-config.h",
+    "type": "file"
+   },
+   {
+    "name": "submodule.c",
+    "type": "file"
+   },
+   {
+    "name": "submodule.h",
+    "type": "file"
+   },
+   {
+    "name": "subprojects",
+    "type": "dir"
+   },
+   {
+    "name": "symlinks.c",
+    "type": "file"
+   },
+   {
+    "name": "symlinks.h",
+    "type": "file"
+   },
+   {
+    "name": "t",
+    "type": "dir"
+   },
+   {
+    "name": "tag.c",
+    "type": "file"
+   },
+   {
+    "name": "tag.h",
+    "type": "file"
+   },
+   {
+    "name": "tar.h",
+    "type": "file"
+   },
+   {
+    "name": "tempfile.c",
+    "type": "file"
+   },
+   {
+    "name": "tempfile.h",
+    "type": "file"
+   },
+   {
+    "name": "templates",
+    "type": "dir"
+   },
+   {
+    "name": "thread-utils.c",
+    "type": "file"
+   },
+   {
+    "name": "thread-utils.h",
+    "type": "file"
+   },
+   {
+    "name": "tmp-objdir.c",
+    "type": "file"
+   },
+   {
+    "name": "tmp-objdir.h",
+    "type": "file"
+   },
+   {
+    "name": "tools",
+    "type": "dir"
+   },
+   {
+    "name": "trace.c",
+    "type": "file"
+   },
+   {
+    "name": "trace.h",
+    "type": "file"
+   },
+   {
+    "name": "trace2.c",
+    "type": "file"
+   },
+   {
+    "name": "trace2.h",
+    "type": "file"
+   },
+   {
+    "name": "trace2",
+    "type": "dir"
+   },
+   {
+    "name": "trailer.c",
+    "type": "file"
+   },
+   {
+    "name": "trailer.h",
+    "type": "file"
+   },
+   {
+    "name": "transport-helper.c",
+    "type": "file"
+   },
+   {
+    "name": "transport-internal.h",
+    "type": "file"
+   },
+   {
+    "name": "transport.c",
+    "type": "file"
+   },
+   {
+    "name": "transport.h",
+    "type": "file"
+   },
+   {
+    "name": "tree-diff.c",
+    "type": "file"
+   },
+   {
+    "name": "tree-walk.c",
+    "type": "file"
+   },
+   {
+    "name": "tree-walk.h",
+    "type": "file"
+   },
+   {
+    "name": "tree.c",
+    "type": "file"
+   },
+   {
+    "name": "tree.h",
+    "type": "file"
+   },
+   {
+    "name": "unicode-width.h",
+    "type": "file"
+   },
+   {
+    "name": "unimplemented.sh",
+    "type": "file"
+   },
+   {
+    "name": "unix-socket.c",
+    "type": "file"
+   },
+   {
+    "name": "unix-socket.h",
+    "type": "file"
+   },
+   {
+    "name": "unix-stream-server.c",
+    "type": "file"
+   },
+   {
+    "name": "unix-stream-server.h",
+    "type": "file"
+   },
+   {
+    "name": "unpack-trees.c",
+    "type": "file"
+   },
+   {
+    "name": "unpack-trees.h",
+    "type": "file"
+   },
+   {
+    "name": "upload-pack.c",
+    "type": "file"
+   },
+   {
+    "name": "upload-pack.h",
+    "type": "file"
+   },
+   {
+    "name": "url.c",
+    "type": "file"
+   },
+   {
+    "name": "url.h",
+    "type": "file"
+   },
+   {
+    "name": "urlmatch.c",
+    "type": "file"
+   },
+   {
+    "name": "urlmatch.h",
+    "type": "file"
+   },
+   {
+    "name": "usage.c",
+    "type": "file"
+   },
+   {
+    "name": "userdiff.c",
+    "type": "file"
+   },
+   {
+    "name": "userdiff.h",
+    "type": "file"
+   },
+   {
+    "name": "utf8.c",
+    "type": "file"
+   },
+   {
+    "name": "utf8.h",
+    "type": "file"
+   },
+   {
+    "name": "varint.c",
+    "type": "file"
+   },
+   {
+    "name": "varint.h",
+    "type": "file"
+   },
+   {
+    "name": "version-def.h.in",
+    "type": "file"
+   },
+   {
+    "name": "version.c",
+    "type": "file"
+   },
+   {
+    "name": "version.h",
+    "type": "file"
+   },
+   {
+    "name": "versioncmp.c",
+    "type": "file"
+   },
+   {
+    "name": "versioncmp.h",
+    "type": "file"
+   },
+   {
+    "name": "walker.c",
+    "type": "file"
+   },
+   {
+    "name": "walker.h",
+    "type": "file"
+   },
+   {
+    "name": "wildmatch.c",
+    "type": "file"
+   },
+   {
+    "name": "wildmatch.h",
+    "type": "file"
+   },
+   {
+    "name": "worktree.c",
+    "type": "file"
+   },
+   {
+    "name": "worktree.h",
+    "type": "file"
+   },
+   {
+    "name": "wrapper.c",
+    "type": "file"
+   },
+   {
+    "name": "wrapper.h",
+    "type": "file"
+   },
+   {
+    "name": "write-or-die.c",
+    "type": "file"
+   },
+   {
+    "name": "write-or-die.h",
+    "type": "file"
+   },
+   {
+    "name": "ws.c",
+    "type": "file"
+   },
+   {
+    "name": "ws.h",
+    "type": "file"
+   },
+   {
+    "name": "wt-status.c",
+    "type": "file"
+   },
+   {
+    "name": "wt-status.h",
+    "type": "file"
+   },
+   {
+    "name": "xdiff-interface.c",
+    "type": "file"
+   },
+   {
+    "name": "xdiff-interface.h",
+    "type": "file"
+   },
+   {
+    "name": "xdiff",
+    "type": "dir"
+   }
+  ],
+  "status": 200
+ },
+ "https://api.github.com/repos/git/git/contents/COPYING.LIB?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/git/git/contents/COPYING.txt?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/git/git/contents/COPYING?ref=master": {
+  "json": {
+   "content": "\n Note that the only valid version of the GPL as far as this project\n is concerned is _this_ particular version of the license (ie v2, not\n v2.2 or v3.x or whatever), unless explicitly otherwise stated.\n\n HOWEVER, in order to allow a migration to GPLv3 if that seems like\n a good idea, I also ask that people involved with the project make\n their preferences known. In particular, if you trust me to make that\n decision, you might note so in your copyright message, ie something\n like\n\n\tThis file is licensed under the GPL v2, or a later version\n\tat the discretion of Linus.\n\n  might avoid issues. But we can also just decide to synchronize and\n  contact all copyright holders on record if/when the occasion arises.\n\n\t\t\tLinus Torvalds\n\n----------------------------------------\n\n\t\t    GNU GENERAL PUBLIC LICENSE\n\t\t       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n\t\t\t    Preamble\n\n  The licenses for most software are designed to take away your\nfreedom to share and change it.  By contrast, the GNU General Public\nLicense is intended to guarantee your freedom to share and change free\nsoftware--to make sure the software is free for all its users.  This\nGeneral Public License applies to most of the Free Software\nFoundation's software and to any other program whose authors commit to\nusing it.  (Some other Free Software Foundation software is covered by\nthe GNU Lesser General Public License instead.)  You can apply it to\nyour programs, too.\n\n  When we speak of free software, we are referring to freedom, not\nprice.  Our General Public Licenses are designed to make sure that you\nhave the freedom to distribute copies of free software (and charge for\nthis service if you wish), that you receive source code or can get it\nif you want it, that you can change the software or use pieces of it\nin new free programs; and that you know you can do these things.\n\n  To protect your rights, we need to make restrictions that forbid\nanyone to deny you these rights or to ask you to surrender the rights.\nThese restrictions translate to certain responsibilities for you if you\ndistribute copies of the software, or if you modify it.\n\n  For example, if you distribute copies of such a program, whether\ngratis or for a fee, you must give the recipients all the rights that\nyou have.  You must make sure that they, too, receive or can get the\nsource code.  And you must show them these terms so they know their\nrights.\n\n  We protect your rights with two steps: (1) copyright the software, and\n(2) offer you this license which gives you legal permission to copy,\ndistribute and/or modify the software.\n\n  Also, for each author's protection and ours, we want to make certain\nthat everyone understands that there is no warranty for this free\nsoftware.  If the software is modified by someone else and passed on, we\nwant its recipients to know that what they have is not the original, so\nthat any problems introduced by others will not reflect on the original\nauthors' reputations.\n\n  Finally, any free program is threatened constantly by software\npatents.  We wish to avoid the danger that redistributors of a free\nprogram will individually obtain patent licenses, in effect making the\nprogram proprietary.  To prevent this, we have made it clear that any\npatent must be licensed for everyone's free use or not licensed at all.\n\n  The precise terms and conditions for copying, distribution and\nmodification follow.\n\n\t\t    GNU GENERAL PUBLIC LICENSE\n   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION\n\n  0. This License applies to any program or other work which contains\na notice placed by the copyright holder saying it may be distributed\nunder the terms of this General Public License.  The \"Program\", below,\nrefers to any such program or work, and a \"work based on the Program\"\nmeans either the Program or any derivative work under copyright law:\nthat is to say, a work containing the Program or a portion of it,\neither verbatim or with modifications and/or translated into another\nlanguage.  (Hereinafter, translation is included without limitation in\nthe term \"modification\".)  Each licensee is addressed as \"you\".\n\nActivities other than copying, distribution and modification are not\ncovered by this License; they are outside its scope.  The act of\nrunning the Program is not restricted, and the output from the Program\nis covered only if its contents constitute a work based on the\nProgram (independent of having been made by running the Program).\nWhether that is true depends on what the Program does.\n\n  1. You may copy and distribute verbatim copies of the Program's\nsource code as you receive it, in any medium, provided that you\nconspicuously and appropriately publish on each copy an appropriate\ncopyright notice and disclaimer of warranty; keep intact all the\nnotices that refer to this License and to the absence of any warranty;\nand give any other recipients of the Program a copy of this License\nalong with the Program.\n\nYou may charge a fee for the physical act of transferring a copy, and\nyou may at your option offer warranty protection in exchange for a fee.\n\n  2. You may modify your copy or copies of the Program or any portion\nof it, thus forming a work based on the Program, and copy and\ndistribute such modifications or work under the terms of Section 1\nabove, provided that you also meet all of these conditions:\n\n    a) You must cause the modified files to carry prominent notices\n    stating that you changed the files and the date of any change.\n\n    b) You must cause any work that you distribute or publish, that in\n    whole or in part contains or is derived from the Program or any\n    part thereof, to be licensed as a whole at no charge to all third\n    parties under the terms of this License.\n\n    c) If the modified program normally reads c",
+   "encoding": "utf-8-trimmed",
+   "name": "COPYING",
+   "size": 18765
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/git/git/contents/Cargo.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/git/git/git/blobs/2f51bf5d5ff5f83e023cbc17f4365d99ab837ce0",
+    "html": "https://github.com/git/git/blob/master/Cargo.toml",
+    "self": "https://api.github.com/repos/git/git/contents/Cargo.toml?ref=master"
+   },
+   "content": "W3BhY2thZ2VdCm5hbWUgPSAiZ2l0Y29yZSIKdmVyc2lvbiA9ICIwLjEuMCIK\nZWRpdGlvbiA9ICIyMDE4IgpydXN0LXZlcnNpb24gPSAiMS40OS4wIgoKW2xp\nYl0KY3JhdGUtdHlwZSA9IFsic3RhdGljbGliIl0KCltkZXBlbmRlbmNpZXNd\nCg==\n",
+   "download_url": "https://raw.githubusercontent.com/git/git/master/Cargo.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/git/git/git/blobs/2f51bf5d5ff5f83e023cbc17f4365d99ab837ce0",
+   "html_url": "https://github.com/git/git/blob/master/Cargo.toml",
+   "name": "Cargo.toml",
+   "path": "Cargo.toml",
+   "sha": "2f51bf5d5ff5f83e023cbc17f4365d99ab837ce0",
+   "size": 136,
+   "type": "file",
+   "url": "https://api.github.com/repos/git/git/contents/Cargo.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/git/git/contents/LICENSE.md?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/git/git/contents/LICENSE.txt?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/git/git/contents/LICENSE?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/git/git/contents/contrib/libgit-rs/Cargo.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/git/git/git/blobs/c3289e69db59395a6faf184fffd2263898013fbc",
+    "html": "https://github.com/git/git/blob/master/contrib/libgit-rs/Cargo.toml",
+    "self": "https://api.github.com/repos/git/git/contents/contrib/libgit-rs/Cargo.toml?ref=master"
+   },
+   "content": "W3BhY2thZ2VdCm5hbWUgPSAibGliZ2l0Igp2ZXJzaW9uID0gIjAuMS4wIgpl\nZGl0aW9uID0gIjIwMjEiCmJ1aWxkID0gImJ1aWxkLnJzIgpydXN0LXZlcnNp\nb24gPSAiMS42MyIgIyBUT0RPOiBPbmNlIHdlIGhpdCAxLjg0IG9yIG5ld2Vy\nLCB3ZSBtYXkgd2FudCB0byByZW1vdmUgQ2FyZ28ubG9jayBmcm9tCiAgICAg\nICAgICAgICAgICAgICAgICAjIHZlcnNpb24gY29udHJvbC4gU2VlIGh0dHBz\nOi8vbG9yZS5rZXJuZWwub3JnL2dpdC9aNDdqZ0stb01qRlJTc2xyQHRhcGV0\ndGUuY3J1c3R5dG9vdGhwYXN0ZS5uZXQvCgoKW2xpYl0KcGF0aCA9ICJzcmMv\nbGliLnJzIgoKW2RlcGVuZGVuY2llc10KbGliZ2l0LXN5cyA9IHsgdmVyc2lv\nbiA9ICIwLjEuMCIsIHBhdGggPSAiLi4vbGliZ2l0LXN5cyIgfQoKW2J1aWxk\nLWRlcGVuZGVuY2llc10KYXV0b2NmZyA9ICIxLjQuMCIK\n",
+   "download_url": "https://raw.githubusercontent.com/git/git/master/contrib/libgit-rs/Cargo.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/git/git/git/blobs/c3289e69db59395a6faf184fffd2263898013fbc",
+   "html_url": "https://github.com/git/git/blob/master/contrib/libgit-rs/Cargo.toml",
+   "name": "Cargo.toml",
+   "path": "contrib/libgit-rs/Cargo.toml",
+   "sha": "c3289e69db59395a6faf184fffd2263898013fbc",
+   "size": 438,
+   "type": "file",
+   "url": "https://api.github.com/repos/git/git/contents/contrib/libgit-rs/Cargo.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/git/git/contents/contrib/libgit-sys/Cargo.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/git/git/git/blobs/e0623022c35f01123bd72a9bf911dc72b3bf6590",
+    "html": "https://github.com/git/git/blob/master/contrib/libgit-sys/Cargo.toml",
+    "self": "https://api.github.com/repos/git/git/contents/contrib/libgit-sys/Cargo.toml?ref=master"
+   },
+   "content": "W3BhY2thZ2VdCm5hbWUgPSAibGliZ2l0LXN5cyIKdmVyc2lvbiA9ICIwLjEu\nMCIKZWRpdGlvbiA9ICIyMDIxIgpidWlsZCA9ICJidWlsZC5ycyIKbGlua3Mg\nPSAiZ2l0cHViIgpydXN0LXZlcnNpb24gPSAiMS42MyIgIyBUT0RPOiBPbmNl\nIHdlIGhpdCAxLjg0IG9yIG5ld2VyLCB3ZSBtYXkgd2FudCB0byByZW1vdmUg\nQ2FyZ28ubG9jayBmcm9tCiAgICAgICAgICAgICAgICAgICAgICAjIHZlcnNp\nb24gY29udHJvbC4gU2VlIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2dpdC9a\nNDdqZ0stb01qRlJTc2xyQHRhcGV0dGUuY3J1c3R5dG9vdGhwYXN0ZS5uZXQv\nCmRlc2NyaXB0aW9uID0gIk5hdGl2ZSBiaW5kaW5ncyB0byBhIHBvcnRpb24g\nb2YgbGliZ2l0IgoKW2xpYl0KcGF0aCA9ICJzcmMvbGliLnJzIgoKW2RlcGVu\nZGVuY2llc10KbGliei1zeXMgPSAiMS4xLjE5IgoKW2J1aWxkLWRlcGVuZGVu\nY2llc10KYXV0b2NmZyA9ICIxLjQuMCIKbWFrZS1jbWQgPSAiMC4xLjAiCg==\n",
+   "download_url": "https://raw.githubusercontent.com/git/git/master/contrib/libgit-sys/Cargo.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/git/git/git/blobs/e0623022c35f01123bd72a9bf911dc72b3bf6590",
+   "html_url": "https://github.com/git/git/blob/master/contrib/libgit-sys/Cargo.toml",
+   "name": "Cargo.toml",
+   "path": "contrib/libgit-sys/Cargo.toml",
+   "sha": "e0623022c35f01123bd72a9bf911dc72b3bf6590",
+   "size": 493,
+   "type": "file",
+   "url": "https://api.github.com/repos/git/git/contents/contrib/libgit-sys/Cargo.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/git/git/git/trees/master?recursive=1": {
+  "json": {
+   "tree": [
+    {
+     "path": "Cargo.toml",
+     "type": "blob"
+    },
+    {
+     "path": "contrib/libgit-rs/Cargo.toml",
+     "type": "blob"
+    },
+    {
+     "path": "contrib/libgit-sys/Cargo.toml",
+     "type": "blob"
+    }
+   ],
+   "truncated": false
+  },
+  "status": 200
+ },
+ "https://crates.io/api/v1/crates/autocfg": {
+  "json": {
+   "crate": {
+    "default_version": "1.5.1",
+    "max_stable_version": "1.5.1",
+    "name": "autocfg",
+    "newest_version": "1.5.1"
+   },
+   "versions": [
+    {
+     "license": "Apache-2.0 OR MIT",
+     "num": "1.5.1",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 OR MIT",
+     "num": "1.5.0",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 OR MIT",
+     "num": "1.4.0",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 OR MIT",
+     "num": "1.3.0",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 OR MIT",
+     "num": "1.2.0",
+     "yanked": false
+    }
+   ]
+  },
+  "status": 200
+ },
+ "https://crates.io/api/v1/crates/libgit-sys": {
+  "json": {
+   "crate": {
+    "default_version": "0.1.0",
+    "max_stable_version": "0.1.0",
+    "name": "libgit-sys",
+    "newest_version": "0.1.0"
+   },
+   "versions": [
+    {
+     "license": "GPL-2.0-only",
+     "num": "0.1.0",
+     "yanked": false
+    }
+   ]
+  },
+  "status": 200
+ },
+ "https://crates.io/api/v1/crates/libz-sys": {
+  "json": {
+   "crate": {
+    "default_version": "1.1.29",
+    "max_stable_version": "1.1.29",
+    "name": "libz-sys",
+    "newest_version": "1.1.29"
+   },
+   "versions": [
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.1.29",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.1.28",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.1.27",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.1.26",
+     "yanked": true
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.1.25",
+     "yanked": false
+    }
+   ]
+  },
+  "status": 200
+ },
+ "https://crates.io/api/v1/crates/make-cmd": {
+  "json": {
+   "crate": {
+    "default_version": "0.1.0",
+    "max_stable_version": "0.1.0",
+    "name": "make-cmd",
+    "newest_version": "0.1.0"
+   },
+   "versions": [
+    {
+     "license": "MIT",
+     "num": "0.1.0",
+     "yanked": false
+    }
+   ]
+  },
+  "status": 200
+ }
+}

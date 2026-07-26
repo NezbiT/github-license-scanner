@@ -1,0 +1,536 @@
+{
+ "https://api.github.com/repos/psf/requests": {
+  "json": {
+   "allow_forking": true,
+   "archive_url": "https://api.github.com/repos/psf/requests/{archive_format}{/ref}",
+   "archived": false,
+   "assignees_url": "https://api.github.com/repos/psf/requests/assignees{/user}",
+   "blobs_url": "https://api.github.com/repos/psf/requests/git/blobs{/sha}",
+   "branches_url": "https://api.github.com/repos/psf/requests/branches{/branch}",
+   "clone_url": "https://github.com/psf/requests.git",
+   "collaborators_url": "https://api.github.com/repos/psf/requests/collaborators{/collaborator}",
+   "comments_url": "https://api.github.com/repos/psf/requests/comments{/number}",
+   "commits_url": "https://api.github.com/repos/psf/requests/commits{/sha}",
+   "compare_url": "https://api.github.com/repos/psf/requests/compare/{base}...{head}",
+   "contents_url": "https://api.github.com/repos/psf/requests/contents/{+path}",
+   "contributors_url": "https://api.github.com/repos/psf/requests/contributors",
+   "created_at": "2011-02-13T18:38:17Z",
+   "custom_properties": {},
+   "default_branch": "main",
+   "deployments_url": "https://api.github.com/repos/psf/requests/deployments",
+   "description": "A simple, yet elegant, HTTP library.",
+   "disabled": false,
+   "downloads_url": "https://api.github.com/repos/psf/requests/downloads",
+   "events_url": "https://api.github.com/repos/psf/requests/events",
+   "fork": false,
+   "forks": 10033,
+   "forks_count": 10033,
+   "forks_url": "https://api.github.com/repos/psf/requests/forks",
+   "full_name": "psf/requests",
+   "git_commits_url": "https://api.github.com/repos/psf/requests/git/commits{/sha}",
+   "git_refs_url": "https://api.github.com/repos/psf/requests/git/refs{/sha}",
+   "git_tags_url": "https://api.github.com/repos/psf/requests/git/tags{/sha}",
+   "git_url": "git://github.com/psf/requests.git",
+   "has_discussions": false,
+   "has_downloads": false,
+   "has_issues": true,
+   "has_pages": false,
+   "has_projects": false,
+   "has_pull_requests": true,
+   "has_wiki": true,
+   "homepage": "https://requests.readthedocs.io/en/latest/",
+   "hooks_url": "https://api.github.com/repos/psf/requests/hooks",
+   "html_url": "https://github.com/psf/requests",
+   "id": 1362490,
+   "is_template": false,
+   "issue_comment_url": "https://api.github.com/repos/psf/requests/issues/comments{/number}",
+   "issue_events_url": "https://api.github.com/repos/psf/requests/issues/events{/number}",
+   "issues_url": "https://api.github.com/repos/psf/requests/issues{/number}",
+   "keys_url": "https://api.github.com/repos/psf/requests/keys{/key_id}",
+   "labels_url": "https://api.github.com/repos/psf/requests/labels{/name}",
+   "language": "Python",
+   "languages_url": "https://api.github.com/repos/psf/requests/languages",
+   "license": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "node_id": "MDc6TGljZW5zZTI=",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0"
+   },
+   "merges_url": "https://api.github.com/repos/psf/requests/merges",
+   "milestones_url": "https://api.github.com/repos/psf/requests/milestones{/number}",
+   "mirror_url": null,
+   "name": "requests",
+   "network_count": 10033,
+   "node_id": "MDEwOlJlcG9zaXRvcnkxMzYyNDkw",
+   "notifications_url": "https://api.github.com/repos/psf/requests/notifications{?since,all,participating}",
+   "open_issues": 233,
+   "open_issues_count": 233,
+   "organization": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/50630501?v=4",
+    "events_url": "https://api.github.com/users/psf/events{/privacy}",
+    "followers_url": "https://api.github.com/users/psf/followers",
+    "following_url": "https://api.github.com/users/psf/following{/other_user}",
+    "gists_url": "https://api.github.com/users/psf/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/psf",
+    "id": 50630501,
+    "login": "psf",
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjUwNjMwNTAx",
+    "organizations_url": "https://api.github.com/users/psf/orgs",
+    "received_events_url": "https://api.github.com/users/psf/received_events",
+    "repos_url": "https://api.github.com/users/psf/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/psf/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/psf/subscriptions",
+    "type": "Organization",
+    "url": "https://api.github.com/users/psf",
+    "user_view_type": "public"
+   },
+   "owner": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/50630501?v=4",
+    "events_url": "https://api.github.com/users/psf/events{/privacy}",
+    "followers_url": "https://api.github.com/users/psf/followers",
+    "following_url": "https://api.github.com/users/psf/following{/other_user}",
+    "gists_url": "https://api.github.com/users/psf/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/psf",
+    "id": 50630501,
+    "login": "psf",
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjUwNjMwNTAx",
+    "organizations_url": "https://api.github.com/users/psf/orgs",
+    "received_events_url": "https://api.github.com/users/psf/received_events",
+    "repos_url": "https://api.github.com/users/psf/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/psf/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/psf/subscriptions",
+    "type": "Organization",
+    "url": "https://api.github.com/users/psf",
+    "user_view_type": "public"
+   },
+   "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+   },
+   "private": false,
+   "pull_request_creation_policy": "collaborators_only",
+   "pulls_url": "https://api.github.com/repos/psf/requests/pulls{/number}",
+   "pushed_at": "2026-07-20T18:41:19Z",
+   "releases_url": "https://api.github.com/repos/psf/requests/releases{/id}",
+   "size": 13567,
+   "ssh_url": "git@github.com:psf/requests.git",
+   "stargazers_count": 54178,
+   "stargazers_url": "https://api.github.com/repos/psf/requests/stargazers",
+   "statuses_url": "https://api.github.com/repos/psf/requests/statuses/{sha}",
+   "subscribers_count": 1299,
+   "subscribers_url": "https://api.github.com/repos/psf/requests/subscribers",
+   "subscription_url": "https://api.github.com/repos/psf/requests/subscription",
+   "svn_url": "https://github.com/psf/requests",
+   "tags_url": "https://api.github.com/repos/psf/requests/tags",
+   "teams_url": "https://api.github.com/repos/psf/requests/teams",
+   "temp_clone_token": "",
+   "topics": [
+    "client",
+    "cookies",
+    "forhumans",
+    "http",
+    "humans",
+    "python",
+    "python-requests",
+    "requests"
+   ],
+   "trees_url": "https://api.github.com/repos/psf/requests/git/trees{/sha}",
+   "updated_at": "2026-07-26T16:53:45Z",
+   "url": "https://api.github.com/repos/psf/requests",
+   "visibility": "public",
+   "watchers": 54178,
+   "watchers_count": 54178,
+   "web_commit_signoff_required": false
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/psf/requests/contents/?ref=main": {
+  "json": [
+   {
+    "name": ".coveragerc",
+    "type": "file"
+   },
+   {
+    "name": ".git-blame-ignore-revs",
+    "type": "file"
+   },
+   {
+    "name": ".github",
+    "type": "dir"
+   },
+   {
+    "name": ".gitignore",
+    "type": "file"
+   },
+   {
+    "name": ".pre-commit-config.yaml",
+    "type": "file"
+   },
+   {
+    "name": ".readthedocs.yaml",
+    "type": "file"
+   },
+   {
+    "name": "AUTHORS.rst",
+    "type": "file"
+   },
+   {
+    "name": "HISTORY.md",
+    "type": "file"
+   },
+   {
+    "name": "LICENSE",
+    "type": "file"
+   },
+   {
+    "name": "MANIFEST.in",
+    "type": "file"
+   },
+   {
+    "name": "Makefile",
+    "type": "file"
+   },
+   {
+    "name": "NOTICE",
+    "type": "file"
+   },
+   {
+    "name": "README.md",
+    "type": "file"
+   },
+   {
+    "name": "docs",
+    "type": "dir"
+   },
+   {
+    "name": "ext",
+    "type": "dir"
+   },
+   {
+    "name": "pyproject.toml",
+    "type": "file"
+   },
+   {
+    "name": "requirements-dev.txt",
+    "type": "file"
+   },
+   {
+    "name": "setup.py",
+    "type": "file"
+   },
+   {
+    "name": "src",
+    "type": "dir"
+   },
+   {
+    "name": "tests",
+    "type": "dir"
+   },
+   {
+    "name": "tox.ini",
+    "type": "file"
+   }
+  ],
+  "status": 200
+ },
+ "https://api.github.com/repos/psf/requests/contents/COPYING.LIB?ref=main": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/psf/requests/contents/COPYING.txt?ref=main": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/psf/requests/contents/COPYING?ref=main": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/psf/requests/contents/LICENSE.md?ref=main": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/psf/requests/contents/LICENSE.txt?ref=main": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/psf/requests/contents/LICENSE?ref=main": {
+  "json": {
+   "content": "\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excl",
+   "encoding": "utf-8-trimmed",
+   "name": "LICENSE",
+   "size": 10142
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/psf/requests/contents/docs/requirements.txt?ref=main": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/psf/requests/git/blobs/2af334d57b7103158612d79e5d786fc29e2f380e",
+    "html": "https://github.com/psf/requests/blob/main/docs/requirements.txt",
+    "self": "https://api.github.com/repos/psf/requests/contents/docs/requirements.txt?ref=main"
+   },
+   "content": "IyBQaW5uaW5nIHRvIGF2b2lkIHVuZXhwZWN0ZWQgYnJlYWthZ2VzLgojIFVz\nZWQgYnkgUlREIHRvIGdlbmVyYXRlIGRvY3MuClNwaGlueD09Ny4yLjYK\n",
+   "download_url": "https://raw.githubusercontent.com/psf/requests/main/docs/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/psf/requests/git/blobs/2af334d57b7103158612d79e5d786fc29e2f380e",
+   "html_url": "https://github.com/psf/requests/blob/main/docs/requirements.txt",
+   "name": "requirements.txt",
+   "path": "docs/requirements.txt",
+   "sha": "2af334d57b7103158612d79e5d786fc29e2f380e",
+   "size": 87,
+   "type": "file",
+   "url": "https://api.github.com/repos/psf/requests/contents/docs/requirements.txt?ref=main"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/psf/requests/contents/pyproject.toml?ref=main": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/psf/requests/git/blobs/e7a1e015e09765802f6ac8d98b5ca5f0daabefb7",
+    "html": "https://github.com/psf/requests/blob/main/pyproject.toml",
+    "self": "https://api.github.com/repos/psf/requests/contents/pyproject.toml?ref=main"
+   },
+   "content": "W2J1aWxkLXN5c3RlbV0KcmVxdWlyZXMgPSBbInNldHVwdG9vbHM+PTYxLjAi\nXQpidWlsZC1iYWNrZW5kID0gInNldHVwdG9vbHMuYnVpbGRfbWV0YSIKCltw\ncm9qZWN0XQpuYW1lID0gInJlcXVlc3RzIgpkZXNjcmlwdGlvbiA9ICJQeXRo\nb24gSFRUUCBmb3IgSHVtYW5zLiIKcmVhZG1lID0gIlJFQURNRS5tZCIKbGlj\nZW5zZSA9IHt0ZXh0ID0gIkFwYWNoZS0yLjAifQphdXRob3JzID0gWwogICAg\neyBuYW1lID0gIktlbm5ldGggUmVpdHoiLCBlbWFpbCA9ICJtZUBrZW5uZXRo\ncmVpdHoub3JnIiB9LApdCm1haW50YWluZXJzID0gWwogICAge25hbWUgPSAi\nSWFuIFN0YXBsZXRvbiBDb3JkYXNjbyIsIGVtYWlsPSJncmFmZmF0Y29sbWlu\nZ292QGdtYWlsLmNvbSJ9LAogICAge25hbWUgPSAiTmF0ZSBQcmV3aXR0Iiwg\nZW1haWw9Im5hdGUucHJld2l0dEBnbWFpbC5jb20ifQpdCnJlcXVpcmVzLXB5\ndGhvbiA9ICI+PTMuMTAiCmRlcGVuZGVuY2llcyA9IFsKICAgICJjaGFyc2V0\nX25vcm1hbGl6ZXI+PTIsPDQiLAogICAgImlkbmE+PTIuNSw8NCIsCiAgICAi\ndXJsbGliMz49MS4yNiw8MyIsCiAgICAiY2VydGlmaT49MjAyMy41LjciCl0K\nZHluYW1pYyA9IFsidmVyc2lvbiJdCgpjbGFzc2lmaWVycyA9IFsKICAgICJE\nZXZlbG9wbWVudCBTdGF0dXMgOjogNSAtIFByb2R1Y3Rpb24vU3RhYmxlIiwK\nICAgICJFbnZpcm9ubWVudCA6OiBXZWIgRW52aXJvbm1lbnQiLAogICAgIklu\ndGVuZGVkIEF1ZGllbmNlIDo6IERldmVsb3BlcnMiLAogICAgIkxpY2Vuc2Ug\nOjogT1NJIEFwcHJvdmVkIDo6IEFwYWNoZSBTb2Z0d2FyZSBMaWNlbnNlIiwK\nICAgICJOYXR1cmFsIExhbmd1YWdlIDo6IEVuZ2xpc2giLAogICAgIk9wZXJh\ndGluZyBTeXN0ZW0gOjogT1MgSW5kZXBlbmRlbnQiLAogICAgIlByb2dyYW1t\naW5nIExhbmd1YWdlIDo6IFB5dGhvbiIsCiAgICAiUHJvZ3JhbW1pbmcgTGFu\nZ3VhZ2UgOjogUHl0aG9uIDo6IDMiLAogICAgIlByb2dyYW1taW5nIExhbmd1\nYWdlIDo6IFB5dGhvbiA6OiAzLjEwIiwKICAgICJQcm9ncmFtbWluZyBMYW5n\ndWFnZSA6OiBQeXRob24gOjogMy4xMSIsCiAgICAiUHJvZ3JhbW1pbmcgTGFu\nZ3VhZ2UgOjogUHl0aG9uIDo6IDMuMTIiLAogICAgIlByb2dyYW1taW5nIExh\nbmd1YWdlIDo6IFB5dGhvbiA6OiAzLjEzIiwKICAgICJQcm9ncmFtbWluZyBM\nYW5ndWFnZSA6OiBQeXRob24gOjogMy4xNCIsCiAgICAiUHJvZ3JhbW1pbmcg\nTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IDMuMTUiLAogICAgIlByb2dyYW1taW5n\nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAzIDo6IE9ubHkiLAogICAgIlByb2dy\nYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiBJbXBsZW1lbnRhdGlvbiA6\nOiBDUHl0aG9uIiwKICAgICJQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRo\nb24gOjogSW1wbGVtZW50YXRpb24gOjogUHlQeSIsCiAgICAiUHJvZ3JhbW1p\nbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IEZyZWUgVGhyZWFkaW5nIDo6IDIg\nLSBCZXRhIiwKICAgICJUb3BpYyA6OiBJbnRlcm5ldCA6OiBXV1cvSFRUUCIs\nCiAgICAiVG9waWMgOjogU29mdHdhcmUgRGV2ZWxvcG1lbnQgOjogTGlicmFy\naWVzIgpdCgpbcHJvamVjdC51cmxzXQpEb2N1bWVudGF0aW9uID0gImh0dHBz\nOi8vcmVxdWVzdHMucmVhZHRoZWRvY3MuaW8iClNvdXJjZSA9ICJodHRwczov\nL2dpdGh1Yi5jb20vcHNmL3JlcXVlc3RzIgoKW3Byb2plY3Qub3B0aW9uYWwt\nZGVwZW5kZW5jaWVzXQpzZWN1cml0eSA9IFtdCnNvY2tzID0gWyJQeVNvY2tz\nPj0xLjUuNiwgIT0xLjUuNyJdCnVzZV9jaGFyZGV0X29uX3B5MyA9IFsiY2hh\ncmRldD49My4wLjIsPDgiXQoKW2RlcGVuZGVuY3ktZ3JvdXBzXQp0ZXN0ID0g\nWwogICAgInJlcXVlc3RzW3NvY2tzXSIsCiAgICAicHl0ZXN0LWh0dHBiaW49\nPTIuMS4wIiwKICAgICJodHRwYmlufj0wLjEwLjAiLAogICAgInB5dGVzdC1j\nb3YiLAogICAgInB5dGVzdC1tb2NrIiwKICAgICJweXRlc3QteGRpc3QiLAog\nICAgInB5dGVzdD49MyIsCiAgICAidHJ1c3RtZSIsCl0KdHlwZWNoZWNrID0g\nWwogICAgInB5cmlnaHQiLAogICAgInR5cGluZ19leHRlbnNpb25zIiwKICAg\nICJjaGFyZGV0IiwKICAgICJjcnlwdG9ncmFwaHkiLAogICAgIlB5T3BlblNT\nTCIsCl0KClt0b29sLnNldHVwdG9vbHNdCmxpY2Vuc2UtZmlsZXMgPSBbIkxJ\nQ0VOU0UiLCAiTk9USUNFIl0KClt0b29sLnNldHVwdG9vbHMuZHluYW1pY10K\ndmVyc2lvbiA9IHthdHRyID0gInJlcXVlc3RzLl9fdmVyc2lvbl9fLl9fdmVy\nc2lvbl9fIn0KClt0b29sLnNldHVwdG9vbHMucGFja2FnZXMuZmluZF0Kd2hl\ncmUgPSBbInNyYyJdCgpbdG9vbC5ydWZmXQp0YXJnZXQtdmVyc2lvbiA9ICJw\neTMxMCIKc3JjID0gWyJzcmMvcmVxdWVzdHMiLCAidGVzdHMiXQpleGNsdWRl\nID0gWyJkb2NzLyIsICJleHQvIl0KClt0b29sLnJ1ZmYubGludF0Kc2VsZWN0\nID0gWwogICAgIkUiLCAgICAgICMgcHljb2Rlc3R5bGUgZXJyb3JzCiAgICAi\nVyIsICAgICAgIyBweWNvZGVzdHlsZSB3YXJuaW5ncwogICAgIkYiLCAgICAg\nICMgcHlmbGFrZXMKICAgICJJIiwgICAgICAjIGlzb3J0CiAgICAiVVAiLCAg\nICAgIyBweXVwZ3JhZGUKICAgICJUMTAiLCAgICAjIGZsYWtlOC1kZWJ1Z2dl\nciAocmVwbGFjZXMgZGVidWctc3RhdGVtZW50cyBob29rKQpdCmlnbm9yZSA9\nIFsiRTIwMyIsICJFNTAxIiwgIlVQMDMxIl0KcGVyLWZpbGUtaWdub3JlcyA9\nIHsic3JjL3JlcXVlc3RzL19faW5pdF9fLnB5IiA9IFsiRTQwMiIsICJGNDAx\nIl0sICJzcmMvcmVxdWVzdHMvY29tcGF0LnB5IiA9IFsiRTQwMiIsICJGNDAx\nIl0sICJ0ZXN0cy9jb21wYXQucHkiID0gWyJGNDAxIl19CgpbdG9vbC5ydWZm\nLmxpbnQuaXNvcnRdCmtub3duLWZpcnN0LXBhcnR5ID0gWyJyZXF1ZXN0cyJd\nCgpbdG9vbC5ydWZmLmZvcm1hdF0KIyBVc2UgYmxhY2stY29tcGF0aWJsZSBm\nb3JtYXR0aW5nCnF1b3RlLXN0eWxlID0gImRvdWJsZSIKaW5kZW50LXN0eWxl\nID0gInNwYWNlIgoKW3Rvb2wucHl0ZXN0LmluaV9vcHRpb25zXQphZGRvcHRz\nID0gIi0tZG9jdGVzdC1tb2R1bGVzIgpkb2N0ZXN0X29wdGlvbmZsYWdzID0g\nIk5PUk1BTElaRV9XSElURVNQQUNFIEVMTElQU0lTIgptaW52ZXJzaW9uID0g\nIjYuMiIKdGVzdHBhdGhzID0gWyJ0ZXN0cyJdCgoKW3Rvb2wucHlyaWdodF0K\naW5jbHVkZSA9IFsic3JjL3JlcXVlc3RzIl0KdHlwZUNoZWNraW5nTW9kZSA9\nICJzdHJpY3QiCiMgbGludGluZyBydWxlcyB1bnJlbGF0ZWQgdG8gdHlwZSBj\naGVja2luZwpyZXBvcnRQcml2YXRlVXNhZ2UgPSBmYWxzZQpyZXBvcnRQcml2\nYXRlSW1wb3J0VXNhZ2UgPSBmYWxzZQpyZXBvcnRVbm5lY2Vzc2FyeUlzSW5z\ndGFuY2UgPSBmYWxzZQpyZXBvcnRVbnVzZWRJbXBvcnQgPSBmYWxzZSAgIyBk\ndXBsaWNhdGUgb2YgUnVmZidzIEY0MDEgcnVsZQo=\n",
+   "download_url": "https://raw.githubusercontent.com/psf/requests/main/pyproject.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/psf/requests/git/blobs/e7a1e015e09765802f6ac8d98b5ca5f0daabefb7",
+   "html_url": "https://github.com/psf/requests/blob/main/pyproject.toml",
+   "name": "pyproject.toml",
+   "path": "pyproject.toml",
+   "sha": "e7a1e015e09765802f6ac8d98b5ca5f0daabefb7",
+   "size": 3404,
+   "type": "file",
+   "url": "https://api.github.com/repos/psf/requests/contents/pyproject.toml?ref=main"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/psf/requests/contents/requirements-dev.txt?ref=main": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/psf/requests/git/blobs/fbe791587e09cc255686fb0ed09d9b9f33c245f6",
+    "html": "https://github.com/psf/requests/blob/main/requirements-dev.txt",
+    "self": "https://api.github.com/repos/psf/requests/contents/requirements-dev.txt?ref=main"
+   },
+   "content": "LWUgLltzb2Nrc10KcHl0ZXN0Pj0yLjguMCw8MTAKcHl0ZXN0LWNvdgpweXRl\nc3QtaHR0cGJpbj09Mi4xLjAKaHR0cGJpbn49MC4xMC4wCnRydXN0bWUKd2hl\nZWwK\n",
+   "download_url": "https://raw.githubusercontent.com/psf/requests/main/requirements-dev.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/psf/requests/git/blobs/fbe791587e09cc255686fb0ed09d9b9f33c245f6",
+   "html_url": "https://github.com/psf/requests/blob/main/requirements-dev.txt",
+   "name": "requirements-dev.txt",
+   "path": "requirements-dev.txt",
+   "sha": "fbe791587e09cc255686fb0ed09d9b9f33c245f6",
+   "size": 93,
+   "type": "file",
+   "url": "https://api.github.com/repos/psf/requests/contents/requirements-dev.txt?ref=main"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/psf/requests/contents/setup.py?ref=main": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/psf/requests/git/blobs/1095518ac8d7956cdbddad1a245075c742b4915c",
+    "html": "https://github.com/psf/requests/blob/main/setup.py",
+    "self": "https://api.github.com/repos/psf/requests/contents/setup.py?ref=main"
+   },
+   "content": "aW1wb3J0IHN5cwoKaWYgc3lzLnZlcnNpb25faW5mbyA8ICgzLCAxMCk6ICAj\nIG5vcWE6IFVQMDM2CiAgICBzeXMuc3RkZXJyLndyaXRlKCJSZXF1ZXN0cyBy\nZXF1aXJlcyBQeXRob24gMy4xMCBvciBsYXRlci5cbiIpCiAgICBzeXMuZXhp\ndCgxKQoKZnJvbSBzZXR1cHRvb2xzIGltcG9ydCBzZXR1cAoKc2V0dXAoKQo=\n",
+   "download_url": "https://raw.githubusercontent.com/psf/requests/main/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/psf/requests/git/blobs/1095518ac8d7956cdbddad1a245075c742b4915c",
+   "html_url": "https://github.com/psf/requests/blob/main/setup.py",
+   "name": "setup.py",
+   "path": "setup.py",
+   "sha": "1095518ac8d7956cdbddad1a245075c742b4915c",
+   "size": 179,
+   "type": "file",
+   "url": "https://api.github.com/repos/psf/requests/contents/setup.py?ref=main"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/psf/requests/git/trees/main?recursive=1": {
+  "json": {
+   "tree": [
+    {
+     "path": "docs/requirements.txt",
+     "type": "blob"
+    },
+    {
+     "path": "pyproject.toml",
+     "type": "blob"
+    },
+    {
+     "path": "requirements-dev.txt",
+     "type": "blob"
+    },
+    {
+     "path": "setup.py",
+     "type": "blob"
+    }
+   ],
+   "truncated": false
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/PySocks/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "BSD",
+    "license_expression": null,
+    "name": "PySocks"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/Sphinx/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-2-Clause",
+    "name": "Sphinx"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/certifi/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+    ],
+    "license": "MPL-2.0",
+    "license_expression": null,
+    "name": "certifi"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/chardet/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "0BSD",
+    "name": "chardet"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/charset_normalizer/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "charset-normalizer"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/httpbin/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: ISC License (ISCL)",
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT or ISC",
+    "license_expression": null,
+    "name": "httpbin"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/idna/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "name": "idna"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pytest-cov/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "pytest-cov"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pytest-httpbin/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "pytest-httpbin"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pytest/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "pytest"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/trustme/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Apache Software License",
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT OR Apache-2.0",
+    "license_expression": null,
+    "name": "trustme"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/urllib3/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "urllib3"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/wheel/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "wheel"
+   }
+  },
+  "status": 200
+ }
+}

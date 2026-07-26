@@ -1,0 +1,2228 @@
+{
+ "https://api.github.com/repos/mongodb/mongo": {
+  "json": {
+   "allow_forking": true,
+   "archive_url": "https://api.github.com/repos/mongodb/mongo/{archive_format}{/ref}",
+   "archived": false,
+   "assignees_url": "https://api.github.com/repos/mongodb/mongo/assignees{/user}",
+   "blobs_url": "https://api.github.com/repos/mongodb/mongo/git/blobs{/sha}",
+   "branches_url": "https://api.github.com/repos/mongodb/mongo/branches{/branch}",
+   "clone_url": "https://github.com/mongodb/mongo.git",
+   "collaborators_url": "https://api.github.com/repos/mongodb/mongo/collaborators{/collaborator}",
+   "comments_url": "https://api.github.com/repos/mongodb/mongo/comments{/number}",
+   "commits_url": "https://api.github.com/repos/mongodb/mongo/commits{/sha}",
+   "compare_url": "https://api.github.com/repos/mongodb/mongo/compare/{base}...{head}",
+   "contents_url": "https://api.github.com/repos/mongodb/mongo/contents/{+path}",
+   "contributors_url": "https://api.github.com/repos/mongodb/mongo/contributors",
+   "created_at": "2009-01-15T16:15:18Z",
+   "custom_properties": {
+    "BusinessUnit": "N/A",
+    "Department": "N/A",
+    "Division": "N/A",
+    "Team": "N/A"
+   },
+   "default_branch": "master",
+   "deployments_url": "https://api.github.com/repos/mongodb/mongo/deployments",
+   "description": "The MongoDB Database",
+   "disabled": false,
+   "downloads_url": "https://api.github.com/repos/mongodb/mongo/downloads",
+   "events_url": "https://api.github.com/repos/mongodb/mongo/events",
+   "fork": false,
+   "forks": 5791,
+   "forks_count": 5791,
+   "forks_url": "https://api.github.com/repos/mongodb/mongo/forks",
+   "full_name": "mongodb/mongo",
+   "git_commits_url": "https://api.github.com/repos/mongodb/mongo/git/commits{/sha}",
+   "git_refs_url": "https://api.github.com/repos/mongodb/mongo/git/refs{/sha}",
+   "git_tags_url": "https://api.github.com/repos/mongodb/mongo/git/tags{/sha}",
+   "git_url": "git://github.com/mongodb/mongo.git",
+   "has_discussions": false,
+   "has_downloads": false,
+   "has_issues": false,
+   "has_pages": false,
+   "has_projects": true,
+   "has_pull_requests": true,
+   "has_wiki": true,
+   "homepage": "https://www.mongodb.com/",
+   "hooks_url": "https://api.github.com/repos/mongodb/mongo/hooks",
+   "html_url": "https://github.com/mongodb/mongo",
+   "id": 108110,
+   "is_template": false,
+   "issue_comment_url": "https://api.github.com/repos/mongodb/mongo/issues/comments{/number}",
+   "issue_events_url": "https://api.github.com/repos/mongodb/mongo/issues/events{/number}",
+   "issues_url": "https://api.github.com/repos/mongodb/mongo/issues{/number}",
+   "keys_url": "https://api.github.com/repos/mongodb/mongo/keys{/key_id}",
+   "labels_url": "https://api.github.com/repos/mongodb/mongo/labels{/name}",
+   "language": "C++",
+   "languages_url": "https://api.github.com/repos/mongodb/mongo/languages",
+   "license": {
+    "key": "other",
+    "name": "Other",
+    "node_id": "MDc6TGljZW5zZTA=",
+    "spdx_id": "NOASSERTION",
+    "url": null
+   },
+   "merges_url": "https://api.github.com/repos/mongodb/mongo/merges",
+   "milestones_url": "https://api.github.com/repos/mongodb/mongo/milestones{/number}",
+   "mirror_url": null,
+   "name": "mongo",
+   "network_count": 5791,
+   "node_id": "MDEwOlJlcG9zaXRvcnkxMDgxMTA=",
+   "notifications_url": "https://api.github.com/repos/mongodb/mongo/notifications{?since,all,participating}",
+   "open_issues": 31,
+   "open_issues_count": 31,
+   "organization": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/45120?v=4",
+    "events_url": "https://api.github.com/users/mongodb/events{/privacy}",
+    "followers_url": "https://api.github.com/users/mongodb/followers",
+    "following_url": "https://api.github.com/users/mongodb/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mongodb/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/mongodb",
+    "id": 45120,
+    "login": "mongodb",
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjQ1MTIw",
+    "organizations_url": "https://api.github.com/users/mongodb/orgs",
+    "received_events_url": "https://api.github.com/users/mongodb/received_events",
+    "repos_url": "https://api.github.com/users/mongodb/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/mongodb/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mongodb/subscriptions",
+    "type": "Organization",
+    "url": "https://api.github.com/users/mongodb",
+    "user_view_type": "public"
+   },
+   "owner": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/45120?v=4",
+    "events_url": "https://api.github.com/users/mongodb/events{/privacy}",
+    "followers_url": "https://api.github.com/users/mongodb/followers",
+    "following_url": "https://api.github.com/users/mongodb/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mongodb/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/mongodb",
+    "id": 45120,
+    "login": "mongodb",
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjQ1MTIw",
+    "organizations_url": "https://api.github.com/users/mongodb/orgs",
+    "received_events_url": "https://api.github.com/users/mongodb/received_events",
+    "repos_url": "https://api.github.com/users/mongodb/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/mongodb/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mongodb/subscriptions",
+    "type": "Organization",
+    "url": "https://api.github.com/users/mongodb",
+    "user_view_type": "public"
+   },
+   "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+   },
+   "private": false,
+   "pull_request_creation_policy": "all",
+   "pulls_url": "https://api.github.com/repos/mongodb/mongo/pulls{/number}",
+   "pushed_at": "2026-07-26T08:52:14Z",
+   "releases_url": "https://api.github.com/repos/mongodb/mongo/releases{/id}",
+   "size": 1398346,
+   "ssh_url": "git@github.com:mongodb/mongo.git",
+   "stargazers_count": 28471,
+   "stargazers_url": "https://api.github.com/repos/mongodb/mongo/stargazers",
+   "statuses_url": "https://api.github.com/repos/mongodb/mongo/statuses/{sha}",
+   "subscribers_count": 1238,
+   "subscribers_url": "https://api.github.com/repos/mongodb/mongo/subscribers",
+   "subscription_url": "https://api.github.com/repos/mongodb/mongo/subscription",
+   "svn_url": "https://github.com/mongodb/mongo",
+   "tags_url": "https://api.github.com/repos/mongodb/mongo/tags",
+   "teams_url": "https://api.github.com/repos/mongodb/mongo/teams",
+   "temp_clone_token": "",
+   "topics": [
+    "c-plus-plus",
+    "database",
+    "mongodb",
+    "nosql"
+   ],
+   "trees_url": "https://api.github.com/repos/mongodb/mongo/git/trees{/sha}",
+   "updated_at": "2026-07-26T08:52:25Z",
+   "url": "https://api.github.com/repos/mongodb/mongo",
+   "visibility": "public",
+   "watchers": 28471,
+   "watchers_count": 28471,
+   "web_commit_signoff_required": false
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/?ref=master": {
+  "json": [
+   {
+    "name": ".bazelignore",
+    "type": "file"
+   },
+   {
+    "name": ".bazeliskrc",
+    "type": "file"
+   },
+   {
+    "name": ".bazelrc",
+    "type": "file"
+   },
+   {
+    "name": ".bazelrc.fuzztest",
+    "type": "file"
+   },
+   {
+    "name": ".bazelrc.local.example",
+    "type": "file"
+   },
+   {
+    "name": ".bazelrc.sync",
+    "type": "file"
+   },
+   {
+    "name": ".bazelrc.target_mongo_version",
+    "type": "file"
+   },
+   {
+    "name": ".bazelversion",
+    "type": "file"
+   },
+   {
+    "name": ".clang-format",
+    "type": "file"
+   },
+   {
+    "name": ".clang-tidy.in",
+    "type": "file"
+   },
+   {
+    "name": ".devcontainer",
+    "type": "dir"
+   },
+   {
+    "name": ".editorconfig",
+    "type": "file"
+   },
+   {
+    "name": ".gdbinit",
+    "type": "file"
+   },
+   {
+    "name": ".git-blame-ignore-revs",
+    "type": "file"
+   },
+   {
+    "name": ".gitattributes",
+    "type": "file"
+   },
+   {
+    "name": ".github",
+    "type": "dir"
+   },
+   {
+    "name": ".gitignore",
+    "type": "file"
+   },
+   {
+    "name": ".lldbinit",
+    "type": "file"
+   },
+   {
+    "name": ".mypy.ini",
+    "type": "file"
+   },
+   {
+    "name": ".npmrc",
+    "type": "file"
+   },
+   {
+    "name": ".prettierignore",
+    "type": "file"
+   },
+   {
+    "name": ".prettierrc",
+    "type": "file"
+   },
+   {
+    "name": ".tmp",
+    "type": "dir"
+   },
+   {
+    "name": ".vscode_defaults",
+    "type": "dir"
+   },
+   {
+    "name": "BUILD.bazel",
+    "type": "file"
+   },
+   {
+    "name": "CONTRIBUTING.rst",
+    "type": "file"
+   },
+   {
+    "name": "CreativeCommons.txt",
+    "type": "file"
+   },
+   {
+    "name": "LICENSE-Community.txt",
+    "type": "file"
+   },
+   {
+    "name": "MODULE.bazel",
+    "type": "file"
+   },
+   {
+    "name": "MODULE.bazel.lock",
+    "type": "file"
+   },
+   {
+    "name": "OWNERS.yml",
+    "type": "file"
+   },
+   {
+    "name": "README.md",
+    "type": "file"
+   },
+   {
+    "name": "README.third_party.md",
+    "type": "file"
+   },
+   {
+    "name": "WORKSPACE.bazel",
+    "type": "file"
+   },
+   {
+    "name": "bazel",
+    "type": "dir"
+   },
+   {
+    "name": "buildscripts",
+    "type": "dir"
+   },
+   {
+    "name": "cspell.json",
+    "type": "file"
+   },
+   {
+    "name": "debian",
+    "type": "dir"
+   },
+   {
+    "name": "distsrc",
+    "type": "dir"
+   },
+   {
+    "name": "docs",
+    "type": "dir"
+   },
+   {
+    "name": "eslint.config.mjs",
+    "type": "file"
+   },
+   {
+    "name": "etc",
+    "type": "dir"
+   },
+   {
+    "name": "evergreen",
+    "type": "dir"
+   },
+   {
+    "name": "jsconfig.json",
+    "type": "file"
+   },
+   {
+    "name": "jstests",
+    "type": "dir"
+   },
+   {
+    "name": "modules_poc",
+    "type": "dir"
+   },
+   {
+    "name": "package.json",
+    "type": "file"
+   },
+   {
+    "name": "pnpm-lock.yaml",
+    "type": "file"
+   },
+   {
+    "name": "pyproject.toml",
+    "type": "file"
+   },
+   {
+    "name": "rpm",
+    "type": "dir"
+   },
+   {
+    "name": "sbom.json",
+    "type": "file"
+   },
+   {
+    "name": "src",
+    "type": "dir"
+   },
+   {
+    "name": "tools",
+    "type": "dir"
+   },
+   {
+    "name": "uv.lock",
+    "type": "file"
+   },
+   {
+    "name": "x509",
+    "type": "dir"
+   }
+  ],
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/COPYING.LIB?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/COPYING.txt?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/COPYING?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/LICENSE-Community.txt?ref=master": {
+  "json": {
+   "content": "                     Server Side Public License\n                     VERSION 1, OCTOBER 16, 2018\n\n                    Copyright \u00a9 2018 MongoDB, Inc.\n\n  Everyone is permitted to copy and distribute verbatim copies of this\n  license document, but changing it is not allowed.\n\n                       TERMS AND CONDITIONS\n\n  0. Definitions.\n  \n  \u201cThis License\u201d refers to Server Side Public License.\n\n  \u201cCopyright\u201d also means copyright-like laws that apply to other kinds of\n  works, such as semiconductor masks.\n\n  \u201cThe Program\u201d refers to any copyrightable work licensed under this\n  License.  Each licensee is addressed as \u201cyou\u201d. \u201cLicensees\u201d and\n  \u201crecipients\u201d may be individuals or organizations.\n\n  To \u201cmodify\u201d a work means to copy from or adapt all or part of the work in\n  a fashion requiring copyright permission, other than the making of an\n  exact copy. The resulting work is called a \u201cmodified version\u201d of the\n  earlier work or a work \u201cbased on\u201d the earlier work.\n\n  A \u201ccovered work\u201d means either the unmodified Program or a work based on\n  the Program.\n\n  To \u201cpropagate\u201d a work means to do anything with it that, without\n  permission, would make you directly or secondarily liable for\n  infringement under applicable copyright law, except executing it on a\n  computer or modifying a private copy. Propagation includes copying,\n  distribution (with or without modification), making available to the\n  public, and in some countries other activities as well.\n\n  To \u201cconvey\u201d a work means any kind of propagation that enables other\n  parties to make or receive copies. Mere interaction with a user through a\n  computer network, with no transfer of a copy, is not conveying.\n\n  An interactive user interface displays \u201cAppropriate Legal Notices\u201d to the\n  extent that it includes a convenient and prominently visible feature that\n  (1) displays an appropriate copyright notice, and (2) tells the user that\n  there is no warranty for the work (except to the extent that warranties\n  are provided), that licensees may convey the work under this License, and\n  how to view a copy of this License. If the interface presents a list of\n  user commands or options, such as a menu, a prominent item in the list\n  meets this criterion.\n\n  1. Source Code.\n\n  The \u201csource code\u201d for a work means the preferred form of the work for\n  making modifications to it. \u201cObject code\u201d means any non-source form of a\n  work.\n\n  A \u201cStandard Interface\u201d means an interface that either is an official\n  standard defined by a recognized standards body, or, in the case of\n  interfaces specified for a particular programming language, one that is\n  widely used among developers working in that language.  The \u201cSystem\n  Libraries\u201d of an executable work include anything, other than the work as\n  a whole, that (a) is included in the normal form of packaging a Major\n  Component, but which is not part of that Major Component, and (b) serves\n  only to enable use of the work with that Major Component, or to implement\n  a Standard Interface for which an implementation is available to the\n  public in source code form. A \u201cMajor Component\u201d, in this context, means a\n  major essential component (kernel, window system, and so on) of the\n  specific operating system (if any) on which the executable work runs, or\n  a compiler used to produce the work, or an object code interpreter used\n  to run it.\n\n  The \u201cCorresponding Source\u201d for a work in object code form means all the\n  source code needed to generate, install, and (for an executable work) run\n  the object code and to modify the work, including scripts to control\n  those activities. However, it does not include the work's System\n  Libraries, or general-purpose tools or generally available free programs\n  which are used unmodified in performing those activities but which are\n  not part of the work. For example, Corresponding Source includes\n  interface definition files associated with source files for the work, and\n  the source code for shared libraries and dynamically linked subprograms\n  that the work is specifically designed to require, such as by intimate\n  data communication or control flow between those subprograms and other\n  parts of the work.\n\n  The Corresponding Source need not include anything that users can\n  regenerate automatically from other parts of the Corresponding Source.\n\n  The Corresponding Source for a work in source code form is that same work.\n\n  2. Basic Permissions.\n\n  All rights granted under this License are granted for the term of\n  copyright on the Program, and are irrevocable provided the stated\n  conditions are met. This License explicitly affirms your unlimited\n  permission to run the unmodified Program, subject to section 13. The\n  output from running a covered work is covered by this License only if the\n  output, given its content, constitutes a covered work. This License\n  acknowledges your rights of fair use or other equivalent, as provided by\n  copyright law.  Subject to section 13, you may make, run and propagate\n  covered works that you do not convey, without conditions so long as your\n  license otherwise remains in force. You may convey covered works to\n  others for the sole purpose of having them make modifications exclusively\n  for you, or provide you with facilities for running those works, provided\n  that you comply with the terms of this License in conveying all\n  material for which you do not control copyright. Those thus making or\n  running the covered works for you must do so exclusively on your\n  behalf, under your direction and control, on terms that prohibit them\n  from making any copies of your copyrighted material outside their\n  relationship with you.\n\n  Conveying under any other circumstances is permitted solely under the\n  conditions stated below. Sublicensing is not allowed; section 10 makes it\n  unnecessary.\n\n  3. Protecting Users' Legal Rights From Anti-Circumvention Law.\n\n  No covered work shall be deemed part of an effective technological\n  measure under any applicable l",
+   "encoding": "utf-8-trimmed",
+   "name": "LICENSE-Community.txt",
+   "size": 30608
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/LICENSE.md?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/LICENSE.txt?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/LICENSE?ref=master": {
+  "json": null,
+  "status": 404
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/buildscripts/cost_model/requirements.txt?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/edbc47be24c891d4d9d83100f9d1ae6dbddc207a",
+    "html": "https://github.com/mongodb/mongo/blob/master/buildscripts/cost_model/requirements.txt",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/buildscripts/cost_model/requirements.txt?ref=master"
+   },
+   "content": "Y29udG91cnB5PT0xLjEuMQpjeWNsZXI9PTAuMTIuMApkbnNweXRob249PTIu\nNC4yCmZvbnR0b29scz09NC40My4wCmpvYmxpYj09MS4zLjIKa2l3aXNvbHZl\ncj09MS40LjUKbWF0cGxvdGxpYj09My44LjAKbnVtcHk9PTEuMjYuMApwYWNr\nYWdpbmc9PTIzLjIKcGFuZGFzPT0yLjEuMQpwYXRzeT09MC41LjMKUGlsbG93\nPT0xMC4wLjEKcHltb25nbz09NC4xMy4wCnB5cGFyc2luZz09My4xLjEKcHl0\naG9uLWRhdGV1dGlsPT0yLjguMgpweXR6PT0yMDIzLjMucG9zdDEKc2Npa2l0\nLWxlYXJuPT0xLjMuMQpzY2lweT09MS4xMS4zCnNlYWJvcm49PTAuMTMuMApz\naXg9PTEuMTYuMApzdGF0c21vZGVscz09MC4xNC4wCnRocmVhZHBvb2xjdGw9\nPTMuMi4wCnR6ZGF0YT09MjAyMy4zCg==\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/buildscripts/cost_model/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/edbc47be24c891d4d9d83100f9d1ae6dbddc207a",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/buildscripts/cost_model/requirements.txt",
+   "name": "requirements.txt",
+   "path": "buildscripts/cost_model/requirements.txt",
+   "sha": "edbc47be24c891d4d9d83100f9d1ae6dbddc207a",
+   "size": 382,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/buildscripts/cost_model/requirements.txt?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/buildscripts/eslint-plugin-mongodb/package.json?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/6866699dd0ecb3a5b096fb5805cf155ba69309cb",
+    "html": "https://github.com/mongodb/mongo/blob/master/buildscripts/eslint-plugin-mongodb/package.json",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/buildscripts/eslint-plugin-mongodb/package.json?ref=master"
+   },
+   "content": "ewogICJuYW1lIjogImVzbGludC1wbHVnaW4tbW9uZ29kYiIsCiAgInZlcnNp\nb24iOiAiMS4wLjAiLAogICJwcml2YXRlIjogdHJ1ZSwKICAibWFpbiI6ICJw\nbHVnaW4uanMiLAogICJ0eXBlIjogIm1vZHVsZSIKfQo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/buildscripts/eslint-plugin-mongodb/package.json",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/6866699dd0ecb3a5b096fb5805cf155ba69309cb",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/buildscripts/eslint-plugin-mongodb/package.json",
+   "name": "package.json",
+   "path": "buildscripts/eslint-plugin-mongodb/package.json",
+   "sha": "6866699dd0ecb3a5b096fb5805cf155ba69309cb",
+   "size": 122,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/buildscripts/eslint-plugin-mongodb/package.json?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/package.json?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/c87877f90ec14273c938f4a0d8c525f3cb56f8a2",
+    "html": "https://github.com/mongodb/mongo/blob/master/package.json",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/package.json?ref=master"
+   },
+   "content": "ewogICJuYW1lIjogIm1vbmdvZGIiLAogICJ2ZXJzaW9uIjogIjEuMC4wIiwK\nICAicHJpdmF0ZSI6IHRydWUsCiAgImRldkRlcGVuZGVuY2llcyI6IHsKICAg\nICJAZXNsaW50L2VzbGludHJjIjogIjMuMi4wIiwKICAgICJAZXNsaW50L2pz\nIjogIl45IiwKICAgICJlc2xpbnQiOiAiOS4xOS4wIiwKICAgICJlc2xpbnQt\nZm9ybWF0dGVyLXVuaXgiOiAiXjguNDAuMCIsCiAgICAiZXNsaW50LXBsdWdp\nbi1tb2NoYS1uby1vbmx5IjogIl4xLjIuMCIsCiAgICAiZ2xvYmFscyI6ICIx\nNC4wLjAiLAogICAgInByZXR0aWVyIjogIjMuNC4yIgogIH0sCiAgInBucG0i\nOiB7CiAgICAib25seUJ1aWx0RGVwZW5kZW5jaWVzIjogW10KICB9LAogICJk\nZXBlbmRlbmNpZXMiOiB7CiAgICAiZXNsaW50LXBsdWdpbi1tb25nb2RiIjog\nImZpbGU6YnVpbGRzY3JpcHRzL2VzbGludC1wbHVnaW4tbW9uZ29kYiIKICB9\nCn0K\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/package.json",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/c87877f90ec14273c938f4a0d8c525f3cb56f8a2",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/package.json",
+   "name": "package.json",
+   "path": "package.json",
+   "sha": "c87877f90ec14273c938f4a0d8c525f3cb56f8a2",
+   "size": 453,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/package.json?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/pyproject.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/4f6051ac866194578f04a7f9c599931545f9a988",
+    "html": "https://github.com/mongodb/mongo/blob/master/pyproject.toml",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/pyproject.toml?ref=master"
+   },
+   "content": "W3Byb2plY3RdCm5hbWUgPSAibWRiLXB5dGhvbi1kZXBzIgp2ZXJzaW9uID0g\nIjEuMC4wIgpyZXF1aXJlcy1weXRob24gPSAiPj0zLjEzLDw0LjAiCmRlc2Ny\naXB0aW9uID0gIk1vbmdvREIgcHl0aG9uIGRlcGVuZGVuY2llcyIKYXV0aG9y\ncyA9IFsgeyBuYW1lID0gIk1vbmdvREIiIH0gXQpyZWFkbWUgPSAiUkVBRE1F\nLm1kIgojIFRoZXNlIHBhY2thZ2VzIGFyZSBpbmNsdWRlZCBhcyBhIFRPRE8g\naWYgd2Ugd2FudCB0byBydW4gcmVzbW9rZSB3aXRoIHBleAojIEN1cnJlbnRs\neSB0aGlzIGRvZXMgbm90aGluZwpwYWNrYWdlcyA9IFsKICAgIHsgaW5jbHVk\nZSA9ICJidWlsZHNjcmlwdHMvcmVzbW9rZS5weSIgfSwKICAgIHsgaW5jbHVk\nZSA9ICJidWlsZHNjcmlwdHMvbW9uZ29zeW1iLnB5IiB9LAogICAgeyBpbmNs\ndWRlID0gImJ1aWxkc2NyaXB0cy9idWlsZF9zeXN0ZW1fb3B0aW9ucy5weSIg\nfSwKICAgIHsgaW5jbHVkZSA9ICJidWlsZHNjcmlwdHMvcmVzbW9rZWxpYiIg\nfSwKICAgIHsgaW5jbHVkZSA9ICJidWlsZHNjcmlwdHMvaWRsIiB9LAogICAg\neyBpbmNsdWRlID0gImJ1aWxkc2NyaXB0cy91dGlsIiB9LApdCmRlcGVuZGVu\nY2llcyA9IFsKICAgICJuZXR3b3JreCIsICAgICAgICAgICAgICAgICAgICAg\nICAgICAgICAgICMgVGhpcyBpcyBhbHNvIHVzZWQgYXMgYSBwYXJ0IG9mIGJ1\naWxkX21ldHJpY3Mgc28gaXQgaXMgc29ydCBvZiByZXF1aXJlZAogICAgInB5\ncmlnaHQ9PTEuMS4zOTMiLAogICAgImZha2VyPT0zNy4xLjAiLAogICAgInB5\nbW9uZ289PTQuMTIuMCIsCl0KCiMgT3B0aW9uYWwgZXh0cmFzLiBUaGVzZSBt\naXJyb3IgdGhlIHByaW9yIFBvZXRyeSBgb3B0aW9uYWwgPSB0cnVlYCBlbnRy\naWVzCiMgdW5kZXIgW3Rvb2wucG9ldHJ5LmRlcGVuZGVuY2llc10g4oCUIG9w\ndC1pbiBmb3IgbGliZGVwcy1ncmFwaCBhbmFseXNpcywgbm90CiMgaW5zdGFs\nbGVkIGJ5IGB1diBzeW5jIC0tYWxsLWdyb3Vwc2AuIEluc3RhbGwgd2l0aCBg\ndXYgc3luYyAtLWV4dHJhIGxpYmRlcHNgCiMgb3IgYHBpcCBpbnN0YWxsICcu\nW2xpYmRlcHNdJ2AuIEtlZXBpbmcgdGhlbSBvdXQgb2YgW3Byb2plY3QuZGVw\nZW5kZW5jaWVzXQojIGF2b2lkcyBmb3JjaW5nIGFuIGBseG1sYCBzZGlzdCBi\ndWlsZCBvbiBzMzkweCAvIHBwYzY0bGUgd2hlcmUgdGhlCiMgbWFueWxpbnV4\nIHdoZWVsIHNldCBkb2Vzbid0IGNvdmVyIGNwMzEzLgpbcHJvamVjdC5vcHRp\nb25hbC1kZXBlbmRlbmNpZXNdCmxpYmRlcHMgPSBbCiAgICAiZmxhc2siLAog\nICAgImZsYXNrLWNvcnM+PTQuMC4yIiwKICAgICJseG1sIiwKICAgICJldmVu\ndGxldCIsCiAgICAiZ2V2ZW50IiwKICAgICJwcm9ncmVzc2JhcjIiLAogICAg\nImN4eGZpbHQiLAogICAgInB5bXBsZXIiLApdCgojIFRoaXMgZW50cnlwb2lu\ndCBpcyBpbmNsdWRlZCBhcyBhIFRPRE8gaWYgd2Ugd2FudCB0byBydW4gcmVz\nbW9rZSB3aXRoIHBleAojIEN1cnJlbnRseSB0aGlzIGRvZXMgbm90aGluZwpb\ncHJvamVjdC5zY3JpcHRzXQpyZXNtb2tlID0gImJ1aWxkc2NyaXB0cy5yZXNt\nb2tlOmVudHJ5cG9pbnQiCgojIFBFUCA3MzUgZGVwZW5kZW5jeSBncm91cHMu\nIE1pcnJvcnMgdGhlIHByaW9yIFt0b29sLnBvZXRyeS5ncm91cC4qXSBsYXlv\ndXQuCiMgSW5zdGFsbCBhbGwgZ3JvdXBzOiBgdXYgc3luYyAtLWFsbC1ncm91\ncHNgLgojIEluc3RhbGwgYSBzaW5nbGUgZ3JvdXA6IGB1diBzeW5jIC0tb25s\neS1ncm91cCBsaW50YC4KIyBFeGNsdWRlIGEgZ3JvdXA6ICAgICAgICBgdXYg\nc3luYyAtLWFsbC1ncm91cHMgLS1uby1ncm91cCBwb3dlcmN5Y2xlLWluY29t\ncGF0aWJsZWAuCltkZXBlbmRlbmN5LWdyb3Vwc10KYXdzID0gWwogICAgImJv\ndG8zPj0xLjM0LjE1Niw8MiIsCiAgICAiYm90b2NvcmU+PTEuMzQuMTU2LDwy\nIiwKXQoKIyBEZXBzIHRoZSBiYXplbCB3cmFwcGVyIGhvb2sgbmVlZHMgYXQg\naW1wb3J0IHRpbWUsIGJlZm9yZSBhbnkgb3RoZXIKIyB0b29saW5nIGhhcyBy\ndW4gKHNlZSBiYXplbC93cmFwcGVyX2hvb2svaW5zdGFsbF9tb2R1bGVzLnB5\nKS4gVGhpcyBncm91cAojIGlzIHRoZSBzaW5nbGUgc291cmNlIG9mIHRydXRo\nIGZvciB0aGF0IGxpc3Q6IHRoZSB3cmFwcGVyIGJvb3RzdHJhcHMKIyBpdHNl\nbGYgd2l0aCBgdXYgc3luYyAtLW9ubHktZ3JvdXAgd3JhcHBlci1ob29rIC0t\nbG9ja2VkIC0taW5leGFjdGAuCiMgQ29uc3RyYWludHMgZGVsaWJlcmF0ZWx5\nIG1pcnJvciB0aGUgcGlucyB0aGVzZSBwYWNrYWdlcyBjYXJyeSBpbiB0aGVp\ncgojIG90aGVyIGdyb3VwcyBzbyByZXNvbHV0aW9uIHN0YXlzIHVuaWZpZWQu\nCndyYXBwZXItaG9vayA9IFsKICAgICJyZXRyeT49MC45LjIsPDEiLAogICAg\nIkdpdFB5dGhvbj49My4xLjQzLDw0IiwKICAgICJyZXF1ZXN0cz49Mi4zMi4z\nLDwzIiwKICAgICJ0aW1lb3V0LWRlY29yYXRvcj09MC41LjAiLAogICAgImJv\ndG8zPj0xLjM0LjE1Niw8MiIsCiAgICAiUHlZQU1MPj02LjAuMiw8NyIsCiAg\nICAicHltb25nbz09NC4xMi4wIiwKXQoKYnVpbGQtbWV0cmljcyA9IFsKICAg\nICJqc29uc2NoZW1hPj00LjIzLjAsPDUiLAogICAgInBzdXRpbD49Ni4wLjAs\nPDciLAogICAgIm1lbW9yeS1wcm9maWxlcj49MC42MS4wLDwwLjYyIiwKICAg\nICJwdXJlbWFnaWM+PTEuMjYsPDEuMjciLAogICAgInRhYnVsYXRlPj0wLjku\nMCw8MC4xMCIsCl0KCmNvbXBpbGUgPSBbCiAgICAiY3QzPT0zLjQuMC5wb3N0\nNSIsICAgICAgICAgICAgICAgICAgICAgICAjIFJlbmFtZWQgZnJvbSBjaGVl\ndGFoMwogICAgInBhY2thZ2luZz49MjUuMCw8MjYiLAogICAgInJlZ2V4Pj0y\nMDI0LjExLjYsPDIwMjUiLAogICAgInNldHVwdG9vbHM+PTgwLjkuMCw8ODEi\nLAogICAgIndoZWVsPT0wLjQ1LjAiLApdCgpjb3JlID0gWwogICAgInBzdXRp\nbD49Ni4wLjAsPDciLAogICAgInB5bW9uZ289PTQuMTIuMCIsCiAgICAiUHlZ\nQU1MPj02LjAuMiw8NyIsCiAgICAidHlwZXMtUHlZQU1MPj02LjAuMTIuMjAy\nNDA4MDgsPDciLAogICAgInJlcXVlc3RzPj0yLjMyLjMsPDMiLAogICAgInR5\ncGluZy1leHRlbnNpb25zPj00LjEyLjIsPDUiLAogICAgInR5cGVyPj0wLjEy\nLjMsPDAuMTMiLAogICAgInRlbmFjaXR5Pj05LjAuMCw8MTAiLApdCgojIHJh\ncGlkeWFtbCBpcyBicm9rZW4gb24gYXRsYXMgZGlzdHJvcyB3aXRoIHBvd2Vy\nY3ljbGUuIFRoZSBwb3dlcmN5Y2xlIHJlbW90ZQojIGJvb3RzdHJhcCBleGNs\ndWRlcyB0aGlzIGdyb3VwIHZpYSBgdXYgc3luYyAtLW5vLWdyb3VwIHBvd2Vy\nY3ljbGUtaW5jb21wYXRpYmxlYC4KIyBUaGUgUzMgd2hlZWwgaW5kZXggaXMg\nY29uZmlndXJlZCB1bmRlciBbW3Rvb2wudXYuaW5kZXhdXSBiZWxvdzsgcmVn\nZW5lcmF0ZQojIGl0IHZpYSBgYnVpbGRzY3JpcHRzL21vbmdvX3JhcGlkeWFt\nbF9idWlsZHMvcmVnZW5lcmF0ZV9zaW1wbGVfaW5kZXgucHlgCiMgYWZ0ZXIg\ncHVibGlzaGluZyBuZXcgd2hlZWxzIHNvIHV2IGNhbiBwZXJzaXN0IGAjc2hh\nMjU2PTxoZXg+YCBoYXNoZXMgaW50bwojIHV2LmxvY2sgKHJ1bGVzX3B5Y3Jv\nc3MgcmVxdWlyZXMgdGhlbSkuCnBvd2VyY3ljbGUtaW5jb21wYXRpYmxlID0g\nWwogICAgInJhcGlkeWFtbD09MC45LjAucG9zdDAgOyBweXRob25fdmVyc2lv\nbiA9PSAnMy4xMyciLApdCgpleHBvcnQgPSBbCiAgICAicGlweD09MS42LjAi\nLAogICAgIyBUT0RPOiBBZGQgaW4gcGV4IGFzIHdlIG1vdmUgZm9yd2FyZCB3\naXRoIHRoaXMKICAgICMgInBleD49Mi4xLjEzNyw8MyIsCiAgICAjIHV2IGlz\nIHJlZmVyZW5jZWQgYnkgYnVpbGRzY3JpcHRzL3V2X2xvY2tfY2hlY2sucHkg\ndmlhIGBweXRob24gLW0gdXZgLgogICAgIyBUaGUgY2Fub25pY2FsIHBpbiBs\naXZlcyBhdCBidWlsZHNjcmlwdHMvdXZfdmVyc2lvbi50eHQg4oCUIGFsbCBz\naGVsbAogICAgIyAvIERvY2tlciAvIFB5dGhvbiBpbnN0YWxsZXJzIHJlYWQg\naXQgZGlyZWN0bHkuIFRPTUwgY2FuJ3QgZG8KICAgICMgY29tbWFuZC1zdWJz\ndGl0dXRpb24sIHNvIHRoaXMgc3RyaW5nIGlzIGNoZWNrZWQgZm9yIHBhcml0\neSB3aXRoCiAgICAjIHV2X3ZlcnNpb24udHh0IGJ5IGJ1aWxkc2NyaXB0cy91\ndl9sb2NrX2NoZWNrLnB5LgogICAgInV2PT0wLjExLjEzIiwKXQoKIyBiYXpl\nbF9ydWxlc19tb25nbyAocHJldmlvdXNseSBoYWQgaXRzIG93biBwb2V0cnku\nbG9jay9weXByb2plY3QudG9tbCkuIEl0cwojIEJVSUxELmJhemVsIGZpbGVz\nIHJlZmVyZW5jZSBgQHBvZXRyeS8vOjxwa2c+YCB3aGljaCBpcyByZXBvLW1h\ncHBlZCB0byB0aGUKIyBvdXRlciB3b3Jrc3BhY2UncyBgQHB5cGlgIOKAlCBz\nZWUgdGhlIGBsb2NhbF9yZXBvc2l0b3J5KC4uLiwgcmVwb19tYXBwaW5nPS4u\nLilgCiMgY2FsbCBpbiAvL1dPUktTUEFDRS5iYXplbC4gRXZlcnkgZGVwIGlu\nIHRoaXMgZ3JvdXAgbXVzdCB0aGVyZWZvcmUgYWxzbyBiZQojIHJlYWNoYWJs\nZSBmcm9tIHRoZSBweWNyb3NzIGh1Yiwgd2hpY2ggaXMgYXV0b21hdGljIHNp\nbmNlIGl0IGNvbWVzIGZyb20gdGhlCiMgc2FtZSB1di5sb2NrLgpiYXplbF9y\ndWxlc19tb25nbyA9IFsKICAgICJweXlhbWw+PTYuMC4yLDw3IiwKICAgICJy\nZXRyeT49MC45LjIsPDEiLAogICAgImdpdHB5dGhvbj49My4xLjQ0LDw0IiwK\nICAgICJyZXF1ZXN0cz49Mi4zMi41LDwzIiwKICAgICJzdHJ1Y3Rsb2c+PTI1\nLjUuMCw8MjYiLApdCgpldmVyZ3JlZW4gPSBbCiAgICAjIGNsaWNrIDguMiBj\naGFuZ2VkIFBhcmFtZXRlci5tYWtlX21ldGF2YXIoKSdzIHNpZ25hdHVyZSBp\nbiBhIHdheSB0aGF0CiAgICAjIGJyb2tlIHR5cGVyIDAuMTIueCAodGhlIHZl\ncnNpb24gcGlubmVkIGluIHRoZSBgY29yZWAgZ3JvdXAgYmVsb3cpLgogICAg\nIyBDYXAgYXQgPDguMiB1bnRpbCB0eXBlciBpcyBidW1wZWQgdG8gYSBjbGlj\nay04LjIrIGNvbXBhdGlibGUgcmVsZWFzZQogICAgIyAodHlwZXIgPj0gMC4x\nNSkuCiAgICAiY2xpY2s+PTguMS43LDw4LjIiLAogICAgImluamVjdD49NS4y\nLjEsPDYiLAogICAgIkdpdFB5dGhvbj49My4xLjQzLDw0IiwKICAgICJweWRh\nbnRpYz49Miw8MyIsCiAgICAjIHB5ZGFudGljIDIgbW92ZWQgYEJhc2VTZXR0\naW5nc2AgaW50byB0aGUgc2VwYXJhdGUgcHlkYW50aWMtc2V0dGluZ3MKICAg\nICMgcGFja2FnZTsgb25seSBidWlsZHNjcmlwdHMvY2xpZW50L2ppcmFjbGll\nbnQucHkgaW1wb3J0cyBpdC4KICAgICJweWRhbnRpYy1zZXR0aW5ncz49Miw8\nMyIsCiAgICAic3RydWN0bG9nPj0yNC40LjAsPDI2IiwKICAgICMgcGF0aHNw\nZWMgaXMgaW1wb3J0ZWQgZGlyZWN0bHkgYnkgYnVpbGRzY3JpcHRzL3ZhbGlk\nYXRlX2NvbW1pdF9tZXNzYWdlLnB5CiAgICAjIGZvciBnaXRpZ25vcmUtc3R5\nbGUgcGF0dGVybiBtYXRjaGluZy4gUHJldmlvdXNseSBhcnJpdmVkIHRyYW5z\naXRpdmVseQogICAgIyB2aWEgYHBvZXRyeWAgKHdoaWNoIHVzZXMgaXQgaW50\nZXJuYWxseSk7IG1ha2luZyBpdCBhIGRpcmVjdCBkZXAgaGVyZQogICAgIyBz\nbyB0aGUgQmF6ZWwgZ3JhcGggc3RheXMgaG9uZXN0IHVuZGVyIHB5Y3Jvc3Mg\nbm93IHRoYXQgUG9ldHJ5IGl0c2VsZgogICAgIyBoYXMgYmVlbiByZW1vdmVk\nLgogICAgInBhdGhzcGVjPj0wLjEyLDwxIiwKXQoKZXh0ZXJuYWwtYXV0aCA9\nIFsKICAgICMgRGVwZW5kZW5jaWVzIG9mIGxkYXB0b3IKICAgICJwYXNzbGli\nPj0xLjcuNCw8MiIsCiAgICAicHlPcGVuU1NMPj0yNS4wLjAsPDI2IiwKICAg\nICJweXBhcnNpbmc+PTIuNC43LDwzIiwKICAgICJzZXJ2aWNlX2lkZW50aXR5\nPj0xOC4xLjAsPDE5IiwKICAgICJ0d2lzdGVkPj0yNi40LjAsPDI3IiwKICAg\nICJ0d2lzdGVkLWlvY3BzdXBwb3J0Pj0xLjAuNCw8MiA7IHN5c19wbGF0Zm9y\nbSA9PSAnd2luMzInIiwKICAgICJ6b3BlLmludGVyZmFjZT49OC4xLjEsPDki\nLAogICAgImxkYXB0b3I9PTE5LjAuMCIsCl0KCmlkbCA9IFsKICAgICMgYHVu\naXR0ZXN0LXhtbC1yZXBvcnRpbmdgIHB1bGxzIGluIGx4bWwgdHJhbnNpdGl2\nZWx5OyBseG1sIHNoaXBzIG5vCiAgICAjIHMzOTB4IGNwMzEzIHdoZWVsIGFu\nZCBpdHMgc2Rpc3QgZmFpbHMgdG8gYnVpbGQgYWdhaW5zdCBSSEVMOSBzMzkw\neCdzCiAgICAjIGxpYnhtbDIgKHhtbEhhc2hTY2FubmVyIHR5cGVkZWYgbWlz\nbWF0Y2gpLiBYTUwtZm9ybWF0IHRlc3QgcmVwb3J0cwogICAgIyBhcmVuJ3Qg\nbmVlZGVkIG9uIHMzOTB4IGFyY2hpdmVfZGlzdF90ZXN0OyBtYXJrIGl0IHBs\nYXRmb3JtLWNvbmRpdGlvbmFsLgogICAgInVuaXR0ZXN0LXhtbC1yZXBvcnRp\nbmc9PTMuMi4wIDsgcGxhdGZvcm1fbWFjaGluZSAhPSAnczM5MHgnIiwKICAg\nICJwYWNrYWdpbmc+PTI1LjAsPDI2IiwKXQoKamlyYS1jbGllbnQgPSBbCiAg\nICAiamlyYT49My4xMC41LDw0IiwKICAgICJyZXF1ZXN0cy1vYXV0aDw9MC40\nLjEiLAogICAgIlB5SldUPj0yLjEyLjAsPDMiLAogICAgIyBweXRob24tZGF0\nZXV0aWwgaXMgaW1wb3J0ZWQgZGlyZWN0bHkgYnkKICAgICMgYnVpbGRzY3Jp\ncHRzL21vbml0b3JfYnVpbGRfc3RhdHVzL2ppcmFfc2VydmljZS5weSB0byBw\nYXJzZSBJU08tODYwMQogICAgIyBkYXRldGltZXMgcmV0dXJuZWQgYnkgdGhl\nIEppcmEgUkVTVCBBUEkuIFByZXZpb3VzbHkgYXJyaXZlZAogICAgIyB0cmFu\nc2l0aXZlbHkgdmlhIGBqaXJhYCB1bmRlciBQb2V0cnk7IG1ha2luZyBpdCBh\nIGRpcmVjdCBkZXAgaGVyZSBzbwogICAgIyB0aGUgQmF6ZWwgZ3JhcGggc3Rh\neXMgaG9uZXN0IHVuZGVyIHB5Y3Jvc3MuCiAgICAicHl0aG9uLWRhdGV1dGls\nPj0yLjksPDMiLAogICAgIyBXZSBhcmUgb21pdHRpbmcgcHljcnlwdG8gYmFz\nZWQgb24gaHR0cHM6Ly9naXRodWIuY29tL3B5Y29udHJpYnMvamlyYS9wdWxs\nLzYyOQpdCgpsaW50ID0gWwogICAgIyBOb3RlOiBUaGVzZSB2ZXJzaW9ucyBh\ncmUgY2hlY2tlZCBieSBweXRob24gbW9kdWxlcyBpbiBidWlsZHNjcmlwdHMv\nbGludGVyLwogICAgIkdpdFB5dGhvbj49My4xLjcsPDQiLAogICAgIm15cHk+\nPTEuMTEuMSw8MiIsCiAgICAic3RydWN0bG9nPj0yNC40LjAsPDI2IiwKICAg\nICJ5YW1sbGludD49MS4zNS4xLDwyIiwKICAgICJ0eXBlcy1zZXR1cHRvb2xz\nPj04MC45LjAsPDgxIiwKICAgICJ0eXBlcy1yZXF1ZXN0cz49Mi4zMi4wLjIw\nMjQwNzEyLDwzIiwKICAgICJ0cWRtIiwKICAgICJjb2xvcmFtYT49MC40LjYs\nPDAuNSIsCiAgICAiZXZlcmdyZWVuLWxpbnQ+PTAuMS4xMCw8MC4yIiwKICAg\nICJydWZmPj0wLjYuNyw8MC43IiwKICAgICJsaWNlbnNlLWV4cHJlc3Npb24+\nPTMwLjQuNCw8MzEiLApdCgptb2R1bGVzX3BvYyA9IFsKICAgICJjb2Rlb3du\nZXJzPj0wLjguMCw8MC45IDsgcGxhdGZvcm1fbWFjaGluZSAhPSAnczM5MHgn\nIGFuZCBwbGF0Zm9ybV9tYWNoaW5lICE9ICdwcGM2NGxlJyIsCiAgICAicHJv\nZ3Jlc3NiYXIyPj00LjQuMiw8NSA7IHBsYXRmb3JtX21hY2hpbmUgIT0gJ3Mz\nOTB4JyBhbmQgcGxhdGZvcm1fbWFjaGluZSAhPSAncHBjNjRsZSciLAogICAg\nInRleHR1YWxbc3ludGF4XT49My4wLjAsPDQgOyBwbGF0Zm9ybV9tYWNoaW5l\nICE9ICdzMzkweCcgYW5kIHBsYXRmb3JtX21hY2hpbmUgIT0gJ3BwYzY0bGUn\nIiwKICAgICJ0cmVlLXNpdHRlcj49MC4yNC4wLDwwLjI1IDsgcGxhdGZvcm1f\nbWFjaGluZSAhPSAnczM5MHgnIGFuZCBwbGF0Zm9ybV9tYWNoaW5lICE9ICdw\ncGM2NGxlJyIsCiAgICAidHJlZS1zaXR0ZXItY3BwPj0wLjIzLjQsPDAuMjQg\nOyBwbGF0Zm9ybV9tYWNoaW5lICE9ICdzMzkweCcgYW5kIHBsYXRmb3JtX21h\nY2hpbmUgIT0gJ3BwYzY0bGUnIiwKICAgICJweXpzdGQ+PTAuMTYuMiw8MC4x\nNyA7IHBsYXRmb3JtX21hY2hpbmUgIT0gJ3MzOTB4JyBhbmQgcGxhdGZvcm1f\nbWFjaGluZSAhPSAncHBjNjRsZSciLAogICAgImNmZmk+PTIuMC4wLDwzIiwK\nXQoKcGxhdGZvcm0gPSBbCiAgICAicHlwaXdpbjMyPj0yMjMgOyBzeXNfcGxh\ndGZvcm0gPT0gJ3dpbjMyJyIsCiAgICAicHl3aW4zMj49MjI1IDsgc3lzX3Bs\nYXRmb3JtID09ICd3aW4zMiciLAogICAgInB5dGhvbi1tc2lsaWI+PTAuNS4w\nLDwwLjYgOyBzeXNfcGxhdGZvcm0gPT0gJ3dpbjMyJyBhbmQgcHl0aG9uX3Zl\ncnNpb24gPj0gJzMuMTMnIiwKICAgICMgY3J5cHRvZ3JhcGh5IDQxKyBzaGlw\ncyBhIFJ1c3QgZXh0ZW5zaW9uIGFuZCBQeVBJIGNhcnJpZXMgbm8KICAgICMg\nczM5MHggLyBwcGM2NGxlIHdoZWVscyBmb3IgaXQgKG9ubHkgbWFueWxpbnV4\nL211c2xsaW51eCB4ODZfNjQgKwogICAgIyBhYXJjaDY0ICsgYXJtdjdsKS4g\nRm9yIHRob3NlIGFyY2hzIHdlIGhvc3QgcHJlLWJ1aWx0IG1hbnlsaW51eF8y\nXzI4CiAgICAjIHdoZWVscyBpbiBtZGItYnVpbGQtcHVibGljIOKAlCBzZWUg\nW3Rvb2wudXYuc291cmNlc10gYXQgdGhlIGJvdHRvbSBvZgogICAgIyB0aGlz\nIGZpbGUgYW5kIGJ1aWxkc2NyaXB0cy9tb25nb19jcnlwdG9ncmFwaHlfYnVp\nbGRzL1JFQURNRS5tZC4KICAgICMgUGlubmVkIHRvID09NDQuMC4yIChyYXRo\nZXIgdGhhbiA+PTQ0LjAuMiw8NDUpIHNvIHRoZSB2ZXJzaW9uCiAgICAjIHV2\nIHBpY2tzIG9uIGV2ZXJ5IHBsYXRmb3JtIG1hdGNoZXMgdGhlIHZlcnNpb24g\nb2YgdGhlIHdoZWVscyB3ZSd2ZQogICAgIyB1cGxvYWRlZDsgYnVtcGluZyBy\nZXF1aXJlcyByZWJ1aWxkaW5nIGJvdGggczM5MHggYW5kIHBwYzY0bGUgd2hl\nZWxzCiAgICAjIGZpcnN0IChzZWUgdGhlIFJFQURNRSkuCiAgICAiY3J5cHRv\nZ3JhcGh5PT00NC4wLjIiLApdCgp0ZXN0aW5nID0gWwogICAgImJhemVsLXJ1\nbmZpbGVzPj0xLjguMyw8MiIsCiAgICAiY3VyYXRvcmJpbj49MS4yLjQsPDIi\nLAogICAgIyBQaW5uZWQgdG8gZXhhY3RseSA1LjI5LjMgYmVjYXVzZSBgYnVp\nbGRzY3JpcHRzL2JhemVsX3NwYXduX3BiMi5weWAKICAgICMgKHByb3RvYy1n\nZW5lcmF0ZWQpIGhhcmRjb2RlcyBgX3J1bnRpbWVfdmVyc2lvbi5WYWxpZGF0\nZVByb3RvYnVmUnVudGltZVZlcnNpb24oNSwgMjksIDMsIC4uLilgCiAgICAj\nIOKAlCBpdCB2YWxpZGF0ZXMgYXQgaW1wb3J0IHRpbWUgdGhhdCB0aGUgaW5z\ndGFsbGVkIHByb3RvYnVmIHJ1bnRpbWUKICAgICMgbWF0Y2hlcyB0aGUgdmVy\nc2lvbiBwcm90b2MgdXNlZCB0byBnZW5lcmF0ZSB0aGUgZmlsZS4gQW55IG90\naGVyCiAgICAjIG1ham9yIHZlcnNpb24gcmFpc2VzLiBNYXRjaGVzIG1hc3Rl\ncidzIHBpbi4gUmVnZW5lcmF0ZSB0aGUgX3BiMi5weQogICAgIyB2aWEgYnVp\nbGRzY3JpcHRzL2dlbmVyYXRlX2JhemVsX3NwYXduX3BiMi5weSBpZiBidW1w\naW5nLgogICAgInByb3RvYnVmPT01LjI5LjMiLAogICAgIyBNYXRjaGVzIG1h\nc3RlcidzIG1vbmdvZGItZm9ya3MvUHlLTUlQIHBpbi4gU2VlIFt0b29sLnV2\nLnNvdXJjZXNdCiAgICAjIGZ1cnRoZXIgZG93biBmb3IgdGhlIFVSTCBzb3Vy\nY2UgY29uZmlndXJhdGlvbjsgcnVsZXNfcHljcm9zcydzIFVSTAogICAgIyBz\nb3VyY2UgaGFuZGxpbmcgaXMgZW5hYmxlZCBieSB0aGUgdXZfdHJhbnNsYXRv\ncl91cmxfc291cmNlIHBhdGNoCiAgICAjIGFwcGxpZWQgaW4gTU9EVUxFLmJh\nemVsLgogICAgInB5a21pcCIsCiAgICAia2Fma2EtcHl0aG9uPj0yLjAuMiw8\nMyIsCiAgICAiYXZyby1weXRob24zPj0xLjEwLjIsPDIiLAogICAgIyBldmVy\nZ3JlZW4tcHkgdXBzdHJlYW0gY2FwcyBhdCBweXRob248My4xNDsgcHJvamVj\ndCBpcyBjb25zdHJhaW5lZCB0bwogICAgIyBweXRob24gMy4xMyBzbyB3ZSBv\nbmx5IG5lZWQgdGhlIG1hcmtlciBmb3IgZm9yd2FyZC1jb21wYXRpYmlsaXR5\nLgogICAgImV2ZXJncmVlbi1weT49My4xNS4wLDw0IDsgcHl0aG9uX3ZlcnNp\nb24gPCAnMy4xNCciLAogICAgIm1vY2s+PTUuMS4wLDw2IiwKICAgICJzaHJ1\nYi1weT49My4xLjQsPDQiLAogICAgIm9jc3ByZXNwb25kZXI+PTAuNS4wLDww\nLjYiLAogICAgImZsYXNrPj0yLjMuMyw8MyIsCiAgICAib2NzcGJ1aWxkZXI+\nPTAuMTAuMiw8MC4xMSIsCiAgICAiZWNkc2E+PTAuMTkuMCw8MC4yMCIsCiAg\nICAiYXNuMWNyeXB0bz49MS41LjEsPDIiLAogICAgInRvbWw+PTAuMTAuMiw8\nMC4xMSIsCiAgICAiZmlsZWxvY2s+PTMuMTguMCw8NCIsCiAgICAibnVtcHk9\nPTIuMi42IDsgcGxhdGZvcm1fbWFjaGluZSAhPSAnczM5MHgnIGFuZCBwbGF0\nZm9ybV9tYWNoaW5lICE9ICdwcGM2NGxlJyIsCiAgICAib3NjcnlwdG8+PTEu\nMy4wLDwyIDsgcGxhdGZvcm1fbWFjaGluZSAhPSAnczM5MHgnIGFuZCBwbGF0\nZm9ybV9tYWNoaW5lICE9ICdwcGM2NGxlJyIsCiAgICAjIFdlcmt6ZXVnIGlz\nIG5lZWRlZCBmb3Igb2NzcCB0ZXN0cyBpbiBvY3NwX21vY2sucHkuCiAgICAi\nV2Vya3pldWc8PTMuMS42IiwKICAgICJQeUdpdGh1Yj49MS41OCw8MiIsCiAg\nICAidXJsbGliMz49Mi43LjAsPDMiLAogICAgImRpc3Rybz49MS45LjAsPDIi\nLAogICAgImRuc3B5dGhvbj49Mi42LjEsPDMiLAogICAgInByb3h5LXByb3Rv\nY29sPj0wLjExLjMsPDAuMTIiLAogICAgInBrY2U+PTEuMC4zLDwyIiwKICAg\nICJwZXhwZWN0Pj00LjkuMCw8NSIsCiAgICAib2F1dGhsaWI+PTMuMS4xLDw0\nIiwKICAgICJyZXF1ZXN0cy1vYXV0aGxpYj49Mi4wLjAsPDMiLAogICAgInBh\nY2thZ2luZz49MjUuMCw8MjYiLAogICAgImRvY2tlcj49Ny4xLjAsPDgiLAog\nICAgIm1vbmdvbW9jaz49NC4xLjIsPDUiLAogICAgInB5and0Pj0yLjEyLjAs\nPDMiLAogICAgInNlbGVuaXVtPj00LjIzLjEsPDUiLAogICAgImdlY2tvZHJp\ndmVyLWF1dG9pbnN0YWxsZXI+PTAuMS4wLDwwLjIiLAogICAgInJldHJ5Pj0w\nLjkuMiw8MSIsCiAgICAiZ2RibW9uZ28+PTAuMTYuMCw8MC4xNyIsCiAgICAi\nZ29vZ2xlYXBpcy1jb21tb24tcHJvdG9zPj0xLjYzLjIsPDIiLAogICAgImdv\nb2dsZS1hcGktcHl0aG9uLWNsaWVudD49Mi4xOS4wLDwzIiwKICAgICJnb29n\nbGUtYXV0aC1vYXV0aGxpYj49MS4yLjEsPDIiLAogICAgIyBgZ2NvdnJgIHB1\nbGxzIGluIGx4bWwgdHJhbnNpdGl2ZWx5OyBseG1sIHNoaXBzIG5vIHMzOTB4\nIGNwMzEzIHdoZWVsCiAgICAjIChzZWUgdGhlIHVuaXR0ZXN0LXhtbC1yZXBv\ncnRpbmcgY29tbWVudCBpbiB0aGUgaWRsIGdyb3VwKS4gQ29kZS0KICAgICMg\nY292ZXJhZ2UgYnVpbGRzIGFyZW4ndCBydW4gb24gczM5MHgsIHNvIGV4Y2x1\nZGluZyBpdCB0aGVyZSBpcyBzYWZlLgogICAgImdjb3ZyPT03LjIgOyBwbGF0\nZm9ybV9tYWNoaW5lICE9ICdzMzkweCciLAogICAgIm9wZW50ZWxlbWV0cnkt\nYXBpIiwKICAgICJvcGVudGVsZW1ldHJ5LXNkayIsCiAgICAib3BlbnRlbGVt\nZXRyeS1leHBvcnRlci1vdGxwLXByb3RvLWNvbW1vbiIsCiAgICAib3BlbnRl\nbGVtZXRyeS1leHBvcnRlci1vdGxwLXByb3RvLWdycGMgOyBwbGF0Zm9ybV9t\nYWNoaW5lICE9ICdzMzkweCcgYW5kIHBsYXRmb3JtX21hY2hpbmUgIT0gJ3Bw\nYzY0bGUnIiwKICAgICJvcGVudGVsZW1ldHJ5LWV4cG9ydGVyLW90bHAtcHJv\ndG8taHR0cCA7IHBsYXRmb3JtX21hY2hpbmUgIT0gJ3MzOTB4JyBhbmQgcGxh\ndGZvcm1fbWFjaGluZSAhPSAncHBjNjRsZSciLAogICAgInRpbWVvdXQtZGVj\nb3JhdG9yPT0wLjUuMCIsCl0KCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t\nLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t\nLS0tLS0tCiMgdXYtc3BlY2lmaWMgY29uZmlnCiMgLS0tLS0tLS0tLS0tLS0t\nLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t\nLS0tLS0tLS0tLS0tLS0tCgojIFRoaXMgcHJvamVjdCBpcyB0aGUgZGV2L2J1\naWxkIHRvb2xiZWx0LCBub3QgYSBwdWJsaXNoZWQgcGFja2FnZS4gVGVsbCB1\ndiBub3QKIyB0byB0cnkgdG8gYnVpbGQgaXQgKG1pcnJvcnMgdGhlIHByaW9y\nIFBvZXRyeSBgcGFja2FnZS1tb2RlID0gZmFsc2VgKS4KW3Rvb2wudXZdCnBh\nY2thZ2UgPSBmYWxzZQoKIyBDdXN0b20gd2hlZWwgaW5kZXggZm9yIHJhcGlk\neWFtbC4gTWlycm9ycyB0aGUgcHJpb3IKIyBbW3Rvb2wucG9ldHJ5LnNvdXJj\nZV1dIGVudHJ5OyBgZXhwbGljaXQgPSB0cnVlYCBtYXRjaGVzIGBwcmlvcml0\neSA9ICJleHBsaWNpdCJgCiMgaW4gUG9ldHJ5IOKAlCB1diB3aWxsIG9ubHkg\nY29uc3VsdCB0aGlzIGluZGV4IGZvciBwYWNrYWdlcyB0aGF0IG9wdCBpbiB2\naWEKIyBbdG9vbC51di5zb3VyY2VzXS4KW1t0b29sLnV2LmluZGV4XV0KbmFt\nZSA9ICJtZGItYnVpbGQtcHVibGljIgp1cmwgPSAiaHR0cHM6Ly9tZGItYnVp\nbGQtcHVibGljLnMzLmFtYXpvbmF3cy5jb20vcmFwaWR5YW1sX3doZWVscy9z\naW1wbGUvIgpleHBsaWNpdCA9IHRydWUKClt0b29sLnV2LnNvdXJjZXNdCnJh\ncGlkeWFtbCA9IHsgaW5kZXggPSAibWRiLWJ1aWxkLXB1YmxpYyIgfQojIE1h\ndGNoIG1hc3RlcidzIFBvZXRyeSBwaW4gKG1vbmdvZGItZm9ya3MvUHlLTUlQ\nIEAgYzQ4Y2IwMTYpLiBEZWNsYXJlZCBhcyBhCiMgZGlyZWN0IFVSTCB0byB0\naGUgR2l0SHViIGFyY2hpdmUgdGFyYmFsbCBmb3IgdGhhdCByZXYg4oCUIHJh\ndGhlciB0aGFuIGEgZ2l0CiMgc291cmNlIOKAlCBzbyB1diByZWNvcmRzIHRo\nZSB0YXJiYWxsJ3Mgc2hhMjU2IGluIHV2LmxvY2sgYW5kIHJ1bGVzX3B5Y3Jv\nc3MKIyAodmlhIHRoZSB1dl90cmFuc2xhdG9yX3VybF9zb3VyY2UgcGF0Y2gp\nIGNhbiBnZW5lcmF0ZSBhIGhhc2gtdmVyaWZpZWQKIyBodHRwX2ZpbGUgZm9y\nIGl0IHdpdGhvdXQgYW55IHRyYW5zbGF0aW9uLXRpbWUgbmV0d29yayBmZXRj\naC4gSWYgR2l0SHViCiMgZXZlciByZS1yb2xscyBpdHMgYXJjaGl2ZSB0YXJi\nYWxscyAoY2hhbmdpbmcgdGhlIGJ5dGVzKSwgYHV2IGxvY2tgIG11c3QgYmUK\nIyByZS1ydW4gdG8gcmVmcmVzaCB0aGUgY29tbWl0dGVkIGhhc2g7IGFsdGVy\nbmF0aXZlbHkgbWlycm9yIHRoZSBzZGlzdCB0bwojIG1kYi1idWlsZC1wdWJs\naWMgbGlrZSB0aGUgY3J5cHRvZ3JhcGh5IHdoZWVscy4KcHlrbWlwID0geyB1\ncmwgPSAiaHR0cHM6Ly9naXRodWIuY29tL21vbmdvZGItZm9ya3MvUHlLTUlQ\nL2FyY2hpdmUvYzQ4Y2IwMTYzNTgxOWU0NzhiNTczZTMyNDVlZjg0MGExMWQ3\nODg2NS50YXIuZ3oiIH0KIyBQcmUtYnVpbHQgY3J5cHRvZ3JhcGh5IHdoZWVs\ncyBmb3IgczM5MHggLyBwcGM2NGxlLiBQeVBJIGNhcnJpZXMgbm8KIyB3aGVl\nbHMgZm9yIHRob3NlIGFyY2hzIGFuZCB0aGUgc2Rpc3QgbmVlZHMgYSBSdXN0\nIHRvb2xjaGFpbiB0aGF0CiMgcGlwLnBhcnNlJ3MgaGVybWV0aWMgc2FuZGJv\neCBjYW4ndCBzZWUg4oCUIHNlZQojIGJ1aWxkc2NyaXB0cy9tb25nb19jcnlw\ndG9ncmFwaHlfYnVpbGRzL1JFQURNRS5tZCBmb3IgdGhlIGJ1aWxkIC8KIyB1\ncGxvYWQgcHJvY2VkdXJlLiB1diBwaWNrcyB0aGUgVVJMIHdob3NlIG1hcmtl\nciBtYXRjaGVzIHRoZSBjdXJyZW50CiMgcGxhdGZvcm07IG9uIGV2ZXJ5IG90\naGVyIGFyY2ggaXQgZmFsbHMgYmFjayB0byBQeVBJICh3aGVyZSA0NC4wLjIg\naXMKIyBhdmFpbGFibGUgYXMgdGhlIHN0YW5kYXJkIGNwMzctYWJpMyB3aGVl\nbCkuCmNyeXB0b2dyYXBoeSA9IFsKICAgIHsgdXJsID0gImh0dHBzOi8vbWRi\nLWJ1aWxkLXB1YmxpYy5zMy5hbWF6b25hd3MuY29tL2NyeXB0b2dyYXBoeV93\naGVlbHMvY3J5cHRvZ3JhcGh5LTQ0LjAuMi1jcDM3LWFiaTMtbWFueWxpbnV4\nXzJfMjhfczM5MHgud2hsIiwgbWFya2VyID0gInBsYXRmb3JtX21hY2hpbmUg\nPT0gJ3MzOTB4JyIgfSwKICAgIHsgdXJsID0gImh0dHBzOi8vbWRiLWJ1aWxk\nLXB1YmxpYy5zMy5hbWF6b25hd3MuY29tL2NyeXB0b2dyYXBoeV93aGVlbHMv\nY3J5cHRvZ3JhcGh5LTQ0LjAuMi1jcDM3LWFiaTMtbWFueWxpbnV4XzJfMjhf\ncHBjNjRsZS53aGwiLCBtYXJrZXIgPSAicGxhdGZvcm1fbWFjaGluZSA9PSAn\ncHBjNjRsZSciIH0sCl0KCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t\nLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t\nLS0tCiMgVG9vbC1zcGVjaWZpYyBjb25maWcgKHVuY2hhbmdlZCBmcm9tIFBv\nZXRyeSBlcmEpCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t\nLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgpb\ndG9vbC5ydWZmXQpmb3JjZS1leGNsdWRlID0gdHJ1ZQpleHRlbmQtZXhjbHVk\nZSA9IFsKICAgICJzcmMvdGhpcmRfcGFydHkiLAogICAgIyBwcm90b2MtZ2Vu\nZXJhdGVkIGZpbGVzLiBUaGVpciBgZnJvbSBnb29nbGUucHJvdG9idWYgaW1w\nb3J0IFhfcGIyYCBsaW5lcwogICAgIyBsb29rICJ1bnVzZWQiIHRvIHN0YXRp\nYyBhbmFseXplcnMgYnV0IGFyZSBsb2FkLW9yZGVyLWNyaXRpY2FsICh0aGV5\nCiAgICAjIHJlZ2lzdGVyIGRlc2NyaXB0b3IgdHlwZXMgd2l0aCB0aGUgZ2xv\nYmFsIHByb3RvYnVmIHBvb2wgdmlhIGltcG9ydC10aW1lCiAgICAjIHNpZGUg\nZWZmZWN0cyksIGFuZCB0aGVpciBmb3JtYXR0aW5nIGlzIGRpY3RhdGVkIGJ5\nIHRoZSBwcm90b2J1ZgogICAgIyBjb21waWxlciDigJQgbm90IHNvbWV0aGlu\nZyB3ZSBzaG91bGQgcmVmbG93IHdpdGggYHJ1ZmYgZm9ybWF0YC4gQXBwbGll\ncwogICAgIyB0byBtYXN0ZXIncyBgYnVpbGRzY3JpcHRzL2JhemVsX3NwYXdu\nX3BiMi5weWAgYW5kIGFueSBmdXR1cmUgZ2VuZXJhdGVkCiAgICAjIHByb3Rv\nYnVmIGZpbGVzIGFueXdoZXJlIGluIHRoZSB0cmVlLgogICAgIioqLypfcGIy\nLnB5IiwKXQoKbGluZS1sZW5ndGggPSAxMDAKdGFyZ2V0LXZlcnNpb24gPSAi\ncHkzMTMiCgpbdG9vbC5ydWZmLmxpbnRdCmV4dGVuZC1zZWxlY3QgPSBbCiAg\nICAiSSIsICAgICAgICAjIGlzb3J0CiAgICAiVVAwMDYiLCAgICAjIG5vbi1w\nZXA1ODUtYW5ub3RhdGlvbgogICAgIlc2MDUiLCAgICAgIyBpbnZhbGlkLWVz\nY2FwZS1zZXF1ZW5jZQpdCmlnbm9yZSA9IFsKICAgICJFNDAyIiwgIyBtb2R1\nbGUtaW1wb3J0LW5vdC1hdC10b3Atb2YtZmlsZQogICAgIkU3MjEiLCAjIHR5\ncGUtY29tcGFyaXNvbgogICAgIkU3MjIiLCAjIGJhcmUtZXhjZXB0CiAgICAi\nRTc0MSIsICMgYW1iaWd1b3VzLXZhcmlhYmxlLW5hbWUKICAgICJGNDAyIiwg\nIyBpbXBvcnQtc2hhZG93ZWQtYnktbG9vcC12YXIKICAgICJGNDAzIiwgIyB1\nbmRlZmluZWQtbG9jYWwtd2l0aC1pbXBvcnQtc3RhcgogICAgIkY0MDUiLCAj\nIHVuZGVmaW5lZC1sb2NhbC13aXRoLWltcG9ydC1zdGFyLXVzYWdlCiAgICAi\nRjgxMSIsICMgcmVkZWZpbmVkLXdoaWxlLXVudXNlZAogICAgIkY4MjEiLCAj\nIHVuZGVmaW5lZC1uYW1lCiAgICAiRjgyMiIsICMgdW5kZWZpbmVkLWV4cG9y\ndAogICAgXQoKW3Rvb2wucnVmZi5saW50LnBlci1maWxlLWlnbm9yZXNdCiMg\nVGhpcyBmaWxlIG5lZWRzIHRvIHN1cHBvcnQgUHl0aG9uIDMuNSsgZm9yIG9s\nZCBPUyBwYWNrYWdlIHRlc3RpbmcKImJ1aWxkc2NyaXB0cy9wYWNrYWdlX3Rl\nc3QvcGFja2FnZV90ZXN0X2ludGVybmFsLnB5IiA9IFsiVVAiXQoKW3Rvb2wu\ncnVmZi5saW50Lmlzb3J0XQprbm93bi1maXJzdC1wYXJ0eSA9IFsiYnVpbGRz\nY3JpcHRzIiwgImJ1aWxkc2NyaXB0cy9pZGwiLCAiZXZlcmdyZWVuIiwgInRv\nb2xzIl0KClt0b29sLnB5cmlnaHRdCmluY2x1ZGUgPSBbCiAgICAiYnVpbGRz\nY3JpcHRzIiwKICAgICJzcmMiCl0KZXhjbHVkZSA9IFsKICAgICIqKi90aGly\nZF9wYXJ0eS8qKiIsCiAgICAiKiovZXh0ZXJuYWwvKioiCl0KcHl0aG9uVmVy\nc2lvbiAgPSAiMy4xMyIKCiMgVGhlc2Ugc2hvdWxkIGJlIHNldCB0byAiZXJy\nb3IiIGZvciBiYXNpYyBmdW5jdGlvbmFsaXR5CnJlcG9ydEludmFsaWRUeXBl\nRm9ybSA9ICJub25lIgpyZXBvcnRNaXNzaW5nSW1wb3J0cyA9ICJub25lIgpy\nZXBvcnRVbmRlZmluZWRWYXJpYWJsZSA9ICJub25lIgpyZXBvcnRBYnN0cmFj\ndFVzYWdlID0gImVycm9yIgpyZXBvcnRBc3NlcnRUeXBlRmFpbHVyZSA9ICJl\ncnJvciIKcmVwb3J0SW5jb25zaXN0ZW50T3ZlcmxvYWQgPSAiZXJyb3IiCnJl\ncG9ydEludmFsaWRUeXBlQXJndW1lbnRzID0gIm5vbmUiCnJlcG9ydE5vT3Zl\ncmxvYWRJbXBsZW1lbnRhdGlvbiA9ICJlcnJvciIKcmVwb3J0T3B0aW9uYWxD\nYWxsID0gIm5vbmUiCnJlcG9ydE9wdGlvbmFsQ29udGV4dE1hbmFnZXIgPSAi\nZXJyb3IiCnJlcG9ydFJlZGVjbGFyYXRpb24gPSAibm9uZSIKcmVwb3J0VW5i\nb3VuZFZhcmlhYmxlID0gIm5vbmUiCnJlcG9ydFVuaGFzaGFibGUgPSAibm9u\nZSIKcmVwb3J0VW51c2VkQ29yb3V0aW5lID0gImVycm9yIgpyZXBvcnRVbnVz\nZWRFeGNlcHQgPSAiZXJyb3IiCgojIFRoZXNlIHNob3VsZCBiZSBzZXQgdG8g\nIndhcm5pbmciIG9yICJlcnJvciIgZm9yIHN0YW5kYXJkIGNoZWNrcwpyZXBv\ncnRBcmd1bWVudFR5cGUgPSAibm9uZSIKcmVwb3J0QXNzaWdubWVudFR5cGUg\nPSAibm9uZSIKcmVwb3J0QXR0cmlidXRlQWNjZXNzSXNzdWUgPSAibm9uZSIK\ncmVwb3J0Q2FsbElzc3VlID0gIm5vbmUiCnJlcG9ydEdlbmVyYWxUeXBlSXNz\ndWVzID0gIm5vbmUiCnJlcG9ydEluZGV4SXNzdWUgPSAibm9uZSIKcmVwb3J0\nT3BlcmF0b3JJc3N1ZSA9ICJub25lIgpyZXBvcnRPcHRpb25hbFN1YnNjcmlw\ndCA9ICJub25lIgpyZXBvcnRPcHRpb25hbE1lbWJlckFjY2VzcyA9ICJub25l\nIgpyZXBvcnRPcHRpb25hbEl0ZXJhYmxlID0gIm5vbmUiCnJlcG9ydE9wdGlv\nbmFsT3BlcmFuZCA9ICJub25lIgpyZXBvcnRSZXR1cm5UeXBlID0gIm5vbmUi\nCnJlcG9ydFR5cGVkRGljdE5vdFJlcXVpcmVkQWNjZXNzID0gIm5vbmUiCnJl\ncG9ydFByaXZhdGVJbXBvcnRVc2FnZSA9ICJub25lIgpyZXBvcnRGdW5jdGlv\nbk1lbWJlckFjY2VzcyA9ICJub25lIgpyZXBvcnRJbmNvbXBhdGlibGVNZXRo\nb2RPdmVycmlkZSA9ICJub25lIgpyZXBvcnRJbmNvbXBhdGlibGVWYXJpYWJs\nZU92ZXJyaWRlID0gIm5vbmUiCnJlcG9ydE92ZXJsYXBwaW5nT3ZlcmxvYWQg\nPSAiZXJyb3IiCnJlcG9ydFBvc3NpYmx5VW5ib3VuZFZhcmlhYmxlID0gIm5v\nbmUiCgojIFRoZXNlIGFyZSBhZGRpdGlvbmFsIGNoZWNrcyBmb3Igc3RyaWN0\nIG1vZGUKcmVwb3J0TWlzc2luZ1R5cGVTdHVicyA9ICJub25lIgpyZXBvcnRB\nc3NlcnRBbHdheXNUcnVlID0gImVycm9yIgpyZXBvcnRJbnZhbGlkU3RyaW5n\nRXNjYXBlU2VxdWVuY2UgPSAiZXJyb3IiCnJlcG9ydEludmFsaWRUeXBlVmFy\nVXNlID0gImVycm9yIgpyZXBvcnRTZWxmQ2xzUGFyYW1ldGVyTmFtZSA9ICJu\nb25lIgpyZXBvcnRVbnN1cHBvcnRlZER1bmRlckFsbCA9ICJlcnJvciIKcmVw\nb3J0VW51c2VkRXhwcmVzc2lvbiA9ICJlcnJvciIKcmVwb3J0V2lsZGNhcmRJ\nbXBvcnRGcm9tTGlicmFyeSA9ICJlcnJvciIKcmVwb3J0Q29uc3RhbnRSZWRl\nZmluaXRpb24gPSAibm9uZSIK\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/pyproject.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/4f6051ac866194578f04a7f9c599931545f9a988",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/pyproject.toml",
+   "name": "pyproject.toml",
+   "path": "pyproject.toml",
+   "sha": "4f6051ac866194578f04a7f9c599931545f9a988",
+   "size": 17163,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/pyproject.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/mongo/db/query/benchmark/data_generator/requirements.txt?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/1308a6b3918496830fbfc0c5e29b50e0e498652d",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/mongo/db/query/benchmark/data_generator/requirements.txt",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/mongo/db/query/benchmark/data_generator/requirements.txt?ref=master"
+   },
+   "content": "ZG5zcHl0aG9uPT0yLjcuMApGYWtlcj09MzcuMS4wCm1pbWVzaXM9PTE4LjAu\nMApudW1weT09Mi4yLjYKcHltb25nbz09NC4xMi4wCnR6ZGF0YT09MjAyNS4y\nCg==\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/mongo/db/query/benchmark/data_generator/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/1308a6b3918496830fbfc0c5e29b50e0e498652d",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/mongo/db/query/benchmark/data_generator/requirements.txt",
+   "name": "requirements.txt",
+   "path": "src/mongo/db/query/benchmark/data_generator/requirements.txt",
+   "sha": "1308a6b3918496830fbfc0c5e29b50e0e498652d",
+   "size": 91,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/mongo/db/query/benchmark/data_generator/requirements.txt?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/mongo/shell/debugger/vscode/package.json?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/e94a6d100bcd8615ede24379c0179225779a8ea9",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/mongo/shell/debugger/vscode/package.json",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/mongo/shell/debugger/vscode/package.json?ref=master"
+   },
+   "content": "ewogICJuYW1lIjogIm1vbmdvLXNoZWxsLWRlYnVnZ2VyIiwKICAiZGlzcGxh\neU5hbWUiOiAiTW9uZ29EQiBTaGVsbCBEZWJ1Z2dlciIsCiAgImRlc2NyaXB0\naW9uIjogIkRlYnVnIEphdmFTY3JpcHQgY29kZSBpbiBNb25nb0RCIFNoZWxs\nIChNb3pKUykiLAogICJ2ZXJzaW9uIjogIjEuNC4yIiwKICAicHVibGlzaGVy\nIjogIm1vbmdvZGIiLAogICJyZXBvc2l0b3J5IjogewogICAgInR5cGUiOiAi\nZ2l0IiwKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tLzEwZ2VuL21v\nbmdvLmdpdCIKICB9LAogICJlbmdpbmVzIjogewogICAgInZzY29kZSI6ICJe\nMS43NS4wIgogIH0sCiAgImNhdGVnb3JpZXMiOiBbCiAgICAiRGVidWdnZXJz\nIgogIF0sCiAgImtleXdvcmRzIjogWwogICAgIm1vbmdvZGIiLAogICAgImph\ndmFzY3JpcHQiLAogICAgImRlYnVnZ2VyIiwKICAgICJtb25nby1zaGVsbCIK\nICBdLAogICJtYWluIjogIi4vZXh0ZW5zaW9uLmpzIiwKICAiZmlsZXMiOiBb\nCiAgICAiKi5qcyIsCiAgICAibm9kZV9tb2R1bGVzIiwKICAgICJSRUFETUUu\nbWQiCiAgXSwKICAiYWN0aXZhdGlvbkV2ZW50cyI6IFsKICAgICJvbkRlYnVn\nIiwKICAgICJvbkRlYnVnUmVzb2x2ZTptb25nby1zaGVsbCIsCiAgICAib25E\nZWJ1Z0R5bmFtaWNDb25maWd1cmF0aW9uczptb25nby1zaGVsbCIKICBdLAog\nICJjb250cmlidXRlcyI6IHsKICAgICJicmVha3BvaW50cyI6IFsKICAgICAg\newogICAgICAgICJsYW5ndWFnZSI6ICJqYXZhc2NyaXB0IgogICAgICB9CiAg\nICBdLAogICAgImRlYnVnZ2VycyI6IFsKICAgICAgewogICAgICAgICJ0eXBl\nIjogIm1vbmdvLXNoZWxsIiwKICAgICAgICAibGFiZWwiOiAiTW9uZ28gU2hl\nbGwiLAogICAgICAgICJwcm9ncmFtIjogIi4vYWRhcHRlci5qcyIsCiAgICAg\nICAgInJ1bnRpbWUiOiAibm9kZSIsCiAgICAgICAgImNvbmZpZ3VyYXRpb25B\ndHRyaWJ1dGVzIjogewogICAgICAgICAgImF0dGFjaCI6IHsKICAgICAgICAg\nICAgInJlcXVpcmVkIjogWwogICAgICAgICAgICAgICJkZWJ1Z1BvcnQiCiAg\nICAgICAgICAgIF0sCiAgICAgICAgICAgICJwcm9wZXJ0aWVzIjogewogICAg\nICAgICAgICAgICJkZWJ1Z1BvcnQiOiB7CiAgICAgICAgICAgICAgICAidHlw\nZSI6ICJudW1iZXIiLAogICAgICAgICAgICAgICAgImRlc2NyaXB0aW9uIjog\nIlBvcnQgb2YgcnVubmluZyBkZWJ1ZyBzZXJ2ZXIiLAogICAgICAgICAgICAg\nICAgImRlZmF1bHQiOiA5MjI5CiAgICAgICAgICAgICAgfSwKICAgICAgICAg\nICAgICAidHJhY2UiOiB7CiAgICAgICAgICAgICAgICAidHlwZSI6ICJib29s\nZWFuIiwKICAgICAgICAgICAgICAgICJkZXNjcmlwdGlvbiI6ICJFbmFibGUg\nbG9nZ2luZyBvZiB0aGUgRGVidWcgQWRhcHRlciBQcm90b2NvbCIsCiAgICAg\nICAgICAgICAgICAiZGVmYXVsdCI6IGZhbHNlCiAgICAgICAgICAgICAgfQog\nICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICAi\naW5pdGlhbENvbmZpZ3VyYXRpb25zIjogWwogICAgICAgIF0sCiAgICAgICAg\nImNvbmZpZ3VyYXRpb25TbmlwcGV0cyI6IFsKICAgICAgICAgIHsKICAgICAg\nICAgICAgImxhYmVsIjogIk1vbmdvREIgU2hlbGw6IEF0dGFjaCIsCiAgICAg\nICAgICAgICJkZXNjcmlwdGlvbiI6ICJBdHRhY2ggdG8gcnVubmluZyBNb25n\nb0RCIFNoZWxsIGRlYnVnIHNlcnZlciIsCiAgICAgICAgICAgICJib2R5Ijog\newogICAgICAgICAgICAgICJ0eXBlIjogIm1vbmdvLXNoZWxsIiwKICAgICAg\nICAgICAgICAicmVxdWVzdCI6ICJhdHRhY2giLAogICAgICAgICAgICAgICJu\nYW1lIjogIkF0dGFjaCB0byBNb25nb0RCIFNoZWxsIiwKICAgICAgICAgICAg\nICAiZGVidWdQb3J0IjogOTIyOQogICAgICAgICAgICB9CiAgICAgICAgICB9\nCiAgICAgICAgXSwKICAgICAgICAidmFyaWFibGVzIjogewogICAgICAgICAg\nIkFza0ZvclByb2dyYW1OYW1lIjogImV4dGVuc2lvbi5tb25nby1zaGVsbC1k\nZWJ1Z2dlci5nZXRQcm9ncmFtTmFtZSIKICAgICAgICB9CiAgICAgIH0KICAg\nIF0KICB9LAogICJzY3JpcHRzIjogewogICAgInBhY2thZ2UiOiAidnNjZSBw\nYWNrYWdlIC0tc2tpcC1saWNlbnNlIC0tZGVwZW5kZW5jaWVzIC0tYmFzZUlt\nYWdlc1VybCBodHRwczovL2dpdGh1Yi5jb20vbW9uZ29kYi9tb25nby9yYXcv\nSEVBRC9zcmMvbW9uZ28vc2hlbGwvZGVidWdnZXIvdnNjb2RlLyIKICB9LAog\nICJkZXZEZXBlbmRlbmNpZXMiOiB7CiAgICAiQHR5cGVzL3ZzY29kZSI6ICJe\nMS43NS4wIiwKICAgICJAdnNjb2RlL3ZzY2UiOiAiXjMuNy4xIgogIH0sCiAg\nImRlcGVuZGVuY2llcyI6IHsKICAgICJAdnNjb2RlL2RlYnVnYWRhcHRlciI6\nICJeMS42OC4wIgogIH0KfQo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/mongo/shell/debugger/vscode/package.json",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/e94a6d100bcd8615ede24379c0179225779a8ea9",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/mongo/shell/debugger/vscode/package.json",
+   "name": "package.json",
+   "path": "src/mongo/shell/debugger/vscode/package.json",
+   "sha": "e94a6d100bcd8615ede24379c0179225779a8ea9",
+   "size": 2357,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/mongo/shell/debugger/vscode/package.json?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/Gemfile?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/597a7d4f4b04b5a8585852fc64eb77c1fa7ff8ef",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/Gemfile",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/Gemfile?ref=master"
+   },
+   "content": "c291cmNlICdodHRwczovL3J1YnlnZW1zLm9yZycKCiMgU3BlY2lmeSB5b3Vy\nIGdlbSdzIGRlcGVuZGVuY2llcyBpbiBncnBjLmdlbXNwZWMKZ2Vtc3BlYwo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/grpc/dist/Gemfile",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/597a7d4f4b04b5a8585852fc64eb77c1fa7ff8ef",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/Gemfile",
+   "name": "Gemfile",
+   "path": "src/third_party/grpc/dist/Gemfile",
+   "sha": "597a7d4f4b04b5a8585852fc64eb77c1fa7ff8ef",
+   "size": 89,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/Gemfile?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/composer.json?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/4ad328dbc07a267d1c65e4de2dd3c5386375b98f",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/composer.json",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/composer.json?ref=master"
+   },
+   "content": "ewogICJuYW1lIjogImdycGMvZ3JwYyIsCiAgInR5cGUiOiAibGlicmFyeSIs\nCiAgImRlc2NyaXB0aW9uIjogImdSUEMgbGlicmFyeSBmb3IgUEhQIiwKICAi\na2V5d29yZHMiOiBbInJwYyJdLAogICJob21lcGFnZSI6ICJodHRwczovL2dy\ncGMuaW8iLAogICJsaWNlbnNlIjogIkFwYWNoZS0yLjAiLAogICJyZXF1aXJl\nIjogewogICAgInBocCI6ICI+PTcuMC4wIgogIH0sCiAgInJlcXVpcmUtZGV2\nIjogewogICAgImdvb2dsZS9hdXRoIjogIl52MS4zLjAiCiAgfSwKICAic3Vn\nZ2VzdCI6IHsKICAgICJleHQtcHJvdG9idWYiOiAiRm9yIGJldHRlciBwZXJm\nb3JtYW5jZSwgaW5zdGFsbCB0aGUgcHJvdG9idWYgQyBleHRlbnNpb24uIiwK\nICAgICJnb29nbGUvcHJvdG9idWYiOiAiVG8gZ2V0IHN0YXJ0ZWQgdXNpbmcg\nZ3JwYyBxdWlja2x5LCBpbnN0YWxsIHRoZSBuYXRpdmUgcHJvdG9idWYgbGli\ncmFyeS4iCiAgfSwKICAiYXV0b2xvYWQiOiB7CiAgICAicHNyLTQiOiB7CiAg\nICAgICJHcnBjXFwiOiAic3JjL3BocC9saWIvR3JwYy8iCiAgICB9CiAgfQp9\nCg==\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/grpc/dist/composer.json",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/4ad328dbc07a267d1c65e4de2dd3c5386375b98f",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/composer.json",
+   "name": "composer.json",
+   "path": "src/third_party/grpc/dist/composer.json",
+   "sha": "4ad328dbc07a267d1c65e4de2dd3c5386375b98f",
+   "size": 541,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/composer.json?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/requirements.txt?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/c798474fb01c273035dd0f958b556f10f9396189",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/requirements.txt",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/requirements.txt?ref=master"
+   },
+   "content": "IyBHUlBDIFB5dGhvbiBzZXR1cCByZXF1aXJlbWVudHMKY292ZXJhZ2U+PTQu\nMApjeXRob249PTMuMS4xCnByb3RvYnVmPj02LjMxLjEsPDcuMC4wCndoZWVs\nPj0wLjI5Cg==\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/grpc/dist/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/c798474fb01c273035dd0f958b556f10f9396189",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/requirements.txt",
+   "name": "requirements.txt",
+   "path": "src/third_party/grpc/dist/requirements.txt",
+   "sha": "c798474fb01c273035dd0f958b556f10f9396189",
+   "size": 97,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/requirements.txt?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/setup.py?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/39ca17e8249e30dc7076ecee680edddc8ae3a34b",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/setup.py",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/setup.py?ref=master"
+   },
+   "content": "IyBDb3B5cmlnaHQgMjAxNSBnUlBDIGF1dGhvcnMuCiMKIyBMaWNlbnNlZCB1\nbmRlciB0aGUgQXBhY2hlIExpY2Vuc2UsIFZlcnNpb24gMi4wICh0aGUgIkxp\nY2Vuc2UiKTsKIyB5b3UgbWF5IG5vdCB1c2UgdGhpcyBmaWxlIGV4Y2VwdCBp\nbiBjb21wbGlhbmNlIHdpdGggdGhlIExpY2Vuc2UuCiMgWW91IG1heSBvYnRh\naW4gYSBjb3B5IG9mIHRoZSBMaWNlbnNlIGF0CiMKIyAgICAgaHR0cDovL3d3\ndy5hcGFjaGUub3JnL2xpY2Vuc2VzL0xJQ0VOU0UtMi4wCiMKIyBVbmxlc3Mg\ncmVxdWlyZWQgYnkgYXBwbGljYWJsZSBsYXcgb3IgYWdyZWVkIHRvIGluIHdy\naXRpbmcsIHNvZnR3YXJlCiMgZGlzdHJpYnV0ZWQgdW5kZXIgdGhlIExpY2Vu\nc2UgaXMgZGlzdHJpYnV0ZWQgb24gYW4gIkFTIElTIiBCQVNJUywKIyBXSVRI\nT1VUIFdBUlJBTlRJRVMgT1IgQ09ORElUSU9OUyBPRiBBTlkgS0lORCwgZWl0\naGVyIGV4cHJlc3Mgb3IgaW1wbGllZC4KIyBTZWUgdGhlIExpY2Vuc2UgZm9y\nIHRoZSBzcGVjaWZpYyBsYW5ndWFnZSBnb3Zlcm5pbmcgcGVybWlzc2lvbnMg\nYW5kCiMgbGltaXRhdGlvbnMgdW5kZXIgdGhlIExpY2Vuc2UuCiIiIkEgc2V0\ndXAgbW9kdWxlIGZvciB0aGUgR1JQQyBQeXRob24gcGFja2FnZS4iIiIKCiMg\nTk9URShodHRwczovL2dpdGh1Yi5jb20vZ3JwYy9ncnBjL2lzc3Vlcy8yNDAy\nOCk6IGFsbG93IHNldHVwdG9vbHMgdG8gbW9ua2V5CiMgcGF0Y2ggZGlzdHV0\naWxzCmltcG9ydCBzZXR1cHRvb2xzICAjIGlzb3J0OnNraXAKCiMgTW9ua2V5\nIFBhdGNoIHRoZSB1bml4IGNvbXBpbGVyIHRvIGFjY2VwdCBBU00KIyBmaWxl\ncyB1c2VkIGJ5IGJvcmluZyBTU0wuCmZyb20gZGlzdHV0aWxzLnVuaXhjY29t\ncGlsZXIgaW1wb3J0IFVuaXhDQ29tcGlsZXIKClVuaXhDQ29tcGlsZXIuc3Jj\nX2V4dGVuc2lvbnMuYXBwZW5kKCIuUyIpCmRlbCBVbml4Q0NvbXBpbGVyCgpp\nbXBvcnQgb3MKaW1wb3J0IG9zLnBhdGgKaW1wb3J0IHBhdGhsaWIKaW1wb3J0\nIHBsYXRmb3JtCmltcG9ydCByZQppbXBvcnQgc2hsZXgKaW1wb3J0IHNodXRp\nbAppbXBvcnQgc3VicHJvY2Vzcwpmcm9tIHN1YnByb2Nlc3MgaW1wb3J0IFBJ\nUEUKaW1wb3J0IHN5cwppbXBvcnQgc3lzY29uZmlnCgppbXBvcnQgX21ldGFk\nYXRhCmZyb20gc2V0dXB0b29scyBpbXBvcnQgRXh0ZW5zaW9uCmZyb20gc2V0\ndXB0b29scy5jb21tYW5kIGltcG9ydCBlZ2dfaW5mbwoKIyBSZWRpcmVjdCB0\naGUgbWFuaWZlc3QgdGVtcGxhdGUgZnJvbSBNQU5JRkVTVC5pbiB0byBQWVRI\nT04tTUFOSUZFU1QuaW4uCmVnZ19pbmZvLm1hbmlmZXN0X21ha2VyLnRlbXBs\nYXRlID0gIlBZVEhPTi1NQU5JRkVTVC5pbiIKClBZMyA9IHN5cy52ZXJzaW9u\nX2luZm8ubWFqb3IgPT0gMwpQWVRIT05fU1RFTSA9IG9zLnBhdGguam9pbigi\nc3JjIiwgInB5dGhvbiIsICJncnBjaW8iKQpDT1JFX0lOQ0xVREUgPSAoCiAg\nICAiaW5jbHVkZSIsCiAgICAiLiIsCikKQUJTTF9JTkNMVURFID0gKG9zLnBh\ndGguam9pbigidGhpcmRfcGFydHkiLCAiYWJzZWlsLWNwcCIpLCkKQUREUkVT\nU19TT1JUSU5HX0lOQ0xVREUgPSAoCiAgICBvcy5wYXRoLmpvaW4oInRoaXJk\nX3BhcnR5IiwgImFkZHJlc3Nfc29ydGluZyIsICJpbmNsdWRlIiksCikKQ0FS\nRVNfSU5DTFVERSA9ICgKICAgIG9zLnBhdGguam9pbigidGhpcmRfcGFydHki\nLCAiY2FyZXMiLCAiY2FyZXMiLCAiaW5jbHVkZSIpLAogICAgb3MucGF0aC5q\nb2luKCJ0aGlyZF9wYXJ0eSIsICJjYXJlcyIpLAogICAgb3MucGF0aC5qb2lu\nKCJ0aGlyZF9wYXJ0eSIsICJjYXJlcyIsICJjYXJlcyIpLAopCmlmICJkYXJ3\naW4iIGluIHN5cy5wbGF0Zm9ybToKICAgIENBUkVTX0lOQ0xVREUgKz0gKG9z\nLnBhdGguam9pbigidGhpcmRfcGFydHkiLCAiY2FyZXMiLCAiY29uZmlnX2Rh\ncndpbiIpLCkKaWYgImZyZWVic2QiIGluIHN5cy5wbGF0Zm9ybToKICAgIENB\nUkVTX0lOQ0xVREUgKz0gKG9zLnBhdGguam9pbigidGhpcmRfcGFydHkiLCAi\nY2FyZXMiLCAiY29uZmlnX2ZyZWVic2QiKSwpCmlmICJsaW51eCIgaW4gc3lz\nLnBsYXRmb3JtOgogICAgQ0FSRVNfSU5DTFVERSArPSAob3MucGF0aC5qb2lu\nKCJ0aGlyZF9wYXJ0eSIsICJjYXJlcyIsICJjb25maWdfbGludXgiKSwpCmlm\nICJvcGVuYnNkIiBpbiBzeXMucGxhdGZvcm06CiAgICBDQVJFU19JTkNMVURF\nICs9IChvcy5wYXRoLmpvaW4oInRoaXJkX3BhcnR5IiwgImNhcmVzIiwgImNv\nbmZpZ19vcGVuYnNkIiksKQpSRTJfSU5DTFVERSA9IChvcy5wYXRoLmpvaW4o\nInRoaXJkX3BhcnR5IiwgInJlMiIpLCkKU1NMX0lOQ0xVREUgPSAoCiAgICBv\ncy5wYXRoLmpvaW4oInRoaXJkX3BhcnR5IiwgImJvcmluZ3NzbC13aXRoLWJh\nemVsIiwgInNyYyIsICJpbmNsdWRlIiksCikKVVBCX0lOQ0xVREUgPSAob3Mu\ncGF0aC5qb2luKCJ0aGlyZF9wYXJ0eSIsICJ1cGIiKSwpClVQQl9HUlBDX0dF\nTkVSQVRFRF9JTkNMVURFID0gKG9zLnBhdGguam9pbigic3JjIiwgImNvcmUi\nLCAiZXh0IiwgInVwYi1nZW4iKSwpClVQQkRFRlNfR1JQQ19HRU5FUkFURURf\nSU5DTFVERSA9ICgKICAgIG9zLnBhdGguam9pbigic3JjIiwgImNvcmUiLCAi\nZXh0IiwgInVwYmRlZnMtZ2VuIiksCikKVVRGOF9SQU5HRV9JTkNMVURFID0g\nKG9zLnBhdGguam9pbigidGhpcmRfcGFydHkiLCAidXRmOF9yYW5nZSIpLCkK\nWFhIQVNIX0lOQ0xVREUgPSAob3MucGF0aC5qb2luKCJ0aGlyZF9wYXJ0eSIs\nICJ4eGhhc2giKSwpClpMSUJfSU5DTFVERSA9IChvcy5wYXRoLmpvaW4oInRo\naXJkX3BhcnR5IiwgInpsaWIiKSwpClJFQURNRSA9IG9zLnBhdGguam9pbihQ\nWVRIT05fU1RFTSwgIlJFQURNRS5yc3QiKQoKIyBFbnN1cmUgd2UncmUgaW4g\ndGhlIHByb3BlciBkaXJlY3Rvcnkgd2hldGhlciBvciBub3Qgd2UncmUgYmVp\nbmcgdXNlZCBieSBwaXAuCm9zLmNoZGlyKG9zLnBhdGguZGlybmFtZShvcy5w\nYXRoLmFic3BhdGgoX19maWxlX18pKSkKc3lzLnBhdGguaW5zZXJ0KDAsIG9z\nLnBhdGguYWJzcGF0aChQWVRIT05fU1RFTSkpCgojIEJyZWFrIGltcG9ydC1z\ndHlsZSB0byBlbnN1cmUgd2UgY2FuIGFjdHVhbGx5IGZpbmQgb3VyIGluLXJl\ncG8gZGVwZW5kZW5jaWVzLgppbXBvcnQgX3BhcmFsbGVsX2NvbXBpbGVfcGF0\nY2gKaW1wb3J0IF9zcGF3bl9wYXRjaAppbXBvcnQgZ3JwY19jb3JlX2RlcGVu\nZGVuY2llcwppbXBvcnQgcHl0aG9uX3ZlcnNpb24KCmltcG9ydCBjb21tYW5k\ncwppbXBvcnQgZ3JwY192ZXJzaW9uCgpfcGFyYWxsZWxfY29tcGlsZV9wYXRj\naC5tb25rZXlwYXRjaF9jb21waWxlX21heWJlKCkKX3NwYXduX3BhdGNoLm1v\nbmtleXBhdGNoX3NwYXduKCkKCgpMSUNFTlNFID0gIkFwYWNoZSBMaWNlbnNl\nIDIuMCIKCkNMQVNTSUZJRVJTID0gKAogICAgWwogICAgICAgICJEZXZlbG9w\nbWVudCBTdGF0dXMgOjogNSAtIFByb2R1Y3Rpb24vU3RhYmxlIiwKICAgICAg\nICAiUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIiwKICAgICAgICAi\nUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IDMiLAogICAgXQog\nICAgKyBbCiAgICAgICAgZiJQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRo\nb24gOjoge3h9IgogICAgICAgIGZvciB4IGluIHB5dGhvbl92ZXJzaW9uLlNV\nUFBPUlRFRF9QWVRIT05fVkVSU0lPTlMKICAgIF0KICAgICsgWyJMaWNlbnNl\nIDo6IE9TSSBBcHByb3ZlZCA6OiBBcGFjaGUgU29mdHdhcmUgTGljZW5zZSJd\nCikKCgpkZWYgX2Vudl9ib29sX3ZhbHVlKGVudl9uYW1lLCBkZWZhdWx0KToK\nICAgICIiIlBhcnNlcyBhIGJvb2wgb3B0aW9uIGZyb20gYW4gZW52aXJvbm1l\nbnQgdmFyaWFibGUiIiIKICAgIHJldHVybiBvcy5lbnZpcm9uLmdldChlbnZf\nbmFtZSwgZGVmYXVsdCkudXBwZXIoKSBub3QgaW4gWyJGQUxTRSIsICIwIiwg\nIiJdCgoKQlVJTERfV0lUSF9CT1JJTkdfU1NMX0FTTSA9IF9lbnZfYm9vbF92\nYWx1ZSgKICAgICJHUlBDX0JVSUxEX1dJVEhfQk9SSU5HX1NTTF9BU00iLCAi\nVHJ1ZSIKKQoKIyBFeHBvcnQgdGhpcyBlbnZpcm9ubWVudCB2YXJpYWJsZSB0\nbyBvdmVycmlkZSB0aGUgcGxhdGZvcm0gdmFyaWFudCB0aGF0IHdpbGwKIyBi\nZSBjaG9zZW4gZm9yIGJvcmluZ3NzbCBhc3NlbWJseSBvcHRpbWl6YXRpb25z\nLiBUaGlzIG9wdGlvbiBpcyB1c2VmdWwgd2hlbgojIGNyb3NzY29tcGlsaW5n\nIGFuZCB0aGUgaG9zdCBwbGF0Zm9ybSBhcyBvYnRhaW5lZCBieSBzeXNjb25m\naWcuZ2V0X3BsYXRmb3JtKCkKIyBkb2Vzbid0IG1hdGNoIHRoZSBwbGF0Zm9y\nbSB3ZSBhcmUgdGFyZ2V0aW5nLgojIEV4YW1wbGUgdmFsdWU6ICJsaW51eC1h\nYXJjaDY0IgpCVUlMRF9PVkVSUklERV9CT1JJTkdfU1NMX0FTTV9QTEFURk9S\nTSA9IG9zLmVudmlyb24uZ2V0KAogICAgIkdSUENfQlVJTERfT1ZFUlJJREVf\nQk9SSU5HX1NTTF9BU01fUExBVEZPUk0iLCAiIgopCgojIEVudmlyb25tZW50\nIHZhcmlhYmxlIHRvIGRldGVybWluZSB3aGV0aGVyIG9yIG5vdCB0aGUgQ3l0\naG9uIGV4dGVuc2lvbiBzaG91bGQKIyAqdXNlKiBDeXRob24gb3IgdXNlIHRo\nZSBnZW5lcmF0ZWQgQyBmaWxlcy4gTm90ZSB0aGF0IHRoaXMgcmVxdWlyZXMg\ndGhlIEMgZmlsZXMKIyB0byBoYXZlIGJlZW4gZ2VuZXJhdGVkIGJ5IGJ1aWxk\naW5nIGZpcnN0ICp3aXRoKiBDeXRob24gc3VwcG9ydC4gRXZlbiBpZiB0aGlz\nCiMgaXMgc2V0IHRvIGZhbHNlLCBpZiB0aGUgc2NyaXB0IGRldGVjdHMgdGhh\ndCB0aGUgZ2VuZXJhdGVkIGAuY2AgZmlsZSBpc24ndAojIHByZXNlbnQsIHRo\nZW4gaXQgd2lsbCBzdGlsbCBhdHRlbXB0IHRvIHVzZSBDeXRob24uCkJVSUxE\nX1dJVEhfQ1lUSE9OID0gX2Vudl9ib29sX3ZhbHVlKCJHUlBDX1BZVEhPTl9C\nVUlMRF9XSVRIX0NZVEhPTiIsICJGYWxzZSIpCgojIEV4cG9ydCB0aGlzIHZh\ncmlhYmxlIHRvIHVzZSB0aGUgc3lzdGVtIGluc3RhbGxhdGlvbiBvZiBvcGVu\nc3NsLiBZb3UgbmVlZCB0bwojIGhhdmUgdGhlIGhlYWRlciBmaWxlcyBpbnN0\nYWxsZWQgKGluIC91c3IvaW5jbHVkZS9vcGVuc3NsKSBhbmQgZHVyaW5nCiMg\ncnVudGltZSwgdGhlIHNoYXJlZCBsaWJyYXJ5IG11c3QgYmUgaW5zdGFsbGVk\nCkJVSUxEX1dJVEhfU1lTVEVNX09QRU5TU0wgPSBfZW52X2Jvb2xfdmFsdWUo\nCiAgICAiR1JQQ19QWVRIT05fQlVJTERfU1lTVEVNX09QRU5TU0wiLCAiRmFs\nc2UiCikKCiMgRXhwb3J0IHRoaXMgdmFyaWFibGUgdG8gdXNlIHRoZSBzeXN0\nZW0gaW5zdGFsbGF0aW9uIG9mIHpsaWIuIFlvdSBuZWVkIHRvCiMgaGF2ZSB0\naGUgaGVhZGVyIGZpbGVzIGluc3RhbGxlZCAoaW4gL3Vzci9pbmNsdWRlLykg\nYW5kIGR1cmluZwojIHJ1bnRpbWUsIHRoZSBzaGFyZWQgbGlicmFyeSBtdXN0\nIGJlIGluc3RhbGxlZApCVUlMRF9XSVRIX1NZU1RFTV9aTElCID0gX2Vudl9i\nb29sX3ZhbHVlKAogICAgIkdSUENfUFlUSE9OX0JVSUxEX1NZU1RFTV9aTElC\nIiwgIkZhbHNlIgopCgojIEV4cG9ydCB0aGlzIHZhcmlhYmxlIHRvIHVzZSB0\naGUgc3lzdGVtIGluc3RhbGxhdGlvbiBvZiBjYXJlcy4gWW91IG5lZWQgdG8K\nIyBoYXZlIHRoZSBoZWFkZXIgZmlsZXMgaW5zdGFsbGVkIChpbiAvdXNyL2lu\nY2x1ZGUvKSBhbmQgZHVyaW5nCiMgcnVudGltZSwgdGhlIHNoYXJlZCBsaWJy\nYXJ5IG11c3QgYmUgaW5zdGFsbGVkCkJVSUxEX1dJVEhfU1lTVEVNX0NBUkVT\nID0gX2Vudl9ib29sX3ZhbHVlKAogICAgIkdSUENfUFlUSE9OX0JVSUxEX1NZ\nU1RFTV9DQVJFUyIsICJGYWxzZSIKKQoKIyBFeHBvcnQgdGhpcyB2YXJpYWJs\nZSB0byB1c2UgdGhlIHN5c3RlbSBpbnN0YWxsYXRpb24gb2YgcmUyLiBZb3Ug\nbmVlZCB0bwojIGhhdmUgdGhlIGhlYWRlciBmaWxlcyBpbnN0YWxsZWQgKGlu\nIC91c3IvaW5jbHVkZS9yZTIpIGFuZCBkdXJpbmcKIyBydW50aW1lLCB0aGUg\nc2hhcmVkIGxpYnJhcnkgbXVzdCBiZSBpbnN0YWxsZWQKQlVJTERfV0lUSF9T\nWVNURU1fUkUyID0gX2Vudl9ib29sX3ZhbHVlKCJHUlBDX1BZVEhPTl9CVUlM\nRF9TWVNURU1fUkUyIiwgIkZhbHNlIikKCiMgRXhwb3J0IHRoaXMgdmFyaWFi\nbGUgdG8gdXNlIHRoZSBzeXN0ZW0gaW5zdGFsbGF0aW9uIG9mIGFic2VpbC4g\nWW91IG5lZWQgdG8KIyBoYXZlIHRoZSBoZWFkZXIgZmlsZXMgaW5zdGFsbGVk\nIChpbiAvdXNyL2luY2x1ZGUvYWJzbCkgYW5kIGR1cmluZwojIHJ1bnRpbWUs\nIHRoZSBzaGFyZWQgbGlicmFyeSBtdXN0IGJlIGluc3RhbGxlZApCVUlMRF9X\nSVRIX1NZU1RFTV9BQlNMID0gb3MuZW52aXJvbi5nZXQoIkdSUENfUFlUSE9O\nX0JVSUxEX1NZU1RFTV9BQlNMIiwgRmFsc2UpCgojIEV4cG9ydCB0aGlzIHZh\ncmlhYmxlIHRvIGZvcmNlIGJ1aWxkaW5nIHRoZSBweXRob24gZXh0ZW5zaW9u\nIHdpdGggYSBzdGF0aWNhbGx5IGxpbmtlZCBsaWJzdGRjKysuCiMgQXQgbGVh\nc3Qgb24gbGludXgsIHRoaXMgaXMgbm9ybWFsbHkgbm90IG5lZWRlZCBhcyB3\nZSBjYW4gYnVpbGQgbWFueWxpbnV4LWNvbXBhdGlibGUgd2hlZWxzIG9uIGxp\nbnV4IGp1c3QgZmluZQojIHdpdGhvdXQgc3RhdGljYWxseSBsaW5raW5nIGxp\nYnN0ZGMrKyAod2hpY2ggbGVhZHMgdG8gYSBzbGlnaHQgaW5jcmVhc2UgaW4g\ndGhlIHdoZWVsIHNpemUpLgojIFRoaXMgb3B0aW9uIGlzIHVzZWZ1bCB3aGVu\nIGNyb3NzY29tcGlsaW5nIHdoZWVscyBmb3IgYWFyY2g2NCB3aGVyZQojIGl0\nJ3MgZGlmZmljdWx0IHRvIGVuc3VyZSB0aGF0IHRoZSBjcm9zc2NvbXBpbGF0\naW9uIHRvb2xjaGFpbiBoYXMgYSBoaWdoLWVub3VnaCB2ZXJzaW9uCiMgb2Yg\nR0NDICh3ZSByZXF1aXJlID49NS4xKSBidXQgc3RpbGwgdXNlcyBvbGQtZW5v\ndWdoIGxpYnN0ZGMrKyBzeW1ib2xzLgojIFRPRE8oanRhdHRlcm11c2NoKTog\ncmVtb3ZlIHRoaXMgd29ya2Fyb3VuZCBvbmNlIGlzc3VlcyB3aXRoIGNyb3Nz\nY29tcGlsZXIgdmVyc2lvbiBhcmUgcmVzb2x2ZWQuCkJVSUxEX1dJVEhfU1RB\nVElDX0xJQlNURENYWCA9IF9lbnZfYm9vbF92YWx1ZSgKICAgICJHUlBDX1BZ\nVEhPTl9CVUlMRF9XSVRIX1NUQVRJQ19MSUJTVERDWFgiLCAiRmFsc2UiCikK\nCiMgRm9yIGxvY2FsIGRldmVsb3BtZW50IHVzZSBvbmx5OiBUaGlzIHNraXBz\nIGJ1aWxkaW5nIGdSUEMgQ29yZSBhbmQgaXRzCiMgZGVwZW5kZW5jaWVzLCBp\nbmNsdWRpbmcgcHJvdG9idWYgYW5kIGJvcmluZ3NzbC4gVGhpcyBhbGxvd3Mg\nImluY3JlbWVudGFsIgojIGNvbXBpbGF0aW9uIGJ5IGZpcnN0IGJ1aWxkaW5n\nIGdSUEMgQ29yZSB1c2luZyBtYWtlLCB0aGVuIGJ1aWxkaW5nIG9ubHkgdGhl\nCiMgUHl0aG9uL0N5dGhvbiBsYXllcnMgaGVyZS4KIwojIE5vdGUgdGhhdCB0\naGlzIHJlcXVpcmVzIGxpYmJvcmluZ3NzbC5hIGluIHRoZSBsaWJzL3tkYmcs\nb3B0fS8gZGlyZWN0b3J5LCB3aGljaAojIG1heSByZXF1aXJlIGNvbmZpZ3Vy\naW5nIG1ha2UgdG8gbm90IHVzZSB0aGUgc3lzdGVtIG9wZW5zc2wgaW1wbGVt\nZW50YXRpb246CiMKIyAgICBtYWtlIEhBU19TWVNURU1fT1BFTlNTTF9BTFBO\nPTAKIwojIFRPRE8oZXJpY2dyaWJrb2ZmKSBSZXNwZWN0IHRoZSBCVUlMRF9X\nSVRIX1NZU1RFTV8qIGZsYWdzIGFsb25nc2lkZSB0aGlzIG9wdGlvbgpVU0Vf\nUFJFQlVJTFRfR1JQQ19DT1JFID0gX2Vudl9ib29sX3ZhbHVlKAogICAgIkdS\nUENfUFlUSE9OX1VTRV9QUkVCVUlMVF9HUlBDX0NPUkUiLCAiRmFsc2UiCikK\nCiMgRW52aXJvbm1lbnQgdmFyaWFibGUgdG8gZGV0ZXJtaW5lIHdoZXRoZXIg\nb3Igbm90IHRvIGVuYWJsZSBjb3ZlcmFnZSBhbmFseXNpcwojIGluIEN5dGhv\nbiBtb2R1bGVzLgpFTkFCTEVfQ1lUSE9OX1RSQUNJTkcgPSBfZW52X2Jvb2xf\ndmFsdWUoCiAgICAiR1JQQ19QWVRIT05fRU5BQkxFX0NZVEhPTl9UUkFDSU5H\nIiwgIkZhbHNlIgopCgojIEVudmlyb25tZW50IHZhcmlhYmxlIHNwZWNpZnlp\nbmcgd2hldGhlciBvciBub3QgdGhlcmUncyBpbnRlcmVzdCBpbiBzZXR0aW5n\nIHVwCiMgZG9jdW1lbnRhdGlvbiBidWlsZGluZy4KRU5BQkxFX0RPQ1VNRU5U\nQVRJT05fQlVJTEQgPSBfZW52X2Jvb2xfdmFsdWUoCiAgICAiR1JQQ19QWVRI\nT05fRU5BQkxFX0RPQ1VNRU5UQVRJT05fQlVJTEQiLCAiRmFsc2UiCikKCgpk\nZWYgY2hlY2tfbGlua2VyX25lZWRfbGliYXRvbWljKCk6CiAgICAiIiJUZXN0\nIGlmIGxpbmtlciBvbiBzeXN0ZW0gbmVlZHMgbGliYXRvbWljLiIiIgogICAg\nY29kZV90ZXN0ID0gKAogICAgICAgIGIiI2luY2x1ZGUgPGF0b21pYz5cbiIK\nICAgICAgICArIGIiaW50IG1haW4oKSB7IHJldHVybiBzdGQ6OmF0b21pYzxp\nbnQ2NF90Pnt9OyB9IgogICAgKQogICAgY3h4ID0gc2hsZXguc3BsaXQob3Mu\nZW52aXJvbi5nZXQoIkNYWCIsICJjKysiKSkKICAgIGNwcF90ZXN0ID0gc3Vi\ncHJvY2Vzcy5Qb3BlbigKICAgICAgICBjeHggKyBbIi14IiwgImMrKyIsICIt\nc3RkPWMrKzE3IiwgIi0iXSwKICAgICAgICBzdGRpbj1QSVBFLAogICAgICAg\nIHN0ZG91dD1QSVBFLAogICAgICAgIHN0ZGVycj1QSVBFLAogICAgKQogICAg\nY3BwX3Rlc3QuY29tbXVuaWNhdGUoaW5wdXQ9Y29kZV90ZXN0KQogICAgaWYg\nY3BwX3Rlc3QucmV0dXJuY29kZSA9PSAwOgogICAgICAgIHJldHVybiBGYWxz\nZQogICAgIyBEb3VibGUtY2hlY2sgdG8gc2VlIGlmIC1sYXRvbWljIGFjdHVh\nbGx5IGNhbiBzb2x2ZSB0aGUgcHJvYmxlbS4KICAgICMgaHR0cHM6Ly9naXRo\ndWIuY29tL2dycGMvZ3JwYy9pc3N1ZXMvMjI0OTEKICAgIGNwcF90ZXN0ID0g\nc3VicHJvY2Vzcy5Qb3BlbigKICAgICAgICBjeHggKyBbIi14IiwgImMrKyIs\nICItc3RkPWMrKzE3IiwgIi0iLCAiLWxhdG9taWMiXSwKICAgICAgICBzdGRp\nbj1QSVBFLAogICAgICAgIHN0ZG91dD1QSVBFLAogICAgICAgIHN0ZGVycj1Q\nSVBFLAogICAgKQogICAgY3BwX3Rlc3QuY29tbXVuaWNhdGUoaW5wdXQ9Y29k\nZV90ZXN0KQogICAgcmV0dXJuIGNwcF90ZXN0LnJldHVybmNvZGUgPT0gMAoK\nCiMgV2hlbiBidWlsZGluZyBleHRlbnNpb25zIGZvciBtYWNPUyBvbiBhIHN5\nc3RlbSBydW5uaW5nIG1hY09TIDExLjAgb3IgbmV3ZXIsCiMgbWFrZSBzdXJl\nIHRoZXkgdGFyZ2V0IG1hY09TIDExLjAgb3IgbmV3ZXIgdG8gdXNlIEMrKzE3\nIHN0ZGxpYiBwcm9wZXJseS4KIyBUaGlzIG92ZXJyaWRlcyB0aGUgZGVmYXVs\ndCBiZWhhdmlvciBvZiBkaXN0dXRpbHMsIHdoaWNoIHRhcmdldHMgdGhlIG1h\nY09TCiMgdmVyc2lvbiBQeXRob24gd2FzIGJ1aWx0IG9uLiBZb3UgY2FuIGZ1\ncnRoZXIgY3VzdG9taXplIHRoZSB0YXJnZXQgbWFjT1MKIyB2ZXJzaW9uIGJ5\nIHNldHRpbmcgdGhlIE1BQ09TWF9ERVBMT1lNRU5UX1RBUkdFVCBlbnZpcm9u\nbWVudCB2YXJpYWJsZSBiZWZvcmUKIyBydW5uaW5nIHNldHVwLnB5LgppZiBz\neXMucGxhdGZvcm0gPT0gImRhcndpbiI6CiAgICBpZiAiTUFDT1NYX0RFUExP\nWU1FTlRfVEFSR0VUIiBub3QgaW4gb3MuZW52aXJvbjoKICAgICAgICB0YXJn\nZXRfdmVyID0gc3lzY29uZmlnLmdldF9jb25maWdfdmFyKCJNQUNPU1hfREVQ\nTE9ZTUVOVF9UQVJHRVQiKQogICAgICAgIGlmIHRhcmdldF92ZXIgPT0gIiIg\nb3IgdHVwbGUoaW50KHApIGZvciBwIGluIHRhcmdldF92ZXIuc3BsaXQoIi4i\nKSkgPCAoCiAgICAgICAgICAgIDEwLAogICAgICAgICAgICAxNCwKICAgICAg\nICApOgogICAgICAgICAgICBvcy5lbnZpcm9uWyJNQUNPU1hfREVQTE9ZTUVO\nVF9UQVJHRVQiXSA9ICIxMS4wIgoKIyBUaGVyZSBhcmUgc29tZSBzaXR1YXRp\nb25zIChsaWtlIG9uIFdpbmRvd3MpIHdoZXJlIENDLCBDRkxBR1MsIGFuZCBM\nREZMQUdTIGFyZQojIGVudGlyZWx5IGlnbm9yZWQvZHJvcHBlZC9mb3Jnb3R0\nZW4gYnkgZGlzdHV0aWxzIGFuZCBpdHMgQ3lnd2luL01pbkdXIHN1cHBvcnQu\nCiMgV2UgdXNlIHRoZXNlIGVudmlyb25tZW50IHZhcmlhYmxlcyB0byB0aHVz\nIGdldCBhcm91bmQgdGhhdCB3aXRob3V0IGxvY2tpbmcKIyBvdXJzZWx2ZXMg\naW4gdy5yLnQuIHRoZSBtdWx0aXR1ZGUgb2Ygb3BlcmF0aW5nIHN5c3RlbXMg\ndGhpcyBvdWdodCB0byBidWlsZCBvbi4KIyBXZSBjYW4gYWxzbyB1c2UgdGhl\nc2UgdmFyaWFibGVzIGFzIGEgd2F5IHRvIGluamVjdCBlbnZpcm9ubWVudC1z\ncGVjaWZpYwojIGNvbXBpbGVyL2xpbmtlciBmbGFncy4gV2UgYXNzdW1lIEdD\nQy1saWtlIGNvbXBpbGVycyBhbmQvb3IgTWluR1cgYXMgYQojIHJlYXNvbmFi\nbGUgZGVmYXVsdC4KRVhUUkFfRU5WX0NPTVBJTEVfQVJHUyA9IG9zLmVudmly\nb24uZ2V0KCJHUlBDX1BZVEhPTl9DRkxBR1MiLCBOb25lKQpFWFRSQV9FTlZf\nTElOS19BUkdTID0gb3MuZW52aXJvbi5nZXQoIkdSUENfUFlUSE9OX0xERkxB\nR1MiLCBOb25lKQppZiBFWFRSQV9FTlZfQ09NUElMRV9BUkdTIGlzIE5vbmU6\nCiAgICBFWFRSQV9FTlZfQ09NUElMRV9BUkdTID0gIiIKICAgIGlmICJ3aW4z\nMiIgaW4gc3lzLnBsYXRmb3JtOgogICAgICAgICMgTVNWQyBieSBkZWZhdWx0\ncyB1c2VzIEMrKzE0IGFuZCBDODkgc28gYm90aCBuZWVkcyB0byBiZSBjb25m\naWd1cmVkLgogICAgICAgIEVYVFJBX0VOVl9DT01QSUxFX0FSR1MgKz0gIiAv\nc3RkOmMrKzE3IgogICAgICAgIEVYVFJBX0VOVl9DT01QSUxFX0FSR1MgKz0g\nIiAvc3RkOmMxMSIKICAgICAgICAjIFdlIG5lZWQgdG8gc3RhdGljYWxseSBs\naW5rIHRoZSBDKysgUnVudGltZSwgb25seSB0aGUgQyBydW50aW1lIGlzCiAg\nICAgICAgIyBhdmFpbGFibGUgZHluYW1pY2FsbHkKICAgICAgICBFWFRSQV9F\nTlZfQ09NUElMRV9BUkdTICs9ICIgL01UIgogICAgZWxpZiAibGludXgiIGlu\nIHN5cy5wbGF0Zm9ybToKICAgICAgICAjIEdDQyBieSBkZWZhdWx0cyB1c2Vz\nIEMxNyBzbyBvbmx5IEMrKzE3IG5lZWRzIHRvIGJlIHNwZWNpZmllZC4KICAg\nICAgICBFWFRSQV9FTlZfQ09NUElMRV9BUkdTICs9ICIgLXN0ZD1jKysxNyIK\nICAgICAgICBFWFRSQV9FTlZfQ09NUElMRV9BUkdTICs9ICgKICAgICAgICAg\nICAgIiAtZnZpc2liaWxpdHk9aGlkZGVuIC1mbm8td3JhcHYgLWZuby1leGNl\ncHRpb25zIgogICAgICAgICkKICAgIGVsaWYgImRhcndpbiIgaW4gc3lzLnBs\nYXRmb3JtOgogICAgICAgICMgQXBwbGVDbGFuZyBieSBkZWZhdWx0cyB1c2Vz\nIEMxNyBzbyBvbmx5IEMrKzE3IG5lZWRzIHRvIGJlIHNwZWNpZmllZC4KICAg\nICAgICBFWFRSQV9FTlZfQ09NUElMRV9BUkdTICs9ICIgLXN0ZD1jKysxNyIK\nICAgICAgICBFWFRSQV9FTlZfQ09NUElMRV9BUkdTICs9ICgKICAgICAgICAg\nICAgIiAtc3RkbGliPWxpYmMrKyAtZnZpc2liaWxpdHk9aGlkZGVuIC1mbm8t\nd3JhcHYgLWZuby1leGNlcHRpb25zIgogICAgICAgICAgICAiIC1ESEFWRV9V\nTklTVERfSCIKICAgICAgICApCgppZiBFWFRSQV9FTlZfTElOS19BUkdTIGlz\nIE5vbmU6CiAgICBFWFRSQV9FTlZfTElOS19BUkdTID0gIiIKICAgIGlmICJs\naW51eCIgaW4gc3lzLnBsYXRmb3JtIG9yICJkYXJ3aW4iIGluIHN5cy5wbGF0\nZm9ybToKICAgICAgICBFWFRSQV9FTlZfTElOS19BUkdTICs9ICIgLWxwdGhy\nZWFkIgogICAgICAgIGlmIGNoZWNrX2xpbmtlcl9uZWVkX2xpYmF0b21pYygp\nOgogICAgICAgICAgICBFWFRSQV9FTlZfTElOS19BUkdTICs9ICIgLWxhdG9t\naWMiCiAgICBpZiAibGludXgiIGluIHN5cy5wbGF0Zm9ybToKICAgICAgICBF\nWFRSQV9FTlZfTElOS19BUkdTICs9ICIgLXN0YXRpYy1saWJnY2MiCgojIEV4\ncGxpY2l0bHkgbGluayBDb3JlIEZvdW5kYXRpb24gZnJhbWV3b3JrIGZvciBN\nYWNPUyB0byBlbnN1cmUgbm8gc3ltYm9sIGlzCiMgbWlzc2luZyB3aGVuIGNv\nbXBpbGVkIHVzaW5nIHBhY2thZ2UgbWFuYWdlcnMgbGlrZSBDb25kYS4KaWYg\nImRhcndpbiIgaW4gc3lzLnBsYXRmb3JtOgogICAgRVhUUkFfRU5WX0xJTktf\nQVJHUyArPSAiIC1mcmFtZXdvcmsgQ29yZUZvdW5kYXRpb24iCgpFWFRSQV9D\nT01QSUxFX0FSR1MgPSBzaGxleC5zcGxpdChFWFRSQV9FTlZfQ09NUElMRV9B\nUkdTKQpFWFRSQV9MSU5LX0FSR1MgPSBzaGxleC5zcGxpdChFWFRSQV9FTlZf\nTElOS19BUkdTKQoKaWYgQlVJTERfV0lUSF9TVEFUSUNfTElCU1REQ1hYOgog\nICAgRVhUUkFfTElOS19BUkdTLmFwcGVuZCgiLXN0YXRpYy1saWJzdGRjKysi\nKQoKQ1lUSE9OX0VYVEVOU0lPTl9QQUNLQUdFX05BTUVTID0gKCkKCkNZVEhP\nTl9FWFRFTlNJT05fTU9EVUxFX05BTUVTID0gKCJncnBjLl9jeXRob24uY3ln\ncnBjIiwpCgpDWVRIT05fSEVMUEVSX0NfRklMRVMgPSAoKQoKQ09SRV9DX0ZJ\nTEVTID0gdHVwbGUoZ3JwY19jb3JlX2RlcGVuZGVuY2llcy5DT1JFX1NPVVJD\nRV9GSUxFUykKaWYgIndpbjMyIiBpbiBzeXMucGxhdGZvcm06CiAgICBDT1JF\nX0NfRklMRVMgPSBmaWx0ZXIobGFtYmRhIHg6ICJ0aGlyZF9wYXJ0eS9jYXJl\ncyIgbm90IGluIHgsIENPUkVfQ19GSUxFUykKCmlmIEJVSUxEX1dJVEhfU1lT\nVEVNX09QRU5TU0w6CiAgICBDT1JFX0NfRklMRVMgPSBmaWx0ZXIoCiAgICAg\nICAgbGFtYmRhIHg6ICJ0aGlyZF9wYXJ0eS9ib3Jpbmdzc2wiIG5vdCBpbiB4\nLCBDT1JFX0NfRklMRVMKICAgICkKICAgIENPUkVfQ19GSUxFUyA9IGZpbHRl\ncihsYW1iZGEgeDogInNyYy9ib3Jpbmdzc2wiIG5vdCBpbiB4LCBDT1JFX0Nf\nRklMRVMpCiAgICBTU0xfSU5DTFVERSA9IChvcy5wYXRoLmpvaW4oIi91c3Ii\nLCAiaW5jbHVkZSIsICJvcGVuc3NsIiksKQoKaWYgQlVJTERfV0lUSF9TWVNU\nRU1fWkxJQjoKICAgIENPUkVfQ19GSUxFUyA9IGZpbHRlcihsYW1iZGEgeDog\nInRoaXJkX3BhcnR5L3psaWIiIG5vdCBpbiB4LCBDT1JFX0NfRklMRVMpCiAg\nICBaTElCX0lOQ0xVREUgPSAob3MucGF0aC5qb2luKCIvdXNyIiwgImluY2x1\nZGUiKSwpCgppZiBCVUlMRF9XSVRIX1NZU1RFTV9DQVJFUzoKICAgIENPUkVf\nQ19GSUxFUyA9IGZpbHRlcihsYW1iZGEgeDogInRoaXJkX3BhcnR5L2NhcmVz\nIiBub3QgaW4geCwgQ09SRV9DX0ZJTEVTKQogICAgQ0FSRVNfSU5DTFVERSA9\nIChvcy5wYXRoLmpvaW4oIi91c3IiLCAiaW5jbHVkZSIpLCkKCmlmIEJVSUxE\nX1dJVEhfU1lTVEVNX1JFMjoKICAgIENPUkVfQ19GSUxFUyA9IGZpbHRlcihs\nYW1iZGEgeDogInRoaXJkX3BhcnR5L3JlMiIgbm90IGluIHgsIENPUkVfQ19G\nSUxFUykKICAgIFJFMl9JTkNMVURFID0gKG9zLnBhdGguam9pbigiL3VzciIs\nICJpbmNsdWRlIiwgInJlMiIpLCkKCmlmIEJVSUxEX1dJVEhfU1lTVEVNX0FC\nU0w6CiAgICBDT1JFX0NfRklMRVMgPSBmaWx0ZXIoCiAgICAgICAgbGFtYmRh\nIHg6ICJ0aGlyZF9wYXJ0eS9hYnNlaWwtY3BwIiBub3QgaW4geCwgQ09SRV9D\nX0ZJTEVTCiAgICApCiAgICBBQlNMX0lOQ0xVREUgPSAob3MucGF0aC5qb2lu\nKCIvdXNyIiwgImluY2x1ZGUiKSwpCgpFWFRFTlNJT05fSU5DTFVERV9ESVJF\nQ1RPUklFUyA9ICgKICAgIChQWVRIT05fU1RFTSwpCiAgICArIENPUkVfSU5D\nTFVERQogICAgKyBBQlNMX0lOQ0xVREUKICAgICsgQUREUkVTU19TT1JUSU5H\nX0lOQ0xVREUKICAgICsgQ0FSRVNfSU5DTFVERQogICAgKyBSRTJfSU5DTFVE\nRQogICAgKyBTU0xfSU5DTFVERQogICAgKyBVUEJfSU5DTFVERQogICAgKyBV\nUEJfR1JQQ19HRU5FUkFURURfSU5DTFVERQogICAgKyBVUEJERUZTX0dSUENf\nR0VORVJBVEVEX0lOQ0xVREUKICAgICsgVVRGOF9SQU5HRV9JTkNMVURFCiAg\nICArIFhYSEFTSF9JTkNMVURFCiAgICArIFpMSUJfSU5DTFVERQopCgpFWFRF\nTlNJT05fTElCUkFSSUVTID0gKCkKaWYgImxpbnV4IiBpbiBzeXMucGxhdGZv\ncm06CiAgICBFWFRFTlNJT05fTElCUkFSSUVTICs9ICgicnQiLCkKaWYgbm90\nICJ3aW4zMiIgaW4gc3lzLnBsYXRmb3JtOgogICAgRVhURU5TSU9OX0xJQlJB\nUklFUyArPSAoIm0iLCkKaWYgIndpbjMyIiBpbiBzeXMucGxhdGZvcm06CiAg\nICBFWFRFTlNJT05fTElCUkFSSUVTICs9ICgKICAgICAgICAiYWR2YXBpMzIi\nLAogICAgICAgICJiY3J5cHQiLAogICAgICAgICJkYmdoZWxwIiwKICAgICAg\nICAid3MyXzMyIiwKICAgICkKaWYgQlVJTERfV0lUSF9TWVNURU1fT1BFTlNT\nTDoKICAgIEVYVEVOU0lPTl9MSUJSQVJJRVMgKz0gKAogICAgICAgICJzc2wi\nLAogICAgICAgICJjcnlwdG8iLAogICAgKQppZiBCVUlMRF9XSVRIX1NZU1RF\nTV9aTElCOgogICAgRVhURU5TSU9OX0xJQlJBUklFUyArPSAoInoiLCkKaWYg\nQlVJTERfV0lUSF9TWVNURU1fQ0FSRVM6CiAgICBFWFRFTlNJT05fTElCUkFS\nSUVTICs9ICgiY2FyZXMiLCkKaWYgQlVJTERfV0lUSF9TWVNURU1fUkUyOgog\nICAgRVhURU5TSU9OX0xJQlJBUklFUyArPSAoInJlMiIsKQppZiBCVUlMRF9X\nSVRIX1NZU1RFTV9BQlNMOgogICAgRVhURU5TSU9OX0xJQlJBUklFUyArPSB0\ndXBsZSgKICAgICAgICBsaWIuc3RlbVszOl0KICAgICAgICBmb3IgbGliIGlu\nIHNvcnRlZChwYXRobGliLlBhdGgoIi91c3IiKS5nbG9iKCJsaWIqL2xpYmFi\nc2xfKi5zbyIpKQogICAgKQoKREVGSU5FX01BQ1JPUyA9ICgoIl9XSU4zMl9X\nSU5OVCIsIDB4NjAwKSwpCmFzbV9maWxlcyA9IFtdCgoKIyBRdW90ZXMgb24g\nV2luZG93cyBidWlsZCBtYWNyb3MgYXJlIGV2YWx1YXRlZCBkaWZmZXJlbnRs\neSBmcm9tIG90aGVyIHBsYXRmb3JtcywKIyBzbyB3ZSBtdXN0IGFwcGx5IHF1\nb3RlcyBhc3ltbWV0cmljYWxseSBpbiBvcmRlciB0byB5aWVsZCB0aGUgcHJv\ncGVyIHJlc3VsdCBpbgojIHRoZSBiaW5hcnkuCmRlZiBfcXVvdGVfYnVpbGRf\nZGVmaW5lKGFyZ3VtZW50KToKICAgIGlmICJ3aW4zMiIgaW4gc3lzLnBsYXRm\nb3JtOgogICAgICAgIHJldHVybiAnIlxcInt9XFwiIicuZm9ybWF0KGFyZ3Vt\nZW50KQogICAgcmV0dXJuICcie30iJy5mb3JtYXQoYXJndW1lbnQpCgoKREVG\nSU5FX01BQ1JPUyArPSAoCiAgICAoIkdSUENfWERTX1VTRVJfQUdFTlRfTkFN\nRV9TVUZGSVgiLCBfcXVvdGVfYnVpbGRfZGVmaW5lKCJQeXRob24iKSksCiAg\nICAoCiAgICAgICAgIkdSUENfWERTX1VTRVJfQUdFTlRfVkVSU0lPTl9TVUZG\nSVgiLAogICAgICAgIF9xdW90ZV9idWlsZF9kZWZpbmUoX21ldGFkYXRhLl9f\ndmVyc2lvbl9fKSwKICAgICksCikKCmFzbV9rZXkgPSAiIgppZiBCVUlMRF9X\nSVRIX0JPUklOR19TU0xfQVNNIGFuZCBub3QgQlVJTERfV0lUSF9TWVNURU1f\nT1BFTlNTTDoKICAgIGJvcmluZ3NzbF9hc21fcGxhdGZvcm0gPSAoCiAgICAg\nICAgQlVJTERfT1ZFUlJJREVfQk9SSU5HX1NTTF9BU01fUExBVEZPUk0KICAg\nICAgICBpZiBCVUlMRF9PVkVSUklERV9CT1JJTkdfU1NMX0FTTV9QTEFURk9S\nTQogICAgICAgIGVsc2Ugc3lzY29uZmlnLmdldF9wbGF0Zm9ybSgpCiAgICAp\nCiAgICBpZiAiaTY4NiIgaW4gYm9yaW5nc3NsX2FzbV9wbGF0Zm9ybToKICAg\nICAgICBwcmludCgiRW5hYmxpbmcgU1NFMiBvbiAlcyBwbGF0Zm9ybSIgJSBi\nb3Jpbmdzc2xfYXNtX3BsYXRmb3JtKQogICAgICAgIEVYVFJBX0NPTVBJTEVf\nQVJHUy5hcHBlbmQoIi1tc3NlMiIpCiAgICBlbHNlOgogICAgICAgIHByaW50\nKCJTU0UyIG5vdCBlbmFibGVkIG9uICVzIHBsYXRmb3JtIiAlIGJvcmluZ3Nz\nbF9hc21fcGxhdGZvcm0pCiAgICAjIEJvcmluZ1NTTCdzIGdhcy1jb21wYXRp\nYmxlIGFzc2VtYmx5IGZpbGVzIGFyZSBhbGwgaW50ZXJuYWxseSBjb25kaXRp\nb25lZAogICAgIyBieSB0aGUgcHJlcHJvY2Vzc29yLiBQcm92aWRlZCB0aGUg\ncGxhdGZvcm0gaGFzIGEgZ2FzLWNvbXBhdGlibGUgYXNzZW1ibGVyCiAgICAj\nIChpLmUuIG5vdCBXaW5kb3dzKSwgd2UgY2FuIGluY2x1ZGUgdGhlIGFzc2Vt\nYmx5IGZpbGVzIGFuZCBsZXQgQm9yaW5nU1NMCiAgICAjIGRlY2lkZSB3aGlj\naCBvbmVzIHNob3VsZCBhbmQgc2hvdWxkbid0IGJlIHVzZWQgZm9yIHRoZSBi\ndWlsZC4KICAgIGlmIG5vdCBib3Jpbmdzc2xfYXNtX3BsYXRmb3JtLnN0YXJ0\nc3dpdGgoIndpbiIpOgogICAgICAgIGFzbV9rZXkgPSAiY3J5cHRvX2FzbSIK\nICAgIGVsc2U6CiAgICAgICAgcHJpbnQoCiAgICAgICAgICAgICJBU00gQnVp\nbGRzIGZvciBCb3JpbmdTU0wgY3VycmVudGx5IG5vdCBzdXBwb3J0ZWQgb246\nIiwKICAgICAgICAgICAgYm9yaW5nc3NsX2FzbV9wbGF0Zm9ybSwKICAgICAg\nICApCmlmIGFzbV9rZXk6CiAgICBhc21fZmlsZXMgPSBncnBjX2NvcmVfZGVw\nZW5kZW5jaWVzLkFTTV9TT1VSQ0VfRklMRVNbYXNtX2tleV0KZWxzZToKICAg\nIERFRklORV9NQUNST1MgKz0gKCgiT1BFTlNTTF9OT19BU00iLCAxKSwpCgpp\nZiAid2luMzIiIGluIHN5cy5wbGF0Zm9ybToKICAgICMgVE9ETyh6eWMpOiBS\nZS1lbmFibGUgYy1hcmVzIG9uIHg2NCBhbmQgeDg2IHdpbmRvd3MgYWZ0ZXIg\nZml4aW5nIHRoZQogICAgIyBhcmVzX2xpYnJhcnlfaW5pdCBjb21waWxhdGlv\nbiBpc3N1ZQogICAgREVGSU5FX01BQ1JPUyArPSAoCiAgICAgICAgKCJXSU4z\nMl9MRUFOX0FORF9NRUFOIiwgMSksCiAgICAgICAgKCJDQVJFU19TVEFUSUNM\nSUIiLCAxKSwKICAgICAgICAoIkdSUENfQVJFUyIsIDApLAogICAgICAgICgi\nTlRERElfVkVSU0lPTiIsIDB4MDYwMDAwMDApLAogICAgICAgICgiTk9NSU5N\nQVgiLCAxKSwKICAgICkKICAgIGlmICI2NGJpdCIgaW4gcGxhdGZvcm0uYXJj\naGl0ZWN0dXJlKClbMF06CiAgICAgICAgREVGSU5FX01BQ1JPUyArPSAoKCJN\nU19XSU42NCIsIDEpLCkKICAgIGVsaWYgc3lzLnZlcnNpb25faW5mbyA+PSAo\nMywgNSk6CiAgICAgICAgIyBGb3Igc29tZSByZWFzb24sIHRoaXMgaXMgbmVl\nZGVkIHRvIGdldCBhY2Nlc3MgdG8gaW5ldF9wdG9uL2luZXRfbnRvcAogICAg\nICAgICMgb24gbXN2YywgYnV0IG9ubHkgZm9yIDMyIGJpdHMKICAgICAgICBE\nRUZJTkVfTUFDUk9TICs9ICgoIk5URERJX1ZFUlNJT04iLCAweDA2MDAwMDAw\nKSwpCmVsc2U6CiAgICBERUZJTkVfTUFDUk9TICs9ICgKICAgICAgICAoIkhB\nVkVfQ09ORklHX0giLCAxKSwKICAgICAgICAoIkdSUENfRU5BQkxFX0ZPUktf\nU1VQUE9SVCIsIDEpLAogICAgKQoKIyBGaXggZm9yIG11bHRpcHJvY2Vzc2lu\nZyBzdXBwb3J0IG9uIEFwcGxlIGRldmljZXMuCiMgVE9ETyh2aWduZXNoYmFi\ndSk6IFJlbW92ZSB0aGlzIG9uY2UgdGhlIHBvbGwgcG9sbGVyIGdldHMgZm9y\nayBzdXBwb3J0LgpERUZJTkVfTUFDUk9TICs9ICgoIkdSUENfRE9fTk9UX0lO\nU1RBTlRJQVRFX1BPU0lYX1BPTExFUiIsIDEpLCkKCiMgRml4IGZvciBDeXRo\nb24gYnVpbGQgaXNzdWUgaW4gYWFyY2g2NC4KIyBJdCdzIHJlcXVpcmVkIHRv\nIGRlZmluZSB0aGlzIG1hY3JvIGJlZm9yZSBpbmNsdWRlIDxpbnR0eXBlcy5o\nPi4KIyA8aW50dHlwZXMuaD4gd2FzIGluY2x1ZGVkIGluIGNvcmUvdGVsZW1l\ndHJ5L2NhbGxfdHJhY2VyLmguCiMgVGhpcyBtYWNybyBzaG91bGQgYWxyZWFk\neSBiZSBkZWZpbmVkIGluIGdycGMvZ3JwYy5oIHRocm91Z2ggcG9ydF9wbGF0\nZm9ybS5oLAojIGJ1dCB3ZSdyZSBzdGlsbCBoYXZpbmcgaXNzdWUgaW4gYWFy\nY2g2NCwgc28gd2UgbWFudWFsbHkgZGVmaW5lIHRoZSBtYWNybyBoZXJlLgoj\nIFRPRE8oeHVhbnduKTogRmlndXJlIG91dCB3aGF0J3MgZ29pbmcgb24gaW4g\ndGhlIGFhcmNoNjQgYnVpbGQgc28gd2UgY2FuIHN1cHBvcnQKIyBnY2MgKyBC\nYXplbC4KREVGSU5FX01BQ1JPUyArPSAoKCJfX1NURENfRk9STUFUX01BQ1JP\nUyIsIE5vbmUpLCkKCkxERkxBR1MgPSB0dXBsZShFWFRSQV9MSU5LX0FSR1Mp\nCkNGTEFHUyA9IHR1cGxlKEVYVFJBX0NPTVBJTEVfQVJHUykKaWYgImxpbnV4\nIiBpbiBzeXMucGxhdGZvcm0gb3IgImRhcndpbiIgaW4gc3lzLnBsYXRmb3Jt\nOgogICAgcHltb2Rpbml0X3R5cGUgPSAiUHlPYmplY3QqIiBpZiBQWTMgZWxz\nZSAidm9pZCIKICAgIHB5bW9kaW5pdCA9ICdleHRlcm4gIkMiIF9fYXR0cmli\ndXRlX18oKHZpc2liaWxpdHkgKCJkZWZhdWx0IikpKSB7fScuZm9ybWF0KAog\nICAgICAgIHB5bW9kaW5pdF90eXBlCiAgICApCiAgICBERUZJTkVfTUFDUk9T\nICs9ICgoIlB5TU9ESU5JVF9GVU5DIiwgcHltb2Rpbml0KSwpCiAgICBERUZJ\nTkVfTUFDUk9TICs9ICgoIkdSUENfUE9TSVhfRk9SS19BTExPV19QVEhSRUFE\nX0FURk9SSyIsIDEpLCkKCgpkZWYgY3l0aG9uX2V4dGVuc2lvbnNfYW5kX25l\nY2Vzc2l0eSgpOgogICAgY3l0aG9uX21vZHVsZV9maWxlcyA9IFsKICAgICAg\nICBvcy5wYXRoLmpvaW4oUFlUSE9OX1NURU0sIG5hbWUucmVwbGFjZSgiLiIs\nICIvIikgKyAiLnB5eCIpCiAgICAgICAgZm9yIG5hbWUgaW4gQ1lUSE9OX0VY\nVEVOU0lPTl9NT0RVTEVfTkFNRVMKICAgIF0KICAgIGNvbmZpZyA9IG9zLmVu\ndmlyb24uZ2V0KCJDT05GSUciLCAib3B0IikKICAgIHByZWZpeCA9ICJsaWJz\nLyIgKyBjb25maWcgKyAiLyIKICAgIGlmIFVTRV9QUkVCVUlMVF9HUlBDX0NP\nUkU6CiAgICAgICAgZXh0cmFfb2JqZWN0cyA9IFsKICAgICAgICAgICAgcHJl\nZml4ICsgImxpYmFyZXMuYSIsCiAgICAgICAgICAgIHByZWZpeCArICJsaWJi\nb3Jpbmdzc2wuYSIsCiAgICAgICAgICAgIHByZWZpeCArICJsaWJncHIuYSIs\nCiAgICAgICAgICAgIHByZWZpeCArICJsaWJncnBjLmEiLAogICAgICAgIF0K\nICAgICAgICBjb3JlX2NfZmlsZXMgPSBbXQogICAgZWxzZToKICAgICAgICBj\nb3JlX2NfZmlsZXMgPSBsaXN0KENPUkVfQ19GSUxFUykKICAgICAgICBleHRy\nYV9vYmplY3RzID0gW10KICAgIGV4dGVuc2lvbnMgPSBbCiAgICAgICAgRXh0\nZW5zaW9uKAogICAgICAgICAgICBuYW1lPW1vZHVsZV9uYW1lLAogICAgICAg\nICAgICBzb3VyY2VzPSgKICAgICAgICAgICAgICAgIFttb2R1bGVfZmlsZV0K\nICAgICAgICAgICAgICAgICsgbGlzdChDWVRIT05fSEVMUEVSX0NfRklMRVMp\nCiAgICAgICAgICAgICAgICArIGNvcmVfY19maWxlcwogICAgICAgICAgICAg\nICAgKyBhc21fZmlsZXMKICAgICAgICAgICAgKSwKICAgICAgICAgICAgaW5j\nbHVkZV9kaXJzPWxpc3QoRVhURU5TSU9OX0lOQ0xVREVfRElSRUNUT1JJRVMp\nLAogICAgICAgICAgICBsaWJyYXJpZXM9bGlzdChFWFRFTlNJT05fTElCUkFS\nSUVTKSwKICAgICAgICAgICAgZGVmaW5lX21hY3Jvcz1saXN0KERFRklORV9N\nQUNST1MpLAogICAgICAgICAgICBleHRyYV9vYmplY3RzPWV4dHJhX29iamVj\ndHMsCiAgICAgICAgICAgIGV4dHJhX2NvbXBpbGVfYXJncz1saXN0KENGTEFH\nUyksCiAgICAgICAgICAgIGV4dHJhX2xpbmtfYXJncz1saXN0KExERkxBR1Mp\nLAogICAgICAgICkKICAgICAgICBmb3IgKG1vZHVsZV9uYW1lLCBtb2R1bGVf\nZmlsZSkgaW4gemlwKAogICAgICAgICAgICBsaXN0KENZVEhPTl9FWFRFTlNJ\nT05fTU9EVUxFX05BTUVTKSwgY3l0aG9uX21vZHVsZV9maWxlcwogICAgICAg\nICkKICAgIF0KICAgIG5lZWRfY3l0aG9uID0gQlVJTERfV0lUSF9DWVRIT04K\nICAgIGlmIG5vdCBCVUlMRF9XSVRIX0NZVEhPTjoKICAgICAgICBuZWVkX2N5\ndGhvbiA9ICgKICAgICAgICAgICAgbmVlZF9jeXRob24KICAgICAgICAgICAg\nb3Igbm90IGNvbW1hbmRzLmNoZWNrX2FuZF91cGRhdGVfY3l0aG9uaXphdGlv\nbihleHRlbnNpb25zKQogICAgICAgICkKICAgICMgVE9ETzogdGhlIHN0cmF0\nZWd5IGZvciBjb25kaXRpb25hbCBjb21waWxpbmcgYW5kIGV4cG9zaW5nIHRo\nZSBhaW8gQ3l0aG9uCiAgICAjIGRlcGVuZGVuY2llcyB3aWxsIGJlIHJldmlz\naXRlZCBieSBodHRwczovL2dpdGh1Yi5jb20vZ3JwYy9ncnBjL2lzc3Vlcy8x\nOTcyOAogICAgcmV0dXJuICgKICAgICAgICBjb21tYW5kcy50cnlfY3l0aG9u\naXplKAogICAgICAgICAgICBleHRlbnNpb25zLAogICAgICAgICAgICBsaW5l\ndHJhY2luZz1FTkFCTEVfQ1lUSE9OX1RSQUNJTkcsCiAgICAgICAgICAgIG1h\nbmRhdG9yeT1CVUlMRF9XSVRIX0NZVEhPTiwKICAgICAgICApLAogICAgICAg\nIG5lZWRfY3l0aG9uLAogICAgKQoKCkNZVEhPTl9FWFRFTlNJT05fTU9EVUxF\nUywgbmVlZF9jeXRob24gPSBjeXRob25fZXh0ZW5zaW9uc19hbmRfbmVjZXNz\naXR5KCkKClBBQ0tBR0VfRElSRUNUT1JJRVMgPSB7CiAgICAiIjogUFlUSE9O\nX1NURU0sCn0KCklOU1RBTExfUkVRVUlSRVMgPSAoKQoKRVhUUkFTX1JFUVVJ\nUkVTID0gewogICAgInByb3RvYnVmIjogImdycGNpby10b29scz49e3ZlcnNp\nb259Ii5mb3JtYXQodmVyc2lvbj1ncnBjX3ZlcnNpb24uVkVSU0lPTiksCn0K\nClNFVFVQX1JFUVVJUkVTID0gKAogICAgSU5TVEFMTF9SRVFVSVJFUyArICgi\nU3BoaW54fj0xLjguMSIsKSBpZiBFTkFCTEVfRE9DVU1FTlRBVElPTl9CVUlM\nRCBlbHNlICgpCikKCnRyeToKICAgIGltcG9ydCBDeXRob24KZXhjZXB0IElt\ncG9ydEVycm9yOgogICAgaWYgQlVJTERfV0lUSF9DWVRIT046CiAgICAgICAg\nc3lzLnN0ZGVyci53cml0ZSgKICAgICAgICAgICAgIllvdSByZXF1ZXN0ZWQg\nYSBDeXRob24gYnVpbGQgdmlhIEdSUENfUFlUSE9OX0JVSUxEX1dJVEhfQ1lU\nSE9OLCAiCiAgICAgICAgICAgICJidXQgZG8gbm90IGhhdmUgQ3l0aG9uIGlu\nc3RhbGxlZC4gV2Ugd29uJ3Qgc3RvcCB5b3UgZnJvbSB1c2luZyAiCiAgICAg\nICAgICAgICJvdGhlciBjb21tYW5kcywgYnV0IHRoZSBleHRlbnNpb24gZmls\nZXMgd2lsbCBmYWlsIHRvIGJ1aWxkLlxuIgogICAgICAgICkKICAgIGVsaWYg\nbmVlZF9jeXRob246CiAgICAgICAgc3lzLnN0ZGVyci53cml0ZSgKICAgICAg\nICAgICAgIldlIGNvdWxkIG5vdCBmaW5kIEN5dGhvbi4gU2V0dXAgbWF5IHRh\na2UgMTAtMjAgbWludXRlcy5cbiIKICAgICAgICApCiAgICAgICAgU0VUVVBf\nUkVRVUlSRVMgKz0gKCJjeXRob249PTMuMS4xIiwpCgpDT01NQU5EX0NMQVNT\nID0gewogICAgImRvYyI6IGNvbW1hbmRzLlNwaGlueERvY3VtZW50YXRpb24s\nCiAgICAiYnVpbGRfcHJvamVjdF9tZXRhZGF0YSI6IGNvbW1hbmRzLkJ1aWxk\nUHJvamVjdE1ldGFkYXRhLAogICAgImJ1aWxkX3B5IjogY29tbWFuZHMuQnVp\nbGRQeSwKICAgICJidWlsZF9leHQiOiBjb21tYW5kcy5CdWlsZEV4dCwKICAg\nICJnYXRoZXIiOiBjb21tYW5kcy5HYXRoZXIsCiAgICAiY2xlYW4iOiBjb21t\nYW5kcy5DbGVhbiwKfQoKIyBFbnN1cmUgdGhhdCBwYWNrYWdlIGRhdGEgaXMg\nY29waWVkIG92ZXIgYmVmb3JlIGFueSBjb21tYW5kcyBoYXZlIGJlZW4gcnVu\nOgpjcmVkZW50aWFsc19kaXIgPSBvcy5wYXRoLmpvaW4oUFlUSE9OX1NURU0s\nICJncnBjIiwgIl9jeXRob24iLCAiX2NyZWRlbnRpYWxzIikKdHJ5OgogICAg\nb3MubWtkaXIoY3JlZGVudGlhbHNfZGlyKQpleGNlcHQgT1NFcnJvcjoKICAg\nIHBhc3MKc2h1dGlsLmNvcHlmaWxlKAogICAgb3MucGF0aC5qb2luKCJldGMi\nLCAicm9vdHMucGVtIiksIG9zLnBhdGguam9pbihjcmVkZW50aWFsc19kaXIs\nICJyb290cy5wZW0iKQopCgpQQUNLQUdFX0RBVEEgPSB7CiAgICAjIEJpbmFy\naWVzIHRoYXQgbWF5IG9yIG1heSBub3QgYmUgcHJlc2VudCBpbiB0aGUgZmlu\nYWwgaW5zdGFsbGF0aW9uLCBidXQgYXJlCiAgICAjIG1lbnRpb25lZCBoZXJl\nIGZvciBjb21wbGV0ZW5lc3MuCiAgICAiZ3JwYy5fY3l0aG9uIjogWwogICAg\nICAgICJfY3JlZGVudGlhbHMvcm9vdHMucGVtIiwKICAgICAgICAiX3dpbmRv\nd3MvZ3JwY19jLjMyLnB5dGhvbiIsCiAgICAgICAgIl93aW5kb3dzL2dycGNf\nYy42NC5weXRob24iLAogICAgXSwKfQpQQUNLQUdFUyA9IHNldHVwdG9vbHMu\nZmluZF9wYWNrYWdlcyhQWVRIT05fU1RFTSkKCnNldHVwdG9vbHMuc2V0dXAo\nCiAgICBuYW1lPSJncnBjaW8iLAogICAgdmVyc2lvbj1ncnBjX3ZlcnNpb24u\nVkVSU0lPTiwKICAgIGRlc2NyaXB0aW9uPSJIVFRQLzItYmFzZWQgUlBDIGZy\nYW1ld29yayIsCiAgICBhdXRob3I9IlRoZSBnUlBDIEF1dGhvcnMiLAogICAg\nYXV0aG9yX2VtYWlsPSJncnBjLWlvQGdvb2dsZWdyb3Vwcy5jb20iLAogICAg\ndXJsPSJodHRwczovL2dycGMuaW8iLAogICAgcHJvamVjdF91cmxzPXsKICAg\nICAgICAiU291cmNlIENvZGUiOiAiaHR0cHM6Ly9naXRodWIuY29tL2dycGMv\nZ3JwYyIsCiAgICAgICAgIkJ1ZyBUcmFja2VyIjogImh0dHBzOi8vZ2l0aHVi\nLmNvbS9ncnBjL2dycGMvaXNzdWVzIiwKICAgICAgICAiRG9jdW1lbnRhdGlv\nbiI6ICJodHRwczovL2dycGMuZ2l0aHViLmlvL2dycGMvcHl0aG9uIiwKICAg\nIH0sCiAgICBsaWNlbnNlPUxJQ0VOU0UsCiAgICBjbGFzc2lmaWVycz1DTEFT\nU0lGSUVSUywKICAgIGxvbmdfZGVzY3JpcHRpb25fY29udGVudF90eXBlPSJ0\nZXh0L3gtcnN0IiwKICAgIGxvbmdfZGVzY3JpcHRpb249b3BlbihSRUFETUUp\nLnJlYWQoKSwKICAgIGV4dF9tb2R1bGVzPUNZVEhPTl9FWFRFTlNJT05fTU9E\nVUxFUywKICAgIHBhY2thZ2VzPWxpc3QoUEFDS0FHRVMpLAogICAgcGFja2Fn\nZV9kaXI9UEFDS0FHRV9ESVJFQ1RPUklFUywKICAgIHBhY2thZ2VfZGF0YT1Q\nQUNLQUdFX0RBVEEsCiAgICBweXRob25fcmVxdWlyZXM9ZiI+PXtweXRob25f\ndmVyc2lvbi5NSU5fUFlUSE9OX1ZFUlNJT059IiwKICAgIGluc3RhbGxfcmVx\ndWlyZXM9SU5TVEFMTF9SRVFVSVJFUywKICAgIGV4dHJhc19yZXF1aXJlPUVY\nVFJBU19SRVFVSVJFUywKICAgIHNldHVwX3JlcXVpcmVzPVNFVFVQX1JFUVVJ\nUkVTLAogICAgY21kY2xhc3M9Q09NTUFORF9DTEFTUywKKQo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/grpc/dist/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/39ca17e8249e30dc7076ecee680edddc8ae3a34b",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/grpc/dist/setup.py",
+   "name": "setup.py",
+   "path": "src/third_party/grpc/dist/setup.py",
+   "sha": "39ca17e8249e30dc7076ecee680edddc8ae3a34b",
+   "size": 22310,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/grpc/dist/setup.py?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/7edb1035afeff3e73978bac874eee0d09ed174e2",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml?ref=master"
+   },
+   "content": "W3BhY2thZ2VdCmVkaXRpb24gPSAiMjAxNSIKbmFtZSA9ICJnbHVlc21pdGgi\nCnZlcnNpb24gPSAiMC4xLjAiCmF1dGhvcnMgPSBbIkNocmlzdGlhbiBIb2xs\nZXIiXQpsaWNlbnNlID0gIk1QTC0yLjAiCgpbZGVwZW5kZW5jaWVzXQp3YXNt\nLXNtaXRoID0gIjAuMjE5LjEiCmFyYml0cmFyeSA9IHsgdmVyc2lvbiA9ICIx\nLjAuMCIsIGZlYXR1cmVzID0gWyJkZXJpdmUiXSB9CmxpYmMgPSAiMC4yIgo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/7edb1035afeff3e73978bac874eee0d09ed174e2",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml",
+   "name": "Cargo.toml",
+   "path": "src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml",
+   "sha": "7edb1035afeff3e73978bac874eee0d09ed174e2",
+   "size": 224,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/447dc4110fe0a502474792e4f5102ed3165967bb",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py?ref=master"
+   },
+   "content": "CiIiInNldHVwL2luc3RhbGwgc2NyaXB0IGZvciBjb25jdXJyZW5jeXRlc3Qi\nIiIKCgppbXBvcnQgb3MKZnJvbSBzZXR1cHRvb2xzIGltcG9ydCBzZXR1cAoK\nCnNldHVwKAogICAgbmFtZT0nY29uY3VycmVuY3l0ZXN0JywKICAgIHZlcnNp\nb249JzAuMS4yJywKICAgIHB5X21vZHVsZXM9Wydjb25jdXJyZW5jeXRlc3Qn\nXSwKICAgIGluc3RhbGxfcmVxdWlyZXM9WydweXRob24tc3VidW5pdCcsICd0\nZXN0dG9vbHMnXSwKICAgIGF1dGhvcj0nQ29yZXkgR29sZGJlcmcnLAogICAg\nYXV0aG9yX2VtYWlsPSdjZ29sZGJlcmcgX2F0XyBnbWFpbC5jb20nLAogICAg\nZGVzY3JpcHRpb249J3Rlc3R0b29scyBleHRlbnNpb24gZm9yIHJ1bm5pbmcg\ndW5pdHRlc3Qgc3VpdGVzIGNvbmN1cnJlbnRseScsCiAgICB1cmw9J2h0dHBz\nOi8vZ2l0aHViLmNvbS9jZ29sZGJlcmcvY29uY3VycmVuY3l0ZXN0JywKICAg\nIGRvd25sb2FkX3VybD0naHR0cDovL3B5cGkucHl0aG9uLm9yZy9weXBpL2Nv\nbmN1cnJlbmN5dGVzdCcsCiAgICBrZXl3b3Jkcz0ndGVzdCB0ZXN0dG9vbHMg\ndW5pdHRlc3QgY29uY3VycmVuY3kgcGFyYWxsZWwnLnNwbGl0KCksCiAgICBs\naWNlbnNlPSdHTlUgR1BMdjMnLAogICAgY2xhc3NpZmllcnM9WwogICAgICAg\nICdEZXZlbG9wbWVudCBTdGF0dXMgOjogNCAtIEJldGEnLAogICAgICAgICdJ\nbnRlbmRlZCBBdWRpZW5jZSA6OiBEZXZlbG9wZXJzJywKICAgICAgICAnTGlj\nZW5zZSA6OiBPU0kgQXBwcm92ZWQgOjogR05VIEdlbmVyYWwgUHVibGljIExp\nY2Vuc2UgdjMgKEdQTHYzKScsCiAgICAgICAgJ09wZXJhdGluZyBTeXN0ZW0g\nOjogUE9TSVgnLAogICAgICAgICdPcGVyYXRpbmcgU3lzdGVtIDo6IFVuaXgn\nLAogICAgICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRob24nLAog\nICAgICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRob24gOjogMics\nCiAgICAgICAgJ1Byb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAz\nJywKICAgICAgICAnVG9waWMgOjogU29mdHdhcmUgRGV2ZWxvcG1lbnQgOjog\nTGlicmFyaWVzIDo6IFB5dGhvbiBNb2R1bGVzJywKICAgICAgICAnVG9waWMg\nOjogU29mdHdhcmUgRGV2ZWxvcG1lbnQgOjogVGVzdGluZycsCiAgICBdCikK\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/447dc4110fe0a502474792e4f5102ed3165967bb",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py",
+   "name": "setup.py",
+   "path": "src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py",
+   "sha": "447dc4110fe0a502474792e4f5102ed3165967bb",
+   "size": 1125,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/aaa8fd5fc6b995380bd1a9dcb0b4f87d9dc6a5b5",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py?ref=master"
+   },
+   "content": "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uCiMgc2V0dXAucHkKIyBJbnN0YWxsIHNj\ncmlwdCBmb3IgZGlzY292ZXIucHkKIyBDb3B5cmlnaHQgKEMpIDIwMDktMjAx\nMCBNaWNoYWVsIEZvb3JkCiMgRS1tYWlsOiBtaWNoYWVsIEFUIHZvaWRzcGFj\nZSBET1Qgb3JnIERPVCB1awoKIyBUaGlzIHNvZnR3YXJlIGlzIGxpY2Vuc2Vk\nIHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUgQlNEIGxpY2Vuc2UuCiMgaHR0cDov\nL3d3dy52b2lkc3BhY2Uub3JnLnVrL3B5dGhvbi9saWNlbnNlLnNodG1sCgpp\nbXBvcnQgc3lzCmZyb20gc2V0dXB0b29scyBpbXBvcnQgc2V0dXAKZnJvbSBk\naXNjb3ZlciBpbXBvcnQgX192ZXJzaW9uX18gYXMgVkVSU0lPTgoKCk5BTUUg\nPSAnZGlzY292ZXInCk1PRFVMRVMgPSAoJ2Rpc2NvdmVyJywpCkRFU0NSSVBU\nSU9OID0gJ1Rlc3QgZGlzY292ZXJ5IGZvciB1bml0dGVzdC4gQmFja3BvcnRl\nZCBmcm9tIFB5dGhvbiAyLjcgZm9yIFB5dGhvbiAyLjQrJwpVUkwgPSAnaHR0\ncDovL3B5cGkucHl0aG9uLm9yZy9weXBpL2Rpc2NvdmVyLycKQ0xBU1NJRklF\nUlMgPSBbCiAgICAnRGV2ZWxvcG1lbnQgU3RhdHVzIDo6IDQgLSBCZXRhJywK\nICAgICdFbnZpcm9ubWVudCA6OiBDb25zb2xlJywKICAgICdJbnRlbmRlZCBB\ndWRpZW5jZSA6OiBEZXZlbG9wZXJzJywKICAgICdMaWNlbnNlIDo6IE9TSSBB\ncHByb3ZlZCA6OiBCU0QgTGljZW5zZScsCiAgICAnUHJvZ3JhbW1pbmcgTGFu\nZ3VhZ2UgOjogUHl0aG9uJywKICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6\nOiBQeXRob24gOjogMi40JywKICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6\nOiBQeXRob24gOjogMi41JywKICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6\nOiBQeXRob24gOjogMi42JywKICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6\nOiBQeXRob24gOjogMi43JywKICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6\nOiBQeXRob24gOjogMycsCiAgICAnUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjog\nUHl0aG9uIDo6IDMuMCcsCiAgICAnUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjog\nUHl0aG9uIDo6IDMuMScsCiAgICAnUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjog\nUHl0aG9uIDo6IDMuMicsCiAgICAnT3BlcmF0aW5nIFN5c3RlbSA6OiBPUyBJ\nbmRlcGVuZGVudCcsCiAgICAnVG9waWMgOjogU29mdHdhcmUgRGV2ZWxvcG1l\nbnQgOjogTGlicmFyaWVzJywKICAgICdUb3BpYyA6OiBTb2Z0d2FyZSBEZXZl\nbG9wbWVudCA6OiBMaWJyYXJpZXMgOjogUHl0aG9uIE1vZHVsZXMnLAogICAg\nJ1RvcGljIDo6IFNvZnR3YXJlIERldmVsb3BtZW50IDo6IFRlc3RpbmcnLApd\nCkFVVEhPUiA9ICdNaWNoYWVsIEZvb3JkJwpBVVRIT1JfRU1BSUwgPSAnbWlj\naGFlbEB2b2lkc3BhY2Uub3JnLnVrJwpLRVlXT1JEUyA9ICJ1bml0dGVzdCwg\ndGVzdGluZywgdGVzdHMiLnNwbGl0KCcsICcpCkxPTkdfREVTQ1JJUFRJT04g\nPSBvcGVuKCdSRUFETUUudHh0JykucmVhZCgpCgoKcGFyYW1zID0gZGljdCgK\nICAgIG5hbWU9TkFNRSwKICAgIHZlcnNpb249VkVSU0lPTiwKICAgIGRlc2Ny\naXB0aW9uPURFU0NSSVBUSU9OLAogICAgbG9uZ19kZXNjcmlwdGlvbj1MT05H\nX0RFU0NSSVBUSU9OLAogICAgYXV0aG9yPUFVVEhPUiwKICAgIGF1dGhvcl9l\nbWFpbD1BVVRIT1JfRU1BSUwsCiAgICB1cmw9VVJMLAogICAgcHlfbW9kdWxl\ncz1NT0RVTEVTLAogICAgY2xhc3NpZmllcnM9Q0xBU1NJRklFUlMsCiAgICBr\nZXl3b3Jkcz1LRVlXT1JEUwopCgpwYXJhbXMudXBkYXRlKGRpY3QoCiAgICBl\nbnRyeV9wb2ludHMgPSB7CiAgICAgICAgJ2NvbnNvbGVfc2NyaXB0cyc6IFsK\nICAgICAgICAgICAgJ2Rpc2NvdmVyID0gZGlzY292ZXI6bWFpbicsCiAgICAg\nICAgICAgIF0sCiAgICAgICAgfSwKKSkKcGFyYW1zWyd0ZXN0X3N1aXRlJ10g\nPSAnZGlzY292ZXIuY29sbGVjdG9yJwoKc2V0dXAoKipwYXJhbXMpCgoK\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/aaa8fd5fc6b995380bd1a9dcb0b4f87d9dc6a5b5",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py",
+   "name": "setup.py",
+   "path": "src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py",
+   "sha": "aaa8fd5fc6b995380bd1a9dcb0b4f87d9dc6a5b5",
+   "size": 1932,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/c384a7658010d9d370e7b0ef12b713fbed310ff1",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py?ref=master"
+   },
+   "content": "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uCiIiIkRpc3R1dGlscyBpbnN0YWxsZXIg\nZm9yIGV4dHJhcy4iIiIKCmZyb20gc2V0dXB0b29scyBpbXBvcnQgc2V0dXAK\naW1wb3J0IG9zLnBhdGgKCmltcG9ydCBleHRyYXMKdGVzdHRvb2xzX2NtZCA9\nIGV4dHJhcy50cnlfaW1wb3J0KCd0ZXN0dG9vbHMuVGVzdENvbW1hbmQnKQoK\nCmRlZiBnZXRfdmVyc2lvbigpOgogICAgIiIiUmV0dXJuIHRoZSB2ZXJzaW9u\nIG9mIGV4dHJhcyB0aGF0IHdlIGFyZSBidWlsZGluZy4iIiIKICAgIHZlcnNp\nb24gPSAnLicuam9pbigKICAgICAgICBzdHIoY29tcG9uZW50KSBmb3IgY29t\ncG9uZW50IGluIGV4dHJhcy5fX3ZlcnNpb25fX1swOjNdKQogICAgcmV0dXJu\nIHZlcnNpb24KCgpkZWYgZ2V0X2xvbmdfZGVzY3JpcHRpb24oKToKICAgIHJl\nYWRtZV9wYXRoID0gb3MucGF0aC5qb2luKAogICAgICAgIG9zLnBhdGguZGly\nbmFtZShfX2ZpbGVfXyksICdSRUFETUUucnN0JykKICAgIHJldHVybiBvcGVu\nKHJlYWRtZV9wYXRoKS5yZWFkKCkKCgpjbWRjbGFzcyA9IHt9CgppZiB0ZXN0\ndG9vbHNfY21kIGlzIG5vdCBOb25lOgogICAgY21kY2xhc3NbJ3Rlc3QnXSA9\nIHRlc3R0b29sc19jbWQKCgpzZXR1cChuYW1lPSdleHRyYXMnLAogICAgICBh\ndXRob3I9J1Rlc3RpbmcgY2FiYWwnLAogICAgICBhdXRob3JfZW1haWw9J3Rl\nc3R0b29scy1kZXZAbGlzdHMubGF1bmNocGFkLm5ldCcsCiAgICAgIHVybD0n\naHR0cHM6Ly9naXRodWIuY29tL3Rlc3RpbmctY2FiYWwvZXh0cmFzJywKICAg\nICAgZGVzY3JpcHRpb249KCdVc2VmdWwgZXh0cmEgYml0cyBmb3IgUHl0aG9u\nIC0gdGhpbmdzIHRoYXQgc2hvbGQgYmUgJwogICAgICAgICdpbiB0aGUgc3Rh\nbmRhcmQgbGlicmFyeScpLAogICAgICBsb25nX2Rlc2NyaXB0aW9uPWdldF9s\nb25nX2Rlc2NyaXB0aW9uKCksCiAgICAgIHZlcnNpb249Z2V0X3ZlcnNpb24o\nKSwKICAgICAgY2xhc3NpZmllcnM9WyJMaWNlbnNlIDo6IE9TSSBBcHByb3Zl\nZCA6OiBNSVQgTGljZW5zZSJdLAogICAgICBwYWNrYWdlcz1bCiAgICAgICAg\nJ2V4dHJhcycsCiAgICAgICAgJ2V4dHJhcy50ZXN0cycsCiAgICAgICAgXSwK\nICAgICAgY21kY2xhc3M9Y21kY2xhc3MpCg==\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/c384a7658010d9d370e7b0ef12b713fbed310ff1",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py",
+   "name": "setup.py",
+   "path": "src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py",
+   "sha": "c384a7658010d9d370e7b0ef12b713fbed310ff1",
+   "size": 1105,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/77cad0abe7f3cdb6264270caa980ef5b861ec571",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml?ref=master"
+   },
+   "content": "W3Rvb2wucG9ldHJ5XQpuYW1lID0gImlzbzg2MDEiCnZlcnNpb24gPSAiMi4x\nLjAiCmRlc2NyaXB0aW9uID0gIlNpbXBsZSBtb2R1bGUgdG8gcGFyc2UgSVNP\nIDg2MDEgZGF0ZXMiCmF1dGhvcnMgPSBbIk1pY2hhZWwgVHdvbWV5IDxtaWNr\nQHR3b21leWxlZS5uYW1lPiJdCmxpY2Vuc2UgPSAiTUlUIgpyZWFkbWUgPSAi\nUkVBRE1FLnJzdCIKaG9tZXBhZ2UgPSAiaHR0cHM6Ly9naXRodWIuY29tL21p\nY2t0d29tZXkvcHlpc284NjAxIgpyZXBvc2l0b3J5ID0gImh0dHBzOi8vZ2l0\naHViLmNvbS9taWNrdHdvbWV5L3B5aXNvODYwMSIKZG9jdW1lbnRhdGlvbiA9\nICJodHRwczovL3B5aXNvODYwMS5yZWFkdGhlZG9jcy5pby9lbi9sYXRlc3Qv\nIgoKW3Rvb2wucG9ldHJ5LmRlcGVuZGVuY2llc10KcHl0aG9uID0gIj49My43\nLDw0LjAiCgpbdG9vbC5wb2V0cnkuZ3JvdXAuZGV2LmRlcGVuZGVuY2llc10K\nbXlweSA9ICIqIgpibGFjayA9ICIqIgpweXRlc3QgPSAiKiIKaHlwb3RoZXNp\ncyA9ICIqIgpweXR6ID0gIioiCnByZS1jb21taXQgPSAiKiIKbm94ID0gIioi\nClNwaGlueCA9ICIqIgpjaGFuZ2Vsb2ctbWFuYWdlciA9ICIqIgpydWZmID0g\nIioiCgpbYnVpbGQtc3lzdGVtXQpyZXF1aXJlcyA9IFsicG9ldHJ5LWNvcmU+\nPTEuMC4wIl0KYnVpbGQtYmFja2VuZCA9ICJwb2V0cnkuY29yZS5tYXNvbnJ5\nLmFwaSIKClt0b29sLmlzb3J0XQpwcm9maWxlID0gImJsYWNrIgo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/77cad0abe7f3cdb6264270caa980ef5b861ec571",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml",
+   "name": "pyproject.toml",
+   "path": "src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml",
+   "sha": "77cad0abe7f3cdb6264270caa980ef5b861ec571",
+   "size": 713,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/0e5ec12d8b4e225e51f711650592ed0ae871b3e2",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml?ref=master"
+   },
+   "content": "W2J1aWxkLXN5c3RlbV0KcmVxdWlyZXMgPSBbInNldHVwdG9vbHM+PTQzLjAu\nMCJdCmJ1aWxkLWJhY2tlbmQgPSAic2V0dXB0b29scy5idWlsZF9tZXRhIgoK\nW3Rvb2wucnVmZl0KbGluZS1sZW5ndGggPSAxMjAKdGFyZ2V0LXZlcnNpb24g\nPSAicHkzNyIK\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/0e5ec12d8b4e225e51f711650592ed0ae871b3e2",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml",
+   "name": "pyproject.toml",
+   "path": "src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml",
+   "sha": "0e5ec12d8b4e225e51f711650592ed0ae871b3e2",
+   "size": 144,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/ed60f3b6f40b00088f57d7667f99c040fa7f5010",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py?ref=master"
+   },
+   "content": "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoKaW1wb3J0IG9zLnBhdGgKCmZyb20g\nc2V0dXB0b29scyBpbXBvcnQgc2V0dXAKCgpkZWYgX2dldF92ZXJzaW9uX2Zy\nb21fZmlsZShmaWxlbmFtZSwgc3RhcnRfb2ZfbGluZSwgc3BsaXRfbWFya2Vy\nKToKICAgICIiIkV4dHJhY3QgdmVyc2lvbiBmcm9tIGZpbGUsIGdpdmluZyBs\nYXN0IG1hdGNoaW5nIHZhbHVlIG9yIE5vbmUiIiIKICAgIHRyeToKICAgICAg\nICByZXR1cm4gWwogICAgICAgICAgICB4IGZvciB4IGluIG9wZW4oZmlsZW5h\nbWUpIGlmIHguc3RhcnRzd2l0aChzdGFydF9vZl9saW5lKQogICAgICAgIF1b\nLTFdLnNwbGl0KHNwbGl0X21hcmtlcilbMV0uc3RyaXAoKQogICAgZXhjZXB0\nIChJT0Vycm9yLCBJbmRleEVycm9yKToKICAgICAgICByZXR1cm4gTm9uZQoK\nClZFUlNJT04gPSAoCiAgICAjIEFzc3VtZSB3ZSBhcmUgaW4gYSBkaXN0cmli\ndXRpb24sIHdoaWNoIGhhcyBQS0ctSU5GTwogICAgX2dldF92ZXJzaW9uX2Zy\nb21fZmlsZSgnUEtHLUlORk8nLCAnVmVyc2lvbjonLCAnOicpCiAgICAjIE11\nc3QgYmUgYSBkZXZlbG9wbWVudCBjaGVja291dCwgc28gdXNlIHRoZSBNYWtl\nZmlsZQogICAgb3IgX2dldF92ZXJzaW9uX2Zyb21fZmlsZSgnTWFrZWZpbGUn\nLCAnVkVSU0lPTicsICc9JykKICAgIG9yICIwLjAiCikKCgpyZWxwYXRoID0g\nb3MucGF0aC5kaXJuYW1lKF9fZmlsZV9fKQppZiByZWxwYXRoOgogICAgb3Mu\nY2hkaXIocmVscGF0aCkKCnNldHVwKAogICAgbmFtZT0ncHl0aG9uLXN1YnVu\naXQnLAogICAgdmVyc2lvbj1WRVJTSU9OLAogICAgZGVzY3JpcHRpb249KCdQ\neXRob24gaW1wbGVtZW50YXRpb24gb2Ygc3VidW5pdCB0ZXN0IHN0cmVhbWlu\nZyBwcm90b2NvbCcpLAogICAgbG9uZ19kZXNjcmlwdGlvbj1vcGVuKCdSRUFE\nTUUucnN0JykucmVhZCgpLAogICAgY2xhc3NpZmllcnM9WwogICAgICAgICdJ\nbnRlbmRlZCBBdWRpZW5jZSA6OiBEZXZlbG9wZXJzJywKICAgICAgICAnT3Bl\ncmF0aW5nIFN5c3RlbSA6OiBPUyBJbmRlcGVuZGVudCcsCiAgICAgICAgJ1By\nb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbicsCiAgICAgICAgJ1Byb2dy\nYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAzJywKICAgICAgICAnUHJv\nZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IDMuNycsCiAgICAgICAg\nJ1Byb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAzLjgnLAogICAg\nICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRob24gOjogMy45JywK\nICAgICAgICAnUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IDMu\nMTAnLAogICAgICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRob24g\nOjogMy4xMScsCiAgICAgICAgJ1Byb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5\ndGhvbiA6OiAzLjEyJywKICAgICAgICAnVG9waWMgOjogU29mdHdhcmUgRGV2\nZWxvcG1lbnQgOjogVGVzdGluZycsCiAgICBdLAogICAga2V5d29yZHM9J3B5\ndGhvbiB0ZXN0IHN0cmVhbWluZycsCiAgICBhdXRob3I9J1JvYmVydCBDb2xs\naW5zJywKICAgIGF1dGhvcl9lbWFpbD0nc3VidW5pdC1kZXZAbGlzdHMubGF1\nbmNocGFkLm5ldCcsCiAgICB1cmw9J2h0dHA6Ly9sYXVuY2hwYWQubmV0L3N1\nYnVuaXQnLAogICAgbGljZW5zZT0nQXBhY2hlLTIuMCBvciBCU0QnLAogICAg\ncHJvamVjdF91cmxzPXsKICAgICAgICAiQnVnIFRyYWNrZXIiOiAiaHR0cHM6\nLy9idWdzLmxhdW5jaHBhZC5uZXQvc3VidW5pdCIsCiAgICAgICAgIlNvdXJj\nZSBDb2RlIjogImh0dHBzOi8vZ2l0aHViLmNvbS90ZXN0aW5nLWNhYmFsL3N1\nYnVuaXQvIiwKICAgIH0sCiAgICBwYWNrYWdlcz1bJ3N1YnVuaXQnLCAnc3Vi\ndW5pdC50ZXN0cycsICdzdWJ1bml0LmZpbHRlcl9zY3JpcHRzJ10sCgogICAg\ncGFja2FnZV9kaXI9eydzdWJ1bml0JzogJ3B5dGhvbi9zdWJ1bml0J30sCiAg\nICBweXRob25fcmVxdWlyZXM9Ij49My43IiwKICAgIGluc3RhbGxfcmVxdWly\nZXM9WwogICAgICAgICdpc284NjAxJywKICAgICAgICAndGVzdHRvb2xzPj0w\nLjkuMzQnLAogICAgXSwKICAgIGVudHJ5X3BvaW50cz17CiAgICAgICAgJ2Nv\nbnNvbGVfc2NyaXB0cyc6IFsKICAgICAgICAgICAgJ3N1YnVuaXQtMXRvMj1z\ndWJ1bml0LmZpbHRlcl9zY3JpcHRzLnN1YnVuaXRfMXRvMjptYWluJywKICAg\nICAgICAgICAgJ3N1YnVuaXQtMnRvMT1zdWJ1bml0LmZpbHRlcl9zY3JpcHRz\nLnN1YnVuaXRfMnRvMTptYWluJywKICAgICAgICAgICAgJ3N1YnVuaXQtZmls\ndGVyPXN1YnVuaXQuZmlsdGVyX3NjcmlwdHMuc3VidW5pdF9maWx0ZXI6bWFp\nbicsCiAgICAgICAgICAgICdzdWJ1bml0LWxzPXN1YnVuaXQuZmlsdGVyX3Nj\ncmlwdHMuc3VidW5pdF9sczptYWluJywKICAgICAgICAgICAgJ3N1YnVuaXQt\nbm90aWZ5PXN1YnVuaXQuZmlsdGVyX3NjcmlwdHMuc3VidW5pdF9ub3RpZnk6\nbWFpbicsCiAgICAgICAgICAgICdzdWJ1bml0LW91dHB1dD1zdWJ1bml0LmZp\nbHRlcl9zY3JpcHRzLnN1YnVuaXRfb3V0cHV0Om1haW4nLAogICAgICAgICAg\nICAnc3VidW5pdC1zdGF0cz1zdWJ1bml0LmZpbHRlcl9zY3JpcHRzLnN1YnVu\naXRfc3RhdHM6bWFpbicsCiAgICAgICAgICAgICdzdWJ1bml0LXRhZ3M9c3Vi\ndW5pdC5maWx0ZXJfc2NyaXB0cy5zdWJ1bml0X3RhZ3M6bWFpbicsCiAgICAg\nICAgICAgICdzdWJ1bml0MmNzdj1zdWJ1bml0LmZpbHRlcl9zY3JpcHRzLnN1\nYnVuaXQyY3N2Om1haW4nLAogICAgICAgICAgICAnc3VidW5pdDJkaXNrPXN1\nYnVuaXQuZmlsdGVyX3NjcmlwdHMuc3VidW5pdDJkaXNrOm1haW4nLAogICAg\nICAgICAgICAnc3VidW5pdDJndGs9c3VidW5pdC5maWx0ZXJfc2NyaXB0cy5z\ndWJ1bml0Mmd0azptYWluJywKICAgICAgICAgICAgJ3N1YnVuaXQyanVuaXR4\nbWw9c3VidW5pdC5maWx0ZXJfc2NyaXB0cy5zdWJ1bml0Mmp1bml0eG1sOm1h\naW4nLAogICAgICAgICAgICAnc3VidW5pdDJweXVuaXQ9c3VidW5pdC5maWx0\nZXJfc2NyaXB0cy5zdWJ1bml0MnB5dW5pdDptYWluJywKICAgICAgICAgICAg\nJ3RhcDJzdWJ1bml0PXN1YnVuaXQuZmlsdGVyX3NjcmlwdHMudGFwMnN1YnVu\naXQ6bWFpbicsCiAgICAgICAgXQogICAgfSwKICAgIHRlc3RzX3JlcXVpcmU9\nWwogICAgICAgICdmaXh0dXJlcycsCiAgICAgICAgJ2h5cG90aGVzaXMnLAog\nICAgICAgICd0ZXN0c2NlbmFyaW9zJywKICAgIF0sCiAgICBleHRyYXNfcmVx\ndWlyZT17CiAgICAgICAgJ2RvY3MnOiBbJ2RvY3V0aWxzJ10sCiAgICAgICAg\nJ3Rlc3QnOiBbJ2ZpeHR1cmVzJywgJ3Rlc3RzY2VuYXJpb3MnLCAnaHlwb3Ro\nZXNpcyddLAogICAgfSwKKQo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/ed60f3b6f40b00088f57d7667f99c040fa7f5010",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py",
+   "name": "setup.py",
+   "path": "src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py",
+   "sha": "ed60f3b6f40b00088f57d7667f99c040fa7f5010",
+   "size": 3302,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/6b0d596a2a4006f8afdafb15edf434090cbacde8",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py?ref=master"
+   },
+   "content": "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uCgpmcm9tIHNldHVwdG9vbHMgaW1wb3J0\nIHNldHVwCmltcG9ydCBvcy5wYXRoCgpkZXNjcmlwdGlvbiA9IG9wZW4ob3Mu\ncGF0aC5qb2luKG9zLnBhdGguZGlybmFtZShfX2ZpbGVfXyksICdSRUFETUUn\nKSwgJ3J0JykucmVhZCgpCgpzZXR1cChuYW1lPSJ0ZXN0c2NlbmFyaW9zIiwK\nICAgICAgdmVyc2lvbj0iMC40IiwKICAgICAgZGVzY3JpcHRpb249IlRlc3Rz\nY2VuYXJpb3MsIGEgcHl1bml0IGV4dGVuc2lvbiBmb3IgZGVwZW5kZW5jeSBp\nbmplY3Rpb24iLAogICAgICBsb25nX2Rlc2NyaXB0aW9uPWRlc2NyaXB0aW9u\nLAogICAgICBtYWludGFpbmVyPSJSb2JlcnQgQ29sbGlucyIsCiAgICAgIG1h\naW50YWluZXJfZW1haWw9InJvYmVydGNAcm9iZXJ0Y29sbGlucy5uZXQiLAog\nICAgICB1cmw9Imh0dHBzOi8vbGF1bmNocGFkLm5ldC90ZXN0c2NlbmFyaW9z\nIiwKICAgICAgcGFja2FnZXM9Wyd0ZXN0c2NlbmFyaW9zJywgJ3Rlc3RzY2Vu\nYXJpb3MudGVzdHMnXSwKICAgICAgcGFja2FnZV9kaXIgPSB7Jyc6J2xpYid9\nLAogICAgICBjbGFzc2lmaWVycyA9IFsKICAgICAgICAgICdEZXZlbG9wbWVu\ndCBTdGF0dXMgOjogNiAtIE1hdHVyZScsCiAgICAgICAgICAnSW50ZW5kZWQg\nQXVkaWVuY2UgOjogRGV2ZWxvcGVycycsCiAgICAgICAgICAnTGljZW5zZSA6\nOiBPU0kgQXBwcm92ZWQgOjogQlNEIExpY2Vuc2UnLAogICAgICAgICAgJ0xp\nY2Vuc2UgOjogT1NJIEFwcHJvdmVkIDo6IEFwYWNoZSBTb2Z0d2FyZSBMaWNl\nbnNlJywKICAgICAgICAgICdPcGVyYXRpbmcgU3lzdGVtIDo6IE9TIEluZGVw\nZW5kZW50JywKICAgICAgICAgICdQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQ\neXRob24nLAogICAgICAgICAgJ1Byb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5\ndGhvbiA6OiAzJywKICAgICAgICAgICdUb3BpYyA6OiBTb2Z0d2FyZSBEZXZl\nbG9wbWVudCA6OiBRdWFsaXR5IEFzc3VyYW5jZScsCiAgICAgICAgICAnVG9w\naWMgOjogU29mdHdhcmUgRGV2ZWxvcG1lbnQgOjogVGVzdGluZycsCiAgICAg\nICAgICBdLAogICAgICBpbnN0YWxsX3JlcXVpcmVzID0gWwogICAgICAgICd0\nZXN0dG9vbHMnLAogICAgICAgIF0KICAgICAgKQo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/6b0d596a2a4006f8afdafb15edf434090cbacde8",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py",
+   "name": "setup.py",
+   "path": "src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py",
+   "sha": "6b0d596a2a4006f8afdafb15edf434090cbacde8",
+   "size": 1109,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/9f2030caab937c85ca9c5905fd536e5bf90fba10",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml?ref=master"
+   },
+   "content": "W3Rvb2wubXlweV0Kd2Fybl9yZWR1bmRhbnRfY2FzdHMgPSB0cnVlCndhcm5f\ndW51c2VkX2NvbmZpZ3MgPSB0cnVlCmNoZWNrX3VudHlwZWRfZGVmcyA9IHRy\ndWUKCltbdG9vbC5teXB5Lm92ZXJyaWRlc11dCm1vZHVsZSA9IFsKICAgICJm\naXh0dXJlcy4qIiwKICAgICJ0ZXN0cmVzb3VyY2VzLioiLAogICAgInRlc3Rz\nY2VuYXJpb3MuKiIsCl0KaWdub3JlX21pc3NpbmdfaW1wb3J0cyA9IHRydWUK\nCltidWlsZC1zeXN0ZW1dCnJlcXVpcmVzID0gWyJzZXR1cHRvb2xzPj02MSIs\nICJoYXRjaGxpbmciLCAiaGF0Y2hfdmNzIl0KYnVpbGQtYmFja2VuZCA9ICJo\nYXRjaGxpbmcuYnVpbGQiCgpbcHJvamVjdF0KbmFtZSA9ICJ0ZXN0dG9vbHMi\nCmRlc2NyaXB0aW9uID0gIkV4dGVuc2lvbnMgdG8gdGhlIFB5dGhvbiBzdGFu\nZGFyZCBsaWJyYXJ5IHVuaXQgdGVzdGluZyBmcmFtZXdvcmsiCnJlYWRtZSA9\nICJkb2Mvb3ZlcnZpZXcucnN0IgphdXRob3JzID0gW3tuYW1lID0gIkpvbmF0\naGFuIE0uIExhbmdlIiwgZW1haWwgPSAiam1sK3Rlc3R0b29sc0BtdW1hay5u\nZXQifV0KY2xhc3NpZmllcnMgPSBbCiAgICAiRGV2ZWxvcG1lbnQgU3RhdHVz\nIDo6IDUgLSBQcm9kdWN0aW9uL1N0YWJsZSIsCiAgICAiSW50ZW5kZWQgQXVk\naWVuY2UgOjogRGV2ZWxvcGVycyIsCiAgICAiTGljZW5zZSA6OiBPU0kgQXBw\ncm92ZWQgOjogTUlUIExpY2Vuc2UiLAogICAgIk9wZXJhdGluZyBTeXN0ZW0g\nOjogT1MgSW5kZXBlbmRlbnQiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdl\nIDo6IFB5dGhvbiIsCiAgICAiUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0\naG9uIDo6IDMiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhv\nbiA6OiAzLjciLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhv\nbiA6OiAzLjgiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhv\nbiA6OiAzLjkiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhv\nbiA6OiAzLjEwIiwKICAgICJQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRo\nb24gOjogMy4xMSIsCiAgICAiUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0\naG9uIDo6IDMuMTIiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5\ndGhvbiA6OiAzIDo6IE9ubHkiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdl\nIDo6IFB5dGhvbiA6OiBJbXBsZW1lbnRhdGlvbiA6OiBDUHl0aG9uIiwKICAg\nICJQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRob24gOjogSW1wbGVtZW50\nYXRpb24gOjogUHlQeSIsCiAgICAiVG9waWMgOjogU29mdHdhcmUgRGV2ZWxv\ncG1lbnQgOjogTGlicmFyaWVzIiwKICAgICJUb3BpYyA6OiBTb2Z0d2FyZSBE\nZXZlbG9wbWVudCA6OiBMaWJyYXJpZXMgOjogUHl0aG9uIE1vZHVsZXMiLAog\nICAgIlRvcGljIDo6IFNvZnR3YXJlIERldmVsb3BtZW50IDo6IFRlc3Rpbmci\nLApdCmRlcGVuZGVuY2llcyA9IFsic2V0dXB0b29sczsgcHl0aG9uX3ZlcnNp\nb24+PSczLjEyJyJdCmR5bmFtaWMgPSBbInZlcnNpb24iXQpyZXF1aXJlcy1w\neXRob24gPSAiPj0zLjciCgpbcHJvamVjdC51cmxzXQpIb21lcGFnZSA9ICJo\ndHRwczovL2dpdGh1Yi5jb20vdGVzdGluZy1jYWJhbC90ZXN0dG9vbHMiCgpb\ndG9vbC5zZXR1cHRvb2xzXQppbmNsdWRlLXBhY2thZ2UtZGF0YSA9IGZhbHNl\nCgpbdG9vbC5zZXR1cHRvb2xzLnBhY2thZ2VzLmZpbmRdCmluY2x1ZGUgPSBb\nInRlc3R0b29scyJdCmV4Y2x1ZGUgPSBbIm1hbioiXQoKW3Rvb2wuZXh0cmFz\nXQp0ZXN0ID0gIiIiCnRlc3RzY2VuYXJpb3MKdGVzdHJlc291cmNlcyIiIgp0\nd2lzdGVkID0gIiIiClR3aXN0ZWQiIiIKClt0b29sLmZpbGVzXQpwYWNrYWdl\ncyA9ICJ0ZXN0dG9vbHMiCgpbdG9vbC5oYXRjaC52ZXJzaW9uXQpzb3VyY2Ug\nPSAidmNzIgoKW3Rvb2wuaGF0Y2guYnVpbGQuaG9va3MudmNzXQp2ZXJzaW9u\nLWZpbGUgPSAidGVzdHRvb2xzL192ZXJzaW9uLnB5Igp0YWctcGF0dGVybiA9\nICJeKHRlc3R0b29scy0pPyg/UDx2ZXJzaW9uPlswLTldKyhcXC5bMC05XSsp\nKigtWzAtOV0rKT8pKFxcLnBvc3QoP1A8cG9zdD5bMC05XSspKT8kIgp0ZW1w\nbGF0ZSA9ICIiIlwKIyBUaGlzIGZpbGUgaXMgYXV0b21hdGljYWxseSBnZW5l\ncmF0ZWQgYnkgaGF0Y2guCnZlcnNpb24gPSB7dmVyc2lvbiFyfQpfX3ZlcnNp\nb25fXyA9IHt2ZXJzaW9uX3R1cGxlIXJ9CiIiIgoKW3Byb2plY3Qub3B0aW9u\nYWwtZGVwZW5kZW5jaWVzXQp0ZXN0ID0gWyJ0ZXN0c2NlbmFyaW9zIiwgInRl\nc3RyZXNvdXJjZXMiXQp0d2lzdGVkID0gWyJUd2lzdGVkIiwgImZpeHR1cmVz\nIl0K\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/9f2030caab937c85ca9c5905fd536e5bf90fba10",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml",
+   "name": "pyproject.toml",
+   "path": "src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml",
+   "sha": "9f2030caab937c85ca9c5905fd536e5bf90fba10",
+   "size": 2298,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/811aeed997f8e1a056140ddf4759d69e774734fd",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt?ref=master"
+   },
+   "content": "Zml4dHVyZXM+PTIuMAo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/811aeed997f8e1a056140ddf4759d69e774734fd",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt",
+   "name": "requirements.txt",
+   "path": "src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt",
+   "sha": "811aeed997f8e1a056140ddf4759d69e774734fd",
+   "size": 14,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/61cc244bf7da4764a366d063653c85b9a3caff10",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py?ref=master"
+   },
+   "content": "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uCmltcG9ydCBzZXR1cHRvb2xzCgpzZXR1\ncHRvb2xzLnNldHVwKCkK\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/61cc244bf7da4764a366d063653c85b9a3caff10",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py",
+   "name": "setup.py",
+   "path": "src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py",
+   "sha": "61cc244bf7da4764a366d063653c85b9a3caff10",
+   "size": 60,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/modularity_check/requirements.txt?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/e61ed4d25c757ad43ebb97067af65cdd71ab679f",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/tools/modularity_check/requirements.txt",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/modularity_check/requirements.txt?ref=master"
+   },
+   "content": "bmV0d29ya3g9PTMuNC4yCnRyZWUtc2l0dGVyPT0wLjI1LjIKdHJlZS1zaXR0\nZXItYz09MC4yNC4xCg==\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/tools/modularity_check/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/e61ed4d25c757ad43ebb97067af65cdd71ab679f",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/tools/modularity_check/requirements.txt",
+   "name": "requirements.txt",
+   "path": "src/third_party/wiredtiger/tools/modularity_check/requirements.txt",
+   "sha": "e61ed4d25c757ad43ebb97067af65cdd71ab679f",
+   "size": 58,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/modularity_check/requirements.txt?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/5c31991874bf5c14a7f98391e4bdc669b24963dc",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml?ref=master"
+   },
+   "content": "W3Byb2plY3RdCm5hbWUgPSAid3QtbWNwIgp2ZXJzaW9uID0gIjAuMS4wIgpk\nZXNjcmlwdGlvbiA9ICJNQ1AgU2VydmVyIGZvciBXaXJlZFRpZ2VyIGRldmVs\nb3BtZW50IGFuZCBkZWJ1Z2dpbmciCnJlYWRtZSA9ICJSRUFETUUubWQiCnJl\ncXVpcmVzLXB5dGhvbiA9ICI+PTMuMTMiCmRlcGVuZGVuY2llcyA9IFsKICAg\nICJtY3BbY2xpXT49MS4yMy4wIiwKICAgICJweWRhbnRpYz49Mi4xMS40IiwK\nICAgICJweXRob24tZG90ZW52Pj0xLjEuMCIsCl0K\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/5c31991874bf5c14a7f98391e4bdc669b24963dc",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml",
+   "name": "pyproject.toml",
+   "path": "src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml",
+   "sha": "5c31991874bf5c14a7f98391e4bdc669b24963dc",
+   "size": 255,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/wt_verify/requirements.txt?ref=master": {
+  "json": {
+   "_links": {
+    "git": "https://api.github.com/repos/mongodb/mongo/git/blobs/2d11d9e138e4b9eb59763570719b4128000edee6",
+    "html": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/tools/wt_verify/requirements.txt",
+    "self": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/wt_verify/requirements.txt?ref=master"
+   },
+   "content": "bWF0cGxvdGxpYgptcGxkMwp0b3JuYWRvCnBhbmRhcwo=\n",
+   "download_url": "https://raw.githubusercontent.com/mongodb/mongo/master/src/third_party/wiredtiger/tools/wt_verify/requirements.txt",
+   "encoding": "base64",
+   "git_url": "https://api.github.com/repos/mongodb/mongo/git/blobs/2d11d9e138e4b9eb59763570719b4128000edee6",
+   "html_url": "https://github.com/mongodb/mongo/blob/master/src/third_party/wiredtiger/tools/wt_verify/requirements.txt",
+   "name": "requirements.txt",
+   "path": "src/third_party/wiredtiger/tools/wt_verify/requirements.txt",
+   "sha": "2d11d9e138e4b9eb59763570719b4128000edee6",
+   "size": 32,
+   "type": "file",
+   "url": "https://api.github.com/repos/mongodb/mongo/contents/src/third_party/wiredtiger/tools/wt_verify/requirements.txt?ref=master"
+  },
+  "status": 200
+ },
+ "https://api.github.com/repos/mongodb/mongo/git/trees/master?recursive=1": {
+  "json": {
+   "tree": [
+    {
+     "path": ".devcontainer/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/amazon_linux_2/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/amazon_linux_2023/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/amazon_linux_2023_3/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/debian10/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/debian12/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/rhel10/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/rhel89/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/rhel93/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/suse/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/ubuntu18/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/ubuntu20/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/ubuntu22/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "bazel/remote_execution_container/ubuntu24/dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "buildscripts/antithesis/base_images/mongo_binaries/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "buildscripts/antithesis/base_images/workload/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "buildscripts/cost_model/requirements.txt",
+     "type": "blob"
+    },
+    {
+     "path": "buildscripts/eslint-plugin-mongodb/package.json",
+     "type": "blob"
+    },
+    {
+     "path": "package.json",
+     "type": "blob"
+    },
+    {
+     "path": "pyproject.toml",
+     "type": "blob"
+    },
+    {
+     "path": "src/mongo/db/query/benchmark/data_generator/requirements.txt",
+     "type": "blob"
+    },
+    {
+     "path": "src/mongo/shell/debugger/vscode/package.json",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/Gemfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/composer.json",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/requirements.txt",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/setup.py",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_aarch64-linux-gnu/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_aarch64-linux-musl/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_arm64-darwin/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_x64-mingw-ucrt/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_x86-linux-gnu/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_x86-linux-musl/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_x86-mingw32/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_x86_64-darwin/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_x86_64-linux-gnu/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/rake-compiler-dock/rake_x86_64-linux-musl/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/grpc/dist/third_party/toolchains/dockerfile/rbe_windows2019/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/mozjs/extract/js/src/fuzz-tests/gluesmith/Cargo.toml",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/.devcontainer/Dockerfile",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/concurrencytest-0.1.2-locally-modified/setup.py",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/discover-0.4.0-locally-modified/setup.py",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/extras-0.0.3/setup.py",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/iso8601-2.1.0/pyproject.toml",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/pyproject.toml",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/python-subunit-1.4.4/setup.py",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/testscenarios-0.4/setup.py",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/pyproject.toml",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/requirements.txt",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/test/3rdparty/testtools-2.7.1/setup.py",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/tools/antithesis/docker-compose.yaml",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/tools/modularity_check/requirements.txt",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/tools/wt-mcp/pyproject.toml",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/wiredtiger/tools/wt_verify/requirements.txt",
+     "type": "blob"
+    },
+    {
+     "path": "src/third_party/zstandard/zstd/contrib/docker/Dockerfile",
+     "type": "blob"
+    }
+   ],
+   "truncated": false
+  },
+  "status": 200
+ },
+ "https://crates.io/api/v1/crates/arbitrary": {
+  "json": {
+   "crate": {
+    "default_version": "1.4.2",
+    "max_stable_version": "1.4.2",
+    "name": "arbitrary",
+    "newest_version": "1.4.2"
+   },
+   "versions": [
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.4.2",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.4.1",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.4.0",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.3.2",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.3.1",
+     "yanked": false
+    }
+   ]
+  },
+  "status": 200
+ },
+ "https://crates.io/api/v1/crates/libc": {
+  "json": {
+   "crate": {
+    "default_version": "0.2.189",
+    "max_stable_version": "0.2.189",
+    "name": "libc",
+    "newest_version": "1.0.0-alpha.4"
+   },
+   "versions": [
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "1.0.0-alpha.4",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "0.2.189",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "0.2.188",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "0.2.187",
+     "yanked": false
+    },
+    {
+     "license": "MIT OR Apache-2.0",
+     "num": "0.2.186",
+     "yanked": false
+    }
+   ]
+  },
+  "status": 200
+ },
+ "https://crates.io/api/v1/crates/wasm-smith": {
+  "json": {
+   "crate": {
+    "default_version": "0.254.0",
+    "max_stable_version": "0.254.0",
+    "name": "wasm-smith",
+    "newest_version": "0.254.0"
+   },
+   "versions": [
+    {
+     "license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+     "num": "0.254.0",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+     "num": "0.253.0",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+     "num": "0.252.0",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+     "num": "0.251.0",
+     "yanked": false
+    },
+    {
+     "license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+     "num": "0.250.0",
+     "yanked": false
+    }
+   ]
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/Pillow/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT-CMU",
+    "name": "pillow"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/Sphinx/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-2-Clause",
+    "name": "Sphinx"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/Twisted/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "MIT License",
+    "license_expression": null,
+    "name": "Twisted"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/black/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "black"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/changelog-manager/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "changelog-manager"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/contourpy/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "BSD 3-Clause License\n         \n         Copyright (c) 2021-2025, ContourPy Developers.\n         All rights reserved.\n         \n         Redistribution and use in source and binary forms, with or witho",
+    "license_expression": null,
+    "name": "contourpy"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/coverage/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "Apache-2.0",
+    "license_expression": null,
+    "name": "coverage"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/cxxfilt/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "BSD",
+    "license_expression": null,
+    "name": "cxxfilt"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/cycler/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "Copyright (c) 2015, matplotlib project All rights reserved.  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are m",
+    "license_expression": null,
+    "name": "cycler"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/cython/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "Apache-2.0",
+    "license_expression": null,
+    "name": "Cython"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/dnspython/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: ISC License (ISCL)"
+    ],
+    "license": "ISC",
+    "license_expression": null,
+    "name": "dnspython"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/eventlet/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "eventlet"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/faker/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT License",
+    "license_expression": null,
+    "name": "Faker"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/fixtures/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Apache Software License",
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "Apache-2.0 or BSD",
+    "license_expression": null,
+    "name": "fixtures"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/flask-cors/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "flask-cors"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/flask/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "name": "Flask"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/fonttools/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "fonttools"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/gevent/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "gevent"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/hypothesis/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MPL-2.0",
+    "name": "hypothesis"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/iso8601/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "iso8601"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/joblib/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "name": "joblib"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/kiwisolver/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "=========================\n         The Kiwi licensing terms\n        =========================\n        Kiwi is licensed under the terms of the Modified BSD License (also known as\n        New or Revised",
+    "license_expression": null,
+    "name": "kiwisolver"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/lxml/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "BSD-3-Clause",
+    "license_expression": null,
+    "name": "lxml"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/matplotlib/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Python Software Foundation License"
+    ],
+    "license": "License agreement for matplotlib versions 1.3.0 and later\n         =========================================================\n         \n         1. This LICENSE AGREEMENT is between the Matplotlib Deve",
+    "license_expression": null,
+    "name": "matplotlib"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/mcp/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "mcp"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/mimesis/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "mimesis"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/mpld3/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "BSD 3-clause",
+    "license_expression": null,
+    "name": "mpld3"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/mypy/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "mypy"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/networkx/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "name": "networkx"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/nox/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "Apache-2.0",
+    "name": "nox"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/numpy/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "name": "numpy"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/packaging/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "Apache-2.0 OR BSD-2-Clause",
+    "name": "packaging"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pandas/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "BSD 3-Clause License\n         \n         Copyright (c) 2008-2011, AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team\n         All rights reserved.\n         \n         Copyrigh",
+    "license_expression": null,
+    "name": "pandas"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/patsy/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "2-clause BSD",
+    "license_expression": null,
+    "name": "patsy"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pre-commit/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "pre-commit"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/progressbar2/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "BSD-3-Clause",
+    "license_expression": null,
+    "name": "progressbar2"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/protobuf/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "3-Clause BSD License",
+    "license_expression": null,
+    "name": "protobuf"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pydantic/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "pydantic"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pymongo/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "Apache-2.0",
+    "name": "pymongo"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pympler/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Apache Software License"
+    ],
+    "license": "Apache License, Version 2.0",
+    "license_expression": null,
+    "name": "Pympler"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pyparsing/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "pyparsing"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pyright/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "pyright"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pytest/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "pytest"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/python-dateutil/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Apache Software License",
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "Dual License",
+    "license_expression": null,
+    "name": "python-dateutil"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/python-dotenv/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "BSD-3-Clause",
+    "license_expression": null,
+    "name": "python-dotenv"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/python-subunit/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "Apache-2.0 or BSD",
+    "license_expression": null,
+    "name": "python-subunit"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/pytz/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "pytz"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/ruff/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "ruff"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/scikit-learn/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "name": "scikit-learn"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/scipy/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers.\n         All rights reserved.\n         \n         Redistribution and use in source and binary forms, with or without\n         modificatio",
+    "license_expression": null,
+    "name": "scipy"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/seaborn/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": null,
+    "license_expression": null,
+    "name": "seaborn"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/setuptools/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "setuptools"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/six/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "six"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/statsmodels/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "BSD License",
+    "license_expression": null,
+    "name": "statsmodels"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/testresources/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Apache Software License",
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "Apache-2.0 or BSD",
+    "license_expression": null,
+    "name": "testresources"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/testscenarios/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Apache Software License",
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "Apache-2.0 OR BSD-3-Clause",
+    "license_expression": null,
+    "name": "testscenarios"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/testtools/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": null,
+    "license_expression": null,
+    "name": "testtools"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/threadpoolctl/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: BSD License"
+    ],
+    "license": "BSD-3-Clause",
+    "license_expression": null,
+    "name": "threadpoolctl"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/tornado/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: Apache Software License"
+    ],
+    "license": "Apache-2.0",
+    "license_expression": null,
+    "name": "tornado"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/tree-sitter-c/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": "MIT",
+    "license_expression": null,
+    "name": "tree-sitter-c"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/tree-sitter/json": {
+  "json": {
+   "info": {
+    "classifiers": [
+     "License :: OSI Approved :: MIT License"
+    ],
+    "license": null,
+    "license_expression": null,
+    "name": "tree-sitter"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/tzdata/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": "Apache-2.0",
+    "license_expression": null,
+    "name": "tzdata"
+   }
+  },
+  "status": 200
+ },
+ "https://pypi.org/pypi/wheel/json": {
+  "json": {
+   "info": {
+    "classifiers": [],
+    "license": null,
+    "license_expression": "MIT",
+    "name": "wheel"
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/@eslint%2Feslintrc": {
+  "json": {
+   "dist-tags": {
+    "latest": "3.3.6"
+   },
+   "license": "MIT",
+   "name": "@eslint/eslintrc",
+   "versions": {
+    "3.3.6": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/@eslint%2Fjs": {
+  "json": {
+   "dist-tags": {
+    "latest": "10.0.1",
+    "maintenance": "9.39.5",
+    "next": "10.0.0-rc.0"
+   },
+   "license": "MIT",
+   "name": "@eslint/js",
+   "versions": {
+    "10.0.1": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/@types%2Fvscode": {
+  "json": {
+   "dist-tags": {
+    "latest": "1.125.0",
+    "ts2.0": "1.39.0",
+    "ts2.1": "1.39.0",
+    "ts2.2": "1.39.0",
+    "ts2.3": "1.39.0",
+    "ts2.4": "1.39.0",
+    "ts2.5": "1.39.0",
+    "ts2.6": "1.39.0",
+    "ts2.7": "1.39.0",
+    "ts2.8": "1.44.0",
+    "ts2.9": "1.45.0",
+    "ts3.0": "1.48.0",
+    "ts3.1": "1.49.0",
+    "ts3.2": "1.51.0",
+    "ts3.3": "1.52.0",
+    "ts3.4": "1.54.0",
+    "ts3.5": "1.56.0",
+    "ts3.6": "1.59.0",
+    "ts3.7": "1.62.0",
+    "ts3.8": "1.64.0",
+    "ts3.9": "1.67.0",
+    "ts4.0": "1.70.0",
+    "ts4.1": "1.73.1",
+    "ts4.2": "1.76.0",
+    "ts4.3": "1.82.0",
+    "ts4.4": "1.82.0",
+    "ts4.5": "1.84.2",
+    "ts4.6": "1.87.0",
+    "ts4.7": "1.90.0",
+    "ts4.8": "1.95.0",
+    "ts4.9": "1.95.0",
+    "ts5.0": "1.98.0",
+    "ts5.1": "1.102.0",
+    "ts5.2": "1.110.0",
+    "ts5.3": "1.120.0",
+    "ts5.4": "1.120.0",
+    "ts5.5": "1.120.0",
+    "ts5.6": "1.125.0",
+    "ts5.7": "1.125.0",
+    "ts5.8": "1.125.0",
+    "ts5.9": "1.125.0",
+    "ts6.0": "1.125.0"
+   },
+   "license": "MIT",
+   "name": "@types/vscode",
+   "versions": {
+    "1.125.0": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/@vscode%2Fdebugadapter": {
+  "json": {
+   "dist-tags": {
+    "latest": "1.68.0",
+    "next": "1.58.0-pre.0"
+   },
+   "license": "MIT",
+   "name": "@vscode/debugadapter",
+   "versions": {
+    "1.68.0": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/@vscode%2Fvsce": {
+  "json": {
+   "dist-tags": {
+    "latest": "3.9.2",
+    "next": "3.9.3-4"
+   },
+   "license": "MIT",
+   "name": "@vscode/vsce",
+   "versions": {
+    "3.9.2": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/eslint": {
+  "json": {
+   "dist-tags": {
+    "es6jsx": "0.11.0-alpha.0",
+    "latest": "10.8.0",
+    "maintenance": "9.39.5",
+    "next": "10.0.0-rc.2"
+   },
+   "license": "MIT",
+   "name": "eslint",
+   "versions": {
+    "10.8.0": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/eslint-formatter-unix": {
+  "json": {
+   "dist-tags": {
+    "latest": "9.0.1"
+   },
+   "license": "MIT",
+   "name": "eslint-formatter-unix",
+   "versions": {
+    "9.0.1": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/eslint-plugin-mocha-no-only": {
+  "json": {
+   "dist-tags": {
+    "latest": "1.2.0"
+   },
+   "license": "ISC",
+   "name": "eslint-plugin-mocha-no-only",
+   "versions": {
+    "1.2.0": {
+     "license": "ISC"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/globals": {
+  "json": {
+   "dist-tags": {
+    "latest": "17.8.0"
+   },
+   "license": "MIT",
+   "name": "globals",
+   "versions": {
+    "17.8.0": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://registry.npmjs.org/prettier": {
+  "json": {
+   "dist-tags": {
+    "latest": "3.9.6",
+    "next": "4.0.0-alpha.13"
+   },
+   "license": "MIT",
+   "name": "prettier",
+   "versions": {
+    "3.9.6": {
+     "license": "MIT"
+    }
+   }
+  },
+  "status": 200
+ },
+ "https://repo.packagist.org/p2/google/auth.json": {
+  "json": {
+   "packages": {
+    "google/auth": [
+     {
+      "license": [
+       "Apache-2.0"
+      ]
+     }
+    ]
+   }
+  },
+  "status": 200
+ }
+}

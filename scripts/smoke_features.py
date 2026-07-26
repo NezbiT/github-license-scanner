@@ -24,9 +24,9 @@ def test_units() -> None:
     dev_strong = PackageLicense(
         "y", "pypi", "GPL-3.0", "strong_copyleft", "r", is_dev=True
     )
-    c, f, _w, _u, _s, dev_only = compute_verdict("MIT", [dev_strong])
+    c, f, _w, _u, _s, dev_only, _net = compute_verdict("MIT", [dev_strong])
     assert c and not f and dev_only
-    c, f, _w, _u, _s, dev_only = compute_verdict("MIT", [prod_strong])
+    c, f, _w, _u, _s, dev_only, _net = compute_verdict("MIT", [prod_strong])
     assert not c and f and not dev_only
     score, label = compute_risk_score("MIT", [prod_strong])
     assert score > 15 and label in {"low", "medium", "high", "minimal"}

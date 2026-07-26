@@ -7,10 +7,14 @@ Usage examples:
   gls history
   gls ui                      # web interface (requires the [ui] extra)
 
-Exit codes for `scan` / `batch`:
-  0 — no strong copyleft force-open signal
-  1 — forces_open_source is True (useful in CI gates)
-  2 — hard failure (bad URL, network, usage error)
+Exit codes for `scan` / `batch`, in order of precedence:
+  1 — strong copyleft (GPL/AGPL/SSPL) in the repo or a production dependency
+  2 — undetermined: a production dependency or the repo license could not be
+      resolved, or the scan failed outright (bad URL, network, usage error).
+      Unknown *dev* dependencies are reported but do not affect the code.
+  0 — everything resolved and no strong copyleft found
+
+2 means "this scan cannot answer the question", never "it is fine".
 """
 
 from __future__ import annotations
@@ -48,14 +52,27 @@ def _print_result(result: ScanResult, verbose: bool = True) -> None:
 
     if not result.scan_complete:
         print("Scan complete      : NO (incomplete — do not treat verdict as reliable)")
-    flag = "YES — strong copyleft may force opening source" if result.forces_open_source else "NO"
-    if result.scan_complete and result.can_sell_closed:
-        sell = "POSSIBLY (heuristic; attribution & counsel still required)"
+
+    # Three states, not two: YES / NO / UNKNOWN. Reporting an unresolved
+    # license as "NO" is what told users they could sell GPL software.
+    undetermined = result.verdict_undetermined or not result.scan_complete
+    if result.forces_open_source:
+        flag = "YES — strong copyleft may force opening source"
+        sell = "NO"
+    elif undetermined:
+        flag = "UNKNOWN — licenses could not be resolved (not a 'no')"
+        sell = "UNKNOWN — resolve the licenses below before deciding"
     else:
-        sell = "NO / UNDETERMINED"
+        flag = "NO"
+        sell = "POSSIBLY (heuristic; attribution & counsel still required)"
+
     print(f"Risk score         : {result.risk_score}/100 ({result.risk_score_label})")
     print(f"Forces open source : {flag}")
     print(f"Can sell closed    : {sell}")
+    if result.repo_license_unresolved and result.scan_complete:
+        print("Repo license       : UNRESOLVED (read LICENSE/COPYING manually)")
+    elif result.license_detection_source == "license_text":
+        print("Repo license source: license file text (GitHub could not identify it)")
     if result.has_network_copyleft:
         print("Network copyleft   : YES (AGPL/SSPL-class — SaaS obligations possible)")
     if result.strong_copyleft_dev_only:
@@ -163,17 +180,15 @@ async def cmd_scan(
         append_scan(result)
         print("Saved to history.")
 
-    if result.errors and not result.owner:
+    # Precedence: a definite copyleft finding (1) outranks "cannot tell" (2),
+    # which outranks "all clear" (0).
+    if result.forces_open_source:
+        return 1
+    if not result.owner or not result.scan_complete:
         return 2
-    if not result.scan_complete:
+    if result.verdict_undetermined:
         return 2
-    if result.errors and not result.packages and result.repo_license is None:
-        if any(
-            any(k in e.lower() for k in ("not found", "rate limit", "forbidden", "exceeded"))
-            for e in result.errors
-        ):
-            return 2
-    return 1 if result.forces_open_source else 0
+    return 0
 
 
 async def cmd_batch(file_path: str, save: bool = True) -> int:

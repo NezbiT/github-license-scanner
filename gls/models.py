@@ -105,6 +105,28 @@ class ScanResult:
     strong_copyleft_dev_only: bool = False
     # True when AGPL/network-copyleft signals were detected (extra SaaS caution)
     has_network_copyleft: bool = False
+    # --- Unknown-license tracking -----------------------------------------
+    # These separate "we know it is safe" from "we could not find out", which
+    # the boolean can_sell_closed / forces_open_source pair cannot express.
+    # How repo_license was determined: github_api | license_text | unresolved
+    license_detection_source: str = "unresolved"
+    # True when neither GitHub nor the license-file text yielded a license
+    repo_license_unresolved: bool = False
+    # True when at least one *production* dependency could not be resolved
+    has_unknown_prod_licenses: bool = False
+
+    @property
+    def verdict_undetermined(self) -> bool:
+        """
+        True when the scan cannot support any closed-source conclusion.
+
+        Strong copyleft is a determination, so it takes precedence: a repo
+        that forces open source is not "undetermined" merely because some
+        dependency was also unresolvable.
+        """
+        if self.forces_open_source:
+            return False
+        return self.repo_license_unresolved or self.has_unknown_prod_licenses
 
     def to_history_entry(self) -> dict[str, Any]:
         """Compact dict suitable for history.json persistence."""

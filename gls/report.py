@@ -25,13 +25,27 @@ def render_markdown_report(result: ScanResult) -> str:
     lines.append(
         f"- **Scan complete:** {'Yes' if result.scan_complete else 'No (incomplete)'}"
     )
-    lines.append(
-        f"- **Can sell closed-source (heuristic):** "
-        f"{'Possibly (with caveats)' if result.can_sell_closed and result.scan_complete else 'No / undetermined'}"
-    )
-    lines.append(
-        f"- **Forces open source (heuristic):** {'Yes' if result.forces_open_source else 'No'}"
-    )
+    # Three states, not two — "unknown" must never render as "No".
+    undetermined = result.verdict_undetermined or not result.scan_complete
+    if result.forces_open_source:
+        sell, forces = "No", "Yes"
+    elif undetermined:
+        sell = "**Unknown** — licenses unresolved, this is not a 'no'"
+        forces = "**Unknown** — licenses unresolved, this is not a 'no'"
+    else:
+        sell, forces = "Possibly (with caveats)", "No"
+    lines.append(f"- **Can sell closed-source (heuristic):** {sell}")
+    lines.append(f"- **Forces open source (heuristic):** {forces}")
+    if result.repo_license_unresolved and result.scan_complete:
+        lines.append(
+            "- **Repository license:** UNRESOLVED — GitHub could not identify it "
+            "and its license file text matched no known license. Read it manually."
+        )
+    elif result.license_detection_source == "license_text":
+        lines.append(
+            "- **Repository license source:** detected from license file text "
+            "(GitHub's own detector could not identify it)"
+        )
     if result.has_network_copyleft:
         lines.append(
             "- **Network/SaaS copyleft signal (AGPL/SSPL):** Yes — review carefully"
