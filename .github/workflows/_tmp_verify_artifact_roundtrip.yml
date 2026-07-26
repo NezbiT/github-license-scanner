@@ -1,0 +1,48 @@
+# TEMPORARY — deleted before this branch is merged.
+#
+# publish.yml hands the built distribution between two jobs via
+# upload-artifact/download-artifact, and that hop only runs on a real
+# release. This mirrors it exactly with the new action majors so a broken
+# bump surfaces here instead of during the next PyPI publish.
+
+name: _tmp verify artifact roundtrip
+
+on:
+  push:
+    branches: [chore/bump-actions-node24]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install build
+      - run: python -m build
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist/
+
+  consume:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+      - name: Assert the distribution survived the roundtrip
+        run: |
+          set -euo pipefail
+          echo "--- dist/ contents ---"
+          ls -la dist/
+          test -f dist/github_license_scanner-0.1.2-py3-none-any.whl
+          test -f dist/github_license_scanner-0.1.2.tar.gz
+          # twine check is what gh-action-pypi-publish effectively gates on
+          pip install --quiet twine
+          twine check dist/*
+          echo "roundtrip OK"
