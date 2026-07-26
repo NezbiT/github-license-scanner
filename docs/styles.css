@@ -34,9 +34,11 @@ a {
   color: inherit;
 }
 
-code {
+/* Inline code in paragraphs (light chips) */
+:not(pre) > code {
   font-family: var(--mono);
   font-size: 0.9em;
+  color: var(--text);
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -291,42 +293,62 @@ code {
   color: var(--text);
 }
 
+/* Multi-line install snippets — high contrast (light panel, dark text) */
 .codeblock {
   position: relative;
   margin: 0.5rem 0 0;
-  background: #0a0a0a;
-  color: #f5f5f5;
+  background: #f4f4f5;
+  color: #111111;
   border-radius: 10px;
-  border: 1px solid #262626;
+  border: 1px solid var(--border);
   overflow: hidden;
 }
 
-.codeblock pre {
+.codeblock pre,
+.codeblock code {
   margin: 0;
-  padding: 1rem 1rem 1rem;
+  color: #111111 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none;
+}
+
+.codeblock pre {
+  padding: 1rem 3.25rem 1rem 1rem;
   overflow-x: auto;
   font-family: var(--mono);
   font-size: 0.8rem;
   line-height: 1.55;
+  white-space: pre;
+}
+
+.codeblock code {
+  display: block;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: inherit;
 }
 
 .codeblock .copy {
   position: absolute;
   top: 0.55rem;
   right: 0.55rem;
-  border: 1px solid #404040;
-  background: #171717;
-  color: #fafafa;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #111111;
   border-radius: 6px;
   padding: 0.3rem 0.55rem;
   font: inherit;
   font-size: 0.72rem;
   font-weight: 600;
   cursor: pointer;
+  z-index: 1;
 }
 
 .codeblock .copy:hover {
-  background: #262626;
+  background: #e5e5e5;
 }
 
 .panel.warn {
